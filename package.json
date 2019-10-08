@@ -2,7 +2,7 @@
   "name": "personal-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rottaj.github.io/personal-site/",
+  "homepage": "https://rottaj.github.io/portfolio-site/",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "bricks.js": "^1.8.0",
