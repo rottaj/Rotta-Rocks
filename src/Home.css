@@ -1,0 +1,139 @@
+body, html{
+    height:100%;
+    margin:0;
+    font-size:16px;
+    font-family:"Lato", sans-serif;
+    font-weight:400;
+    line-height:1.8em;
+    color:#666;
+  }
+  
+  .mainContainer {
+    width: 100vw;
+  }
+  
+  .first-pic, .pimg2, .pimg3{
+    position:relative;
+    opacity:0.70;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+  
+    /*
+      fixed = parallax
+      scroll = normal
+    */
+    background-attachment: fixed;
+  }
+  
+  .first-pic{
+    background-image:url('./DSC_2669.jpg');
+    height: 100vh;
+  }
+  
+  .pimg2{
+    /* background-image:url('./DSC_2545.jpg'); */
+    min-height:400px;
+    background-image: grey;
+  }
+
+  .pimg3{
+    /*background-image:url('https://flipwallpapers.com/wallpapers/4k-wallpaper-hd-resolution-For-desktop-Wallpaper.jpg'); */
+    min-height:400px;
+  }
+  
+  
+  .section{
+    text-align:center;
+    padding:50px 80px;
+  }
+  
+  .section-light{
+    background-color:#f4f4f4;
+    color:#666;
+  }
+  
+  .section-dark{
+    background-color:#282e34;
+    color:#ddd;
+  }
+
+  .section-text{
+    letter-spacing:1px;
+  }
+
+  .ptext{
+    /*margin-left: 5%;  */
+    padding-top: 22%;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:26px;
+    letter-spacing:8px;
+    text-transform:uppercase;
+  }
+  
+  .ptext2 {
+    text-align:left;
+    color:#000;
+    font-size:16px;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    /*background-color: grey; */
+  }
+
+  .popRepos {
+    background-color: grey;
+  }
+  
+  .ptext .border{
+    border-radius: 25px;
+    background-color:#111;
+    color:rgb(146, 141, 141);
+    padding:20px;
+  }
+
+  .navBar {
+    /*position: fixed; */
+    display: flex;
+    flex-flow: row;
+    padding-right: 0.1%;
+  }
+
+  .contact {
+    padding-left: 50%;
+  }
+/*
+  .gh {
+    width: 7%; height: 7%;
+    background: url(gh_icon);
+    background-repeat: no-repeat;
+  }
+  .ig {
+    width: 2350px; height: 75px;
+    background: url(ig_icon);
+    background-repeat: no-repeat;
+  }
+  .twitter {
+    width: 2350px; height: 75px;
+    background: url(tw_icon);
+    background-repeat: no-repeat
+  }
+  .sc {
+    background: url(sc_icon);
+    width: 2350px; height: 75px;
+    background-repeat: no-repeat
+  }
+  */
+
+  #nav {
+    color: white;
+  }
+
+
+  /* .ptext .border.trans{
+    background-color:transparent;
+    color: rgb(78, 74, 74)
+  } */
+  
+  
