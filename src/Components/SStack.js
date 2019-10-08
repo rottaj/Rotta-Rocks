@@ -44,6 +44,7 @@ export default class SoftwareStack extends React.Component {
                             <h3>Backend</h3>
                             <h5>NodeJS and Express.</h5>
                             <h5>JSON Web Tokens for session-based authentication</h5>
+                            <h4>(Not Integrated in Github Pages)</h4>
                         </div>
                     </Card>
                     <Card>
