@@ -1,3 +1,3 @@
 #########Personal Site##############
 
-Stack: NodeJS, Express, React
+Deployed with Github Pages
