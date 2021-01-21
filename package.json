@@ -31,7 +31,7 @@
     "semantic-ui-react": "^0.87.3",
     "sequelize": "^5.19.4",
     "sequelize-cli": "^5.5.1",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "socket.io-client": "^2.3.0",
     "twilio": "^3.35.1"
   },
