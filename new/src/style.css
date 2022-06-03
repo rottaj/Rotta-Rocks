@@ -3,3 +3,8 @@ canvas {
   top: 0;
   left: 0;
 }
+
+.NameTop {
+  color:"green";
+  position: absolute;
+}
