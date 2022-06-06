@@ -1,11 +1,32 @@
-body {
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-canvas {
+html {
+  font-size: 16px;
+    line-height: 1.5;
+    background: rgb(15, 15, 16);
+    /* font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; */
+    font-family: "Avenir Next", Avenir, "Helvetica Neue", sans-serif;
+    color: var(--c-secondary);
+    box-sizing: border-box;
 
 }
+
+body {
+}
+
+canvas {
+  /*
+  width: 960px;
+  height: 952px;
+  */
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
 .canvas-container {
   position: fixed;
   top: 0;
@@ -15,8 +36,32 @@ canvas {
   z-index: 1;
   pointer-events: none;
 }
+
+
 #main {
- display: grid;
-    grid-template-columns: 1fr 6fr 4fr 1fr;
-    grid-template-rows: 1fr 3fr auto;
+  /*visibility: hidden; */
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 10%;
+  display: grid;
+  grid-template-columns: 1fr 6fr 4fr 1fr;
+  grid-template-rows: 1fr 3fr auto;
+  grid-template-areas:
+    ". header header ."
+    ". intro . ."
+    ". timeline timeline ."
+    "footer footer footer footer";
+
+}
+
+.logo {
+  display: block;
+  margin: var(--v-space) 0 0 0;
+  color: white;
+  font-size: 6.5rem;
+}
+
+.about {
+  display: block;
+  color: white;
 }
