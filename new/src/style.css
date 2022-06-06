@@ -44,13 +44,6 @@ canvas {
   padding-right: 5%;
   padding-top: 10%;
   display: grid;
-  grid-template-columns: 1fr 6fr 4fr 1fr;
-  grid-template-rows: 1fr 3fr auto;
-  grid-template-areas:
-    ". header header ."
-    ". intro . ."
-    ". timeline timeline ."
-    "footer footer footer footer";
 
 }
 
@@ -64,4 +57,44 @@ canvas {
 .about {
   display: block;
   color: white;
+  font-size: 2rem;
+}
+
+.timeline {
+  padding-left: 100px;
+  padding-right: 25%;
+  grid-area: timeline;
+  display: block;
+  color: white;
+  border-radius: 20px;
+}
+
+.timeline-block {
+  border-radius: 20px;
+  color: white;
+  z-index: 2;
+  background: var(--c-tertiary);
+  backdrop-filter: saturate(100%) blur(40px);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  position: relative;
+  padding: calc(var(--v-space)/2) 0;
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: ". co description ."; 
+}
+
+.timeline-header {
+  font-weight: var(--f-weight);
+  font-size: 3rem;
+  line-height: 1.4;
+}
+
+.timeline-description {
+  padding-top: 10px;
+  margin: calc(var(--v-space) * .5) 0 0;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  grid-area: description;
 }
