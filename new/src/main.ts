@@ -14,14 +14,8 @@ scene.add( cube );
 camera.position.z = 30;
 
 const geometryTorus = new THREE.TorusGeometry( 10, 0.1, 16, 100 )
-const geometryTorusTwo = new THREE.TorusGeometry( 10, 0.1, 16, 100 )
 const torus = new THREE.Mesh( geometryTorus, material )
-const torusTwo = new THREE.Mesh( geometryTorusTwo, material )
-//torusTwo.translate(1, 0, 0)
-const torusThree = new THREE.Mesh( geometryTorus, material )
-scene.add(torus)
-scene.add(torusTwo)
-scene.add(torusThree)
+///scene.add(torus)
 
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(20, 20, 20);
@@ -42,38 +36,33 @@ function moveCamera() {
 document.body.onscroll = moveCamera;
 moveCamera();
 
+var mouse = {x: 0, y: 0};
+function onMouseMove(event: any) {
+  event.preventDefault();
+	mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+	mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
 
-const loader = new FontLoader();
+ // Make the sphere follow the mouse
+  var vector = new THREE.Vector3(mouse.x, mouse.y, 0.5);
+	vector.unproject( camera );
+	var dir = vector.sub( camera.position ).normalize();
+	var distance = - camera.position.z / dir.z;
+	var pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
+	cube.position.copy(pos);
+}
 
-loader.load( 'fonts/helvetiker_bold.typeface.json', function ( font: any ) {
-
-	const geometry = new TextGeometry( 'Hello three.js!', {
-		font: font,
-		size: 80,
-		height: 5,
-		curveSegments: 12,
-		bevelEnabled: true,
-		bevelThickness: 10,
-		bevelSize: 8,
-		bevelOffset: 0,
-		bevelSegments: 5
-	} );
-} );
+document.addEventListener('mousemove', onMouseMove, false)
 
 function animate() {
   requestAnimationFrame( animate )
   cube.rotation.x += 0.01
   cube.rotation.y += 0.01
   cube.rotation.z += 0.01
+  /*
   torus.rotation.x += 0.01
   torus.rotation.y += 0.01
   torus.rotation.z += 0.01
-  torusTwo.rotation.x += 0.01
-  torusTwo.rotation.y += 0.01
-  torusTwo.rotation.z += 0.01
-  torusThree.rotation.x += 0.01
-  torusThree.rotation.y += 0.01
-  torusThree.rotation.z += 0.01
+  */
   renderer.render( scene, camera )
 }
 animate()
