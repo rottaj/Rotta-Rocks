@@ -135,6 +135,86 @@ canvas {
   grid-area: description;
 }
 
+.projects {
+  padding-top: 10%;
+  grid-area: timeline;
+  display: block;
+  color: white;
+}
+
+.project-block {
+  margin-left: 10%;
+  margin-right: 10%;
+  color: white;
+  z-index: 2;
+  /*background: hsl(35, 31%, 13%, 0.11);*/
+  background: hsl(35, 38%, 27%, 0.11);
+  backdrop-filter: saturate(100%) blur(5px);
+  position: relative;
+  padding: calc(var(--v-space)/2) 0;
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: ". co description ."; 
+}
+
+.project-block-top {
+  margin-left: 10%;
+  margin-right: 10%;
+  color: white;
+  z-index: 2;
+  /*background: hsl(35, 31%, 13%, 0.11);*/
+  background: hsl(35, 38%, 27%, 0.11);
+  backdrop-filter: saturate(100%) blur(5px);
+  position: relative;
+  padding: calc(var(--v-space)/2) 0;
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: ". co description ."; 
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+}
+.project-block-bottom {
+  margin-left: 10%;
+  margin-right: 10%;
+  color: white;
+  z-index: 2;
+  /*background: hsl(35, 31%, 13%, 0.11);*/
+  background: hsl(35, 38%, 27%, 0.11);
+  backdrop-filter: saturate(100%) blur(5px);
+  position: relative;
+  padding: calc(var(--v-space)/2) 0;
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: ". co description ."; 
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+
+.project-header {
+  font-weight: var(--f-weight);
+  font-size: 3rem;
+  line-height: 1.4;
+  padding-left: 5rem;
+}
+
+.project-description {
+  padding-top: 25px;
+  margin: calc(var(--v-space) * .5) 0 0;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  grid-area: description;
+}
+
+
+
+
+
+
 .footer {
   color: white;
 }
