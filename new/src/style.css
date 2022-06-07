@@ -89,7 +89,7 @@ canvas {
 }
 
 .timeline-description {
-  padding-top: 10px;
+  padding-top: 25px;
   margin: calc(var(--v-space) * .5) 0 0;
   font-weight: normal;
   font-size: 1.5rem;
