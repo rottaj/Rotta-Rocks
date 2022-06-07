@@ -13,10 +13,6 @@ body {
 }
 
 canvas {
-  /*
-  width: 960px;
-  height: 952px;
-  */
   position: fixed;
   top: 0;
   right: 0;
@@ -40,6 +36,7 @@ canvas {
 
 #main {
   /*visibility: hidden; */
+  line-height: 6rem;
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 10%;
@@ -58,6 +55,7 @@ canvas {
   display: block;
   color: white;
   font-size: 2rem;
+  line-height: 3rem;
 }
 
 .timeline {
@@ -97,4 +95,8 @@ canvas {
   font-size: 1.5rem;
   line-height: 1.4;
   grid-area: description;
+}
+
+.footer {
+  color: white;
 }
