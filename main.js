@@ -39,7 +39,7 @@ document.body.onscroll = moveCamera;
 moveCamera();
 
 var mouse = {x: 0, y: 0};
-function onMouseMove(event: any) {
+function onMouseMove(event) {
   event.preventDefault();
 	mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
 	mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;

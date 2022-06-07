@@ -61,6 +61,13 @@ canvas {
   margin-bottom: 10%;
 }
 
+.h2-header {
+  color: white;
+  font-size: 3rem;
+  line-height: 1rem;
+  padding-left: 12%;
+}
+
 .timeline {
   grid-area: timeline;
   display: block;
@@ -134,6 +141,7 @@ canvas {
   line-height: 1.4;
   grid-area: description;
 }
+
 
 .projects {
   padding-top: 10%;
