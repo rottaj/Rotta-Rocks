@@ -10,6 +10,8 @@ html {
 }
 
 body {
+  display: block;
+  font-weight: 600;
 }
 
 canvas {
@@ -69,9 +71,16 @@ canvas {
 }
 
 .timeline {
-  grid-area: timeline;
-  display: block;
+  grid-area: 'timeline';
   color: white;
+  grid-row-start: timeline;
+  grid-column-start: timeline;
+  grid-row-end: timeline;
+  grid-column-end: timeline;
+}
+
+section {
+  display: block
 }
 
 .timeline-block {
@@ -87,7 +96,10 @@ canvas {
   display: grid;
   grid-template-columns: 1fr 5fr 5fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: ". co description ."; 
+  grid-template-areas:
+  ". hr hr ."
+  ". co co ."
+  ". description description .";
 }
 
 .timeline-block-top {
@@ -103,7 +115,10 @@ canvas {
   display: grid;
   grid-template-columns: 1fr 5fr 5fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: ". co description ."; 
+  grid-template-areas:
+    ". hr hr ."
+    ". co co ."
+    ". description description .";
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
 }
@@ -120,7 +135,10 @@ canvas {
   display: grid;
   grid-template-columns: 1fr 5fr 5fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: ". co description ."; 
+  grid-template-areas:
+    ". hr hr ."
+    ". co co ."
+    ". description description .";
   border-bottom-left-radius: 60px;
   border-bottom-right-radius: 60px;
 }
@@ -163,7 +181,10 @@ canvas {
   display: grid;
   grid-template-columns: 1fr 5fr 5fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: ". co description ."; 
+  grid-template-areas:
+    ". hr hr ."
+    ". co co ."
+    ". description description .";
 }
 
 .project-block-top {
@@ -179,7 +200,10 @@ canvas {
   display: grid;
   grid-template-columns: 1fr 5fr 5fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: ". co description ."; 
+  grid-template-areas:
+    ". hr hr ."
+    ". co co ."
+    ". description description .";
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
 }
@@ -196,7 +220,10 @@ canvas {
   display: grid;
   grid-template-columns: 1fr 5fr 5fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: ". co description ."; 
+  grid-template-areas:
+    ". hr hr ."
+    ". co co ."
+    ". description description .";
   border-bottom-left-radius: 60px;
   border-bottom-right-radius: 60px;
 }
