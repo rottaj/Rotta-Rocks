@@ -16,6 +16,7 @@
   * [📜 Information Disclosure Cheat Sheet](web-application-security/information-gathering/information-disclosure-cheat-sheet.md)
 * [Client-Side Attacks](web-application-security/client-side-attacks/README.md)
   * [Cross-Site Scripting (XSS)](web-application-security/client-side-attacks/cross-site-scripting-xss.md)
+  * [DOM-based XSS](web-application-security/client-side-attacks/dom-based-xss.md)
   * [Cross-Site Request Forgery (CSRF)](web-application-security/client-side-attacks/cross-site-request-forgery-csrf.md)
   * [📜 Cross Site Scripting (XSS) Cheat Sheet](web-application-security/client-side-attacks/cross-site-scripting-xss-cheat-sheet.md)
 * [Server Side Attacks](web-application-security/server-side-attacks/README.md)
