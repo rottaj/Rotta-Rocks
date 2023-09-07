@@ -1,2 +1,0 @@
-# Brute Forcing Cookies
-

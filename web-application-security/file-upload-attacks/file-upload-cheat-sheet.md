@@ -44,6 +44,13 @@
 
 
 
+### Uploading .htaccess File:
+
+```
+AddType application/x-httpd-php .php
+AddType application/x-httpd-php .jpg
+```
+
 
 
 ### Injections in FIle Name
