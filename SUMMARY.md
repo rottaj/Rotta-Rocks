@@ -24,6 +24,7 @@
   * [Server-Side Includes (SSI)](web-application-security/server-side-attacks/server-side-includes-ssi.md)
   * [Edge-Side Includes (ESI)](web-application-security/server-side-attacks/edge-side-includes-esi.md)
   * [Server-Side Template Injection (SSTI)](web-application-security/server-side-attacks/server-side-template-injection-ssti.md)
+  * [XML External Entity (XXE) Injection](web-application-security/server-side-attacks/xml-external-entity-xxe-injection.md)
   * [📜 Server Side Attacks Cheat Sheet](web-application-security/server-side-attacks/server-side-attacks-cheat-sheet.md)
 * [Authentication & Authorization Attacks](web-application-security/authentication-and-authorization-attacks/README.md)
   * [Login Brute Forcing](web-application-security/authentication-and-authorization-attacks/login-brute-forcing/README.md)
@@ -65,10 +66,15 @@
 
 ## 🦈 Ethical Hacking
 
-* [Coming Soon](ethical-hacking/coming-soon.md)
+* [Pivoting, Tunneling, and Port Forwarding](ethical-hacking/pivoting-tunneling-and-port-forwarding/README.md)
+  * [SSH](ethical-hacking/pivoting-tunneling-and-port-forwarding/ssh.md)
+  * [Meterpreter](ethical-hacking/pivoting-tunneling-and-port-forwarding/meterpreter.md)
 
 ## ☣ Malware Development
 
+* [Windows](malware-development/windows/README.md)
+  * [Memory Allocation ](malware-development/windows/memory-allocation.md)
+* [C2 Development](malware-development/c2-development.md)
 * [Coming Soon!](malware-development/coming-soon.md)
 
 ## 🔍 Malware Analysis

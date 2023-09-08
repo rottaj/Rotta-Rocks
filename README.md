@@ -10,12 +10,6 @@ Prior life as a Software Engineer in the Oil & Gas and Insurance sectors.
 
 
 
-### My Certificates
-
-Once I collect them all they will go here :tada:
-
-##
-
 ## My Socials
 
 {% embed url="https://www.github.com/rottaj" %}
