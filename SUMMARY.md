@@ -72,10 +72,13 @@
 
 ## ☣ Malware Development
 
-* [Windows](malware-development/windows/README.md)
-  * [Memory Allocation ](malware-development/windows/memory-allocation.md)
+* [Memory Allocation](malware-development/memory-allocation.md)
+* [Process Enumeration](malware-development/process-enumeration/README.md)
+  * [CreateToolhelp32Snapshot](malware-development/process-enumeration/createtoolhelp32snapshot.md)
+  * [EnumProcesses (psapi.h)](malware-development/process-enumeration/enumprocesses-psapi.h.md)
+  * [NtQuerySystemInformation (winternl.h)](malware-development/process-enumeration/ntquerysysteminformation-winternl.h.md)
+* [syscalls](malware-development/syscalls.md)
 * [C2 Development](malware-development/c2-development.md)
-* [Coming Soon!](malware-development/coming-soon.md)
 
 ## 🔍 Malware Analysis
 

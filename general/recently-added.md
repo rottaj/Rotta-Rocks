@@ -1,7 +1,12 @@
 ---
-description: Notes, Blogs, Write-ups, and other nonsense.
+description: Here's a list of things I'm currently working on.
 ---
 
 # Recently Added
 
-I'm currently preparing for Hack The Box's "Certified Bug Bounty Hunter" certificate. You can check out my exam prep bellow! :relaxed:
+Burp Suite Practioner exam.
+
+OSCP&#x20;
+
+Researching & analyzing malware.
+
