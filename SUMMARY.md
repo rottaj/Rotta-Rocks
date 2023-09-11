@@ -67,6 +67,7 @@
 ## 🦈 Ethical Hacking
 
 * [Pivoting, Tunneling, and Port Forwarding](ethical-hacking/pivoting-tunneling-and-port-forwarding/README.md)
+  * [Reconnaisance](ethical-hacking/pivoting-tunneling-and-port-forwarding/reconnaisance.md)
   * [SSH](ethical-hacking/pivoting-tunneling-and-port-forwarding/ssh.md)
   * [Meterpreter](ethical-hacking/pivoting-tunneling-and-port-forwarding/meterpreter.md)
 

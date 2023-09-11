@@ -4,11 +4,9 @@ description: Hi, I'm Jack! (Rotta)
 
 # About Me
 
-A Collection of My Notes, Blogs, and other Nonsense. Diving deep into offensive tools, malware exploration, and web application hacking.
+A collection of my notes, blogs, and other nonsense. Diving into offensive tools, exploring malware, and hacking web applications.
 
-Prior life as a Software Engineer in the Oil & Gas and Insurance sectors.
-
-
+Prior work as a Software Engineer in the Oil & Gas and Insurance sectors.
 
 ## My Socials
 
