@@ -77,19 +77,7 @@ msf6 post(multi/manage/autoroute) > run
 [*] Post module execution completed
 ```
 
-#### Alternatively we can use "autoroute" from our Meterpreter session:
 
-```shell-session
-meterpreter > run autoroute -s 172.16.5.0/23
-
-[!] Meterpreter scripts are deprecated. Try post/multi/manage/autoroute.
-[!] Example: run post/multi/manage/autoroute OPTION=value [...]
-[*] Adding a route to 172.16.5.0/255.255.254.0...
-[+] Added route to 172.16.5.0/255.255.254.0 via 10.129.202.64
-[*] Use the -p option to list all active routes
-```
-
-#### After adding the necessary route(s) we can use the `-p` option to list the active routes to make sure our configuration is applied as expected.
 
 ```
 meterpreter > run autoroute -p

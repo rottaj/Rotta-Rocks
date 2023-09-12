@@ -64,12 +64,31 @@
   * [HTTP Host Header Attacks](web-application-security/other-attacks/http-host-header-attacks.md)
   * [Password Reset Poisoning](web-application-security/other-attacks/password-reset-poisoning.md)
 
+## 🌩 Cloud Security
+
+* [Microsoft Azure](cloud-security/microsoft-azure.md)
+* [Amazon AWS](cloud-security/amazon-aws.md)
+* [Google Cloud](cloud-security/google-cloud.md)
+
 ## 🦈 Ethical Hacking
 
 * [Pivoting, Tunneling, and Port Forwarding](ethical-hacking/pivoting-tunneling-and-port-forwarding/README.md)
   * [Reconnaisance](ethical-hacking/pivoting-tunneling-and-port-forwarding/reconnaisance.md)
   * [SSH](ethical-hacking/pivoting-tunneling-and-port-forwarding/ssh.md)
   * [Meterpreter](ethical-hacking/pivoting-tunneling-and-port-forwarding/meterpreter.md)
+  * [Socat](ethical-hacking/pivoting-tunneling-and-port-forwarding/socat.md)
+  * [Pivoting Around Obstactles](ethical-hacking/pivoting-tunneling-and-port-forwarding/pivoting-around-obstactles/README.md)
+    * [plink.exe](ethical-hacking/pivoting-tunneling-and-port-forwarding/pivoting-around-obstactles/plink.exe.md)
+    * [Pivoting with sshuttle](ethical-hacking/pivoting-tunneling-and-port-forwarding/pivoting-around-obstactles/pivoting-with-sshuttle.md)
+    * [Web Server Pivoting with Rpivot](ethical-hacking/pivoting-tunneling-and-port-forwarding/pivoting-around-obstactles/web-server-pivoting-with-rpivot.md)
+    * [Port Forwarding with Windows Netsh](ethical-hacking/pivoting-tunneling-and-port-forwarding/pivoting-around-obstactles/port-forwarding-with-windows-netsh.md)
+  * [Tunneling](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/README.md)
+    * [Dnscat2](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/dnscat2.md)
+    * [Chisel](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/chisel.md)
+* [Active Directory Enumeration & Attacks](ethical-hacking/active-directory-enumeration-and-attacks/README.md)
+  * [Useful Tools / Links](ethical-hacking/active-directory-enumeration-and-attacks/useful-tools-links.md)
+* [Payloads](ethical-hacking/payloads/README.md)
+  * [Metasploit](ethical-hacking/payloads/metasploit.md)
 
 ## ☣ Malware Development
 
