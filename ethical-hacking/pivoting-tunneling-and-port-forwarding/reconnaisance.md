@@ -32,9 +32,8 @@ for /L %i in (1 1 254) do ping 172.16.5.%i -n 1 -w 100 | find "Reply"
 
 #### For Loop Using Powershell
 
-```powershell
-1..254 | % {"172.16.5.$($_): $(Test-Connection -count 1 -comp 172.15.5.$($_) -quiet)"}
-```
+<pre class="language-powershell"><code class="lang-powershell"><strong>1..254 | % {"172.16.5.$($_): $(Test-Connection -count 1 -comp 172.15.5.$($_) -quiet)"}
+</strong></code></pre>
 
 _<mark style="color:red;">**Note:**</mark>_ It is possible that a ping sweep may not result in successful replies on the first attempt, especially when communicating across networks. This can be caused by the time it takes for a host to build it's arp cache. In these cases, it is good to attempt our ping sweep at least twice to ensure the arp cache gets built.
 
