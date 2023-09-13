@@ -85,6 +85,8 @@
   * [Tunneling](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/README.md)
     * [Dnscat2](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/dnscat2.md)
     * [Chisel](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/chisel.md)
+  * [Double Pivots](ethical-hacking/pivoting-tunneling-and-port-forwarding/double-pivots/README.md)
+    * [RDP and SOCKS Tunneling with SocksOverRDP](ethical-hacking/pivoting-tunneling-and-port-forwarding/double-pivots/rdp-and-socks-tunneling-with-socksoverrdp.md)
 * [Active Directory Enumeration & Attacks](ethical-hacking/active-directory-enumeration-and-attacks/README.md)
   * [Useful Tools / Links](ethical-hacking/active-directory-enumeration-and-attacks/useful-tools-links.md)
 * [Payloads](ethical-hacking/payloads/README.md)
