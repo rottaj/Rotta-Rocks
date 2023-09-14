@@ -72,6 +72,8 @@
 
 ## 🦈 Ethical Hacking
 
+* [Information Gathering / Reconnaisance](ethical-hacking/information-gathering-reconnaisance/README.md)
+  * [External Recon and Enumeration](ethical-hacking/information-gathering-reconnaisance/external-recon-and-enumeration.md)
 * [Pivoting, Tunneling, and Port Forwarding](ethical-hacking/pivoting-tunneling-and-port-forwarding/README.md)
   * [Reconnaisance](ethical-hacking/pivoting-tunneling-and-port-forwarding/reconnaisance.md)
   * [SSH](ethical-hacking/pivoting-tunneling-and-port-forwarding/ssh.md)
@@ -88,7 +90,7 @@
   * [Double Pivots](ethical-hacking/pivoting-tunneling-and-port-forwarding/double-pivots/README.md)
     * [RDP and SOCKS Tunneling with SocksOverRDP](ethical-hacking/pivoting-tunneling-and-port-forwarding/double-pivots/rdp-and-socks-tunneling-with-socksoverrdp.md)
 * [Active Directory Enumeration & Attacks](ethical-hacking/active-directory-enumeration-and-attacks/README.md)
-  * [Useful Tools / Links](ethical-hacking/active-directory-enumeration-and-attacks/useful-tools-links.md)
+  * [Active Directory Toolkit](ethical-hacking/active-directory-enumeration-and-attacks/active-directory-toolkit.md)
 * [Payloads](ethical-hacking/payloads/README.md)
   * [Metasploit](ethical-hacking/payloads/metasploit.md)
 
