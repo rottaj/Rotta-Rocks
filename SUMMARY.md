@@ -93,6 +93,9 @@
     * [RDP and SOCKS Tunneling with SocksOverRDP](ethical-hacking/pivoting-tunneling-and-port-forwarding/double-pivots/rdp-and-socks-tunneling-with-socksoverrdp.md)
 * [Active Directory Enumeration & Attacks](ethical-hacking/active-directory-enumeration-and-attacks/README.md)
   * [Active Directory Toolkit](ethical-hacking/active-directory-enumeration-and-attacks/active-directory-toolkit.md)
+  * [LLMNR/NBT-NS Poisoning](ethical-hacking/active-directory-enumeration-and-attacks/llmnr-nbt-ns-poisoning/README.md)
+    * [Linux](ethical-hacking/active-directory-enumeration-and-attacks/llmnr-nbt-ns-poisoning/linux.md)
+    * [Windows](ethical-hacking/active-directory-enumeration-and-attacks/llmnr-nbt-ns-poisoning/windows.md)
 * [Payloads](ethical-hacking/payloads/README.md)
   * [Metasploit](ethical-hacking/payloads/metasploit.md)
 
