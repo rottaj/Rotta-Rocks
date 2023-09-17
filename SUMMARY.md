@@ -106,6 +106,9 @@
   * [CreateToolhelp32Snapshot](malware-development/process-enumeration/createtoolhelp32snapshot.md)
   * [EnumProcesses (psapi.h)](malware-development/process-enumeration/enumprocesses-psapi.h.md)
   * [NtQuerySystemInformation (winternl.h)](malware-development/process-enumeration/ntquerysysteminformation-winternl.h.md)
+* [Techniques and Exploitation Methods](malware-development/techniques-and-exploitation-methods/README.md)
+  * [DLL Injection](malware-development/techniques-and-exploitation-methods/dll-injection.md)
+  * [Reflective DLL Injection](malware-development/techniques-and-exploitation-methods/reflective-dll-injection.md)
 * [syscalls](malware-development/syscalls.md)
 * [C2 Development](malware-development/c2-development.md)
 
