@@ -108,6 +108,8 @@
     * [SMBMap](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-from-kali/smbmap.md)
     * [rpcclient](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-from-kali/rpcclient.md)
     * [Impacket Toolkit](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-from-kali/impacket-toolkit.md)
+    * [Bloodhound](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-from-kali/bloodhound.md)
+    * [Windapsearch](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-from-kali/windapsearch.md)
   * [Authenticated Enumeration - Windows](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-windows.md)
 * [Payloads](ethical-hacking/payloads/README.md)
   * [Metasploit](ethical-hacking/payloads/metasploit.md)

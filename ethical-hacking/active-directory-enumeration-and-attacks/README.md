@@ -19,3 +19,10 @@ Being comfortable enumerating, attacking, and defending AD from Both Windows & L
 
 _<mark style="color:red;">**GOAL:**</mark>_ The general goal of gaining a foothold in a companies Active Directory environment is to escalate privilege by moving laterally or vertically throughout the network until we accomplish the intent of the assessment.
 
+
+
+Cheatsheets & More:
+
+[https://wadcoms.github.io/](https://wadcoms.github.io/) - WADComs interactive cheatsheet. Windows/AD environments.
+
+[https://orange-cyberdefense.github.io/ocd-mindmaps/](https://orange-cyberdefense.github.io/ocd-mindmaps/) - Active Directory Mindmap
