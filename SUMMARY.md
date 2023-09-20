@@ -113,6 +113,7 @@
 * [Techniques and Exploitation Methods](malware-development/techniques-and-exploitation-methods/README.md)
   * [DLL Injection](malware-development/techniques-and-exploitation-methods/dll-injection.md)
   * [Reflective DLL Injection](malware-development/techniques-and-exploitation-methods/reflective-dll-injection.md)
+  * [Shellcode Reflective DLL Injection](malware-development/techniques-and-exploitation-methods/shellcode-reflective-dll-injection.md)
 * [PE Tips & Tricks](malware-development/pe-tips-and-tricks/README.md)
   * [Parsing PE Headers](malware-development/pe-tips-and-tricks/parsing-pe-headers.md)
   * [Embed an EXE inside a LNK](malware-development/pe-tips-and-tricks/embed-an-exe-inside-a-lnk.md)
