@@ -6,6 +6,8 @@ description: >-
 
 # Creating a Target User List
 
+***
+
 We can gather a target list in many ways:
 
 * By leveraging an SMB NULL session to retrieve a complete list of domain users from the domain controller
@@ -26,7 +28,7 @@ If you are on an internal machine but don’t have valid domain credentials, you
 **Using enum4linux**
 
 ```shell-session
-attacker@kali$ enum4linux -U 172.16.5.5  | grep "user:" | cut -f2 -d"[" | cut -f1 -d"]"
+attacker@kali$ 
 
 administrator
 guest

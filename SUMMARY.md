@@ -100,6 +100,9 @@
   * [Password Spraying](ethical-hacking/active-directory-enumeration-and-attacks/password-spraying/README.md)
     * [Enumeration & Retrieving Password Policy](ethical-hacking/active-directory-enumeration-and-attacks/password-spraying/enumeration-and-retrieving-password-policy.md)
     * [Creating a Target User List](ethical-hacking/active-directory-enumeration-and-attacks/password-spraying/creating-a-target-user-list.md)
+    * [Internal Spraying - From Linux](ethical-hacking/active-directory-enumeration-and-attacks/password-spraying/internal-spraying-from-linux.md)
+    * [Internal Spraying - From Windows](ethical-hacking/active-directory-enumeration-and-attacks/password-spraying/internal-spraying-from-windows.md)
+  * [Enumerating Security Controls](ethical-hacking/active-directory-enumeration-and-attacks/enumerating-security-controls.md)
 * [Payloads](ethical-hacking/payloads/README.md)
   * [Metasploit](ethical-hacking/payloads/metasploit.md)
 
