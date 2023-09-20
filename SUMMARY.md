@@ -116,6 +116,9 @@
 * [PE Tips & Tricks](malware-development/pe-tips-and-tricks/README.md)
   * [Parsing PE Headers](malware-development/pe-tips-and-tricks/parsing-pe-headers.md)
   * [Embed an EXE inside a LNK](malware-development/pe-tips-and-tricks/embed-an-exe-inside-a-lnk.md)
+* [Staging](malware-development/staging/README.md)
+  * [Fetch Payload from Web Server](malware-development/staging/fetch-payload-from-web-server.md)
+  * [Fetch DLL from Web Server](malware-development/staging/fetch-dll-from-web-server.md)
 * [syscalls](malware-development/syscalls.md)
 * [C2 Development](malware-development/c2-development.md)
 
