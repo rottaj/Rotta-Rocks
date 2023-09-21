@@ -28,4 +28,6 @@ We want to utilize tools like Powershell, Windows Management Instrumentation (WM
 
 
 
-I
+Reference:
+
+[https://academy.hackthebox.com/](https://academy.hackthebox.com/)

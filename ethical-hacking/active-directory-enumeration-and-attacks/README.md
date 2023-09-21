@@ -26,3 +26,9 @@ Cheatsheets & More:
 [https://wadcoms.github.io/](https://wadcoms.github.io/) - WADComs interactive cheatsheet. Windows/AD environments.
 
 [https://orange-cyberdefense.github.io/ocd-mindmaps/](https://orange-cyberdefense.github.io/ocd-mindmaps/) - Active Directory Mindmap
+
+
+
+Reference:
+
+[https://academy.hackthebox.com/](https://academy.hackthebox.com/)

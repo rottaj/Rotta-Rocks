@@ -114,7 +114,12 @@
     * [Impacket Toolkit](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-from-kali/impacket-toolkit.md)
     * [Bloodhound](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-from-kali/bloodhound.md)
     * [Windapsearch](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-from-kali/windapsearch.md)
-  * [Authenticated Enumeration - Windows](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-windows.md)
+  * [Authenticated Enumeration - Windows](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-windows/README.md)
+    * [ActiveDirectory PowerShell Module](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-windows/activedirectory-powershell-module.md)
+    * [PowerView/SharpView](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-windows/powerview-sharpview.md)
+    * [SharpHound/BloodHound](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-windows/sharphound-bloodhound.md)
+    * [Grouper2](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-windows/grouper2.md)
+    * [Snaffler](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-windows/snaffler.md)
 * [Payloads](ethical-hacking/payloads/README.md)
   * [Metasploit](ethical-hacking/payloads/metasploit.md)
 
