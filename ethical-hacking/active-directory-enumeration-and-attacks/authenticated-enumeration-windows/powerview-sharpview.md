@@ -1,2 +1,0 @@
-# PowerView/SharpView
-
