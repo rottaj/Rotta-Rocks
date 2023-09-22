@@ -55,4 +55,18 @@ Closing writers
 2022-04-18T13:59:46.3663660-07:00|INFORMATION|SharpHound Enumeration Completed at 1:59 PM on 4/18/2022! Happy Graphing
 ```
 
+
+
+## Viewing Data
+
+We can then type "bloodhound" in cmd and login with our credentials and click "Upload Data". Select the newly created .zip file.
+
+```
+$ bloodhound
+```
+
+
+
+
+
 _<mark style="color:red;">**NOTE:**</mark>_ Keep in mind as we go through the engagement, we should be documenting every file that is transferred to and from hosts in the domain and where they were placed on disk. This is good practice if we have to deconflict our actions with the customer. Also, depending on the scope of the engagement, you want to ensure you cover your tracks and clean up anything you put in the environment at the conclusion of the engagement.

@@ -119,6 +119,8 @@
     * [PowerView](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-windows/powerview.md)
     * [SharpHound/BloodHound](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-windows/sharphound-bloodhound.md)
     * [Snaffler](ethical-hacking/active-directory-enumeration-and-attacks/authenticated-enumeration-windows/snaffler.md)
+  * [Living Off the Land](ethical-hacking/active-directory-enumeration-and-attacks/living-off-the-land.md)
+  * [Kerberoasting](ethical-hacking/active-directory-enumeration-and-attacks/kerberoasting.md)
 * [Payloads](ethical-hacking/payloads/README.md)
   * [Metasploit](ethical-hacking/payloads/metasploit.md)
 
