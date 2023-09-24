@@ -141,7 +141,10 @@
 * [Staging](malware-development/staging/README.md)
   * [Fetch Payload from Web Server](malware-development/staging/fetch-payload-from-web-server.md)
   * [Fetch DLL from Web Server](malware-development/staging/fetch-dll-from-web-server.md)
-* [syscalls](malware-development/syscalls.md)
+* [Bypassing AV](malware-development/bypassing-av.md)
+* [Bypassing EDR Hooks](malware-development/bypassing-edr-hooks/README.md)
+  * [Patching NT API Stub](malware-development/bypassing-edr-hooks/patching-nt-api-stub.md)
+  * [Calling Syscalls Directly (SSN)](malware-development/bypassing-edr-hooks/calling-syscalls-directly-ssn.md)
 * [C2 Development](malware-development/c2-development.md)
 
 ## 🔍 Malware Analysis
