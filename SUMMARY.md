@@ -145,6 +145,9 @@
 * [Bypassing EDR Hooks](malware-development/bypassing-edr-hooks/README.md)
   * [Patching NT API Stub](malware-development/bypassing-edr-hooks/patching-nt-api-stub.md)
   * [Calling Syscalls Directly (SSN)](malware-development/bypassing-edr-hooks/calling-syscalls-directly-ssn.md)
+* [Syscalls](malware-development/syscalls/README.md)
+  * [Direct Syscalls](malware-development/syscalls/direct-syscalls.md)
+  * [Indirect Syscalls](malware-development/syscalls/indirect-syscalls.md)
 * [C2 Development](malware-development/c2-development.md)
 
 ## 🔍 Malware Analysis
