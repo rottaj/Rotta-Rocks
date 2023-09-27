@@ -133,6 +133,7 @@
   * [EnumProcesses (psapi.h)](malware-development/process-enumeration/enumprocesses-psapi.h.md)
   * [NtQuerySystemInformation (winternl.h)](malware-development/process-enumeration/ntquerysysteminformation-winternl.h.md)
 * [Techniques and Exploitation Methods](malware-development/techniques-and-exploitation-methods/README.md)
+  * [Thread Hijacking](malware-development/techniques-and-exploitation-methods/thread-hijacking.md)
   * [DLL Injection](malware-development/techniques-and-exploitation-methods/dll-injection.md)
   * [Reflective DLL Injection](malware-development/techniques-and-exploitation-methods/reflective-dll-injection.md)
   * [Shellcode Reflective DLL Injection](malware-development/techniques-and-exploitation-methods/shellcode-reflective-dll-injection.md)
