@@ -132,6 +132,8 @@
   * [CreateToolhelp32Snapshot](malware-development/process-enumeration/createtoolhelp32snapshot.md)
   * [EnumProcesses (psapi.h)](malware-development/process-enumeration/enumprocesses-psapi.h.md)
   * [NtQuerySystemInformation (winternl.h)](malware-development/process-enumeration/ntquerysysteminformation-winternl.h.md)
+* [Thread Enumeration](malware-development/thread-enumeration/README.md)
+  * [CreateToolhelp32Snapshot](malware-development/thread-enumeration/createtoolhelp32snapshot.md)
 * [Techniques and Exploitation Methods](malware-development/techniques-and-exploitation-methods/README.md)
   * [Thread Hijacking](malware-development/techniques-and-exploitation-methods/thread-hijacking.md)
   * [DLL Injection](malware-development/techniques-and-exploitation-methods/dll-injection.md)
