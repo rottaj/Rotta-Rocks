@@ -127,7 +127,9 @@
 
 ## ☣ Malware Development
 
-* [Memory Allocation](malware-development/memory-allocation.md)
+* [Memory Allocation](malware-development/memory-allocation/README.md)
+  * [Private Memory Allocation](malware-development/memory-allocation/private-memory-allocation.md)
+  * [Memory Mapping](malware-development/memory-allocation/memory-mapping.md)
 * [Process Enumeration](malware-development/process-enumeration/README.md)
   * [CreateToolhelp32Snapshot](malware-development/process-enumeration/createtoolhelp32snapshot.md)
   * [EnumProcesses (psapi.h)](malware-development/process-enumeration/enumprocesses-psapi.h.md)
