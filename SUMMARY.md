@@ -70,10 +70,6 @@
 * [Amazon AWS](cloud-security/amazon-aws.md)
 * [Google Cloud](cloud-security/google-cloud.md)
 
-***
-
-* [Page](page.md)
-
 ## 🦈 Ethical Hacking
 
 * [Information Gathering / Reconnaisance](ethical-hacking/information-gathering-reconnaisance/README.md)
@@ -150,8 +146,10 @@
 * [Staging](malware-development/staging/README.md)
   * [Fetch Payload from Web Server](malware-development/staging/fetch-payload-from-web-server.md)
   * [Fetch DLL from Web Server](malware-development/staging/fetch-dll-from-web-server.md)
-* [Bypassing AV](malware-development/bypassing-av/README.md)
+* [Bypassing AV](malware-development/bypassing-av.md)
   * [String Hashing](malware-development/bypassing-av/string-hashing.md)
+  * [Hiding & Obfuscating IAT](malware-development/bypassing-av/hiding-and-obfuscating-iat.md)
+  * [Custom WINAPI Functions](malware-development/bypassing-av/custom-winapi-functions.md)
 * [Evading EDR](malware-development/evading-edr/README.md)
   * [Payload Execution Control](malware-development/evading-edr/payload-execution-control.md)
   * [Bypassing EDR Hooks](malware-development/evading-edr/bypassing-edr-hooks/README.md)
@@ -161,7 +159,12 @@
 * [Syscalls](malware-development/syscalls/README.md)
   * [Direct Syscalls](malware-development/syscalls/direct-syscalls.md)
   * [Indirect Syscalls](malware-development/syscalls/indirect-syscalls.md)
-* [C2 Development](malware-development/c2-development.md)
+* [C2 Development](malware-development/c2-development/README.md)
+  * [Infrastructure](malware-development/c2-development/infrastructure.md)
+  * [Teamserver](malware-development/c2-development/teamserver.md)
+  * [Listeners](malware-development/c2-development/listeners.md)
+  * [Agent Stubs](malware-development/c2-development/agent-stubs.md)
+  * [Encrypting Communication](malware-development/c2-development/encrypting-communication.md)
 
 ## 🔍 Malware Analysis
 
