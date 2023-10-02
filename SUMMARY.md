@@ -165,6 +165,7 @@
   * [Userland Hooking](malware-development/syscalls/userland-hooking.md)
   * [Direct Syscalls](malware-development/syscalls/direct-syscalls.md)
   * [Indirect Syscalls](malware-development/syscalls/indirect-syscalls.md)
+  * [SysWhispers](malware-development/syscalls/syswhispers.md)
 * [C2 Development](malware-development/c2-development/README.md)
   * [Infrastructure](malware-development/c2-development/infrastructure.md)
   * [Teamserver](malware-development/c2-development/teamserver.md)
