@@ -10,7 +10,7 @@ Prior work as a Software Engineer in the Oil & Gas and Insurance sectors.
 
 ## What is the purpose of this?
 
-The purpose of this web page is to provide information and resources related to offensive security. The materials within this web page should be utilized responsibly. Enjoy.
+The purpose of this web page is to provide information and resources related to offensive security. The materials within this web page should be used responsibly. Enjoy.
 
 ## My Socials
 
