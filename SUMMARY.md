@@ -162,6 +162,7 @@
     * [Microsoft's Detours Library](malware-development/api-hooking/open-source-hooking-libraries/microsofts-detours-library.md)
     * [MinHook Library](malware-development/api-hooking/open-source-hooking-libraries/minhook-library.md)
 * [Syscalls](malware-development/syscalls/README.md)
+  * [Userland Hooking](malware-development/syscalls/userland-hooking.md)
   * [Direct Syscalls](malware-development/syscalls/direct-syscalls.md)
   * [Indirect Syscalls](malware-development/syscalls/indirect-syscalls.md)
 * [C2 Development](malware-development/c2-development/README.md)
