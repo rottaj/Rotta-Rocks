@@ -121,7 +121,10 @@
 * [Payloads](ethical-hacking/payloads/README.md)
   * [Metasploit](ethical-hacking/payloads/metasploit.md)
 * [Windows Privilege Escalation](ethical-hacking/windows-privilege-escalation/README.md)
-  * [Enumeration](ethical-hacking/windows-privilege-escalation/enumeration.md)
+  * [Initial Enumeration](ethical-hacking/windows-privilege-escalation/initial-enumeration.md)
+  * [Searching For Sensitive Files](ethical-hacking/windows-privilege-escalation/searching-for-sensitive-files.md)
+  * [Searching Logs & Event Viewer](ethical-hacking/windows-privilege-escalation/searching-logs-and-event-viewer.md)
+  * [Escalating Privilege](ethical-hacking/windows-privilege-escalation/escalating-privilege.md)
 
 ## ☣ Malware Development
 

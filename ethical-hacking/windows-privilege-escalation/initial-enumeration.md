@@ -5,7 +5,7 @@ description: >-
   obtain.
 ---
 
-# Enumeration
+# Initial Enumeration
 
 _<mark style="color:red;">**IMPORTANT:**</mark>_ Stomping these commands on a computer can be a loud process, always practice good opsec when enumerating!
 
@@ -74,6 +74,38 @@ ObjectClass Name                      PrincipalSource
 User        CLIENTWK220\Administrator Local          
 User        CLIENTWK220\daveadmin     Local
 User        CLIENTWK220\backupadmin   Local  
+```
+
+## Checking Groups - net user&#x20;
+
+Another way we can check groups a user belongs to is using `net user`
+
+```powershell
+PS C:\Users\tony> net user tony
+User name                    tony
+Full Name                    Nothing Stops
+Comment
+User's comment
+Country/region code          000 (System Default)
+Account active               Yes
+Account expires              Never
+
+Password last set            6/16/2023 1:57:34 PM
+Password expires             Never
+Password changeable          6/16/2023 1:57:34 PM
+Password required            Yes
+User may change password     Yes
+
+Workstations allowed         All
+Logon script
+User profile
+Home directory
+Last logon                   Never
+
+Logon hours allowed          All
+
+Local Group Memberships      *Administrators       *Users
+Global Group memberships     *None
 ```
 
 ### Display OS, Version, & Architecture
