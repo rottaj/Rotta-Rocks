@@ -120,6 +120,8 @@
   * [Living Off the Land](ethical-hacking/active-directory-enumeration-and-attacks/living-off-the-land.md)
 * [Payloads](ethical-hacking/payloads/README.md)
   * [Metasploit](ethical-hacking/payloads/metasploit.md)
+* [Windows Privilege Escalation](ethical-hacking/windows-privilege-escalation/README.md)
+  * [Enumeration](ethical-hacking/windows-privilege-escalation/enumeration.md)
 
 ## ☣ Malware Development
 
