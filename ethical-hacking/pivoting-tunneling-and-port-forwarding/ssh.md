@@ -6,7 +6,7 @@ description: This is more of a cheat sheet for commands.
 
 
 
-
+## Local Port Forwarding
 
 ### Local Port Forwarding
 
@@ -14,15 +14,28 @@ description: This is more of a cheat sheet for commands.
  ssh -L 1234:localhost:3306 Ubuntu@10.129.202.64
 ```
 
-Forwarding multiple ports
+Opens a listener on local port 1234 (our machine) and sends all traffic to remote port 3306 (10.129.202.64).
+
+### Forwarding multiple ports
 
 ```bash
  ssh -L 1234:localhost:3306 8080:localhost:80 ubuntu@10.129.202.64
 ```
 
+This SSH command connects to a remote machine and sets up two local port forwards:
 
+1. Local port 1234 forwards to port 3306 on the remote machine (typically MySQL).
+2. Local port 8080 forwards to port 80 on the remote machine (typically HTTP).
 
-###
+### Local Port Forwarding Example
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-10-03 194415.png" alt=""><figcaption></figcaption></figure>
+
+```bash
+jumphost@ubuntu ssh -N -L 0.0.0.0:4455:172.16.50.217:445 database_admin@10.4.50.215
+```
+
+Opens a listener on port 4455 (CONFULENCE01) and forwards all traffic to 172.16.50.217:445. (PGDATABASE01).
 
 ## SSH Tunneling over SOCKS proxy
 

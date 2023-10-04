@@ -16,7 +16,7 @@ There are many terms to describe a compromised host that we use to pivot:
 
 _**The purpose of pivoting is to defeat segmentation (physically and virtually) and to access an isolated network.**_
 
-
+<figure><img src="../../.gitbook/assets/Screenshot 2023-10-03 154843.png" alt=""><figcaption></figcaption></figure>
 
 ### Lateral Movement
 
