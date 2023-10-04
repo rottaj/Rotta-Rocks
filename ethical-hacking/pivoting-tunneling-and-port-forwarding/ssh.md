@@ -35,11 +35,13 @@ This SSH command connects to a remote machine and sets up two local port forward
 jumphost@ubuntu ssh -N -L 0.0.0.0:4455:172.16.50.217:445 database_admin@10.4.50.215
 ```
 
-Opens a listener on port 4455 (CONFULENCE01) and forwards all traffic to 172.16.50.217:445. (PGDATABASE01).
+Opens a listener on port 4455 (CONFULENCE01 Jump Host) and forwards all traffic through 10.4.50.215 to 172.16.50.217:445. (PGDATABASE01).
 
-## SSH Tunneling over SOCKS proxy
+_<mark style="color:red;">**NOTE**</mark>_: **-N** flag is means execute no remote commands. When we use this, we will not get any response back.
 
-### Dynamic Port Forwarding:
+## Dynamic Port Forwarding - SSH Tunneling over SOCKS proxy
+
+Local port forwarding is limited to one socket per SSH connection. OpenSSH allows for dynamic port forwarding. From a single listening port, packets can be forwarded to any socket that the server has access to.
 
 _**Attack hosts starts the SSH client via Dynamic Port Forward:**_
 
@@ -47,7 +49,7 @@ _**Attack hosts starts the SSH client via Dynamic Port Forward:**_
 ssh -D 9050 ubuntu@10.129.202.64
 ```
 
-The -D flag enables dynamic port forwarding & ssh acts as a SOCKS server.
+_<mark style="color:red;">**NOTE:**</mark>_ The **-D** flag enables dynamic port forwarding & ssh acts as a SOCKS server.
 
 _**Next we need a tool that can route any tool's packets over the specified port. We will use proxychains.**_
 

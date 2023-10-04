@@ -74,10 +74,11 @@
 
 * [Information Gathering / Reconnaisance](ethical-hacking/information-gathering-reconnaisance/README.md)
   * [External Recon and Enumeration](ethical-hacking/information-gathering-reconnaisance/external-recon-and-enumeration.md)
+  * [Network Sweeping Reconnaisance](ethical-hacking/information-gathering-reconnaisance/network-sweeping-reconnaisance.md)
   * [Initial Enumeration of Network](ethical-hacking/information-gathering-reconnaisance/initial-enumeration-of-network.md)
   * [Toolkit](ethical-hacking/information-gathering-reconnaisance/toolkit.md)
+  * [Popped a Shell](ethical-hacking/information-gathering-reconnaisance/popped-a-shell.md)
 * [Pivoting, Tunneling, and Port Forwarding](ethical-hacking/pivoting-tunneling-and-port-forwarding/README.md)
-  * [Reconnaisance](ethical-hacking/pivoting-tunneling-and-port-forwarding/reconnaisance.md)
   * [SSH](ethical-hacking/pivoting-tunneling-and-port-forwarding/ssh.md)
   * [Meterpreter](ethical-hacking/pivoting-tunneling-and-port-forwarding/meterpreter.md)
   * [Socat](ethical-hacking/pivoting-tunneling-and-port-forwarding/socat.md)
