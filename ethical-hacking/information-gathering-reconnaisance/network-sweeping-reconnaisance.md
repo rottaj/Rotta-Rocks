@@ -4,7 +4,21 @@ description: >-
   discover other hosts on our network.
 ---
 
-# Reconnaisance
+# Network Sweeping Reconnaisance
+
+## Nmap
+
+```
+nmap -sP 192.168.2.1/24
+```
+
+```
+nmap -sP 192.168.0.0/16
+```
+
+```
+proxychains nmap -sT -p135 10.4.0.0/16 --min-rate=10000
+```
 
 ## Ping Sweep
 
