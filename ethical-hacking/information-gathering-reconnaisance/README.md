@@ -1,5 +1,4 @@
 # Information Gathering / Reconnaisance
 
-Reference:
+[InsideTrust - Statisically Likely Usernames](https://github.com/insidetrust/statistically-likely-usernames)
 
-[https://academy.hackthebox.com/](https://academy.hackthebox.com/)

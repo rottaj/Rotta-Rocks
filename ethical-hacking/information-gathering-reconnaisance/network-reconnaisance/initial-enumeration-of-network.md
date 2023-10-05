@@ -28,11 +28,11 @@ We can use `Wireshark` and `TCPDump` to "put our ear to the wire" and see what h
 
 **Wireshark Output**
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-09-15 125246.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-09-15 125246.png" alt=""><figcaption></figcaption></figure>
 
 ARP packets make us aware of the hosts: 172.16.5.5, 172.16.5.25 172.16.5.50, 172.16.5.100, and 172.16.5.125.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-09-15 125358.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-09-15 125358.png" alt=""><figcaption></figcaption></figure>
 
 MDNS makes us aware of the ACADEMY-EA-WEB01 host.
 
@@ -46,7 +46,7 @@ If we are on a host without a GUI (which is typical), we can use [tcpdump](https
 attacker@kali$ sudo tcpdump -i ens224 
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-09-15 125526.png" alt=""><figcaption><p>Our first look at network traffic pointed us to a couple of hosts via <code>MDNS</code> and <code>ARP</code></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-09-15 125526.png" alt=""><figcaption><p>Our first look at network traffic pointed us to a couple of hosts via <code>MDNS</code> and <code>ARP</code></p></figcaption></figure>
 
 &#x20;Depending on the host you are on, you may already have a network monitoring tool built-in, such as `pktmon.exe,`which was added to all editions of Windows 10.
 
@@ -60,7 +60,7 @@ _<mark style="color:red;">**NOTE:**</mark>_ for testing, it's always a good idea
 sudo responder -I ens224 -A
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-09-15 130734.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-09-15 130734.png" alt=""><figcaption></figcaption></figure>
 
 **FPing Active Checks**
 
