@@ -86,7 +86,9 @@
     * [plink.exe](ethical-hacking/pivoting-tunneling-and-port-forwarding/pivoting/plink.exe.md)
     * [Web Server Pivoting with Rpivot](ethical-hacking/pivoting-tunneling-and-port-forwarding/pivoting/web-server-pivoting-with-rpivot.md)
     * [Port Forwarding with Windows Netsh](ethical-hacking/pivoting-tunneling-and-port-forwarding/pivoting/port-forwarding-with-windows-netsh.md)
+  * [Page](ethical-hacking/pivoting-tunneling-and-port-forwarding/page.md)
   * [Tunneling](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/README.md)
+    * [ssh.exe](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/ssh.exe.md)
     * [sshuttle](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/sshuttle.md)
     * [Dnscat2](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/dnscat2.md)
     * [Chisel](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/chisel.md)
@@ -127,6 +129,8 @@
   * [Searching For Sensitive Files](ethical-hacking/windows-privilege-escalation/searching-for-sensitive-files.md)
   * [Searching Logs & Event Viewer](ethical-hacking/windows-privilege-escalation/searching-logs-and-event-viewer.md)
   * [Escalating Privilege](ethical-hacking/windows-privilege-escalation/escalating-privilege.md)
+  * [Leveraging Windows Services](ethical-hacking/windows-privilege-escalation/leveraging-windows-services/README.md)
+    * [Service Binary Hijacking](ethical-hacking/windows-privilege-escalation/leveraging-windows-services/service-binary-hijacking.md)
 
 ## ☣ Malware Development
 
