@@ -81,6 +81,14 @@ PS> move C:\xampp\mysql\bin\mysqld.exe mysqld.exe
 PS> move .\adduser.exe C:\xampp\mysql\bin\mysqld.exe
 ```
 
+## Restart Service
+
+If we have permissions on the service we can restart the service with `Restart-Service`, otherwise see below.
+
+```
+Restart-Service -name "ServiceName With Malicious exe"
+```
+
 ## Restart
 
 We'll need to restart the computer since most services are protected by Admistrators.&#x20;
@@ -103,7 +111,7 @@ SeTimeZonePrivilege           Change the time zone                 Disabled
 
 We're able to restart the system.
 
-_**Shutdown:**_
+_**Shutdown Computer:**_
 
 ```
 PS C:\Users\dave> shutdown /r /t 0 

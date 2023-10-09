@@ -131,6 +131,7 @@
   * [Escalating Privilege](ethical-hacking/windows-privilege-escalation/escalating-privilege.md)
   * [Leveraging Windows Services](ethical-hacking/windows-privilege-escalation/leveraging-windows-services/README.md)
     * [Service Binary Hijacking](ethical-hacking/windows-privilege-escalation/leveraging-windows-services/service-binary-hijacking.md)
+    * [Service DLL Hijacking](ethical-hacking/windows-privilege-escalation/leveraging-windows-services/service-dll-hijacking.md)
 
 ## ☣ Malware Development
 
