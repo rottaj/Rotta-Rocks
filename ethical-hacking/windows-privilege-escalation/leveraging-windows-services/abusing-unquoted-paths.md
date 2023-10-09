@@ -63,6 +63,20 @@ We start by enumerating services and find the ones that have spaces in their fil
 
 <figure><img src="../../../.gitbook/assets/Screenshot_20231009_205743.png" alt=""><figcaption></figcaption></figure>
 
+## Enumerating Permissions
+
+Once we've enumerated the installed service and found one of interest, we can view the permissions.  We can use tools like: _**icacls**_ Windows utility or the PowerShell Cmdlet _**Get-ACL**_
+
+| MASK | PERMISSIONS             |
+| ---- | ----------------------- |
+| F    | Full access             |
+| M    | Modify access           |
+| RX   | Read and execute access |
+| R    | Read-only access        |
+| W    | Write-only access       |
+
+###
+
 ### Checking Permissions
 
 We need to make sure we have permissions in each path that we want to add our malicios binary:

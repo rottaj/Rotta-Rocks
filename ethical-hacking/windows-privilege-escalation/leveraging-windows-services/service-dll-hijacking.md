@@ -20,6 +20,20 @@ PS> Restart-Service BetaService
 
 <figure><img src="../../../.gitbook/assets/Screenshot_20231009_181914.png" alt=""><figcaption><p>Viewing Loaded DLL's after executing Restart-Service</p></figcaption></figure>
 
+## Enumerating Permissions
+
+Once we've enumerated the installed service and found one of interest, we can view the permissions.  We can use tools like: _**icacls**_ Windows utility or the PowerShell Cmdlet _**Get-ACL**_
+
+| MASK | PERMISSIONS             |
+| ---- | ----------------------- |
+| F    | Full access             |
+| M    | Modify access           |
+| RX   | Read and execute access |
+| R    | Read-only access        |
+| W    | Write-only access       |
+
+##
+
 ## Create Malicious DLL
 
 There are many types of malicios DLL's we can execute on our victim. For more information view: Malware Development
