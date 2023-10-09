@@ -9,8 +9,6 @@ description: >-
 
 ***
 
-
-
 ## Background
 
 When a Windows service is started, Win32 API [CreateProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa) is called. `lpApplicationName` is the name of the executable and optionally the full path. If the provided string contains spaces and is not inclosed in quotation marks, it can be interpreted in various ways.
@@ -47,7 +45,7 @@ We create a malicious binary and place it in each directory shown above.
 
 ### Enumerating Services
 
-
+#### Commands:
 
 ```
 Get-CimInstance -ClassName win32_service | Select Name,State,PathName 
@@ -56,8 +54,6 @@ Get-CimInstance -ClassName win32_service | Select Name,State,PathName
 ```
 wmic service get name,pathname | findstr /i /v "C:\Windows\" | findstr /i /v """
 ```
-
-
 
 We start by enumerating services and find the ones that have spaces in their filepaths.
 
@@ -82,7 +78,7 @@ Once we've enumerated the installed service and found one of interest, we can vi
 We need to make sure we have permissions in each path that we want to add our malicios binary:
 
 ```
-PS C:\Users\steve> icacls "C:\"
+PS C:\Users\user> icacls "C:\"
 C:\ BUILTIN\Administrators:(OI)(CI)(F)
     NT AUTHORITY\SYSTEM:(OI)(CI)(F)
     BUILTIN\Users:(OI)(CI)(RX)
@@ -105,7 +101,5 @@ C:\Program Files NT SERVICE\TrustedInstaller:(F)
 ...
 
 ```
-
-
 
 ### We then copy out executable to these file paths and rename them accordingly. Don't forget to delete them after your finished & restore the original binary!
