@@ -25,7 +25,7 @@ PS C:\> powershell -ep bypass
 
 ## Developing Powershell Scripts
 
-### .NET _System.DirectoryServices.ActiveDirectory_
+### Get Domain - .NET _System.DirectoryServices.ActiveDirectory_
 
 In Microsoft .NET classes related to AD are found in the _System.DirectoryServices.ActiveDirectory namespace._
 
@@ -77,3 +77,56 @@ PS C:\Users\stephanie\Desktop> ([adsi]'').distinguishedName
 DC=corp,DC=com
 ```
 
+Now that we have the LDAP URI Path we can start to perform queries.
+
+
+
+### Retrieving AD Entries - .NET _DirectorySearcher_
+
+In .NET ADSI we can use the [DirectorySearcher](https://learn.microsoft.com/en-us/dotnet/api/system.directoryservices.directorysearcher?view=dotnet-plat-ext-7.0) object to perform queries against Active Directory. We'll add a FindAll() query that finds all entries in Active Directory.
+
+```
+$PDC = [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().PdcRoleOwner.Name
+$DN = ([adsi]'').distinguishedName 
+$LDAP = "LDAP://$PDC/$DN"
+
+# Add Query to our script.
+$direntry = New-Object System.DirectoryServices.DirectoryEntry($LDAP)
+
+$dirsearcher = New-Object System.DirectoryServices.DirectorySearcher($direntry)
+$dirsearcher.FindAll()
+```
+
+<figure><img src="../../../.gitbook/assets/Screenshot_20231012_223855.png" alt=""><figcaption><p>FindAll() retrievies all entries in the entire domain.</p></figcaption></figure>
+
+The above image returns all entries in the entire domain. This is a lot of information, it's best to filter out what we're looking for.
+
+
+
+### Filter AD Entries - Find All Users
+
+One way we can find all users is by Sam-Account-Type. This is the attribute applied to all users, computers, and group objects.
+
+* SAM\_USER\_OBJECT            0x30000000
+* SAM\_GROUP\_OBJECT         0x10000000
+* SAM\_MACHINE\_ACCOUNT 0x30000001
+
+```
+$dirsearcher.filter="samAccountType=805306368" #0x30000000 in decimal 
+```
+
+<figure><img src="../../../.gitbook/assets/Screenshot_20231012_224833.png" alt=""><figcaption><p>Fetch all Users in AD with samAccountType. 0x3000000</p></figcaption></figure>
+
+#### Printing User Properties
+
+Let's loop through the newly created Users object and print all the properties for each entry.
+
+<pre class="language-powershell"><code class="lang-powershell">$dirsearcher.filter="samAccountType=805306368"
+$result = $dirsearcher.FindAll()
+ForEach($obj in $result) {
+<strong>    $obj.Properties
+</strong>    Write-Host "==================================================="
+}
+</code></pre>
+
+<figure><img src="../../../.gitbook/assets/Screenshot_20231012_225246.png" alt=""><figcaption><p>Listing all properties in user object. Yields lots of information!</p></figcaption></figure>
