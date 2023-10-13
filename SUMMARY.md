@@ -114,7 +114,10 @@
       * [Windapsearch](ethical-hacking/active-directory-enumeration-and-attacks/active-directory-toolkit/kali-linux-authenticated-enumeration-tools/windapsearch.md)
   * [Enumerating Active Directory](ethical-hacking/active-directory-enumeration-and-attacks/enumerating-active-directory/README.md)
     * [net.exe](ethical-hacking/active-directory-enumeration-and-attacks/enumerating-active-directory/net.exe.md)
+    * [Powershell Active Directory Commands](ethical-hacking/active-directory-enumeration-and-attacks/enumerating-active-directory/powershell-active-directory-commands.md)
     * [Powershell & .NET Classes](ethical-hacking/active-directory-enumeration-and-attacks/enumerating-active-directory/powershell-and-.net-classes.md)
+    * [PowerView / SharpView](ethical-hacking/active-directory-enumeration-and-attacks/enumerating-active-directory/powerview-sharpview.md)
+  * [Attacking Active Directory Authentication](ethical-hacking/active-directory-enumeration-and-attacks/attacking-active-directory-authentication.md)
 * [Exploiting Microsoft Office](ethical-hacking/exploiting-microsoft-office/README.md)
   * [Phishing with Teams](ethical-hacking/exploiting-microsoft-office/phishing-with-teams.md)
   * [Malicious Macros](ethical-hacking/exploiting-microsoft-office/malicious-macros.md)
@@ -129,6 +132,9 @@
     * [Service DLL Hijacking](ethical-hacking/windows-privilege-escalation/leveraging-windows-services/service-dll-hijacking.md)
     * [Abusing Unquoted Paths](ethical-hacking/windows-privilege-escalation/leveraging-windows-services/abusing-unquoted-paths.md)
   * [Scheduled Tasks](ethical-hacking/windows-privilege-escalation/scheduled-tasks.md)
+* [Setting up Infrastructure](ethical-hacking/setting-up-infrastructure/README.md)
+  * [C2 Infrastructure](ethical-hacking/setting-up-infrastructure/c2-infrastructure.md)
+  * [EvilGinx2 Phishing Infrastructure ](ethical-hacking/setting-up-infrastructure/evilginx2-phishing-infrastructure.md)
 
 ## ☣ Malware Development
 
@@ -192,3 +198,6 @@
 * [Introduction to Malware Analysis](malware-analysis/introduction-to-malware-analysis/README.md)
   * [Resources](malware-analysis/introduction-to-malware-analysis/resources.md)
   * [Analysis Definition, Purpose, & Common Activities](malware-analysis/introduction-to-malware-analysis/analysis-definition-purpose-and-common-activities.md)
+* [Network Traffic Analysis](malware-analysis/network-traffic-analysis.md)
+* [Dynamic Sandbox Analysis](malware-analysis/dynamic-sandbox-analysis.md)
+* [Using Intrusion Detection Systems (IDS)](malware-analysis/using-intrusion-detection-systems-ids.md)
