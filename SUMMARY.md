@@ -131,13 +131,13 @@
   * [Powershell Active Directory Commands](active-directory/enumerating-active-directory/powershell-active-directory-commands.md)
   * [Powershell & .NET Classes](active-directory/enumerating-active-directory/powershell-and-.net-classes.md)
   * [PowerView / SharpView](active-directory/enumerating-active-directory/powerview-sharpview.md)
-* [Active Directory Attacks](active-directory/active-directory-attacks/README.md)
-  * [Password Spraying](active-directory/active-directory-attacks/password-spraying/README.md)
-    * [Enumeration & Retrieving Password Policy](active-directory/active-directory-attacks/password-spraying/enumeration-and-retrieving-password-policy.md)
-    * [Creating a Target User List](active-directory/active-directory-attacks/password-spraying/creating-a-target-user-list.md)
-    * [Internal Spraying - From Linux](active-directory/active-directory-attacks/password-spraying/internal-spraying-from-linux.md)
-    * [Internal Spraying - From Windows](active-directory/active-directory-attacks/password-spraying/internal-spraying-from-windows.md)
-  * [Attacking Active Directory Authentication](active-directory/active-directory-attacks/attacking-active-directory-authentication.md)
+* [Attacking Active Directory Authentication](active-directory/attacking-active-directory-authentication.md)
+* [Password Spraying](active-directory/password-spraying/README.md)
+  * [Enumeration & Retrieving Password Policy](active-directory/password-spraying/enumeration-and-retrieving-password-policy.md)
+  * [Creating a Target User List](active-directory/password-spraying/creating-a-target-user-list.md)
+  * [Internal Spraying - From Linux](active-directory/password-spraying/internal-spraying-from-linux.md)
+  * [Internal Spraying - From Windows](active-directory/password-spraying/internal-spraying-from-windows.md)
+* [Lab Environment Setup](active-directory/lab-environment-setup.md)
 
 ## ☣ Malware Development
 

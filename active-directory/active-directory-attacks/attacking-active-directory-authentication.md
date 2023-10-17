@@ -1,2 +1,0 @@
-# Attacking Active Directory Authentication
-
