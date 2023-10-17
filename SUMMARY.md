@@ -137,7 +137,9 @@
   * [Creating a Target User List](active-directory/password-spraying/creating-a-target-user-list.md)
   * [Internal Spraying - From Linux](active-directory/password-spraying/internal-spraying-from-linux.md)
   * [Internal Spraying - From Windows](active-directory/password-spraying/internal-spraying-from-windows.md)
-* [Lab Environment Setup](active-directory/lab-environment-setup.md)
+* [Lab Environment Setup](active-directory/lab-environment-setup/README.md)
+  * [Installing Forest](active-directory/lab-environment-setup/installing-forest.md)
+  * [Adding Data to Active Directory](active-directory/lab-environment-setup/adding-data-to-active-directory.md)
 
 ## ☣ Malware Development
 
