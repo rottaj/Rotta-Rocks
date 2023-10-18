@@ -99,6 +99,7 @@
   * [Identifying & Building Rules](ethical-hacking/cracking-passwords/identifying-and-building-rules.md)
   * [Password Managers](ethical-hacking/cracking-passwords/password-managers.md)
   * [SSH Private Keys](ethical-hacking/cracking-passwords/ssh-private-keys.md)
+  * [NTLM](ethical-hacking/cracking-passwords/ntlm.md)
 * [Windows Privilege Escalation](ethical-hacking/windows-privilege-escalation/README.md)
   * [Initial Enumeration](ethical-hacking/windows-privilege-escalation/initial-enumeration.md)
   * [Searching For Sensitive Files](ethical-hacking/windows-privilege-escalation/searching-for-sensitive-files.md)
