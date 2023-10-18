@@ -28,10 +28,11 @@ Database:$keepass$*2*60*0*d74e29a727e9338717d27a7d457ba3486d20dec73a9db1a7fbc7a0
 
 
 
-### Running Hashcat
+### Running Hashcat w/ rules
 
 ```bash
 kali@kali:~/passwordattacks$ hashcat -m 13400 keepass.hash /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/rockyou-30000.rule --force
 hashcat (v6.2.5) starting
 ...
 ```
+
