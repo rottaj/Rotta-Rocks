@@ -26,3 +26,11 @@ Once we extract password hashes we need to format them based on the hashing algo
 
 In nearly all cases we'll need to mutate our wordlist and perform a rule-based attack based on the password policy in place.
 
+
+
+### CeWL
+
+CeWL (Custom Wordlist Generator) is a tool we can use that spiders a website and outputs a wordlist.&#x20;
+
+{% embed url="https://www.kali.org/tools/cewl/" %}
+
