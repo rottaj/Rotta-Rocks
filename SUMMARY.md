@@ -118,6 +118,8 @@
   * [Insecure File Permissions](ethical-hacking/linux-privilege-escalation/insecure-file-permissions.md)
   * [Insecure System Components](ethical-hacking/linux-privilege-escalation/insecure-system-components/README.md)
     * [Abusing Setuid Binaries and Capabilities](ethical-hacking/linux-privilege-escalation/insecure-system-components/abusing-setuid-binaries-and-capabilities.md)
+    * [Sudo Trickery](ethical-hacking/linux-privilege-escalation/insecure-system-components/sudo-trickery.md)
+    * [Kernel Vulnerabilities](ethical-hacking/linux-privilege-escalation/insecure-system-components/kernel-vulnerabilities.md)
 * [Exploiting Microsoft Office](ethical-hacking/exploiting-microsoft-office/README.md)
   * [Phishing with Teams](ethical-hacking/exploiting-microsoft-office/phishing-with-teams.md)
   * [Malicious Macros](ethical-hacking/exploiting-microsoft-office/malicious-macros.md)

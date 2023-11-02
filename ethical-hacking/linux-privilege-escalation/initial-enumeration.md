@@ -49,7 +49,7 @@ Codename:       kali-rolling
 If for some reason lsb\_release is not installed we can try viewing /etc/issue. Alternatively, we can use _**uname -a**_
 
 ```shell-session
-j$ cat /etc/issue
+$ cat /etc/issue
 Debian GNU/Linux 10 \n \l
 
 $ cat /etc/os-release
@@ -353,11 +353,7 @@ signer:         Debian Secure Boot CA
 sig_key:        4B:6E:F5:AB:CA:66:98:25:17:8E:05:2C:84:66:7C:CB:C0:53:1F:8C
 ```
 
-##
-
 ## Scheduled Tasks
-
-
 
 ### Crontab
 
@@ -449,6 +445,3 @@ drwxr-xr-x 120 root root  12K Aug 18 12:37 ..
 -rwxr-xr-x   1 root root  813 Feb 10  2019 man-db
 ```
 
-
-
-##
