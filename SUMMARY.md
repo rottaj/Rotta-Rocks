@@ -120,6 +120,7 @@
     * [Abusing Setuid Binaries and Capabilities](ethical-hacking/linux-privilege-escalation/insecure-system-components/abusing-setuid-binaries-and-capabilities.md)
     * [Sudo Trickery](ethical-hacking/linux-privilege-escalation/insecure-system-components/sudo-trickery.md)
     * [Kernel Vulnerabilities](ethical-hacking/linux-privilege-escalation/insecure-system-components/kernel-vulnerabilities.md)
+  * [Abusing Environment Variables](ethical-hacking/linux-privilege-escalation/abusing-environment-variables.md)
 * [Exploiting Microsoft Office](ethical-hacking/exploiting-microsoft-office/README.md)
   * [Phishing with Teams](ethical-hacking/exploiting-microsoft-office/phishing-with-teams.md)
   * [Malicious Macros](ethical-hacking/exploiting-microsoft-office/malicious-macros.md)
