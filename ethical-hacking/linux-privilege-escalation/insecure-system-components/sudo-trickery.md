@@ -33,6 +33,30 @@ $ ftp>!/bin/sh
 $ less>! <shell_comand>
 ```
 
+
+
+## Running as other user
+
+If there is NOPASSWD sudo permissions we can access with:
+
+```shell-session
+$ sudo -l
+Matching Defaults entries for max on so-simple:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User max may run the following commands on so-simple:
+    (steven) NOPASSWD: /usr/sbin/service
+
+```
+
+We can run as steven with the following:
+
+```shell-session
+$ sudo -u steven /usr/sbin/service -h
+Usage: service < option > | --status-all | [ service_name [ command | --full-restart ] ]
+
+```
+
 ### GTFOBins
 
 Check GTFOBins - a list of binaries that can be exploited to bypass local restrictions.
