@@ -6,6 +6,10 @@ description: >-
 
 # Windows Privilege Escalation
 
+## Here's a nice checklist&#x20;
+
+{% embed url="https://book.hacktricks.xyz/windows-hardening/checklist-windows-privilege-escalation" %}
+
 ## Important Information
 
 Below is important information on the Windows security model. This contains information about users, groups, security tokens, and access control.&#x20;
@@ -17,8 +21,6 @@ Below is important information on the Windows security model. This contains info
 _<mark style="color:red;">**NOTE:**</mark>_ Windows uses SID, not usernames, to identify principles for access control management. The SID is stored in a security database. When a new account or group is created, a SID is created to go with it.&#x20;
 
 _<mark style="color:red;">**NOTE:**</mark>_ SIDs are a fundamental building block of the Windows security model.
-
-
 
 ### Security Identifier (SID) Architecture
 
