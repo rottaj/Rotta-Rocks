@@ -60,6 +60,7 @@
 * [Web Cache Poisoning](web-application-security/web-cache-poisoning/README.md)
   * [Delivering XSS Attack](web-application-security/web-cache-poisoning/delivering-xss-attack.md)
 * [OAuth Attacks](web-application-security/oauth-attacks.md)
+* [API Attacks](web-application-security/api-attacks.md)
 * [Other Attacks](web-application-security/other-attacks/README.md)
   * [HTTP Host Header Attacks](web-application-security/other-attacks/http-host-header-attacks.md)
   * [Password Reset Poisoning](web-application-security/other-attacks/password-reset-poisoning.md)
