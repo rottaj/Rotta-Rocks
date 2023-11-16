@@ -167,6 +167,8 @@
 
 ## ☣ Malware Development
 
+* [Windows Architecture](malware-development/windows-architecture/README.md)
+  * [Registers](malware-development/windows-architecture/registers.md)
 * [Memory Allocation](malware-development/memory-allocation/README.md)
   * [Private Memory Allocation](malware-development/memory-allocation/private-memory-allocation.md)
   * [Memory Mapping](malware-development/memory-allocation/memory-mapping.md)
