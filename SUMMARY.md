@@ -100,7 +100,8 @@
     * [RDP and SOCKS Tunneling with SocksOverRDP](ethical-hacking/pivoting-tunneling-and-port-forwarding/double-pivots/rdp-and-socks-tunneling-with-socksoverrdp.md)
 * [Cracking Passwords](ethical-hacking/cracking-passwords/README.md)
   * [Password Cracking Prerequisites](ethical-hacking/cracking-passwords/password-cracking-prerequisites.md)
-  * [Identifying & Building Rules](ethical-hacking/cracking-passwords/identifying-and-building-rules.md)
+  * [Mutating Wordlists](ethical-hacking/cracking-passwords/mutating-wordlists/README.md)
+    * [Identifying & Building Rules](ethical-hacking/cracking-passwords/mutating-wordlists/identifying-and-building-rules.md)
   * [Password Managers](ethical-hacking/cracking-passwords/password-managers.md)
   * [SSH Private Keys](ethical-hacking/cracking-passwords/ssh-private-keys.md)
   * [NTLM](ethical-hacking/cracking-passwords/ntlm.md)
@@ -233,3 +234,7 @@
 * [Network Traffic Analysis](malware-analysis/network-traffic-analysis.md)
 * [Dynamic Sandbox Analysis](malware-analysis/dynamic-sandbox-analysis.md)
 * [Using Intrusion Detection Systems (IDS)](malware-analysis/using-intrusion-detection-systems-ids.md)
+
+***
+
+* [Digital Forensics](digital-forensics.md)
