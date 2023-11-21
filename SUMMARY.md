@@ -134,6 +134,8 @@
 * [Setting up Infrastructure](ethical-hacking/setting-up-infrastructure/README.md)
   * [C2 Infrastructure](ethical-hacking/setting-up-infrastructure/c2-infrastructure.md)
   * [EvilGinx2 Phishing Infrastructure ](ethical-hacking/setting-up-infrastructure/evilginx2-phishing-infrastructure.md)
+* [Ex-filtrating Data](ethical-hacking/ex-filtrating-data/README.md)
+  * [WebDAV](ethical-hacking/ex-filtrating-data/webdav.md)
 * [Templates](ethical-hacking/templates.md)
 
 ## 🪟 Active Directory
