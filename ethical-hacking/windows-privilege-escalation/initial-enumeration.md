@@ -13,7 +13,13 @@ _<mark style="color:red;">**IMPORTANT:**</mark>_ Stomping these commands on a co
 
 ### WinPEAS
 
+{% embed url="https://github.com/carlospolop/PEASS-ng/releases/" %}
+
 {% embed url="https://github.com/carlospolop/PEASS-ng/blob/master/winPEAS/winPEASexe/README.md" %}
+
+```
+cp /usr/share/peass/winpeas/winPEASx64.exe .
+```
 
 ## Initial Enumeration
 
