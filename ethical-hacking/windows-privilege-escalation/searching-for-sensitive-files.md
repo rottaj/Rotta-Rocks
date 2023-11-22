@@ -62,3 +62,24 @@ Stop-Transcript
 
 ##
 
+## Runas Other User
+
+```powershell
+PS C:\Users> net user
+
+User accounts for \\CLIENTWK221
+
+-------------------------------------------------------------------------------
+Administrator            damian                   DefaultAccount
+Guest                    mac                      milena
+moss                     offsec                   richmond
+roy                      WDAGUtilityAccount
+The command completed successfully.
+```
+
+If we have found credentials, we should try them on all users.
+
+```powershell
+PS C:\Users\steve> runas /user:roy cmd
+```
+

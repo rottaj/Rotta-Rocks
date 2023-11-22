@@ -13,33 +13,26 @@ Two important logging mechanisms for PowerShell are:
 * _PowerShell Transcription_
 * _PowerShell Script Block Logging_.
 
-### req query
-
-```
-reg query HKCU\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
-```
-
-```
-reg query HKLM\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
-```
-
-```
-reg query HKCU\Wow6432Node\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
-```
-
-```
-reg query HKLM\Wow6432Node\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
-```
-
-
-
 ### Get-WinEvent
+
+```
+Get-WinEvent Microsoft-Windows-PowerShell/Operational | Where-Object Id -eq 4104 | Out-GridView
+```
+
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 ```
 Get-WinEvent -LogName "Microsoft-Windows-Powershell/Operational" | select -first 20 | Out-Gridview
 ```
 
+### req query
 
+```
+reg query HKCU\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
+reg query HKLM\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
+reg query HKCU\Wow6432Node\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
+reg query HKLM\Wow6432Node\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
+```
 
 ## Event Viewer
 

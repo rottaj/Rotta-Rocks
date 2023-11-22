@@ -7,7 +7,13 @@ description: >-
 
 # Initial Enumeration
 
-_<mark style="color:red;">**IMPORTANT:**</mark>_ Stomping these commands on a computer can be a loud process, always practice good opsec when enumerating!
+_<mark style="color:red;">**IMPORTANT:**</mark>_ Stomping these commands on a computer can be a loud process, always practice good OPSEC when enumerating!
+
+## Automated Enumeration
+
+### WinPEAS
+
+{% embed url="https://github.com/carlospolop/PEASS-ng/blob/master/winPEAS/winPEASexe/README.md" %}
 
 ## Initial Enumeration
 
@@ -166,9 +172,15 @@ Active Connections
 
 ### List Installed Programs - Get ItemProperty
 
+#### Run both commands
+
 ```
-PS C:\Users\dave> Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname 
-Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname
+Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname 
+Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname
+```
+
+```
+PS C:\Users\dave> Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
 
 displayname                                                       
 -----------                                                       
@@ -194,6 +206,10 @@ VMware Tools
 Microsoft Visual C++ 2019 X64 Additional Runtime - 14.28.29913
 Microsoft Visual C++ 2019 X64 Minimum Runtime - 14.28.29913  
 ```
+
+###
+
+
 
 ### List Running Processes
 
