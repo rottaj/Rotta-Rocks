@@ -38,7 +38,7 @@ For both the following commands, we must have **SeDebugPrivilege** access right 
 
 **lsadump::sam** extracts NTLM hashes from SAM. NOTE: we must **token::elevate** to elevate to SYSTEM user privileges. We need local administrator privileges.
 
-```
+```powershell
 mimikatz # privilege::debug
 Privilege '20' OK
 
