@@ -213,8 +213,6 @@ Microsoft Visual C++ 2019 X64 Additional Runtime - 14.28.29913
 Microsoft Visual C++ 2019 X64 Minimum Runtime - 14.28.29913  
 ```
 
-###
-
 
 
 ### List Running Processes
@@ -235,4 +233,14 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
     825      40    75804      14404       5.91   6332   0 powershell
 ...                                                
     379      24     6864      30236              2272   1 xampp-control
+```
+
+
+
+## Other
+
+### Host File
+
+```powershell
+PC C\> dir C:\Windows\System32\drivers\etc\hosts
 ```
