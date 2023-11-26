@@ -171,8 +171,9 @@
 
 ## ☣ Malware Development
 
-* [Windows Architecture](malware-development/windows-architecture/README.md)
-  * [Registers](malware-development/windows-architecture/registers.md)
+* [Windows Internals](malware-development/windows-internals/README.md)
+  * [Registers](malware-development/windows-internals/registers.md)
+  * [x64 Calling Convention](malware-development/windows-internals/x64-calling-convention.md)
 * [Memory Allocation](malware-development/memory-allocation/README.md)
   * [Private Memory Allocation](malware-development/memory-allocation/private-memory-allocation.md)
   * [Memory Mapping](malware-development/memory-allocation/memory-mapping.md)
