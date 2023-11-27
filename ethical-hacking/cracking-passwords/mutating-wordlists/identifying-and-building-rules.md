@@ -18,6 +18,16 @@ u d
 $ hashcat -m 0 crackme.hash /usr/share/wordlists/rockyou.txt -r demo3.rule --force
 ```
 
+### best64.rule
+
+Best64.rule is a nice thing to have running in the background.
+
+```
+hashcat -m 3200 hash.txt -r /usr/share/hashcat/rules/best64.rule /usr/share/wordlists/rockyou.txt
+```
+
+
+
 ### Multiple Rules - Same Password
 
 When rule functions are on the same line separated by a space. In this case, Hashcat will use them consecutively on each password of the wordlist.
