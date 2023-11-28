@@ -89,6 +89,8 @@ This is because modern SSH Private keys use AES-256, which Hashcat does not supp
 
 ## Cracking with John
 
+<mark style="color:red;">**NOTE:**</mark> It's important that the wordlist is the first parameter and hash is the second. Don't ask why.
+
 ### Creating Rules in John
 
 To add rules to John we need to add them to the **/etc/john/john.conf** file**. View "Identifying & Building Rules".**
@@ -120,7 +122,9 @@ Session completed.
 
 </code></pre>
 
-
+```
+kali@kali$ sudo john --wordlist=/usr/share/wordlists/rockyou.txt ssh.hash
+```
 
 [^1]: this is it
 
