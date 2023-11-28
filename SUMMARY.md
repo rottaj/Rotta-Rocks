@@ -136,6 +136,8 @@
   * [EvilGinx2 Phishing Infrastructure ](ethical-hacking/setting-up-infrastructure/evilginx2-phishing-infrastructure.md)
 * [Ex-filtrating Data](ethical-hacking/ex-filtrating-data/README.md)
   * [WebDAV](ethical-hacking/ex-filtrating-data/webdav.md)
+* [Phishing](ethical-hacking/phishing/README.md)
+  * [OSCP Phishing Guide](ethical-hacking/phishing/oscp-phishing-guide.md)
 * [Templates](ethical-hacking/templates.md)
 
 ## 🪟 Active Directory
