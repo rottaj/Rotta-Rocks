@@ -95,7 +95,7 @@ We can use the `--shares` flag to enumerate available shares on the remote host 
 ### S**hare Enumeration - Domain Controller**
 
 ```shell-session
-attacker@kali$ sudo crackmapexec smb 172.16.5.5 -u forend -p Klmcargo2 --shares
+attacker@kali$ sudo crackmapexec smb 172.16.5.5 -u users.txt -p passwords.txt --shares
 
 SMB         172.16.5.5      445    ACADEMY-EA-DC01  [*] Windows 10.0 Build 17763 x64 (name:ACADEMY-EA-DC01) (domain:INLANEFREIGHT.LOCAL) (signing:True) (SMBv1:False)
 SMB         172.16.5.5      445    ACADEMY-EA-DC01  [+] INLANEFREIGHT.LOCAL\forend:Klmcargo2 
