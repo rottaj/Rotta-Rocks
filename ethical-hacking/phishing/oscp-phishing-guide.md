@@ -32,6 +32,8 @@ Next we'll create a malicious Windows Library file that we'll use to hold our re
 Create a malicious Windows Library File
 {% endembed %}
 
+Once we've created the Windows Library we transfer the Lirbary file and powercat.ps1 script to the WebDAV server.
+
 ## Send Email to Victims
 
 In the beginning of this page we mentioned that we have access to a compromised mail server, there are various tools we can use to leverage SMTP. We will use swaks
