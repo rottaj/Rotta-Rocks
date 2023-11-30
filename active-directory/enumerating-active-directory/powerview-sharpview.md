@@ -18,6 +18,13 @@ SharpView
 
 ## PowerView
 
+### Import Powerview
+
+```powershell
+PS C:\Tools> powershell -ep bypass
+PS C:\Tools> Import-Module .\PowerView.ps1
+```
+
 ### Get-NetComputer
 
 Enumerates the computer objects in the domain.
@@ -197,4 +204,41 @@ whencreated                : 10/16/2023 5:37:36 PM
 primarygroupid             : 513
 pwdlastset                 : 10/16/2023 10:37:36 AM
 usnchanged                 : 532618
+```
+
+
+
+### Find-DomainShare
+
+Get all shares in Domain.
+
+```powershell
+PS C:\Tools> Find-DomainShare
+
+Name           Type Remark                 ComputerName
+----           ---- ------                 ------------
+ADMIN$   2147483648 Remote Admin           DC1.corp.com
+C$       2147483648 Default share          DC1.corp.com
+IPC$     2147483651 Remote IPC             DC1.corp.com
+NETLOGON          0 Logon server share     DC1.corp.com
+SYSVOL            0 Logon server share     DC1.corp.com
+ADMIN$   2147483648 Remote Admin           web04.corp.com
+backup            0                        web04.corp.com
+C$       2147483648 Default share          web04.corp.com
+IPC$     2147483651 Remote IPC             web04.corp.com
+ADMIN$   2147483648 Remote Admin           FILES04.corp.com
+C                 0                        FILES04.corp.com
+C$       2147483648 Default share          FILES04.corp.com
+docshare          0 Documentation purposes FILES04.corp.com
+IPC$     2147483651 Remote IPC             FILES04.corp.com
+Tools             0                        FILES04.corp.com
+Users             0                        FILES04.corp.com
+Windows           0                        FILES04.corp.com
+ADMIN$   2147483648 Remote Admin           client74.corp.com
+C$       2147483648 Default share          client74.corp.com
+IPC$     2147483651 Remote IPC             client74.corp.com
+ADMIN$   2147483648 Remote Admin           client75.corp.com
+C$       2147483648 Default share          client75.corp.com
+IPC$     2147483651 Remote IPC             client75.corp.com
+sharing           0                        client75.corp.com
 ```

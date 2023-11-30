@@ -161,6 +161,8 @@
   * [Powershell Active Directory Commands](active-directory/enumerating-active-directory/powershell-active-directory-commands.md)
   * [Powershell & .NET Classes](active-directory/enumerating-active-directory/powershell-and-.net-classes.md)
   * [PowerView / SharpView](active-directory/enumerating-active-directory/powerview-sharpview.md)
+  * [Enumerating Service Accounts](active-directory/enumerating-active-directory/enumerating-service-accounts.md)
+  * [Enumerating Object Permissions](active-directory/enumerating-active-directory/enumerating-object-permissions.md)
 * [Attacking Active Directory Authentication](active-directory/attacking-active-directory-authentication.md)
 * [Password Spraying](active-directory/password-spraying/README.md)
   * [Enumeration & Retrieving Password Policy](active-directory/password-spraying/enumeration-and-retrieving-password-policy.md)
