@@ -8,7 +8,7 @@ Kerberos uses a Ticket Granting Service (TGS) authentication method. The _Pass t
 
 
 
-##
+In this scenario we abuse the already existing session ticket of the user "dave" that exists on the network. We will fetch the ticket with mimikatz and inject the ticket into our current user: "Jen" to access files that are under daves permission.
 
 ## Attack
 
