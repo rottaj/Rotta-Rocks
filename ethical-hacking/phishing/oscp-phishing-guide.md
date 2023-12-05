@@ -83,3 +83,5 @@ Install the latest PowerShell for new features and improvements! https://aka.ms/
 
 PS C:\Windows\System32\WindowsPowerShell\v1.0> 
 ```
+
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
