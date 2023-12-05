@@ -16,11 +16,7 @@ Once we've obtained **NTDS.dit** we can extract every single user credential off
 
 
 
-
-
 ## Attack
-
-
 
 ### Create Snapshot
 
@@ -63,7 +59,12 @@ Querying all shadow copies with the SnapshotSetID {f7f6d8dd-a555-477b-8be6-c9bd2
 Snapshot creation done.
 ```
 
+<mark style="color:red;">**NOTE:**</mark> Pay attention to the above command output, the <mark style="color:yellow;">**shadow copy device**</mark> name is the path we will use to copy.\
 
+
+```
+\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2
+```
 
 ### Moving the Database file.
 
