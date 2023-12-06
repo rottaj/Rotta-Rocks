@@ -8,7 +8,7 @@ description: >-
 
 ## CherryTree
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% file src="../.gitbook/assets/CherryTree_template.ctb" %}
 

