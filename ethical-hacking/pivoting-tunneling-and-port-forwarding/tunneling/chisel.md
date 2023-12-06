@@ -118,3 +118,18 @@ socks5 127.0.0.1 1080
 ```shell-session
 attacker@kali$ proxychains xfreerdp /v:172.16.5.19 /u:victor /p:pass@123
 ```
+
+
+
+### **Port Forwarding a Web Service.**
+
+Sometimes we may want to port foward a direct port back to our reverse port forward. We can use the syntax: **R:localport:remotehost:remoteport.**
+
+<mark style="color:red;">**NOTE:**</mark> <mark style="color:yellow;">**This is useful if we want to access an internal**</mark>** **<mark style="color:red;">**web service**</mark>** **<mark style="color:yellow;">**on our local machine through 127.0.0.1**</mark>
+
+```powershell
+C:\Users\marcus> chisel.exe client 192.168.119.5:8080 R:80:172.16.6.241:80
+
+2022/10/11 07:22:46 client: Connecting to ws://192.168.119.5:8080
+2022/10/11 07:22:46 client: Connected (Latency 11.0449ms)
+```
