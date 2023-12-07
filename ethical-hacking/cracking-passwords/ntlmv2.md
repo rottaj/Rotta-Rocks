@@ -90,6 +90,8 @@ PAUL::FILES01:1f9d4c51f6e...00000000000000:123Password123
 
 Sometimes we obtain a Net-NTLMv2 hash but cant crack it. **If the hash we obtained is from a local administrator, we can use it to authenticate over SMB** like we do with psexec or wmiexec.
 
+<mark style="color:red;">**IMPORTANT**</mark>: SMB Signing must be disabled to perform a relay attack!
+
 ### NTLM_relayx - Impacket_
 
 _We can use NTLMrelayx from impacket to relay the hash over SMB._
