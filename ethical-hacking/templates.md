@@ -10,7 +10,9 @@ description: >-
 
 <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-{% file src="../.gitbook/assets/CherryTree_template.ctb" %}
+##
+
+{% file src="../.gitbook/assets/CherryTree_template (1).ctb" %}
 
 ## Xmind
 
