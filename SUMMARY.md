@@ -139,7 +139,8 @@
   * [Converting files to Hex Strings](ethical-hacking/ex-filtrating-data/converting-files-to-hex-strings.md)
 * [Phishing](ethical-hacking/phishing/README.md)
   * [OSCP Phishing Guide](ethical-hacking/phishing/oscp-phishing-guide.md)
-* [Templates](ethical-hacking/templates.md)
+* [Templates & Cheat Sheets](ethical-hacking/templates-and-cheat-sheets/README.md)
+  * [OSCP Cheat Sheet](ethical-hacking/templates-and-cheat-sheets/oscp-cheat-sheet.md)
 
 ## 🪟 Active Directory
 
