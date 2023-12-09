@@ -208,7 +208,7 @@ python smbrelayx.py -h target
 
 
 
-## Miscellanious
+## Miscellaneous
 
 #### findDelegation.py
 
