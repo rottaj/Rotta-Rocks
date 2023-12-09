@@ -128,17 +128,31 @@ python mimikatz.py domain/user:password@target
 
 ## SMB/MSRPC
 
+### smbclient.py
 
+general-purpose SMB client that lets you list shares and files, rename, upload and download files
+
+```
+python smbclient.py domain/user:password@target
+```
 
 ## Database Tools
 
+### mssqlclient.py
 
+MSSQL client, supporting both SQL and Windows Authentications (including hashes).
 
+```
+python mssqlclient.py domain/user:password@target
+```
 
+### mssqlinstance.py
 
+retrieves the MSSQL instance names from the target host. This script can be useful in various reconnaissance and penetration testing scenarios.
 
-
-###
+```
+python mssqlinstance.py domain/user:password@target
+```
 
 ## Local Server Tools
 
@@ -190,4 +204,80 @@ Smbrelayx.py is an exploit script for CVE-2015-0005 that uses an SMB Relay Attac
 
 ```
 python smbrelayx.py -h target
+```
+
+
+
+## Miscellanious
+
+#### findDelegation.py
+
+FindDelegation.py is a simple script to quickly list all delegation relationships (unconstrained, constrained, resource-based constrained) in an Active Directory environment. This can be useful in assessing delegation configurations within a domain. Here’s an example of using this script:
+
+```
+python findDelegation.py domain/user:password@target
+```
+
+#### GetADUsers.py
+
+GetADUsers.py gathers data about the domain’s users and their corresponding email addresses. It will also include some extra information about last logon and last password set attributes. This script can provide valuable data in user enumeration scenarios. Here’s an example of how to use this script:
+
+```
+python GetADUsers.py domain/user:password@target
+```
+
+#### Get-GPPPassword.py
+
+Get-GPPPassword.py extracts and decrypts Group Policy Preferences passwords using streams for treating files instead of mounting shares. Additionally, it can parse GPP XML files offline. This script can be valuable for discovering potentially insecure GPP configurations. Here’s an example of how to use this script:
+
+```
+python Get-GPPPassword.py domain/user:password@target
+```
+
+#### mqtt\_check.py
+
+Mqtt\_check.py is a simple MQTT example aimed at playing with different login options. It can be converted into an account/password brute forcer quite easily. This script can be useful in testing MQTT protocol security. Here’s an example of using this script:
+
+```
+python mqtt_check.py target -u username -P password
+```
+
+#### rdp\_check.py
+
+Rdp\_check.py provides a partial implementation of \[MS-RDPBCGR] and \[MS-CREDSSP] just to reach CredSSP auth. This example tests whether an account is valid on the target host. This script can help in testing RDP configurations and user account validity. Here’s an example of using this script:
+
+```
+python rdp_check.py target username password
+```
+
+#### sniff.py
+
+Sniff.py is a simple packet sniffer that uses the pcapy library to listen for packets in transit over the specified interface. This script can be useful in network analysis or troubleshooting. Here’s an example of how to use this script:
+
+```
+python sniff.py -i eth0
+```
+
+#### sniffer.py
+
+Sniffer.py is a simple packet sniffer that uses a raw socket to listen for packets in transit corresponding to the specified protocols. This script can be valuable in network analysis or troubleshooting. Here’s an example of how to use this script:
+
+```
+python sniffer.py -p tcp -i eth0
+```
+
+#### ping.py
+
+Ping.py is a simple ICMP ping script that uses the ICMP echo and echo-reply packets to check the status of a host. If the remote host is up, it should reply to the echo probe with an echo-reply packet. This script can be useful for basic network testing and troubleshooting. Here’s an example of how to use this script:
+
+```
+python ping.py target
+```
+
+#### ping6.py
+
+Ping6.py is a simple IPv6 ICMP ping script that uses the ICMP echo and echo-reply packets to check the status of a host.
+
+```
+python ping6.py target
 ```
