@@ -141,6 +141,7 @@
   * [OSCP Phishing Guide](ethical-hacking/phishing/oscp-phishing-guide.md)
 * [Templates & Cheat Sheets](ethical-hacking/templates-and-cheat-sheets/README.md)
   * [OSCP Cheat Sheet](ethical-hacking/templates-and-cheat-sheets/oscp-cheat-sheet.md)
+  * [Impacket Cheat Sheet](ethical-hacking/templates-and-cheat-sheets/impacket-cheat-sheet.md)
 
 ## 🪟 Active Directory
 
