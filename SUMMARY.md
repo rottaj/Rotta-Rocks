@@ -51,6 +51,7 @@
     * [UNION Based SQL Injection](web-application-security/data-validation-and-input-validation-attacks/sql-injection/union-based-sql-injection.md)
     * [Blind SQL Injection](web-application-security/data-validation-and-input-validation-attacks/sql-injection/blind-sql-injection.md)
     * [Database Enumeration](web-application-security/data-validation-and-input-validation-attacks/sql-injection/database-enumeration.md)
+    * [Read / Write Files](web-application-security/data-validation-and-input-validation-attacks/sql-injection/read-write-files.md)
     * [Code Execution](web-application-security/data-validation-and-input-validation-attacks/sql-injection/code-execution.md)
   * [📜 SQL Injection Cheat Sheet](web-application-security/data-validation-and-input-validation-attacks/sql-injection-cheat-sheet.md)
   * [Command Injection](web-application-security/data-validation-and-input-validation-attacks/command-injection.md)
