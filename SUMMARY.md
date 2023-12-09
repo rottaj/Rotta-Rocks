@@ -141,6 +141,7 @@
   * [EvilGinx2 Phishing Infrastructure ](ethical-hacking/setting-up-infrastructure/evilginx2-phishing-infrastructure.md)
 * [Ex-filtrating Data](ethical-hacking/ex-filtrating-data/README.md)
   * [WebDAV](ethical-hacking/ex-filtrating-data/webdav.md)
+  * [SMB](ethical-hacking/ex-filtrating-data/smb.md)
   * [Converting files to Hex Strings](ethical-hacking/ex-filtrating-data/converting-files-to-hex-strings.md)
 * [Phishing](ethical-hacking/phishing/README.md)
   * [OSCP Phishing Guide](ethical-hacking/phishing/oscp-phishing-guide.md)
