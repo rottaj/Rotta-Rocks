@@ -6,6 +6,24 @@ description: >-
 
 # Searching For Sensitive Files
 
+##
+
+## dir
+
+```bash
+dir /s/b *.log
+```
+
+```powershell
+dir /s/b *.txt
+```
+
+```bash
+dir /s/b *.kdbx
+```
+
+##
+
 ## Get-ChildItem
 
 Here are some useful searches using `Get-ChildItem`

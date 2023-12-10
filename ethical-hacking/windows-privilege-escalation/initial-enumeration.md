@@ -35,9 +35,8 @@ There are several key pieces of information we should always initilally obtain:
 
 ### Display Groups - whoami
 
-```
-C:\Users\dave> whoami /groups
-whoami /groups
+<pre><code><strong>C:\Users\dave> whoami /groups
+</strong>whoami /groups
 
 GROUP INFORMATION
 -----------------
@@ -45,7 +44,23 @@ GROUP INFORMATION
 Group Name                             Type             SID                                                                                    
 ====================================== ================ ============================================== 
 Everyone                             Well-known group S-1-1-0                                        
-```
+</code></pre>
+
+
+
+### Get Privileges - whoami
+
+<pre><code><strong>C:\Users\dave> whoami /priv
+</strong>whoami /priv
+
+PRIVILEGES INFORMATION
+-----------------
+
+Privilege Name
+-----------------
+</code></pre>
+
+###
 
 ### Display Local Users - Get-LocalUser
 

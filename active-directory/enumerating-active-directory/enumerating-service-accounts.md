@@ -52,3 +52,15 @@ Address:  192.168.50.72
 ```
 
 <mark style="color:red;">**NOTE:**</mark> We can browser to that IP address, for now we'll document that it's attached to a Service Account which is likely higher privilege than a User Account.
+
+
+
+
+
+## Impacket GetUserSPNs
+
+If we have credentials to a domain user we can use Impacket's GetUserSPN's script
+
+```sh
+GetUserSPNs.py -outputfile kerberoastables.txt -hashes 'LMhash:NThash' -dc-ip $KeyDistributionCenter 'DOMAIN/USER'
+```
