@@ -35,7 +35,7 @@ There are several key pieces of information we should always initilally obtain:
 
 ### Display Groups - whoami
 
-<pre><code><strong>C:\Users\dave> whoami /groups
+<pre class="language-powershell"><code class="lang-powershell"><strong>C:\Users\dave> whoami /groups
 </strong>whoami /groups
 
 GROUP INFORMATION
@@ -50,7 +50,7 @@ Everyone                             Well-known group S-1-1-0
 
 ### Get Privileges - whoami
 
-<pre><code><strong>C:\Users\dave> whoami /priv
+<pre class="language-powershell"><code class="lang-powershell"><strong>C:\Users\dave> whoami /priv
 </strong>whoami /priv
 
 PRIVILEGES INFORMATION
@@ -64,7 +64,7 @@ Privilege Name
 
 ### Display Local Users - Get-LocalUser
 
-```
+```powershell
 PS C:\Users\dave> Get-LocalUser
 Get-LocalUser
 
@@ -78,7 +78,7 @@ daveadmin          True
 
 ### Display Local Groups - Get-LocalGroup
 
-```
+```powershell
 PS C:\Users\dave> Get-LocalGroup
 Get-LocalGroup
 
@@ -92,7 +92,7 @@ helpdesk
 
 ### Display Group Members - GetLocalGroupMember
 
-```
+```powershell
 PS C:\Users\dave> Get-LocalGroupMember Administrators
 Get-LocalGroupMember Administrators
 
@@ -137,7 +137,7 @@ Global Group memberships     *None
 
 ### Display OS, Version, & Architecture
 
-```
+```powershell
 PS C:\Users\dave> systeminfo
 
 Host Name:                 Computer
@@ -152,7 +152,7 @@ Registered Organization:
 
 ### Display Routing Table - route print
 
-```
+```powershell
 PS C:\Users\dave> route print
 route print
 ===========================================================================
@@ -175,7 +175,7 @@ Network Destination        Netmask          Gateway       Interface  Metric
 
 ### List Active Network Connections - netstat
 
-```
+```powershell
 PS C:\Users\dave> netstat -ano
 netstat -ano
 
@@ -195,12 +195,12 @@ Active Connections
 
 #### Run both commands
 
-```
+```powershell
 Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname 
 Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname
 ```
 
-```
+```powershell
 PS C:\Users\dave> Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
 
 displayname                                                       
@@ -232,7 +232,7 @@ Microsoft Visual C++ 2019 X64 Minimum Runtime - 14.28.29913
 
 ### List Running Processes
 
-```
+```powershell
 PS C:\Users\dave> Get-Process
 Get-Process
 

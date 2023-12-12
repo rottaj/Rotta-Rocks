@@ -10,6 +10,10 @@ description: >-
 
 ## dir
 
+```powershell
+dir /A C:\Users\
+```
+
 ```bash
 dir /s/b *.log
 ```
@@ -22,7 +26,16 @@ dir /s/b *.txt
 dir /s/b *.kdbx
 ```
 
-##
+
+
+## env & path
+
+When a program is executed, the system first searches the current working directory and then searches the path. Check for any PATH variables that may have write privileges.
+
+```powershell
+$env
+$env:path
+```
 
 ## Get-ChildItem
 
