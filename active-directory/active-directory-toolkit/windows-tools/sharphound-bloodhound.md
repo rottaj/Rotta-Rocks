@@ -37,7 +37,7 @@ Copyright (C) 2022 SpecterOps
 
 
 ```powershell
-PS C:\htb> .\SharpHound.exe -c All --zipfilename ILFREIGHT
+PS C:\htb> .\SharpHound -c All --domain medtech.com --zipfilename MEDTECH.zip
 
 2022-04-18T13:58:22.1163680-07:00|INFORMATION|Resolved Collection Methods: Group, LocalAdmin, GPOLocalGroup, Session, LoggedOn, Trusts, ACL, Container, RDP, ObjectProps, DCOM, SPNTargets, PSRemote
 2022-04-18T13:58:22.1163680-07:00|INFORMATION|Initializing SharpHound at 1:58 PM on 4/18/2022
