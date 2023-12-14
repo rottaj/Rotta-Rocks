@@ -27,11 +27,12 @@ PS/> tasklist
 
 We can view the DLL's a service loads calling it's process:
 
-```powershell
-Get-Process -Name RemoteServerWin | Select-Object -Expand Property Modules | Select-Object FileName
+<pre class="language-powershell"><code class="lang-powershell">Get-Process -Name RemoteServerWin | Select-Object -Expand Property Modules | Select-Object FileName
 
-(Get-Process -Name "msedge").Modules
-```
+Get-Process -Name RemoteServerWin | select -ExpandProperty modules | group -Property FileName | select name
+<strong>
+</strong><strong>(Get-Process -Name "msedge").Modules
+</strong></code></pre>
 
 ## Enumerating Permissions
 
