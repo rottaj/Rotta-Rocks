@@ -31,6 +31,10 @@ We can view the DLL's a service loads calling it's process:
 
 Get-Process -Name RemoteServerWin | select -ExpandProperty modules | group -Property FileName | select name
 <strong>
+</strong>
+Get-Process | where {$_.Id  -eq 520} | select -ExpandProperty modules | group -Property FileName | select name
+Get-Process -Id 520 | select -ExpandProperty modules | group -Property FileName | select name
+<strong>
 </strong><strong>(Get-Process -Name "msedge").Modules
 </strong></code></pre>
 
