@@ -53,14 +53,27 @@ Everyone                             Well-known group S-1-1-0
 <pre class="language-powershell"><code class="lang-powershell"><strong>C:\Users\dave> whoami /priv
 </strong>whoami /priv
 
-PRIVILEGES INFORMATION
------------------
+Privilege Name                Description                               State   
+============================= ========================================= ========
+SeAssignPrimaryTokenPrivilege Replace a process level token             Disabled
+SeIncreaseQuotaPrivilege      Adjust memory quotas for a process        Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking                  Enabled 
+SeManageVolumePrivilege       Perform volume maintenance tasks          Enabled 
+SeImpersonatePrivilege        Impersonate a client after authentication Enabled 
+SeCreateGlobalPrivilege       Create global objects                     Enabled 
+SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
 
-Privilege Name
------------------
 </code></pre>
 
-###
+_<mark style="color:red;">**NOTE:**</mark>_ Always make sure to fully enumerate privileges! And Possible exploits!
+
+#### Abusing SeImpersonatePrivilege:
+
+We can exploit SeImpersonatePrivilege with PrintSpoofer:
+
+[https://github.com/itm4n/PrintSpoofer](https://github.com/itm4n/PrintSpoofer)
+
+
 
 ### Display Local Users - Get-LocalUser
 
