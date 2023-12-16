@@ -150,6 +150,7 @@
 * [Templates & Cheat Sheets](ethical-hacking/templates-and-cheat-sheets/README.md)
   * [OSCP Cheat Sheet](ethical-hacking/templates-and-cheat-sheets/oscp-cheat-sheet.md)
   * [Impacket Cheat Sheet](ethical-hacking/templates-and-cheat-sheets/impacket-cheat-sheet.md)
+  * [Penetration Test Checklist](ethical-hacking/templates-and-cheat-sheets/penetration-test-checklist.md)
 
 ## 🪟 Active Directory
 
