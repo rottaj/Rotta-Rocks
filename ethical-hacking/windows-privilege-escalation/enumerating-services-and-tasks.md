@@ -2,6 +2,12 @@
 
 ## Here are some useful scripts to enumerate Services & Tasks.
 
+## <mark style="color:yellow;">PayloadAllTheThings</mark>
+
+{% embed url="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md#eop---processes-enumeration-and-tasks" %}
+
+
+
 ## PowerShell - List running Services
 
 ```powershell
