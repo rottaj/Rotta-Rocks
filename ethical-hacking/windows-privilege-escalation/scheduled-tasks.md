@@ -62,3 +62,17 @@ C:\ BUILTIN\Administrators:(OI)(CI)(F)
 ```
 
 #### We use our preferred method of transfering the malicious binary to the location and it will be executed the next time the scheduled task is run.
+
+
+
+
+
+
+
+## Create Scheduled Task
+
+We can create as
+
+```powershell
+schtasks /create /tn "CopyTask" /tr "copy C:\Test\BetaLibrary.Dll C:\BetaMonitor\BetaLibary.Dll" /sc once /st 00:00
+```
