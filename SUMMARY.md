@@ -257,6 +257,9 @@
   * [Listeners](malware-development/c2-development/listeners.md)
   * [Agent Stubs](malware-development/c2-development/agent-stubs.md)
   * [Encrypting Communication](malware-development/c2-development/encrypting-communication.md)
+* [MalDev Environment Setup](malware-development/maldev-environment-setup/README.md)
+  * [Setting up Dev Box](malware-development/maldev-environment-setup/setting-up-dev-box.md)
+  * [Setting up Pwn Box](malware-development/maldev-environment-setup/setting-up-pwn-box.md)
 
 ## 🔍 Malware Analysis
 

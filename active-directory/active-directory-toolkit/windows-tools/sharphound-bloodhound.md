@@ -87,4 +87,4 @@ _<mark style="color:red;">**NOTE:**</mark>_ Keep in mind as we go through the en
 
 When we have a user we can search for them, right-click and mark as Owned.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
