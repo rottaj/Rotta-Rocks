@@ -112,6 +112,7 @@
   * [NTLM Toolkit](ethical-hacking/cracking-passwords/ntlm-toolkit.md)
   * [NTLMv2](ethical-hacking/cracking-passwords/ntlmv2.md)
   * [MS-Cachev2 (DCC2)](ethical-hacking/cracking-passwords/ms-cachev2-dcc2.md)
+  * [Password Protected Files](ethical-hacking/cracking-passwords/password-protected-files.md)
 * [Windows Privilege Escalation](ethical-hacking/windows-privilege-escalation/README.md)
   * [Initial Enumeration](ethical-hacking/windows-privilege-escalation/initial-enumeration.md)
   * [Searching For Sensitive Files](ethical-hacking/windows-privilege-escalation/searching-for-sensitive-files.md)
