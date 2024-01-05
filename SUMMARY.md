@@ -124,6 +124,7 @@
     * [Abusing Unquoted Paths](ethical-hacking/windows-privilege-escalation/leveraging-windows-services/abusing-unquoted-paths.md)
   * [Scheduled Tasks](ethical-hacking/windows-privilege-escalation/scheduled-tasks.md)
   * [Enumerating Services & Tasks](ethical-hacking/windows-privilege-escalation/enumerating-services-and-tasks.md)
+  * [Dumping Secrets](ethical-hacking/windows-privilege-escalation/dumping-secrets.md)
 * [Linux Privilege Escalation](ethical-hacking/linux-privilege-escalation/README.md)
   * [Initial Enumeration](ethical-hacking/linux-privilege-escalation/initial-enumeration.md)
   * [Automated Enumeration](ethical-hacking/linux-privilege-escalation/automated-enumeration.md)
