@@ -28,7 +28,7 @@
   ```
 * <pre class="language-shell-session"><code class="lang-shell-session"><strong>$ netexec wmi ips.txt -u users.txt -p passwords.txt 
   </strong></code></pre>
-* <pre><code><strong>$ netexec mssql ips.txt -u users.txt -p passwords.txt 
+* <pre class="language-shell-session"><code class="lang-shell-session"><strong>$ netexec mssql ips.txt -u users.txt -p passwords.txt 
   </strong></code></pre>
 
 
