@@ -1,5 +1,9 @@
 # Dumping Secrets
 
+If we ever come across a windows.old, it's a good idea to extract the SAM & SYSTEM files.&#x20;
+
+If we have privileged access we can make a copy of the SAM & SYSTEM registry files.
+
 ## Extracting SAM & SYSTEM with Metasploit
 
 ```
