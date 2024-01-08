@@ -140,10 +140,10 @@ python smbclient.py domain/user:password@target
 
 ### mssqlclient.py
 
-MSSQL client, supporting both SQL and Windows Authentications (including hashes).
+MSSQL client, supporting both SQL and Windows Authentications (including hashes). _<mark style="color:yellow;">**-windows-auth**</mark>_ is very important!
 
 ```
-python mssqlclient.py domain/user:password@target
+python mssqlclient.py domain/user:password@target -windows-auth
 ```
 
 ### mssqlinstance.py

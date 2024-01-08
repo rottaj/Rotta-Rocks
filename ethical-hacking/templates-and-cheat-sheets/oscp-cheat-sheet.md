@@ -520,8 +520,30 @@ snmpbulkwalk -c public -v2c 192.168.238.149 > out.txt
 Enumerate extended objects
 
 ```
+snmpwalk -v2c -c public 192.168.221.156  NET-SNMP-EXTEND-MIB::nsExtendObjects
 snmpwalk -v1 -c public 192.168.221.156  NET-SNMP-EXTEND-MIB::nsExtendObjects
 ```
+
+#### Bruteforce
+
+```
+python3 snmpbrute.py -t $ip -p 161 -f /opt/SecLists/Discovery/SNMP/common-snmp-community-strings.txt
+```
+
+#### Others
+
+<pre><code><strong>hydra -P /opt/SecLists/Discovery/SNMP-common-snmp/community-strings.txt -v $ip snmp
+</strong>	 
+nmpcheck -t $ip -c public
+ 
+snmpenum -t $ip
+
+snmpwalk -v2c -c $community_string $ip >> snmpv2c.txt
+
+snmpwalk -c public -v1 $ip 1 | grep hrSWRunName | cut -d\*\* -f 
+
+snmpbulkwalk -c public -v2c $ip >> snmpbulk.txt
+</code></pre>
 
 ### Linux
 

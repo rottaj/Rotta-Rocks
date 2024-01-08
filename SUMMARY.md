@@ -98,7 +98,6 @@
     * [Web Server Pivoting with Rpivot](ethical-hacking/pivoting-tunneling-and-port-forwarding/pivoting/web-server-pivoting-with-rpivot.md)
   * [Tunneling](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/README.md)
     * [Chisel](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/chisel.md)
-    * [ssh.exe](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/ssh.exe.md)
     * [sshuttle](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/sshuttle.md)
     * [Dnscat2](ethical-hacking/pivoting-tunneling-and-port-forwarding/tunneling/dnscat2.md)
   * [Double Pivots](ethical-hacking/pivoting-tunneling-and-port-forwarding/double-pivots/README.md)
