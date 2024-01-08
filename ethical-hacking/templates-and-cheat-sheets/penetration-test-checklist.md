@@ -33,6 +33,18 @@
 
 
 
+
+
+## Harvested a new Private Key
+
+### Spray Intranet (.ssh)
+
+If we have a shell on a box and notice a user has a private key in their home directory, we should test it against all computers with ssh open.
+
+* ```shell-session
+  victim@host$ ssh -i id_rsa mario@172.16.233.14
+  ```
+
 ## Popped a new Shell
 
 #### Enumerate
