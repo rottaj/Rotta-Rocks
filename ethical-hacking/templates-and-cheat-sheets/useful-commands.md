@@ -76,7 +76,7 @@ Command Injection
 
 Crying for Help
 	☐ telnet -d -d -d -d -d $ip $port
-	☐ for file in $(ls /usr/share/seclists/Discovery/Web-Content); do gobuster -u http://$ip/ -w /usr/share/seclists/Discovery/Web-Content/$file -e -k -l -s "200,204,301,302,307" -t 20 ; done		
+	☐ for file in $(ls /opt/SecLists/Discovery/Web-Content); do ffuf -u http://$ip/FUZZ -w /opt/SecLists/Discovery/Web-Content/$file -e .conf,.php,.sh,.txt ; done		
 	☐ update /etc/host. Ip address with computer name, etc.		
 	☐ https://securing.dev/posts/hacking-the-oscp-recon/
 	
