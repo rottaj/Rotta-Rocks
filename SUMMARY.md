@@ -196,6 +196,7 @@
 * [Persistence](active-directory/persistence/README.md)
   * [Golden Ticket](active-directory/persistence/golden-ticket.md)
   * [Shadow Copies](active-directory/persistence/shadow-copies.md)
+* [God Access](active-directory/god-access.md)
 * [Lab Environment Setup](active-directory/lab-environment-setup/README.md)
   * [Installing Forest](active-directory/lab-environment-setup/installing-forest.md)
   * [Adding Data to Active Directory](active-directory/lab-environment-setup/adding-data-to-active-directory.md)
