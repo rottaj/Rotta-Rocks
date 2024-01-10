@@ -8,6 +8,12 @@
 
 
 
+## View Startup Services
+
+```
+PS C:\> Get-CimInstance Win32_StartupCommand | select Name, command, Location, User | fl
+```
+
 ## PowerShell - List running Services
 
 ```powershell
