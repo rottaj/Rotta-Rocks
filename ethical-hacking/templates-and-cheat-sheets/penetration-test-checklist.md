@@ -13,6 +13,10 @@
 
 
 
+## Windows Privilege Escalation
+
+{% embed url="https://book.hacktricks.xyz/windows-hardening/checklist-windows-privilege-escalation" %}
+
 ## Harvested a New Credential&#x20;
 
 ### Spray Passwords

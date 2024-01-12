@@ -14,6 +14,17 @@
 PS C:\> Get-CimInstance Win32_StartupCommand | select Name, command, Location, User | fl
 ```
 
+## Startup Folders
+
+```
+dir /b "C:\Documents and Settings\All Users\Start Menu\Programs\Startup" 2>nul
+dir /b "C:\Documents and Settings\%username%\Start Menu\Programs\Startup" 2>nul
+dir /b "%programdata%\Microsoft\Windows\Start Menu\Programs\Startup" 2>nul
+dir /b "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup" 2>nul
+Get-ChildItem "C:\Users\All Users\Start Menu\Programs\Startup"
+Get-ChildItem "C:\Users\$env:USERNAME\Start Menu\Programs\Startup"
+```
+
 ## PowerShell - List running Services
 
 ```powershell
