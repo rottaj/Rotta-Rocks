@@ -860,6 +860,16 @@ launch bloodhound
 
 ### Web
 
+
+
+
+
+#### wordpress
+
+```
+ $ wpscan --url http://172.16.111.7/wordpress/ --enumerate p --plugins-detection aggressive
+```
+
 #### SQLi
 
 Basic SQLi
