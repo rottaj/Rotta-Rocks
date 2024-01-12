@@ -16,7 +16,7 @@ PS C:\> Get-CimInstance Win32_StartupCommand | select Name, command, Location, U
 
 ## Startup Folders
 
-```
+```powershell
 dir /b "C:\Documents and Settings\All Users\Start Menu\Programs\Startup" 2>nul
 dir /b "C:\Documents and Settings\%username%\Start Menu\Programs\Startup" 2>nul
 dir /b "%programdata%\Microsoft\Windows\Start Menu\Programs\Startup" 2>nul
