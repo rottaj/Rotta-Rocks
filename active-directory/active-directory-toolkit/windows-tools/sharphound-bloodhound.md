@@ -63,6 +63,14 @@ Closing writers
 
 ## Viewing Data
 
+
+
+### Start Bloodhound
+
+```bash
+$ sudo neo4j start
+```
+
 We can then type "bloodhound" in cmd and login with our credentials and click "Upload Data". Select the newly created .zip file.
 
 ```
