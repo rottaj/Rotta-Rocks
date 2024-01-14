@@ -71,6 +71,7 @@ Command Injection
 	wget -r http://$ip/.git
 	git log
 	git show
+	git show <commit hash> *80ad5fe45438bb1b9cc5932f56af2e9be7e96046*
 	git diff
 	git fetch
 
