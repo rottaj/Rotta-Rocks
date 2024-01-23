@@ -273,6 +273,7 @@
 * [Network Traffic Analysis](malware-analysis/network-traffic-analysis.md)
 * [Dynamic Sandbox Analysis](malware-analysis/dynamic-sandbox-analysis.md)
 * [Using Intrusion Detection Systems (IDS)](malware-analysis/using-intrusion-detection-systems-ids.md)
+* [Tools](malware-analysis/tools.md)
 
 ***
 
