@@ -201,7 +201,7 @@ Like we did above we can portforward an internal web service back to our kali ho
 #### Reverse Port Forward
 
 ```bash
-victim@ubuntu ssh -R web_service_port:localhost:local_port kali@192.168.45.186
+victim@ubuntu ssh -N -R web_service_port:localhost:local_port kali@192.168.45.186
 ```
 
 #### Local Port Forward
