@@ -198,6 +198,14 @@ C:\Users\web_svc>ssh -N -L 0.0.0.0:1234:192.168.45.186:4444 kali@192.168.45.186
 
 Like we did above we can portforward an internal web service back to our kali host.
 
+#### Reverse Port Forward
+
 ```bash
-victim@ubuntu ssh -N -L local_port:remote_host:remote_port kali@192.168.45.186
+victim@ubuntu ssh -R web_service_port:localhost:local_port kali@192.168.45.186
+```
+
+#### Local Port Forward
+
+```bash
+kali@kali ssh -L local_port:localhost:web_service_port victim@victim_ip
 ```
