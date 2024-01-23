@@ -165,4 +165,157 @@ _**The relevant flags are explained below:**_
 
 
 
-## Assembly Programming Structure
+## MASM Assembly Program Structure
+
+Here is a typical MASM program, the semicolon `;` denotes a comment.
+
+```nasm
+; Data section: contains variable and memory values, adding this section is optional 
+; Variables can be declared below the ".data" directive
+.data
+
+
+; Code section: contains the assembly code/functions
+; Assembly functions can be declared below the ".code" directive
+.code
+
+
+; MASM function declaration
+main PROC ; Start of function "main"
+     
+      ; Assembly code of "main"
+      
+      ret ; Return from "main"     
+main ENDP ; End of function "main"    
+
+
+; The "end" directive marks the end of the source file
+end
+```
+
+
+
+### Declaring Variables
+
+<mark style="color:yellow;">**Variables must be declared within the .data section of the program.**</mark>
+
+```
+VarName directive VarValue
+```
+
+**VarName** is the variable name you want.&#x20;
+
+Here is a list of possible directives:&#x20;
+
+* `word` - Unsigned 16-bit value (word).
+* `sword` - Signed 16-bit integer value.
+* `dword` - Unsigned 32-bit value (double word).
+* `sdword` - Signed 32-bit integer value.
+* `qword` - Unsigned 64-bit value (quad word).
+* `sqword` - Signed 64-bit integer value.
+* `oword` - 128-bit value (octal word).
+* `tbyte` - Unsigned 80-bit value.
+* `real4` - 32-bit floating point value.
+* `real8` - 64-bit floating point value.
+* `real10` - 80-bit floating point value.
+* `byte` - Unsigned 8-bit value.
+* `sbyte` - Signed 8-bit integer value.
+
+**Declaring Value:**
+
+**VarValue** is our value:
+
+```nasm
+WordVariable      word         2
+sWordVariable     sword       -2
+FloatVariable     real8       3.1
+```
+
+**Declaring value as Hexadecimal:**
+
+We can initialize a value with hexadecimal using the `h` suffix.
+
+```nasm
+DwordVariable     dword       10h         ; this is 10 in hex, which is 16 in decimal
+```
+
+#### Declaring Strings:
+
+Strings are declared using byte directive
+
+```nasm
+StringVar  byte 'This is a string', 0    ; we add "0" to null-terminate the string 
+```
+
+**The MASM assembler interprets the above string as an array of hexadecimal characters. We can incorprate a new line character `\n` as hexademical: `10`**
+
+```nasm
+StringVar byte 'This is a string with a new line', 10, 0  ; "10" represents the new line character and is equal to 16 in decimal format
+```
+
+Since the `byte` directive in MASM assumes that it is dealing with hexadecimal characters, it is unnecessary to include the `h` suffix to represent the value of 10.
+
+
+
+## Assembly Instructions
+
+The following section goes over common Assembly instructions. A full list can be found:
+
+{% embed url="https://www.felixcloutier.com/x86/" %}
+Refer to the intel 64 architecture software developer manual
+{% endembed %}
+
+
+
+### mov instruction
+
+The **`mov`** instruction is the most frequently used instruction in assembly. As the name suggests, it is used to move data between registers or memory locations.
+
+```nasm
+mov destination, source
+```
+
+Both destination or source can be a general purpose register or memory variable. **The mov instruction is limited to:**
+
+* Only one of the source and destination operands can be a memory variable.
+* Both the source and destination operands must be of the same size. Mixing different operand sizes within a single `mov` instruction will result in a compilation error.
+
+_**Here is a list of all legal mov instructions**_
+
+<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption><p>In T<em>he Art of 64-Bit Assembly Language</em> book</p></figcaption></figure>
+
+```nasm
+mov rax, 1234     ; move the value 1234 into the RAX register
+mov rax, rbx      ; move the value in the RBX register into the RAX register
+
+mov al, 5h        ; move the value 0x05 into the AL register
+mov [ebx], al     ; move the value in AL to the memory location pointed to by the EBX register
+```
+
+In assembly language, square brackets `[]` are utilized to indicate indirect memory access. It points to the source of the memory location. Similar to pointers in C.
+
+
+
+### add & sub instructions
+
+add & sub insturctions adds and subtracts to operands. They share the same syntax.
+
+```nasm
+add destination, source ; destination = destination + source
+sub destination, source ; destination = destination + source
+```
+
+```nasm
+add rax, rbx      ; add the value in RBX to the value in RAX and store the result in RAX
+add rax, [rcx]    ; add the value in the memory location at RCX to the value in RAX and store the result in RAX
+add [rax], 10     ; add the value 10 to the memory location at RAX and store the result in that memory location
+
+mov al, 12h       ; move the value 0x12 into the AL register
+mov bl, 5h        ; move the value 0x05 into the BL register
+sub al, bl        ; subtract the value in BL from the value in AL and store the result in AL. AL's value is now '13'
+```
+
+
+
+### call & ret instructions
+
