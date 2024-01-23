@@ -275,6 +275,10 @@
 * [Using Intrusion Detection Systems (IDS)](malware-analysis/using-intrusion-detection-systems-ids.md)
 * [Tools](malware-analysis/tools.md)
 
-***
+## 🔬 Digital Forensics
 
-* [Digital Forensics](digital-forensics.md)
+* [Tools](digital-forensics/tools.md)
+
+## 🛠 Programming
+
+* [MASM Assembly ](programming/masm-assembly.md)
