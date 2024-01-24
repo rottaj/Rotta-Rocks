@@ -584,3 +584,179 @@ mov byte ptr [ebx + 8], 55h	; Example 2
 
 ## Calling Functions
 
+Calling functions in assembly can happen a couple ways:
+
+
+
+### Calling assembly function via call
+
+1.) Calling the assembly function via call instruction with ret used to return the caller.
+
+```nasm
+call power
+
+power:
+        push ebp                # save old base pointer
+        mov esp, ebp           # make stack pointer the base pointer
+
+```
+
+### Calling the assembly function from C
+
+We can import an assemly function to a C file. The function prototype is defined with the **`extern`** keyword. This informs the compiler that the function is already in another file, such as an **`.asm`** file.
+
+_**Example of calling assembly from C:**_
+
+```c
+/*
+      main.c file
+*/
+
+#include <stdio.h>
+
+extern void SimpleAsmFunc(); // SimpleAsmFunc's prototype. Parameters and function return data type is covered in a later section
+
+int main (){
+      printf("[i] Calling 'SimpleAsmFunc' ... ");
+      SimpleAsmFunc();
+      printf("[+] Done");
+      return 0;
+}
+```
+
+```nasm
+; The asm file that includes the definition of 'SimpleAsmFunc'
+
+.code
+
+SimpleAsmFunc PROC
+      xor rcx, rcx      ; SimpleAsmFunc's code
+      add rcx, 2
+      ret
+SimpleAsmFunc ENDP
+
+end
+```
+
+### Calling a C function from within an assembly file.
+
+To do this, the assembly code must first declare the C function using the externdef directive. This tells the MASM assembler that the function is in another file.
+
+```
+externdef symbol_name:type
+```
+
+Here the **`externdef`** is the name of the function and the **`type`** specifies the function type.
+
+```
+externdef foo:proc	; This will tell MASM that "foo" is a procedure
+```
+
+_**Example calling C code from assembly:**_
+
+```c
+/*
+      main.c file
+*/
+
+#include <stdio.h>
+
+// Dummy C function
+void SimpleCFunc() {
+
+	int i = 100;
+	i = i * (i + 7) >> 3;
+	i += i/2;
+
+	if (i > 100)
+	   i -= 20;
+        else
+	   i += 20;
+}
+
+
+int main() {
+	// You can port "AsmFunc" here and call it
+	return 0;
+}
+```
+
+```
+; The asm file that calls 'SimpleCFunc'
+
+externdef SimpleCFunc:proc 	; Using externdef to declare "SimpleCFunc" as a procedure defined in an other file
+
+.code 
+
+AsmFunc PROC
+
+      call SimpleCFunc		; Calling SimpleCFunc
+      ret
+
+AsmFunc ENDP
+
+end
+```
+
+
+
+## Passing Parameters
+
+The first four parameters (if they exist) are passed through the registers `RCX`, `RDX`, `R8`, and `R9`.
+
+_<mark style="color:red;">**NOTE:**</mark>_ If a procedure requires more than four parameters, they are pushed onto the stack. These parameters are known as **stack parameters**, and the stack must be 16-byte aligned to accommodate them.&#x20;
+
+<mark style="color:red;">**IMPORTANT**</mark>: The first stack parameter (5th procedure parameter) is located at a specific offset from the `rsp` register, depending on the function's [calling convention](https://learn.microsoft.com/en-us/cpp/cpp/calling-conventions?view=msvc-170). In a 64-bit MASM function, the fifth parameter is usually located at an offset of `[rsp + 40].`
+
+_**Example passing parameters:**_
+
+```nasm
+AsmFunc11Parms PROC
+
+    ; RCX => Parm1
+    ; RDX => Parm2
+    ; R8  => Parm3
+    ; R9  => Parm4
+
+    mov rax, qword ptr [rsp + 40]  ; Parm5
+    mov rax, qword ptr [rsp + 48]  ; Parm6
+    mov rax, qword ptr [rsp + 56]  ; Parm7
+    mov rax, qword ptr [rsp + 64]  ; Parm8
+    mov rax, qword ptr [rsp + 72]  ; Parm9
+    mov rax, qword ptr [rsp + 80]  ; Parm10
+    mov rax, qword ptr [rsp + 88]  ; Parm11
+
+    ret
+
+AsmFunc11Parms ENDP
+```
+
+Calling `AsmFunc11Parms` from C is done below
+
+```c
+#include <Windows.h>
+
+extern int AsmFunc11Parms(PVOID Parm1, PVOID Parm2, PVOID Parm3, PVOID Parm4, PVOID Parm5, PVOID Parm6, PVOID Parm7, PVOID Parm8, PVOID Parm9, PVOID Parm10, PVOID Parm11);
+
+int main() {
+	AsmFunc11Parms(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+	return 0;
+}
+```
+
+
+
+## Returning Value
+
+When assembly returns a value it is stored in the **`RAX`** register. Before executing the **`ret`** instruction, the procedure saves the value inside the **`RAX`** register. Allowing the function to return a value.
+
+\
+The following `AddtwoNumbers` procedure, takes two parameters, to return their sum.
+
+```
+AddtwoNumbers PROC
+    mov rax, rcx    ; Moving the 1st parmeter to RAX  
+    add rax, rdx    ; Add the 2nd parmeter to the value in RAX
+    ret             ; return (RAX here is RCX + RDX)
+AddtwoNumbers ENDP
+```
