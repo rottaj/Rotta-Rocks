@@ -139,9 +139,21 @@ _<mark style="color:red;">**IMPORTANT:**</mark>_ Whenever a value of a non-volat
 
 ## RSP & RIP Registers
 
-The _**RIP**_ register on 64-bit systems and the _**EIP**_ on 32-bit systems, is a _**special-purpose register**_ that holds the memory address of the next instruction being executed. The processor automatically increments the RIP/EIP register after executing each instruction.
+The _**RIP/EIP**_ register is a _**special-purpose register**_ that holds the memory address of the next instruction being executed. The processor automatically increments the RIP/EIP register after executing each instruction.
 
 The _**RSP/ESP**_ register is called the _**stack pointer register**_. It holds the memory address of the top of the stack. (The stack is a memory region that's used to store temporary data & function call information. The RSP/ESP keeps track of the stacks current location).
+
+
+
+## RDI, RSI, RDX  Argument Registers
+
+The general purpose registers rdi, rsi, rdx, rcx, r8, and r9 are typically used for parameter passing. These registers are known as "Arguments registers", they hold values that are passed to a function.
+
+```c
+int result = add(3,6);
+```
+
+In the example above, the values 3 and 6 would be passed to the add function using registers. **rdi might hold 3 and rsi might hold 6.**
 
 
 
@@ -267,7 +279,7 @@ Refer to the intel 64 architecture software developer manual
 
 
 
-### mov instruction
+### mov&#x20;
 
 The **`mov`** instruction is the most frequently used instruction in assembly. As the name suggests, it is used to move data between registers or memory locations.
 
@@ -296,7 +308,7 @@ In assembly language, square brackets `[]` are utilized to indicate indirect mem
 
 
 
-### add & sub instructions
+### add & sub&#x20;
 
 add & sub insturctions adds and subtracts to operands. They share the same syntax.
 
@@ -317,5 +329,258 @@ sub al, bl        ; subtract the value in BL from the value in AL and store the 
 
 
 
-### call & ret instructions
+### call & ret&#x20;
+
+Procedure calls are made with the **`call`** instruction. The **`ret`** instruction is then used to return execution back to the caller, which serves a similar purpose as C/C++.
+
+```nasm
+call  ProcedureName  ; ProcedureName is the function name we call.
+```
+
+The **`ret`** instruction does not require any parameters / operands. It does not return any value, it's purpose is to indicate that the current function is finished executing. The address that is returned from **`ret`** is determined by the value at the top of the stack.
+
+```nasm
+ret
+```
+
+#### Example code
+
+Here is an example of **`ret`** & **`call`** instructions.
+
+```nasm
+.code
+
+DummpProc     PROC
+      mov rcx, 3        ; dummy code
+      add rbx, 2
+      sub esi, 1
+      ret               ; return execution back to "main"
+DummpProc     ENDP
+
+
+main          PROC
+      call DummpProc    ; calling "DummpProc"
+      ret               ; function "main" is terminated
+main          ENDP
+
+end
+```
+
+### lea&#x20;
+
+The Load Effective Address (lea) instruction returns the memory address of a location and load it into a register, without actually accessing the memory itself. It's essentially the _**`&`**_ **address-of** operator in C/C++.&#x20;
+
+```nasm
+lea reg64, source  ; reg64 represents a 64-bit general-purpose register
+```
+
+Where `reg64` (the destination operand) represents any **64-bit general-purpose register** that will hold the address of the source memory location.
+
+```nasm
+StringVar byte 'String Variable', 0       ; A dummy string variable 
+lea rcx, StringVar                        ; Load the address of the StringVar variable into RCX. RCX is now equal to &StringVar[0]
+```
+
+
+
+### and, or, xor, not
+
+The logical operators **`and`**, **`or`**, **`xor`**, and **`not`** are all used to perform logical operations on bits.
+
+#### and
+
+The **`and`** instruction performs a bitwise and **operation** between two operands and stores the result in the destination operand.
+
+```nasm
+and destination, source
+```
+
+#### or
+
+The `or` instruction performs a _bitwise or operation_ between two operands and stores the result in the destination operand.
+
+```nasm
+or destination, source
+```
+
+#### xor
+
+The `xor` instruction performs an _exclusive OR operation_ between two operands and stores the result in the destination operand. One common use of the `xor` instruction is to clear a register, which is achieved by XORing the register with itself. The syntax of the `xor` instruction is as follows:
+
+```
+xor destination, source
+```
+
+**not**
+
+The `not` instruction performs a _bitwise not operation_ on the operand and stores the result in the destination operand. The syntax of the `not` instruction is as follows:
+
+```
+not destination
+```
+
+### jmp
+
+The **`jmp`** instruction, jumps to the destination operand. It can be a memory address, register, or a label. It's used for unconditional branching or jumping.
+
+```
+jmp   destination       ; Where 'destination' is where to jump 
+```
+
+<mark style="color:red;">**NOTE:**</mark> In assembly language, a <mark style="color:yellow;">**label**</mark> is a name given to a specific location in the program's code, which is usually defined using a colon (`:`) at the end of a name or identifier.
+
+**Example jmp**
+
+```nasm
+.code
+
+main PROC
+      add eax, 2              ; dummy code
+      xor ax, 5
+      mov bx, ax
+      jmp LabelName           ; Jump to execute 'LabelName' 
+      mov eax, 100            ; These instructions won't get executed
+      mov ebx, 100
+LabelName:
+      xor eax, eax            ; LabelName's code
+      sub ebx, 2      
+      ret
+main ENDP
+
+end
+```
+
+
+
+### jz & jnz
+
+jz and jnz instructions are conditional jump instructions, which allow for conditional execution of code. <mark style="color:yellow;">**These instructions work by checking a specified flag in the RFLAGS register.**</mark>
+
+`jz`, which stands for "jump if zero", jumps if the zero flag is set (1), while `jnz` ("jump if not zero") executes the jump if the zero flag is clear (0). There are many other conditional jump instructions:
+
+* `jc` _Jump if Carry_ - Executes the branch if the Carry Flag is set (1).
+* `jnc` _Jump if Not Carry_ - Executes the branch if the Carry Flag is not set (0).
+* `jo` _Jump if Overflow_ - Executes the branch if the Overflow Flag is set (1).
+* `jno` _Jump if Not Overflow_ - Executes the branch if the Overflow Flag is not set (0).
+* `js` _Jump if Sign_ - Executes the branch if the Sign Flag is set (1).
+* `jns` _Jump if Not Sign_ - Executes the branch if the Sign Flag is not set (0).
+* `je` _Jump if Equal_ - Executes the branch if the Zero Flag is set (1).
+* `jne` _Jump if Not Equal_ - Executes the branch if the Zero Flag is not set (0).
+* `ja` _Jump if Above_ - Executes the branch if the left operand is greater than the right operand.
+* `jae` _Jump if Above or Equal_ - Executes the branch if the left operand is greater than or equal to the right operand.
+* `jb` _Jump if Below_ - Executes the branch if the left operand is less than the right operand.
+* `jbe` _Jump if Below or Equal_ - Executes the branch if the left operand is less than or equal to the right operand.
+
+
+
+### cmp&#x20;
+
+The **`cmp`** instruction or "compare" is the most useful instruction to execute prior to a conditional jump instruction.
+
+```
+cmp First, Second
+```
+
+The `cmp` instruction subtracts the second operand from the first operand and sets the condition code flags based on the result of the subtraction. NOTE: It does not store the difference back into the first (destination).
+
+The following examples demonstrate how `cmp` can set a flag's value based on the value of its operands.
+
+* If the first operand is greater than the second operand, the Carry flag is cleared and the Sign flag is set if the result is negative.
+* If the second operand is greater than the first operand, the Carry flag is set and the Sign flag is cleared.
+* If the two operands are equal, the Zero flag is set and the Carry and Sign flags are cleared.
+
+
+
+#### The `cmp` instruction is usually used in conjuction with a jmp. Here's an example of dissembled C code:
+
+```c
+#include <stdio.h>
+
+int main() {
+
+	int i = rand();
+	// if "i" is not equal to 10
+	if (i != 10) {
+		printf("i != 10 \n");
+	}
+
+	return 0;
+}
+```
+
+<figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+
+The following assembly code shows a `je` instruction being found directly below a `cmp` instruction.
+
+
+
+### push & pop&#x20;
+
+The push and pop instructions are used to manipulate the stack.&#x20;
+
+**`push`** takes a value from a register and pushed it onto the top of the stack.
+
+```
+push Source
+```
+
+pop takes the value at the top of the stack and pops it off, storing it in the destination register or memory location.
+
+```
+pop Destination
+```
+
+### leave
+
+The **`leave`** instruction is used to clean up or exit a subroutine or function.
+
+&#x20;When executed, it first moves the value of the base pointer register (`RBP`) to the stack pointer register (`RSP`). It then pops the value of the base pointer register from the stack, restoring it to its previous value.
+
+Essentially, the `leave` instruction performs the same task as the following instructions:
+
+```
+mov rsp, rbp
+pop rbp
+```
+
+
+
+## Memory Access Specifiers
+
+In assembly, memory access specifiers are used to determine the size and the type of data being accessed in memory. These specifiers act like type-casting in a programming language.
+
+The most commonly used Memory Access Specifiers are:
+
+### Q**uadword Pointer - qword ptr**
+
+A quadword pointer is used to access a 64-bit data value stored in memory. It is specified using the `qword ptr` specifier. For instance, if you want to access a 64-bit integer value stored in a particular memory location, you can use the `qword ptr` specifier with the `mov` instruction. Here are two examples:
+
+```
+mov rax, qword ptr [rbx]         ; Example 1
+mov rax, qword ptr [rsp + 32h]   ; Example 2
+```
+
+In the first example, the 64-bit integer value stored at the memory location pointed to by the `rbx` register is accessed using the `qword ptr` specifier with the `mov` instruction. In the second example, the `qword ptr` specifier is used with the `mov` instruction to access the 64-bit integer value stored at an offset of `32h` bytes from the `rsp` register.
+
+### D**oubleword Pointer - dword ptr**
+
+A doubleword pointer is a memory addressing mode that specifies the size of 32-bit data in memory. It is used when manipulating data stored in memory, particularly 32-bit integer values. To access a 32-bit integer value stored at a specific memory location, the `dword ptr` specifier should be used in the instruction, as shown in the following examples:
+
+```
+mov dword ptr [ebx], 12345678	; Example 1: stores a 32-bit integer value in memory
+mov eax, dword ptr [edx + 4]	; Example 2: loads a 32-bit integer value from memory into the eax register
+```
+
+### B**yte Pointer - byte ptr**
+
+A byte pointer is used to indicate the size of 8-bit data in memory. To access a single byte of data stored at a specific memory location, the byte ptr specifier is used.
+
+```
+mov al, byte ptr [edx + 2]	; Example 1	
+mov byte ptr [ebx + 8], 55h	; Example 2	
+```
+
+
+
+## Calling Functions
 
