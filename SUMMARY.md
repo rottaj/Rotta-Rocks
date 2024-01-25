@@ -255,6 +255,8 @@
   * [Anti-Debugging Techniques](malware-development/anti-analysis-techniques/anti-debugging-techniques/README.md)
     * [Check If Running In a Debugger](malware-development/anti-analysis-techniques/anti-debugging-techniques/check-if-running-in-a-debugger.md)
     * [Self Deleting Malware](malware-development/anti-analysis-techniques/anti-debugging-techniques/self-deleting-malware.md)
+  * [Anti-Virtual Environments (AVE) Techniques](malware-development/anti-analysis-techniques/anti-virtual-environments-ave-techniques/README.md)
+    * [Detecting Hardware Specs](malware-development/anti-analysis-techniques/anti-virtual-environments-ave-techniques/detecting-hardware-specs.md)
 * [C2 Development](malware-development/c2-development/README.md)
   * [Infrastructure](malware-development/c2-development/infrastructure.md)
   * [Teamserver](malware-development/c2-development/teamserver.md)
@@ -264,6 +266,7 @@
 * [MalDev Environment Setup](malware-development/maldev-environment-setup/README.md)
   * [Setting up Dev Box](malware-development/maldev-environment-setup/setting-up-dev-box.md)
   * [Setting up Pwn Box](malware-development/maldev-environment-setup/setting-up-pwn-box.md)
+* [Maldev Checklist](malware-development/maldev-checklist.md)
 
 ## 🔍 Malware Analysis
 
