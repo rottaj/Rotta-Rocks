@@ -257,6 +257,7 @@
     * [Self Deleting Malware](malware-development/anti-analysis-techniques/anti-debugging-techniques/self-deleting-malware.md)
   * [Anti-Virtual Environments (AVE) Techniques](malware-development/anti-analysis-techniques/anti-virtual-environments-ave-techniques/README.md)
     * [Detecting Hardware Specs](malware-development/anti-analysis-techniques/anti-virtual-environments-ave-techniques/detecting-hardware-specs.md)
+    * [Delaying Execution](malware-development/anti-analysis-techniques/anti-virtual-environments-ave-techniques/delaying-execution.md)
 * [C2 Development](malware-development/c2-development/README.md)
   * [Infrastructure](malware-development/c2-development/infrastructure.md)
   * [Teamserver](malware-development/c2-development/teamserver.md)
