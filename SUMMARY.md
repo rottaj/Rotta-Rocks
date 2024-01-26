@@ -287,3 +287,5 @@
 ## 🛠 Programming
 
 * [MASM Assembly ](programming/masm-assembly.md)
+* [Windows API](programming/windows-api/README.md)
+  * [Deleting Files](programming/windows-api/deleting-files.md)
