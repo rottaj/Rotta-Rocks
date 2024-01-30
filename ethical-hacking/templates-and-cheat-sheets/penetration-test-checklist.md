@@ -35,7 +35,14 @@
 * <pre class="language-shell-session"><code class="lang-shell-session"><strong>$ netexec mssql ips.txt -u users.txt -p passwords.txt -local-auth
   </strong></code></pre>
 
+### Manual Spray (if above didn't recover anything).
 
+* ```shell-session
+  $ proxychains evil-winrm -i 10.10.93.154 -u Administrator -p "Passwords"
+  ```
+* ```shell-session
+  $ proxychains xfreerdp /v:10.10.93.154 /u:Administrator /p:password
+  ```
 
 ## Harvested Domain Credential
 
