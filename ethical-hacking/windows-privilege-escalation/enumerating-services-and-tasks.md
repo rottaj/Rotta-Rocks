@@ -8,6 +8,12 @@
 
 
 
+## View Services & User that's running them
+
+```powershell
+Get-WmiObject Win32_Service | Select-Object DisplayName, StartName
+```
+
 ## View Startup Services
 
 ```
