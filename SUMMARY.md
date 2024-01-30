@@ -252,6 +252,7 @@
   * [Reducing Binary Entropy](malware-development/anti-analysis-techniques/reducing-binary-entropy.md)
   * [Brute Forcing Decryption Key](malware-development/anti-analysis-techniques/brute-forcing-decryption-key.md)
   * [Removing MSCRT](malware-development/anti-analysis-techniques/removing-mscrt.md)
+  * [Hiding / Camouflaging IAT](malware-development/anti-analysis-techniques/hiding-camouflaging-iat.md)
 * [API Hooking](malware-development/api-hooking/README.md)
   * [Userland Hooking](malware-development/api-hooking/userland-hooking.md)
   * [Custom Hooking Function](malware-development/api-hooking/custom-hooking-function.md)
