@@ -4,6 +4,10 @@ description: Here are some tools
 
 # Information Gathering / Reconnaisance
 
+Infosec Reference
+
+{% embed url="https://github.com/rmusser01/Infosec_Reference/tree/master" %}
+
 [InsideTrust - Statisically Likely Usernames](https://github.com/insidetrust/statistically-likely-usernames)
 
 
