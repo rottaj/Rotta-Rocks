@@ -198,6 +198,7 @@
   * [Golden Ticket](active-directory/persistence/golden-ticket.md)
   * [Shadow Copies](active-directory/persistence/shadow-copies.md)
 * [God Access](active-directory/god-access/README.md)
+  * [GenericAll Abuse](active-directory/god-access/genericall-abuse.md)
   * [NTDS Tom Foolery](active-directory/god-access/ntds-tom-foolery.md)
 * [Lab Environment Setup](active-directory/lab-environment-setup/README.md)
   * [Installing Forest](active-directory/lab-environment-setup/installing-forest.md)
