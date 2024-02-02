@@ -455,7 +455,9 @@ wpscan --url http://10.10.10.88/webservices/wp/index.php --proxy 127.0.0.1:8080 
 
 ### SMB
 
-nmap to get basic info
+<mark style="color:yellow;">**Make sure to add DC name to /etc/hosts.**</mark>** Or any other domain-connected hostname.**
+
+nmap to get basic info&#x20;
 
 ```
 nmap -v -p 139,445 --script smb-os-discovery 192.168.50.152
@@ -463,8 +465,14 @@ nmap -v -p 139,445 --script smb-os-discovery 192.168.50.152
 
 check for anonymous share
 
+```sh
+smbmap -H <IP> # Try with hostname too if not found
 ```
-smbmap -H <IP>
+
+aggressive scan
+
+```bash
+enum4linux -A <IP> # Try with hostname too if not found
 ```
 
 list share of particular user with username and password
