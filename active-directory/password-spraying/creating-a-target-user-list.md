@@ -17,15 +17,11 @@ We can gather a target list in many ways:
 
 No matter the method we choose, it is also vital for us to consider the domain password policy.
 
-
-
-
-
 ## SMB NULL Session to Pull User List
 
 If you are on an internal machine but don’t have valid domain credentials, you can look for SMB NULL sessions or LDAP anonymous binds on Domain Controllers.
 
-**Using enum4linux**
+### enum4linux
 
 ```shell-session
 attacker@kali$ 
@@ -50,7 +46,7 @@ mholliday
 <SNIP>
 ```
 
-**Using rpcclient**
+### rpcclient
 
 ```shell-session
 attacker@kali$ rpcclient -U "" -N 172.16.5.5
@@ -66,10 +62,10 @@ user:[avazquez] rid:[0x458]
 <SNIP>
 ```
 
-**Using CrackMapExec --users Flag**
+### netexec --users
 
 ```shell-session
-attacker@kali$ crackmapexec smb 172.16.5.5 --users
+attacker@kali$ netexec smb 172.16.5.5 --users
 
 SMB         172.16.5.5      445    ACADEMY-EA-DC01  [*] Windows 10.0 Build 17763 x64 (name:ACADEMY-EA-DC01) (domain:INLANEFREIGHT.LOCAL) (signing:True) (SMBv1:False)
 SMB         172.16.5.5      445    ACADEMY-EA-DC01  [+] Enumerated domain user(s)
@@ -83,17 +79,24 @@ SMB         172.16.5.5      445    ACADEMY-EA-DC01  INLANEFREIGHT.LOCAL\avazquez
 <SNIP>
 ```
 
-
-
 ## Gathering Users with LDAP Anonymous
 
 We can use various tools to gather users when we find an LDAP anonymous bind.
 
-\
-**Using ldapsearch**
+### ldapsearch
 
-```shell-session
-attacker@kali$ ldapsearch -h 172.16.5.5 -x -b "DC=INLANEFREIGHT,DC=LOCAL" -s sub "(&(objectclass=user))"  | grep sAMAccountName: | cut -f2 -d" "
+#### Get Root Domain Name Context
+
+```shell
+ldapsearch -H ldap://hutch.offsec0:389/ -x -s base -b '' "(objectClass=*)" "*" +
+```
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>DC=hutch, DC=offsec</p></figcaption></figure>
+
+**Get users**
+
+```bash
+attacker@kali$ ldapsearch -h 172.16.5.5 -x -b "DC=HUTCH,DC=OFFSEC" -s sub "(&(objectclass=user))"  | grep sAMAccountName: | cut -f2 -d" "
 
 guest
 ACADEMY-EA-DC01$
@@ -112,7 +115,14 @@ dbranch
 <SNIP>
 ```
 
-**Using windapsearch (easier)**
+#### Extensive search >> pipe to output file
+
+<pre class="language-shell-session"><code class="lang-shell-session"><strong>attacker@kali$ ldapsearch -x -h 192.168.162.122 -b "dc=hutch,dc=offsec" > ldap_search.txt
+</strong></code></pre>
+
+### windapsearch (easier)
+
+[Windapsearch](https://github.com/ropnop/windapsearch) is an easier tool, it's important to use both however if we don't initially get what we want.
 
 <pre class="language-shell-session"><code class="lang-shell-session"><strong>attacker@kali$ ./windapsearch.py --dc-ip 172.16.5.5 -u "" -U
 </strong>

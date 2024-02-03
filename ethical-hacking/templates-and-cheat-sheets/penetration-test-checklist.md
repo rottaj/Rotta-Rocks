@@ -2,6 +2,12 @@
 
 
 
+## Unauthenticated Recon - Domain
+
+
+
+* [ ] [Create a target list](../../active-directory/password-spraying/creating-a-target-user-list.md)
+
 ## Web Application Testing
 
 

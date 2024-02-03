@@ -67,7 +67,7 @@ net group "domain admins" <username> /add /domain
 
 ### GenericAll on Computer
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 If enumerating and we see a user has GenericAll permission on a computer we know we full control.
 

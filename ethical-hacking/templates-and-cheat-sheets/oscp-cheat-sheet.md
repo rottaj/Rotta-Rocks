@@ -553,6 +553,20 @@ snmpwalk -c public -v1 $ip 1 | grep hrSWRunName | cut -d\*\* -f
 snmpbulkwalk -c public -v2c $ip >> snmpbulk.txt
 </code></pre>
 
+### LDAP
+
+windapsearch - get users
+
+```
+./windapsearch.py --dc-ip 192.168.213.122 -u "" -U
+```
+
+ldapsearch - extensive output to file
+
+```
+ldapsearch -x -h 192.168.162.122 -b "dc=hutch,dc=offsec" > ldap_search.txt
+```
+
 ### Linux
 
 linenum
