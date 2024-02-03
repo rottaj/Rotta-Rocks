@@ -563,9 +563,10 @@ windapsearch - get users
 
 ldapsearch - extensive output to file
 
-```
-ldapsearch -x -h 192.168.162.122 -b "dc=hutch,dc=offsec" > ldap_search.txt
-```
+<pre class="language-shell-session"><code class="lang-shell-session">ldapsearch -x -H ldap://192.168.213.122 -b "dc=hutch,dc=offsec" > ldap_search.txt
+<strong># Check for passwords in description
+</strong><strong>cat ldap_search.txt | grep description
+</strong></code></pre>
 
 ### Linux
 
