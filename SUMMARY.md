@@ -69,6 +69,7 @@
 * [Other Attacks](web-application-security/other-attacks/README.md)
   * [HTTP Host Header Attacks](web-application-security/other-attacks/http-host-header-attacks.md)
   * [Password Reset Poisoning](web-application-security/other-attacks/password-reset-poisoning.md)
+  * [Insecure HTTP Method Abuse](web-application-security/other-attacks/insecure-http-method-abuse.md)
 
 ## 🌩 Cloud Security
 
