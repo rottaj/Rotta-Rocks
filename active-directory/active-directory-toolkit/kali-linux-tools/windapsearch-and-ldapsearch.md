@@ -4,7 +4,7 @@ description: >-
   groups, and computers from a Windows domain by utilizing LDAP queries.
 ---
 
-# Windapsearch
+# Windapsearch & Ldapsearch
 
 ***
 
@@ -75,4 +75,37 @@ cn: lab_adm
 
 cn: Sharepoint Admin
 userPrincipalName: sp-admin@INLANEFREIGHT.LOCAL
+```
+
+
+
+## Ldapsearch&#x20;
+
+### Get extensive output
+
+```shell-session
+attacker@kali$ ldapsearch -x -H ldap://192.168.213.122 -b "dc=hutch,dc=offsec" > ldap_search.txt
+
+```
+
+### Grep for goodies
+
+```shell-session
+attacker@kali$ cat ldap_search.txt | grep description
+description: Built-in account for guest access to the computer/domain
+description: All workstations and servers joined to the domain
+description: Members of this group are permitted to publish certificates to th
+description: All domain users
+description: All domain guests
+description: Members in this group can modify group policy for the domain
+description: Servers in this group can access remote access properties of user
+description: Members in this group can have their passwords replicated to all 
+description: Members in this group cannot have their passwords replicated to a
+description: Members of this group are Read-Only Domain Controllers in the ent
+description: Members of this group that are domain controllers may be cloned.
+description: Members of this group are afforded additional protections against
+description: DNS Administrators Group
+description: DNS clients who are permitted to perform dynamic updates on behal
+description: Password set to CrabSharkJellyfish192 at user's request. Please c
+
 ```
