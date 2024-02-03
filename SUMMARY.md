@@ -178,6 +178,7 @@
   * [PowerView / SharpView](active-directory/enumerating-active-directory/powerview-sharpview.md)
   * [Enumerating Service Accounts](active-directory/enumerating-active-directory/enumerating-service-accounts.md)
   * [Enumerating Object Permissions](active-directory/enumerating-active-directory/enumerating-object-permissions.md)
+  * [Enumerating Objects](active-directory/enumerating-active-directory/enumerating-objects.md)
 * [Attacking Active Directory Authentication](active-directory/attacking-active-directory-authentication/README.md)
   * [AS-REP Roasting](active-directory/attacking-active-directory-authentication/as-rep-roasting.md)
   * [Kerberoasting](active-directory/attacking-active-directory-authentication/kerberoasting.md)

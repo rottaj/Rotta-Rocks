@@ -134,10 +134,37 @@ If we have a shell on a box and notice a user has a private key in their home di
 
 {% embed url="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md" %}
 
+### Manual Enumeration
+
+* ```
+  systeminfo | findstr /B /C:"Host Name" /C:"OS Name" /C:"OS Version" /C:"System Type" /C:"Network Card(s)" /C:"Hotfix(s)"
+  ```
+* ```
+  whoami /priv
+  ```
+* ```
+  net user <user>
+  ```
+* ```
+  net localgroup administrators
+  ```
+* ```
+  cmd.exe /c dir /a C:\
+  ```
+* ```
+  ls "program files"
+  ```
+* ```
+  netstat -nao
+  ```
+* ```
+  .\SharpHound -c All --domain medtech.com --zipfilename MEDTECH.zip
+  ```
+
 ***
 
 ## Lateral Movement
 
-* [ ] bloodhound / sharphound
+* [ ] bloodhound / sharphound (Shortest path to high value targets)
 * [ ] mimikatz
 * [ ] netexec spray passwords & hashes

