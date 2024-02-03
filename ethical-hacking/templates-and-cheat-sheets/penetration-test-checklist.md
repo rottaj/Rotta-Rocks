@@ -85,19 +85,7 @@ If we have a shell on a box and notice a user has a private key in their home di
 
 ## Popped a new Shell
 
-#### Automated Enumeration
-
-* <pre class="language-powershell"><code class="lang-powershell"><strong>PS> .\winPEASx64.exe
-  </strong></code></pre>
-* ```powershell
-  PS> powershell -ep bypass -c ". .\PrivescCheck.ps1; Invoke-PrivescCheck"
-  ```
-
-**Manual Enumeration**
-
-* [ ] Check for sensitive files
-* [ ] Check for potential binary hijacking
-* [ ] Check for scheduled tasks / services running under other users.
+####
 
 #### (PWNED) - Dump Secrets
 
@@ -106,9 +94,28 @@ If we have a shell on a box and notice a user has a private key in their home di
 * <pre class="language-powershell"><code class="lang-powershell"><strong>PS> .\mimikatz.exe
   </strong></code></pre>
 
-## Privilege Escalation
+## Privilege Escalation - Windows
 
-* [ ] PayloadAllTheThings&#x20;
+####
+
+### Automated Enumeration
+
+* <pre class="language-powershell"><code class="lang-powershell"><strong>PS> .\winPEASx64.exe
+  </strong></code></pre>
+* ```powershell
+  PS> powershell -ep bypass -c ". .\PrivescCheck.ps1; Invoke-PrivescCheck"
+  ```
+
+
+
+### Manual Enumeration
+
+* [ ] Check for sensitive files
+* [ ] Check for potential binary hijacking
+* [ ] Check for scheduled tasks / services running under other users.
+* [ ] Check **ALL** privileges "whoami /priv" for potential exploits
+
+
 
 {% embed url="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md" %}
 
