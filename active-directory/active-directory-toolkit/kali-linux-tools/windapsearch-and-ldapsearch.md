@@ -8,7 +8,13 @@ description: >-
 
 ***
 
-## **Windapsearch - Domain Admins**
+{% embed url="https://github.com/ropnop/windapsearch.git" %}
+
+## **Windapsearch**
+
+**Windapsearch is a fantastic tool to utilize to enumerate an AD network once we have access to a domain user.** <mark style="color:yellow;">We can view, SPN's, connected computers, group policy objects, and more. Read the github above.</mark>
+
+### Get **Domain Admins**
 
 ```shell-session
 attacker@kali$ python3 windapsearch.py --dc-ip 172.16.5.5 -u forend@inlanefreight.local -p Klmcargo2 --da
@@ -32,9 +38,7 @@ cn: Matthew Morgan
 userPrincipalName: mmorgan@inlanefreight.local
 ```
 
-
-
-## **Windapsearch - Privileged Users**
+### **Get Privileged Users**
 
 ```shell-session
 attacker@kali$ python3 windapsearch.py --dc-ip 172.16.5.5 -u forend@inlanefreight.local -p Klmcargo2 -PU
@@ -77,15 +81,32 @@ cn: Sharepoint Admin
 userPrincipalName: sp-admin@INLANEFREIGHT.LOCAL
 ```
 
+### Get Service Principal Names
 
+```shell-session
+attacker@kali$ ./windapsearch.py --dc-ip 192.168.191.122 -u "fmcsorley@hutch.offsec" -p "CrabSharkJellyfish192" --user-spns         
+[+] Using Domain Controller at: 192.168.191.122
+[+] Getting defaultNamingContext from Root DSE
+[+]     Found: DC=hutch,DC=offsec
+[+] Attempting bind
+[+]     ...success! Binded as: 
+[+]      u:HUTCH\fmcsorley
+[+] Attempting to enumerate all User objects with SPNs
+[+]     Found 0 Users with SPNs:
+
+
+[*] Bye!
+
+```
 
 ## Ldapsearch&#x20;
+
+We can use ldapsearch for an initial foothold if we don't have access to a user account but can anonymously query LDAP.
 
 ### Get extensive output
 
 ```shell-session
 attacker@kali$ ldapsearch -x -H ldap://192.168.213.122 -b "dc=hutch,dc=offsec" > ldap_search.txt
-
 ```
 
 ### Grep for goodies
