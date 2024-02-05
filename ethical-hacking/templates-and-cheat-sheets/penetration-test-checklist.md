@@ -23,6 +23,8 @@
 
 ## Harvested a New Credential&#x20;
 
+<mark style="color:yellow;">**Make sure to test twice**</mark>. Once for domain and once for  "<mark style="color:yellow;">**--local-auth**</mark>" to test local user passwords.
+
 ### Spray Passwords
 
 * ```shell-session
