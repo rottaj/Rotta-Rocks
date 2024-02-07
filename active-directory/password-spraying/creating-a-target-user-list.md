@@ -91,7 +91,7 @@ We can use various tools to gather users when we find an LDAP anonymous bind.
 ldapsearch -H ldap://hutch.offsec0:389/ -x -s base -b '' "(objectClass=*)" "*" +
 ```
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>DC=hutch, DC=offsec</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>DC=hutch, DC=offsec</p></figcaption></figure>
 
 **Get users**
 

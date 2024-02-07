@@ -913,7 +913,7 @@ launch bloodhound
 
 If there's a web page that allows you to connect to a device on the internet like the image below: try thee following.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 reverse shell
 
