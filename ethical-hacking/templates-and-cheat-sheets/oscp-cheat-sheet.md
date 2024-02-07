@@ -580,6 +580,20 @@ ldapsearch - extensive output to file
 </strong><strong>cat ldap_search.txt | grep description
 </strong></code></pre>
 
+```bash
+ldapsearch -x -H ldap://dc.support.htb -D 'SUPPORT\ldap' -w 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' -b "CN=Users,DC=SUPPORT,DC=HTB" | tee ldap_dc.support.htb.txt
+```
+
+
+
+ldapdomaindump
+
+This tool creates csv files that we can use to view permissions, users, computers, etc.
+
+```bash
+ldapdomaindump -u 'support\ldap' -p 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' dc.support.htb
+```
+
 ### Linux
 
 linenum

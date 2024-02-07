@@ -130,3 +130,47 @@ description: DNS clients who are permitted to perform dynamic updates on behal
 description: Password set to CrabSharkJellyfish192 at user's request. Please c
 
 ```
+
+
+
+### Recommended Command
+
+```
+ldapsearch -x -H ldap://dc.support.htb -D 'SUPPORT\ldap' -w 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' -b "CN=Users,DC=SUPPORT,DC=HTB" | tee ldap_dc.support.htb.txt
+
+#
+# LDAPv3
+# base <CN=Users,DC=SUPPORT,DC=HTB> with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# Users, support.htb
+dn: CN=Users,DC=support,DC=htb
+objectClass: top
+objectClass: container
+cn: Users
+description: Default container for upgraded user accounts
+distinguishedName: CN=Users,DC=support,DC=htb
+instanceType: 4
+whenCreated: 20220528110155.0Z
+whenChanged: 20220528110155.0Z
+uSNCreated: 5660
+uSNChanged: 5660
+showInAdvancedViewOnly: FALSE
+name: Users
+objectGUID:: fvT3rPs5nUaComz/MQQwrw==
+systemFlags: -1946157056
+objectCategory: CN=Container,CN=Schema,CN=Configuration,DC=support,DC=htb
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220528110344.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# krbtgt, Users, support.htb
+dn: CN=krbtgt,CN=Users,DC=support,DC=htb
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+
+```
