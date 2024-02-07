@@ -36,3 +36,15 @@ hashcat (v6.2.5) starting
 ...
 ```
 
+
+
+## MacOS Keychain&#x20;
+
+```bash
+$ keychain2john MyKeychain.keychain-db >> keychain.hash
+```
+
+```bash
+$ hashcat -m 23100 keychain.hash /usr/share/wordlists/rockyou.txt
+```
+

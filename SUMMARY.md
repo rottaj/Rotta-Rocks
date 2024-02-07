@@ -276,6 +276,7 @@
 * [MalDev Environment Setup](malware-development/maldev-environment-setup/README.md)
   * [Setting up Dev Box](malware-development/maldev-environment-setup/setting-up-dev-box.md)
   * [Setting up Pwn Box](malware-development/maldev-environment-setup/setting-up-pwn-box.md)
+  * [Commando VM](malware-development/maldev-environment-setup/commando-vm.md)
 * [Maldev Checklist](malware-development/maldev-checklist.md)
 
 ## 🔍 Malware Analysis

@@ -1,5 +1,13 @@
 # Active Directory Toolkit
 
+Gitbooks
+
+Hacker Recipes has some pretty great notes on AD. Way better than my notes.
+
+{% embed url="https://www.thehacker.recipes/ad/" %}
+
+
+
 Here is a mindmap by Orange Cyberdefense:
 
 {% embed url="https://wadcoms.github.io/" %}

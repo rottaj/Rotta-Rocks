@@ -2,9 +2,7 @@
 
 
 
-## Cracking Zip Files
-
-
+## .Zip Files
 
 ### Zip2john
 
@@ -14,6 +12,10 @@
 ```
 
 ### Cracking w/ Hashcat
+
+
+
+#### 13600
 
 ```bash
 ┌──(kali㉿kali)-[~/…/Prep/OSCP-A/Crystal/backup]
@@ -43,3 +45,58 @@ Started: Wed Jan  3 14:49:07 2024
 Stopped: Wed Jan  3 14:49:09 2024
 
 ```
+
+#### 17200
+
+```
+hashcat -m 17200 zipped.hash /usr/share/wordlists/rockyou.txt
+```
+
+
+
+
+
+## PKCS#12 (.p12, .pfx)
+
+PKCS12 is typically used to store private keys. In this example, we'll crack and extract an RC4 encryption key and certificate.
+
+We can use a tool called [crackpkcs12](https://github.com/crackpkcs12/crackpkcs12) to crack a .pfx file
+
+```
+$ crackpkcs12 -d /usr/share/wordlists/rockyou.txt ../auth.pfx 
+
+Dictionary attack - Starting 4 threads
+
+*********************************************************
+Dictionary attack - Thread 3 - Password found: thuglegacy
+*********************************************************
+
+```
+
+### Extract keys
+
+Now with the password, we can extract the encrypted key and certificate. It'll ask to set a PEM password.
+
+```
+$openssl pkcs12 -in auth.pfx -nocerts -out auth.key-enc
+
+Enter Import Password:
+Enter PEM pass phrase:
+Verifying - Enter PEM pass phrase:
+```
+
+### Decrypt
+
+The key and certificate we extracted is encrypted. Let's decrypt it.
+
+```
+$ openssl rsa -in legacyy_dev_auth.key-enc -out legacyy_dev_auth.key
+Enter pass phrase for legacyy_dev_auth.key-enc:
+writing RSA key
+```
+
+### Dump certificate
+
+<pre><code><strong>$ openssl pkcs12 -in legacyy_dev_auth.pfx -clcerts -nokeys -out legacyy_dev_auth.crt
+</strong>Enter Import Password:
+</code></pre>
