@@ -4,6 +4,8 @@
 
 ## Introduction
 
+**TL;DR** _Active Directory Certificate Services has a lot of attack potential!_&#x20;
+
 {% embed url="https://posts.specterops.io/certified-pre-owned-d95910965cd2" %}
 
 ## Certify.exe

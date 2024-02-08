@@ -188,7 +188,7 @@
 * [Password Spraying](active-directory/password-spraying/README.md)
   * [Enumeration & Retrieving Password Policy](active-directory/password-spraying/enumeration-and-retrieving-password-policy.md)
   * [Creating a Target User List](active-directory/password-spraying/creating-a-target-user-list.md)
-  * [Internal Spraying - From Linux](active-directory/password-spraying/internal-spraying-from-linux.md)
+  * [Brute Force / Password Spraying - Linux Tools](active-directory/password-spraying/brute-force-password-spraying-linux-tools.md)
   * [Internal Spraying - From Windows](active-directory/password-spraying/internal-spraying-from-windows.md)
 * [Lateral Movement Techniques](active-directory/lateral-movement-techniques/README.md)
   * [WMI and WinRM](active-directory/lateral-movement-techniques/wmi-and-winrm.md)

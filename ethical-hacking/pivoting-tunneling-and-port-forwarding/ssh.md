@@ -209,3 +209,15 @@ victim@ubuntu ssh -N -R web_service_port:localhost:local_port kali@192.168.45.18
 ```bash
 kali@kali ssh -L local_port:localhost:web_service_port victim@victim_ip
 ```
+
+
+
+## Port Forwarding an Internal Web Service
+
+Say we discover a web service that is running locally, or only allows 127.0.0.1 to authenticate. We can port forward the service back to our kali host and access it locally.
+
+<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+
+```bash
+$ ssh nadine@10.10.10.184 -L 8443:127.0.0.1:8443
+```
