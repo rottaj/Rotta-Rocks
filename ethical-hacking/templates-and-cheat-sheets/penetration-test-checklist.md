@@ -167,11 +167,14 @@ If we have a shell on a box and notice a user has a private key in their home di
 
 ***
 
-## Lateral Movement
+## Active Directory Lateral Movement
 
 * [ ] bloodhound / sharphound (Shortest path to high value targets)
+* [ ] Certify / Certipy - Check for vulnerable ADCS's
 * [ ] mimikatz
 * [ ] netexec spray passwords & hashes
+
+
 
 
 
