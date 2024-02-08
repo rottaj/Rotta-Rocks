@@ -172,6 +172,11 @@ If we have a shell on a box and notice a user has a private key in their home di
 * [ ] Certify / Certipy - Check for vulnerable ADCS's
 * [ ] mimikatz
 * [ ] netexec spray passwords & hashes
+* [ ] NTLM Relay Attack
+* [ ] Check for Service Accounts
+* [ ] Kerberoast / AS-REPRoast
+
+
 
 
 
