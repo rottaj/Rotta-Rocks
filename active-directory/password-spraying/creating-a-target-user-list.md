@@ -79,7 +79,7 @@ SMB         172.16.5.5      445    ACADEMY-EA-DC01  INLANEFREIGHT.LOCAL\avazquez
 <SNIP>
 ```
 
-## Gathering Users with LDAP Anonymous
+## LDAP Anonymous bind
 
 We can use various tools to gather users when we find an LDAP anonymous bind.
 

