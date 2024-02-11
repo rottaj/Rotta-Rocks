@@ -10,7 +10,7 @@ Prior work as a Software Engineer in the Oil & Gas and Insurance sectors.
 
 ## Certifications
 
-<table><thead><tr><th width="185"></th><th></th><th data-hidden></th></tr></thead><tbody><tr><td>OSCP</td><td>Offensive Security Certified Professional</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="457">Name</th><th width="266">Date Obtained</th><th data-hidden></th></tr></thead><tbody><tr><td>Offensive Security Certified Professional (OSCP)</td><td>February 9, 2024</td><td></td></tr></tbody></table>
 
 ## What is the purpose of this?
 
