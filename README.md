@@ -8,6 +8,12 @@ A collection of my notes, blogs, and other nonsense. Diving into offensive tools
 
 Prior work as a Software Engineer in the Oil & Gas and Insurance sectors.
 
+
+
+### Certifications
+
+<table><thead><tr><th width="185"></th><th></th><th data-hidden></th></tr></thead><tbody><tr><td>OSCP</td><td>Offensive Security Certified Professional</td><td></td></tr></tbody></table>
+
 ## What is the purpose of this?
 
 The purpose of this web page is to provide information and resources related to offensive security. The materials within this web page should be used responsibly. Enjoy.
