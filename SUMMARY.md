@@ -248,6 +248,7 @@
     * [Patching NT API Stub](malware-development/evading-edr/bypassing-edr-hooks/patching-nt-api-stub.md)
     * [Calling Syscalls Directly (SSN)](malware-development/evading-edr/bypassing-edr-hooks/calling-syscalls-directly-ssn.md)
   * [PPID Spoofing](malware-development/evading-edr/ppid-spoofing.md)
+  * [Call Stack Spoofing](malware-development/evading-edr/call-stack-spoofing.md)
 * [Anti-Analysis Techniques](malware-development/anti-analysis-techniques/README.md)
   * [Anti-Debugging Techniques](malware-development/anti-analysis-techniques/anti-debugging-techniques/README.md)
     * [Check If Running In a Debugger](malware-development/anti-analysis-techniques/anti-debugging-techniques/check-if-running-in-a-debugger.md)
