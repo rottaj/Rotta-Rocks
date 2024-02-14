@@ -24,7 +24,7 @@ With Overpass the Hash, we can "over" abuse the NTLM user hash to gain a full Ke
 
 We can check if a machine is caching credentials by right-clicking on an applicaton -> "show more options" -> and see if "Run as different user" is an option.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

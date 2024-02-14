@@ -12,7 +12,7 @@ description: >-
 
 The diagram below can help us identify if we are dealing with an SSTI vulnerability and also identify the underlying template engine.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 In addition to the above diagram, we can try the following approaches to recognize the technology we are dealing with:
 
