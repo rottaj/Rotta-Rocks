@@ -219,6 +219,7 @@
     * [PE File Structure](malware-development/windows-internals/pe-file-format/pe-file-structure.md)
     * [DOS Header, DOS Stub, & Rich Header](malware-development/windows-internals/pe-file-format/dos-header-dos-stub-and-rich-header.md)
     * [NT Headers](malware-development/windows-internals/pe-file-format/nt-headers.md)
+    * [Data Directories & Section Headers](malware-development/windows-internals/pe-file-format/data-directories-and-section-headers.md)
 * [Memory Allocation](malware-development/memory-allocation/README.md)
   * [Private Memory Allocation](malware-development/memory-allocation/private-memory-allocation.md)
   * [Memory Mapping](malware-development/memory-allocation/memory-mapping.md)

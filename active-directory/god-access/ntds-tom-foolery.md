@@ -10,7 +10,7 @@ NTDS, specifically the NTDS.DIT file is not just a file within Active Directory;
 
 The NTDS.DIT file is located typically at: `C:\Windows\NTDS\Ntds.dit`. Though Administrators can specify alternate locations on setup.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Extracting Password Hashes
 
