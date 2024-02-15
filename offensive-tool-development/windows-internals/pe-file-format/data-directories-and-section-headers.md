@@ -6,7 +6,7 @@ What is a Data Directory? A Data Directory is as piece of data located within on
 
 <mark style="color:yellow;">**Data Directories contain useful information needed by the loader, an example is the Import Directory, which contains a list external functions imported from other libraries.]**</mark>
 
-<mark style="color:red;">**IMPORTANT:**</mark> Not all Data Directories have the same structure, the `IMAGE_DATA_DIRECTORY.VirtualAddress`, however the type of that directory is what determines how the chunk of data is parsed.
+<mark style="color:red;">**IMPORTANT:**</mark> **Not all Data Directories have the same structure**, the `IMAGE_DATA_DIRECTORY.VirtualAddress`, however the type of that directory is what determines how the chunk of data is parsed.
 
 ## Data Directories
 
@@ -84,3 +84,43 @@ Sections are the containers of the actual data of an executable file. They occup
 
 ### Section Headers
 
+After the Optional Headers comes the Section Headers. The headers contain information about the sections in the PE file.
+
+A Section Header is a struct `IMAGE_SECTION_HEADER` defined in `winnt.h`.
+
+```c
+typedef struct _IMAGE_SECTION_HEADER {
+    BYTE    Name[IMAGE_SIZEOF_SHORT_NAME];
+    union {
+            DWORD   PhysicalAddress;
+            DWORD   VirtualSize;
+    } Misc;
+    DWORD   VirtualAddress;
+    DWORD   SizeOfRawData;
+    DWORD   PointerToRawData;
+    DWORD   PointerToRelocations;
+    DWORD   PointerToLinenumbers;
+    WORD    NumberOfRelocations;
+    WORD    NumberOfLinenumbers;
+    DWORD   Characteristics;
+} IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER;
+```
+
+* **Name**: The name of the section. `IMAGE_SIZEOF_SHORT_NAME` is a max of 8 characters.
+* **PhysicalAddress or VirtualSize**: A `union`. (Only one member can have a value at a time). Contains the total size of the section when it's loaded into memory.
+* **VirtualAddress**: For executable images this address holds the first byte of the section relative to the image base. For object files, it holds the first byte of the section before relocation is applied.
+* **SizeOfRawData**: Contains the size of the section on Disk. Must be a multiple of `IMAGE_OPTIONAL_HEADER.FileAlignment`. `SizeOfRawData` and `VirtualSize` can be different.
+* **PointerToRawData**: A pointer to the first page of the section within the file. For executable images, it must be a multiple of `IMAGE_OPTIONAL_HEADER.FileAlignment`.
+* **PointerToRelocations**: A file pointer to the beginning of the relocation entries for the section. It sets to `0` for executable files.
+* **NumberOfLineNumbers**: The number of COFF line number entries for the section. **It's set to `0` because COFF debugging is deprecated**.
+* **Characteristics**: Flags that describe the characteristics of the section. Like if the section contains executable code, initialized/unitialized data, can be shared in memory.
+
+<mark style="color:red;">**NOTE**</mark><mark style="color:red;">:</mark> `SizeOfRawData` and `VirtualSize` can be different, this is because:
+
+`SizeOfRawData` must be a multiple of `IMAGE_OPTIONAL_HEADER.FIleAlignment` but `VirtualSize` is not.&#x20;
+
+
+
+**Here is the SectionHeader in PE-Bear**
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
