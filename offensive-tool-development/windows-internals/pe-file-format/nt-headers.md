@@ -59,9 +59,9 @@ typedef struct _IMAGE_FILE_HEADER {
 ```
 
 * **Machine**: This is the CPU architecture. We’re only interested in two of them, `0x8864` for `AMD64` and `0x14c` for `i38`
-* **NumberOfSections**: Holds the number of sections. (size of the section table).
+* <mark style="color:yellow;">**NumberOfSections**</mark>: Holds the number of sections. (size of the section table).
 * **TimeDateStamp**: When the file was created
-* <mark style="color:yellow;">**SizeOfOptionalHeader**</mark>: The size of the optional header. (Used to iterate through each  section)
+* <mark style="color:yellow;">**SizeOfOptionalHeader**</mark>: The size of the optional header. (Used to iterate through each section)
 
 
 
