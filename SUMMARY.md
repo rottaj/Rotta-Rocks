@@ -231,6 +231,8 @@
   * [NtQuerySystemInformation (winternl.h)](offensive-tool-development/process-enumeration/ntquerysysteminformation-winternl.h.md)
 * [Thread Enumeration](offensive-tool-development/thread-enumeration/README.md)
   * [CreateToolhelp32Snapshot](offensive-tool-development/thread-enumeration/createtoolhelp32snapshot.md)
+* [Access Tokens](offensive-tool-development/access-tokens/README.md)
+  * [Page 1](offensive-tool-development/access-tokens/page-1.md)
 * [Techniques and Exploitation Methods](offensive-tool-development/techniques-and-exploitation-methods/README.md)
   * [Thread Hijacking](offensive-tool-development/techniques-and-exploitation-methods/thread-hijacking.md)
   * [DLL Injection](offensive-tool-development/techniques-and-exploitation-methods/dll-injection.md)
