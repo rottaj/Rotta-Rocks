@@ -16,6 +16,7 @@
     * [NT Headers](offensive-tool-development/windows-internals/pe-file-format/nt-headers.md)
     * [Data Directories & Section Headers](offensive-tool-development/windows-internals/pe-file-format/data-directories-and-section-headers.md)
     * [Import Directory Table, ILT & IAT](offensive-tool-development/windows-internals/pe-file-format/import-directory-table-ilt-and-iat.md)
+    * [Image Export Table](offensive-tool-development/windows-internals/pe-file-format/image-export-table.md)
     * [PE Base Relocations](offensive-tool-development/windows-internals/pe-file-format/pe-base-relocations.md)
 * [Memory Allocation](offensive-tool-development/memory-allocation/README.md)
   * [Private Memory Allocation](offensive-tool-development/memory-allocation/private-memory-allocation.md)
