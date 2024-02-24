@@ -47,7 +47,7 @@ The most important members are:
 
 <mark style="color:red;">**NOTE:**</mark> The offset to `e_lfanew` is 0x3C from the start of the DOS Header.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## DOS Stub
 

@@ -60,6 +60,7 @@
   * [Call Stack Spoofing](offensive-tool-development/evading-edr/call-stack-spoofing.md)
   * [NTDLL Unhooking](offensive-tool-development/evading-edr/ntdll-unhooking/README.md)
     * [NTDLL Unhooking - From Disk](offensive-tool-development/evading-edr/ntdll-unhooking/ntdll-unhooking-from-disk.md)
+    * [NTDLL Unhooking - From KnownDlls](offensive-tool-development/evading-edr/ntdll-unhooking/ntdll-unhooking-from-knowndlls.md)
 * [Anti-Analysis Techniques](offensive-tool-development/anti-analysis-techniques/README.md)
   * [Anti-Debugging Techniques](offensive-tool-development/anti-analysis-techniques/anti-debugging-techniques/README.md)
     * [Check If Running In a Debugger](offensive-tool-development/anti-analysis-techniques/anti-debugging-techniques/check-if-running-in-a-debugger.md)
@@ -106,6 +107,12 @@
 * [Introduction to Malware Analysis](malware-analysis/introduction-to-malware-analysis/README.md)
   * [Resources](malware-analysis/introduction-to-malware-analysis/resources.md)
   * [Analysis Definition, Purpose, & Common Activities](malware-analysis/introduction-to-malware-analysis/analysis-definition-purpose-and-common-activities.md)
+
+## 🥾 Security Operation Center
+
+* [Network Traffic Analysis](security-operation-center/network-traffic-analysis/README.md)
+  * [Tcpdump](security-operation-center/network-traffic-analysis/tcpdump.md)
+  * [Wireshark](security-operation-center/network-traffic-analysis/wireshark.md)
 
 ## 🪟 Active Directory
 
