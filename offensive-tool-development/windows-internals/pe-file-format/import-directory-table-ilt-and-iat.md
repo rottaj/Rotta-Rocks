@@ -126,3 +126,58 @@ On disk, the IAT is identical to the ILT, however during bounding when the binar
 <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 **Above we can see the RVA's to the ILT & IAT.**
+
+
+
+## Fixing / Patching Import Address Table (IAT)
+
+<mark style="color:yellow;">**NOTE:**</mark> Advancing to the next element in the IAT is done by adding the size of the structure to the current element's address. The final element within the IAT array is represented by a nullified `IMAGE_IMPORT_DESCRIPTOR` structure.
+
+[<mark style="color:red;">**IMPORTANT:**</mark> A function can be resolved by both name and ordinal. In order to resolve the address, we need to determine how it's being imported first.](#user-content-fn-1)[^1]
+
+### Access Import Nable Table (INT)
+
+We can access the INT via the **`OriginalFirstThunk`** RVA from the **`IMPORT_IMAGE_DESCRIPTOR`**.
+
+```c
+typedef struct _IMAGE_THUNK_DATA64 {
+    union {
+        ULONGLONG ForwarderString;  // Used in the case of forwarded functions - not used.
+        ULONGLONG Function;         // The address of the function to be populated
+        ULONGLONG Ordinal;	    // Ordinal number of the function	
+        ULONGLONG AddressOfData;    // RVA to PIMAGE_IMPORT_BY_NAME - used only if the function is imported by name rather by ordinal.
+    } u1;
+} IMAGE_THUNK_DATA64;
+```
+
+
+
+### Determine if a function is being imported by Ordinal.
+
+To determine if a function is being imported by a name or ordinal, we can use **`IMAGE_SNAP_BY_ORDINAL`**. This verifies whether an import entry is being imported by an ordinal.
+
+```c
+pFunctionAddress = GetProcAddress(hModule, IMAGE_ORDINAL(PIMAGE_THUNK_DATA->u1.Ordinal));
+```
+
+If this function (`IMAGE_SNAP_ORDINAL`) returns **False**, it means that the import entry is being imported by name rather than ordinal.
+
+### Importing a function by Name
+
+If a function is being imported by name and not ordinal (see above), we can retrieve the functions name for use in `GetProcAddress` (relies on function name). We can retrieve the Name through the **`AddressOfData`** RVA found within **`IMAGE_THUNK_DATA`** that points to a **`IMAGE_IMPORT_BY_NAME`** struct:
+
+```c
+typedef struct _IMAGE_IMPORT_BY_NAME {
+    WORD    Hint;	// Look-up number of the function in the function export table - not used.
+    CHAR   Name[1];	// Function name
+} IMAGE_IMPORT_BY_NAME, *PIMAGE_IMPORT_BY_NAME;
+```
+
+When dealing with functions imported by name, their address can be resolved using the following code snippet:
+
+```c
+PIMAGE_IMPORT_BY_NAME pImgImportByName = (PIMAGE_IMPORT_BY_NAME)(pPeBaseAddress + PIMAGE_THUNK_DATA->u1.AddressOfData);
+pFunctionAddress = GetProcAddress(hModule, pImgImportByName->Name);
+```
+
+[^1]: IMPORTANT

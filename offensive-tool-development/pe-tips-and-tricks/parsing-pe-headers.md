@@ -214,6 +214,23 @@ _<mark style="color:yellow;">**Retrieving The Import Address Table**</mark>_
 IMAGE_IMPORT_DESCRIPTOR* pImgImpDesc = (PIMAGE_IMPORT_DESCRIPTOR)(pPE + ImgOptHdr.DataDirectory[IMAGE_DIRECTORY_ENTRY_IMPORT].VirtualAddress);
 ```
 
+### Parse Import Address Table
+
+Here is an example of crudely parsing an IAT. To iterate through the IAT we add the size of IMAGE\_DATA\_DIRECTORY with every iteration until we reach a NULLified version. (Represents the end). (View Local PE Injection & Reflective DLL Injection for reference).
+
+```c
+BOOL ParseImportAddressTable(IN PIMAGE_DATA_DIRECTORY pEntryImportDataDir, IN PBYTE pPeBaseAddress) {
+    for (SIZE_T i =0; i < pEntryImportDataDir->Size; i+=sizeof(IMAGE_IMPORT_DESCRIPTOR)) {
+        PIMAGE_IMPORT_DESCRIPTOR currentImport = (PIMAGE_IMPORT_DESCRIPTOR)(pPeBaseAddress + pEntryImportDataDir->VirtualAddress + i);
+        wprintf(L"%s\n", pPeBaseAddress + currentImport->Name);
+        if (currentImport-> FirstThunk == 0 && currentImport->OriginalFirstThunk == 0)
+            break
+    }
+}
+```
+
+&#x20;Alternatively we can use the common SectionFromRVA & Rva2Offset method which determines what section an RVA resides in by iterating through each section and calculating the difference.
+
 ### Additional Undocumented Structures
 
 Several undocumented structures can be accessed via the `IMAGE_DATA_DIRECTORY` array in the optional header but are not documented in the Winnt.h header file.&#x20;

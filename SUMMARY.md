@@ -5,7 +5,7 @@
 * [About Me](README.md)
 * [Recently Added](general/recently-added.md)
 
-## ☣ Offensive Tool Development
+## ☣️ Offensive Tool Development
 
 * [Windows Internals](offensive-tool-development/windows-internals/README.md)
   * [Registers](offensive-tool-development/windows-internals/registers.md)
@@ -40,6 +40,9 @@
   * [Process Hollowing](offensive-tool-development/techniques-and-exploitation-methods/process-hollowing.md)
 * [PE Tips & Tricks](offensive-tool-development/pe-tips-and-tricks/README.md)
   * [Parsing PE Headers](offensive-tool-development/pe-tips-and-tricks/parsing-pe-headers.md)
+  * [Patching IAT](offensive-tool-development/pe-tips-and-tricks/patching-iat.md)
+  * [Patching Base Relocations](offensive-tool-development/pe-tips-and-tricks/patching-base-relocations.md)
+  * [Fixing Memory Permissions](offensive-tool-development/pe-tips-and-tricks/fixing-memory-permissions.md)
   * [Embed an EXE inside a LNK](offensive-tool-development/pe-tips-and-tricks/embed-an-exe-inside-a-lnk.md)
 * [Staging](offensive-tool-development/staging/README.md)
   * [Fetch Payload from Web Server](offensive-tool-development/staging/fetch-payload-from-web-server.md)
@@ -222,7 +225,7 @@
   * [Password Reset Poisoning](web-application-security/other-attacks/password-reset-poisoning.md)
   * [Insecure HTTP Method Abuse](web-application-security/other-attacks/insecure-http-method-abuse.md)
 
-## 🌩 Cloud Security
+## 🌩️ Cloud Security
 
 * [Microsoft Azure](cloud-security/microsoft-azure.md)
 * [Amazon AWS](cloud-security/amazon-aws.md)
@@ -311,7 +314,7 @@
 
 * [Tools](digital-forensics/tools.md)
 
-## 🛠 Programming
+## 🛠️ Programming
 
 * [MASM Assembly ](programming/masm-assembly.md)
 * [Windows API](programming/windows-api/README.md)
