@@ -22,7 +22,7 @@ Visual Studio is as follows:  `vcruntimeXXX.dll` where XXX is the version number
 
 MinGW stands for "minimalist GNU". Mingw uses `msvcrt.dll` to export all functions.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -41,7 +41,7 @@ run:
     x86_64-w64-mingw32-gcc main.c -o Playground.exe -municode -static -nostdlib -nostartfiles
 ```
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Replacing CRT Library Functions w/ our own.
 

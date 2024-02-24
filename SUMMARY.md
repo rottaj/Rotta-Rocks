@@ -58,6 +58,8 @@
     * [Calling Syscalls Directly (SSN)](offensive-tool-development/evading-edr/bypassing-edr-hooks/calling-syscalls-directly-ssn.md)
   * [PPID Spoofing](offensive-tool-development/evading-edr/ppid-spoofing.md)
   * [Call Stack Spoofing](offensive-tool-development/evading-edr/call-stack-spoofing.md)
+  * [NTDLL Unhooking](offensive-tool-development/evading-edr/ntdll-unhooking/README.md)
+    * [NTDLL Unhooking - From Disk](offensive-tool-development/evading-edr/ntdll-unhooking/ntdll-unhooking-from-disk.md)
 * [Anti-Analysis Techniques](offensive-tool-development/anti-analysis-techniques/README.md)
   * [Anti-Debugging Techniques](offensive-tool-development/anti-analysis-techniques/anti-debugging-techniques/README.md)
     * [Check If Running In a Debugger](offensive-tool-development/anti-analysis-techniques/anti-debugging-techniques/check-if-running-in-a-debugger.md)

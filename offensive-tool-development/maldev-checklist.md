@@ -19,6 +19,7 @@ description: >-
 * [ ] Native NtAPI or Indirect Syscalls
 * [ ] Call Stack Spoofing
 * [ ] PPID Spoofing
+* [ ] Unhooking NTDLL
 * [ ] Payload execution control
 
 ### IAT Hiding / Obfuscation
