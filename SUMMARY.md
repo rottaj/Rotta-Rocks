@@ -115,7 +115,8 @@
   * [Wireshark](security-operation-center/network-traffic-analysis/wireshark.md)
 * [Splunk as SIEM](security-operation-center/splunk-as-siem/README.md)
   * [Using Splunk Applications](security-operation-center/splunk-as-siem/using-splunk-applications.md)
-  * [Indexing with Splunk Processing Language (SPL)](security-operation-center/splunk-as-siem/indexing-with-splunk-processing-language-spl.md)
+  * [Search Processing Language (SPL) Commands](security-operation-center/splunk-as-siem/search-processing-language-spl-commands.md)
+  * [Hunting with Splunk](security-operation-center/splunk-as-siem/hunting-with-splunk.md)
 
 ## 🪟 Active Directory
 
