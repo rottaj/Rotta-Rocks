@@ -113,6 +113,9 @@
 * [Network Traffic Analysis](security-operation-center/network-traffic-analysis/README.md)
   * [Tcpdump](security-operation-center/network-traffic-analysis/tcpdump.md)
   * [Wireshark](security-operation-center/network-traffic-analysis/wireshark.md)
+* [Splunk as SIEM](security-operation-center/splunk-as-siem/README.md)
+  * [Using Splunk Applications](security-operation-center/splunk-as-siem/using-splunk-applications.md)
+  * [Indexing with Splunk Processing Language (SPL)](security-operation-center/splunk-as-siem/indexing-with-splunk-processing-language-spl.md)
 
 ## 🪟 Active Directory
 
