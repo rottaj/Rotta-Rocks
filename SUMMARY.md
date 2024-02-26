@@ -105,9 +105,12 @@
   * [Signatures & Fingerprints](malware-analysis/static-analysis/signatures-and-fingerprints.md)
   * [Pestudio](malware-analysis/static-analysis/pestudio.md)
   * [x64dbg](malware-analysis/static-analysis/x64dbg.md)
-* [Dynamic Analysis](malware-analysis/dynamic-analysis.md)
-* [Returning Source Code](malware-analysis/returning-source-code/README.md)
-  * [.NET Binary](malware-analysis/returning-source-code/.net-binary.md)
+* [Dynamic Analysis](malware-analysis/dynamic-analysis/README.md)
+  * [Noriben](malware-analysis/dynamic-analysis/noriben.md)
+* [Reverse Engineering / Code Analysis](malware-analysis/reverse-engineering-code-analysis/README.md)
+  * [IDA](malware-analysis/reverse-engineering-code-analysis/ida.md)
+  * [Returning Source Code](malware-analysis/reverse-engineering-code-analysis/returning-source-code/README.md)
+    * [.NET Binary](malware-analysis/reverse-engineering-code-analysis/returning-source-code/.net-binary.md)
 * [Tools](malware-analysis/tools.md)
 
 ## 🥾 Security Operation Center
