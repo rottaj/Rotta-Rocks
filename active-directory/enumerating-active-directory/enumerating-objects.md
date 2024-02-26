@@ -8,7 +8,7 @@ In this page we'll cover some enumeration TTP's that we can use to further under
 
 Once we load data into bloodhound we can get a map of the users on the domain we want to target, this often gives us valuable information on intersting objects we want to enumerate further
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This shows that the **svc\_apache** service account can read the GMSA password, which means that the **svc\_apache** account is a Group Managed Service Account (gMSA).
 
