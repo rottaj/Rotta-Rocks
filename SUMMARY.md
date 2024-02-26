@@ -18,6 +18,8 @@
     * [Import Directory Table, ILT & IAT](offensive-tool-development/windows-internals/pe-file-format/import-directory-table-ilt-and-iat.md)
     * [Image Export Table](offensive-tool-development/windows-internals/pe-file-format/image-export-table.md)
     * [PE Base Relocations](offensive-tool-development/windows-internals/pe-file-format/pe-base-relocations.md)
+  * [Processes & PEB Structure](offensive-tool-development/windows-internals/processes-and-peb-structure.md)
+  * [Threads & TEB Structure](offensive-tool-development/windows-internals/threads-and-teb-structure.md)
 * [Memory Allocation](offensive-tool-development/memory-allocation/README.md)
   * [Private Memory Allocation](offensive-tool-development/memory-allocation/private-memory-allocation.md)
   * [Memory Mapping](offensive-tool-development/memory-allocation/memory-mapping.md)
@@ -99,14 +101,14 @@
 ## 🔍 Malware Analysis
 
 * [Network Traffic Analysis](malware-analysis/network-traffic-analysis.md)
-* [Dynamic Sandbox Analysis](malware-analysis/dynamic-sandbox-analysis.md)
-* [Using Intrusion Detection Systems (IDS)](malware-analysis/using-intrusion-detection-systems-ids.md)
+* [Static Analysis](malware-analysis/static-analysis/README.md)
+  * [Signatures & Fingerprints](malware-analysis/static-analysis/signatures-and-fingerprints.md)
+  * [Pestudio](malware-analysis/static-analysis/pestudio.md)
+  * [x64dbg](malware-analysis/static-analysis/x64dbg.md)
+* [Dynamic Analysis](malware-analysis/dynamic-analysis.md)
 * [Returning Source Code](malware-analysis/returning-source-code/README.md)
   * [.NET Binary](malware-analysis/returning-source-code/.net-binary.md)
 * [Tools](malware-analysis/tools.md)
-* [Introduction to Malware Analysis](malware-analysis/introduction-to-malware-analysis/README.md)
-  * [Resources](malware-analysis/introduction-to-malware-analysis/resources.md)
-  * [Analysis Definition, Purpose, & Common Activities](malware-analysis/introduction-to-malware-analysis/analysis-definition-purpose-and-common-activities.md)
 
 ## 🥾 Security Operation Center
 

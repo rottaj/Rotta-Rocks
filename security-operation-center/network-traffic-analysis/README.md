@@ -11,15 +11,9 @@ Doing so we establish a baseline for our environment and can respond to threats,
 * **Identifying** and analyzing traffic from non-standard ports, suspicious hosts, and issues with network protocols. (HTTP, SMB, TCP, etc.)
 * **Detecting** malware on the wire. (ransomware, exploits, non-standard interactions)
 
-
-
 ## BPF Syntax
 
 Berkely Packet Filters is a technology that enables a raw interface to read and write from the Data-Link layer. More on this later.
-
-
-
-
 
 ## Networking Reference
 
@@ -27,9 +21,7 @@ Berkely Packet Filters is a technology that enables a raw interface to read and 
 
 Here is a side by side of the <mark style="color:yellow;">**Open Systems Interconnect (OSI)**</mark> model and the <mark style="color:yellow;">Transmission Control Protocol - Internet Protocol (TCP-IP)</mark> model side by side.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### PDU Example
 

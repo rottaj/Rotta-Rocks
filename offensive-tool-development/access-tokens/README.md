@@ -4,7 +4,13 @@
 
 ## Introduction&#x20;
 
+Each process has a security context associated with it, embodied by an `Access Token`. This `Access Token` encapsulates information about the process's security privileges, including the user account under which the process operates and the access rights granted to the process.
+
+
+
 In short, an access token, is a security context under which a process and it's threads a run under. In respect the windows API, depending on which function you use typically determines what type of token you are using.
+
+
 
 **CreateProcess**: This function is used to create a process in user mode. This process runs under the security context of the executing user.
 

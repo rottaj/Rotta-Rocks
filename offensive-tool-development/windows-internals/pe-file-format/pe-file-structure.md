@@ -12,17 +12,29 @@ Executables `.exe`, Dynamic Link Libraries `.dll`, kernel modules `.srv`, Contro
 
 A typical PE structure is as follows:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>From 0xRicks blog post</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>From 0xRicks blog post</p></figcaption></figure>
+
+
+
+* `Text Section (.text)`: The hub where the executable code of the program resides.
+* `Data Section (.data)`: A storage for initialized global and static data variables.
+* `Read-only initialized data (.rdata)`: Houses read-only data such as constant values, string literals, and initialized global and static variables.
+* `Exception information (.pdata)`: A collection of function table entries utilized for exception handling.
+* `BSS Section (.bss)`: Holds uninitialized global and static data variables.
+* `Resource Section (.rsrc)`: Safeguards resources such as images, icons, strings, and version information.
+* `Import Section (.idata)`: Details about functions imported from other DLLs.
+* `Export Section (.edata)`: Information about functions exported by the executable.
+* `Relocation Section (.reloc)`: Details for relocating the executable's code and data when loaded at a different memory address.
 
 We can see the same thing in [hasherezade](https://github.com/hasherezade/pe-bear)'s PE-bear:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## DOS Header
 
 Every PE file starts with a DOS Header, it's a 64 bytes long structure. It makes the PE file a MS-DOS executable. It contains the magic bytes `4D 5A` that signifies the file is in the DOS family. Named after [Mark Zbikowski](https://en.wikipedia.org/wiki/Mark\_Zbikowski).
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## DOS Stub
 
