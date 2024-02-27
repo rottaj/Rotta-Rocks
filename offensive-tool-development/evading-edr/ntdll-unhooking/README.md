@@ -34,8 +34,8 @@ In order to write data we need to change the memory permissions to allow write a
 
 The offset of the .text section for most DLL's <mark style="color:yellow;">**on disk**</mark> is 0x400 (1024).
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 When a DLL is mapped into <mark style="color:yellow;">**memory of a process**</mark>, the .text section is mainly set to an offset of 0x1000 (4096).
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>

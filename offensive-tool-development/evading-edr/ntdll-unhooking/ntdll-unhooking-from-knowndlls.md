@@ -17,7 +17,7 @@ Using **SysInternals** **WinObj** we can inspect the KnownDLLs directory.
 [![Download](https://learn.microsoft.com/en-us/sysinternals/downloads/media/shared/download\_sm.png)](https://download.sysinternals.com/files/WinObj.zip) [**Download WinObj**](https://download.sysinternals.com/files/WinObj.zip) **(1.8 MB)**\
 **Run now** from [Sysinternals Live](https://live.sysinternals.com/Winobj.exe).
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

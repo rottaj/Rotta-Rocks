@@ -100,7 +100,8 @@
 
 ## 🔍 Malware Analysis
 
-* [Network Traffic Analysis](malware-analysis/network-traffic-analysis.md)
+* [Network Traffic Analysis](malware-analysis/network-traffic-analysis/README.md)
+  * [INetSim](malware-analysis/network-traffic-analysis/inetsim.md)
 * [Static Analysis](malware-analysis/static-analysis/README.md)
   * [Signatures & Fingerprints](malware-analysis/static-analysis/signatures-and-fingerprints.md)
   * [Pestudio](malware-analysis/static-analysis/pestudio.md)
@@ -109,8 +110,10 @@
   * [Noriben](malware-analysis/dynamic-analysis/noriben.md)
 * [Reverse Engineering / Code Analysis](malware-analysis/reverse-engineering-code-analysis/README.md)
   * [IDA](malware-analysis/reverse-engineering-code-analysis/ida.md)
+  * [x64dbg](malware-analysis/reverse-engineering-code-analysis/x64dbg.md)
   * [Returning Source Code](malware-analysis/reverse-engineering-code-analysis/returning-source-code/README.md)
     * [.NET Binary](malware-analysis/reverse-engineering-code-analysis/returning-source-code/.net-binary.md)
+* [Creating Detection Rules](malware-analysis/creating-detection-rules.md)
 * [Tools](malware-analysis/tools.md)
 
 ## 🥾 Security Operation Center
@@ -176,6 +179,7 @@
 * [Lab Environment Setup](active-directory/lab-environment-setup/README.md)
   * [Installing Forest](active-directory/lab-environment-setup/installing-forest.md)
   * [Adding Data to Active Directory](active-directory/lab-environment-setup/adding-data-to-active-directory.md)
+* [Templates & Cheat Sheets](active-directory/templates-and-cheat-sheets.md)
 
 ## 🐞 Web Application Security
 
