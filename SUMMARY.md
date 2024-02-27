@@ -61,6 +61,7 @@
   * [NTDLL Unhooking](offensive-tool-development/evading-edr/ntdll-unhooking/README.md)
     * [NTDLL Unhooking - From Disk](offensive-tool-development/evading-edr/ntdll-unhooking/ntdll-unhooking-from-disk.md)
     * [NTDLL Unhooking - From KnownDlls](offensive-tool-development/evading-edr/ntdll-unhooking/ntdll-unhooking-from-knowndlls.md)
+    * [NTDLL Unhooking - From Suspended Process](offensive-tool-development/evading-edr/ntdll-unhooking/ntdll-unhooking-from-suspended-process.md)
 * [Anti-Analysis Techniques](offensive-tool-development/anti-analysis-techniques/README.md)
   * [Anti-Debugging Techniques](offensive-tool-development/anti-analysis-techniques/anti-debugging-techniques/README.md)
     * [Check If Running In a Debugger](offensive-tool-development/anti-analysis-techniques/anti-debugging-techniques/check-if-running-in-a-debugger.md)
