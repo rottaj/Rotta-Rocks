@@ -8,6 +8,10 @@ description: >-
 
 
 
+## Introduction
+
+Memory Mapping functions are a great way of efficiently reading / writing data to files, loading KnownDLL's, and more
+
 ***
 
 ## CreateFileMapping
@@ -124,6 +128,45 @@ int wmain( int argc, wchar_t* argv[]) {
 ```
 
 _**To Map Memory in Remote Process We can use the following:**_
+
+##
+
+##
+
+## MapViewOfFile - Load KnownDLL
+
+We use MapViewOfFile in conjuction with pNtOpenSection to read the DLL into memory.
+
+```c
+
+OBJECT_ATTRIBUTES objAtr        = { 0 };
+UNICODE_STRING    unicodeString = { 0 };
+PVOID pBuffer = 0;
+HANDLE hSection;
+
+
+unicodeString.Buffer = (PWSTR)NTDLL;
+unicodeString.Length = wcslen(NTDLL) * sizeof(WCHAR);
+unicodeString.MaximumLength = unicodeString.Length + sizeof(WCHAR);
+
+InitializeObjectAttributes(&objAtr, &unicodeString, OBJ_CASE_INSENSITIVE, NULL, NULL);
+
+fnNtOpenSection pNtOpenSection = (fnNtOpenSection)GetProcAddress(GetModuleHandleW(L"NTDLL"), "NtOpenSection");
+
+NTSTATUS status = pNtOpenSection(&hSection, SECTION_MAP_READ, &objAtr);
+if (status != 0x00) {
+    printf("[!] NtOpenSection Failed With Error : 0x%0.8X \n", status);
+    return -1;
+}
+
+pBuffer = MapViewOfFile(hSection, FILE_MAP_READ, NULL, NULL, NULL);
+if (MapViewOfFile == NULL) {
+    wprintf(L"[!] MapViewOfFile Failed %d\n", GetLastError());
+    return -1;
+}
+```
+
+##
 
 ## MapViewOfFile2
 
