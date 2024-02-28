@@ -42,9 +42,68 @@ typedef struct _PEB {
 * **Ldr**: A pointer to a [PEB\_LDR\_DATA](https://learn.microsoft.com/en-us/windows/desktop/api/winternl/ns-winternl-peb\_ldr\_data) structure that contains information about the loaded DLL's
 * **BeingDebugged**: Is the process in debugging mode.
 
-## Access PEB (x64)
+## Access Local PEB (x64)
 
 ```c
 #include <winternl.h>
+// Get PEB structure
 PPEB pPeb = (PPEB)__readgsqword(0x60);
+
+// HELPER FUNCTIONS
+// Get of current process (call pLdr->DllBase to get base address)
+PLDR_DATA_TABLE_ENTRY pLdr = (PLDR_DATA_TABLE_ENTRY)((PBYTE)(pPeb->Ldr->InMemoryOrderModuleList.Flink - 0x10)
 ```
+
+##
+
+### Get Local Base Address (NTDLL)
+
+Flink actually returns the address of the end of the structure. Which is why we subtract 0x10 (size of entry) to get to the beginning.
+
+```c
+PVOID FetchLocalNtdllAddress() {
+    PPEB pPeb = (PPEB)__readgsqword(0x60);
+    PLDR_DATA_TABLE_ENTRY pLdr = (PLDR_DATA_TABLE_ENTRY)((PBYTE)pPeb->Ldr->InMemoryOrderModuleList.Flink->Flink - 0x10);
+    return pLdr->DllBase;
+}
+```
+
+##
+
+## Access Remote PEB (x64)
+
+To access a remote processes PEB structure & get the remote address of entry point we can use the following:
+
+
+
+## Suspended Processes
+
+Suspended processes can be a nice trick when it comes to EDR since they can't load their hooks into a process that is suspended
+
+### Create Suspended Process
+
+```c
+STARTUPINFO si = {0};
+PROCESS_INFORMATION pi = {0};
+
+si->cb = sizeof(si);
+// Just a POC: Update this with the dynamic filepath fetch for "svchost.exe"
+if (CreateProcessW(L"C:\\Windows\\System32\\svchost.exe", 
+ NULL,
+ NULL, 
+ NULL, 
+ FALSE, 
+ DEBUG_PROCESS, // Can use CREATE_SUSPENDED also both work fine. 
+ NULL, 
+ NULL, 
+ si, 
+ pi
+) == 0) {
+    wprintf(L"CreateProcessW Failed %d", GetLastError()) ;
+    return FALSE;
+};
+// Modify suspended process
+
+ResumeThread (pi.hThread);
+```
+
