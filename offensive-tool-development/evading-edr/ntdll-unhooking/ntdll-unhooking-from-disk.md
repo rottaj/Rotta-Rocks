@@ -21,7 +21,7 @@ I'm not going to include a ReadFile example.&#x20;
 
 Something worth noting: SEC\_IMAGE\_NO\_EXECUTE does not trigger [PsSetLoadImageNotifyRoutine](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pssetloadimagenotifyroutine) callback. Using this will not trigger EDRs.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### CreateFileMappingW & MapViewOfFile
 

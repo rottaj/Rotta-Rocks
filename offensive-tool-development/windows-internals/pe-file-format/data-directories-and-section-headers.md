@@ -123,4 +123,4 @@ typedef struct _IMAGE_SECTION_HEADER {
 
 **Here is the SectionHeader in PE-Bear**
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>

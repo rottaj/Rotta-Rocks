@@ -13,6 +13,29 @@ A process in Windows includes:
 * **Access Tokens (Security Context)**: Access tokens encapsulate information about the processes security privileges. Includes the user account and it's access rights.
 * **Threads**: Processes run atlest 1 or more threads. Threads enable concurrent execution.
 
+
+
+## Process Initialization and csrss.exe
+
+Normally, a new process is created with `CreateProcess` (or one of it's variants). Here is the general flow:
+
+* NtCreateProcess is called.
+  * The target exe file is opened and the .text section is called.
+  * The initial thread and stack are created along with it's security context.
+* Windows subsystem initialization is performed
+  * A message is sent to the Client/Server Runtime Subsystem (csrss.exe) to notify the creation of a new process.
+  * csrss performs it's own initialization (such as allocating structures for new process)
+* The initial thread is resumed
+* Process initialization is performed in the security context of the new process.
+
+The first thread that a process runs is `LdrInitializeThunk`. This is the initialization function before execution is transferred to the user-supplied thread entry point.
+
+
+
+
+
+
+
 ## PEB Structure
 
 ```c
