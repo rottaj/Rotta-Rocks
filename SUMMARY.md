@@ -41,6 +41,7 @@
   * [Shellcode Reflective DLL Injection](offensive-tool-development/techniques-and-exploitation-methods/shellcode-reflective-dll-injection.md)
   * [APC Injection](offensive-tool-development/techniques-and-exploitation-methods/apc-injection.md)
   * [Function Stomping](offensive-tool-development/techniques-and-exploitation-methods/function-stomping.md)
+  * [DLL Sideloading](offensive-tool-development/techniques-and-exploitation-methods/dll-sideloading.md)
   * [Local PE Injection](offensive-tool-development/techniques-and-exploitation-methods/local-pe-injection.md)
   * [Reflective DLL Injection](offensive-tool-development/techniques-and-exploitation-methods/reflective-dll-injection.md)
   * [Process Hollowing](offensive-tool-development/techniques-and-exploitation-methods/process-hollowing.md)
