@@ -14,7 +14,7 @@ Lots of legitimate applications use NTAPI functions so it shouldn't be an IOC if
 
 Below is the spec for NTAPI function NtOpenSection
 
-<figure><img src="../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
 
 ### Using in code
 
@@ -44,7 +44,7 @@ STATUS = pNtOpenSection(&hSection, SECTION_MAP_READ, &ObjAtr);
 
 **Confirming**:
 
-<figure><img src="../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
 
 **NOTE:** When using NTAPI it's suggested to create your own versions for GetProcAddress & GetModuleHandle preferably with string hashing.
 
@@ -54,7 +54,7 @@ It's that easy!
 
 ## Common Structures & Variables
 
-When using NTAPI functions you typically run into common structures and variable types. Here is a collection of some for useful reference:
+When using NTAPI functions you typically run into undocumented structures, for this reason we will have to manually implement them ourselves. Here are some common ones:
 
 ### OBJECT\_ATTRIBUTES
 
@@ -76,4 +76,55 @@ UniStr.Length = wcslen(NTDLL) * sizeof(WCHAR);
 UniStr.MaximumLength = UniStr.Length + sizeof(WCHAR);
 
 InitializeObjectAttributes(&ObjAtr, &UniStr, OBJ_CASE_INSENSITIVE, NULL, NULL);
+```
+
+
+
+### SYSTEM\_PROCESS\_INFORMATION
+
+SYSTEM\_PROCESS\_INFORMATION is vaguely documented by Microsoft. Here is the full structure found here:
+
+{% embed url="https://ntdoc.m417z.com/system_process_information" %}
+
+{% embed url="https://github.com/winsiderss/systeminformer/blob/master/phnt/include/ntexapi.h#L1736" %}
+
+```c
+typedef struct _SYSTEM_PROCESS_INFORMATION
+{
+    ULONG NextEntryOffset;
+    ULONG NumberOfThreads; // Size of the Threads member
+    LARGE_INTEGER WorkingSetPrivateSize; 
+    ULONG HardFaultCount; 
+    ULONG NumberOfThreadsHighWatermark; 
+    ULONGLONG CycleTime; 
+    LARGE_INTEGER CreateTime;
+    LARGE_INTEGER UserTime;
+    LARGE_INTEGER KernelTime;
+    UNICODE_STRING ImageName;
+    KPRIORITY BasePriority;
+    HANDLE UniqueProcessId;
+    HANDLE InheritedFromUniqueProcessId;
+    ULONG HandleCount;
+    ULONG SessionId;
+    ULONG_PTR UniqueProcessKey; 
+    SIZE_T PeakVirtualSize;
+    SIZE_T VirtualSize;
+    ULONG PageFaultCount;
+    SIZE_T PeakWorkingSetSize;
+    SIZE_T WorkingSetSize;
+    SIZE_T QuotaPeakPagedPoolUsage;
+    SIZE_T QuotaPagedPoolUsage;
+    SIZE_T QuotaPeakNonPagedPoolUsage;
+    SIZE_T QuotaNonPagedPoolUsage;
+    SIZE_T PagefileUsage;
+    SIZE_T PeakPagefileUsage;
+    SIZE_T PrivatePageCount;
+    LARGE_INTEGER ReadOperationCount;
+    LARGE_INTEGER WriteOperationCount;
+    LARGE_INTEGER OtherOperationCount;
+    LARGE_INTEGER ReadTransferCount;
+    LARGE_INTEGER WriteTransferCount;
+    LARGE_INTEGER OtherTransferCount;
+    SYSTEM_THREAD_INFORMATION Threads[1]; // Threads member
+} SYSTEM_PROCESS_INFORMATION, *PSYSTEM_PROCESS_INFORMATION;
 ```

@@ -70,7 +70,11 @@ typedef struct _PEB {
 ```c
 #include <winternl.h>
 // Get PEB structure
-PPEB pPeb = (PPEB)__readgsqword(0x60);
+#ifdef _WIN64
+	PPEB pPeb = (PPEB)__readgsqword(0x60);
+#elif _WIN32
+	PPEB pPeb = (PPEB)__readfsdword(0x30);
+#endif // _WIN64
 
 // HELPER FUNCTIONS
 // Get of current process (call pLdr->DllBase to get base address)

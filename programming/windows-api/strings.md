@@ -8,7 +8,7 @@ Probably the biggest source of my frustration when working with the Windows API 
 
 ## wcsncmp
 
-When working with functions like SYSTEM\_PROC\_INFORMATION we will run into the use of unicode strings when enumerating process image names.
+When working with structures like SYSTEM\_PROCESS\_INFORMATION we will run into the use of unicode strings when enumerating process image names.
 
 ```c
 if (wcsncmp(L"Teams.exe", SystemProcInfo->ImageName.Buffer, SystemProcInfo->ImageName.Length / sizeof(WCHAR)) == 0) {
