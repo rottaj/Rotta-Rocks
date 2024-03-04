@@ -21,7 +21,7 @@ Berkely Packet Filters is a technology that enables a raw interface to read and 
 
 Here is a side by side of the <mark style="color:yellow;">**Open Systems Interconnect (OSI)**</mark> model and the <mark style="color:yellow;">Transmission Control Protocol - Internet Protocol (TCP-IP)</mark> model side by side.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### PDU Example
 

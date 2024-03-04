@@ -1,3 +1,9 @@
+---
+description: >-
+  Processes & the Process Environment Block (PEB) is  crucial to understand
+  thoroughly. There's a lot to it, I'll try to cover most of it here.
+---
+
 # Processes & PEB Structure
 
 ## Introduction
@@ -12,8 +18,6 @@ A process in Windows includes:
 * **Handle Table**: Holds the handles that are opened.&#x20;
 * **Access Tokens (Security Context)**: Access tokens encapsulate information about the processes security privileges. Includes the user account and it's access rights.
 * **Threads**: Processes run atlest 1 or more threads. Threads enable concurrent execution.
-
-
 
 ## Process Initialization and csrss.exe
 
@@ -32,11 +36,9 @@ The first thread that a process runs is `LdrInitializeThunk`. This is the initia
 
 
 
-
-
-
-
 ## PEB Structure
+
+Much of the PEB is undocumented. Use [http://undocumented.ntinternals.net/](http://undocumented.ntinternals.net/) for more info.
 
 ```c
 typedef struct _PEB {
@@ -65,6 +67,42 @@ typedef struct _PEB {
 * **Ldr**: A pointer to a [PEB\_LDR\_DATA](https://learn.microsoft.com/en-us/windows/desktop/api/winternl/ns-winternl-peb\_ldr\_data) structure that contains information about the loaded DLL's
 * **BeingDebugged**: Is the process in debugging mode.
 
+### PEB\_LDR\_DATA
+
+The PEB\_LDR\_DATA structure contains informations about the loaded DLL's
+
+```c
+typedef struct _PEB_LDR_DATA
+{
+     ULONG Length;
+     UCHAR Initialized;
+     PVOID SsHandle;
+      InLoadOrderModuleList;
+      InMemoryOrderModuleList;
+      InInitializationOrderModuleList;
+     PVOID EntryInProgress;
+} PEB_LDR_DATA, *PPEB_LDR_DATA;
+```
+
+* **InMemoryOrderModuleList**: Doubly linked list of LIST\_ENTRYs containing pointers to a loaded DLL.&#x20;
+* **Length**: Length of the list.
+
+### LIST\_ENTRY
+
+LIST\_ENTRY contains pointers to [LDR\_DATA\_TABLE\_ENTRY](https://www.geoffchappell.com/studies/windows/km/ntoskrnl/inc/api/ntldr/ldr\_data\_table\_entry.htm) (the loaded DLL).
+
+```c
+typedef struct _LIST_ENTRY {
+   struct _LIST_ENTRY *Flink;
+   struct _LIST_ENTRY *Blink;
+} LIST_ENTRY, *PLIST_ENTRY, *RESTRICTED_POINTER PRLIST_ENTRY;
+```
+
+* **Flink**: points to the next entry in the list.
+* **Blink**: points to the previous entry in the list
+* <mark style="color:yellow;">**IMPORTANT**</mark>: Flink and Blink don't point to the start of the struct. They point to the InMemoryOrderModuleList member of the struct. <mark style="color:yellow;">To get the start of</mark>`LDR_DATA_TABLE_ENTRY` <mark style="color:yellow;">from them, subtract InMemoryOrderModuleList offset</mark> `(0x10)`<mark style="color:yellow;">. Or</mark> `CONTAINING_RECORD` <mark style="color:yellow;">macro.</mark>
+* <mark style="color:green;">Example</mark>: (->Flink - 0x10) Full example below.
+
 ## Access Local PEB (x64)
 
 ```c
@@ -81,7 +119,7 @@ typedef struct _PEB {
 PLDR_DATA_TABLE_ENTRY pLdr = (PLDR_DATA_TABLE_ENTRY)((PBYTE)(pPeb->Ldr->InMemoryOrderModuleList.Flink - 0x10)
 ```
 
-##
+
 
 ### Get Local Base Address (NTDLL)
 
@@ -133,4 +171,100 @@ if (CreateProcessW(L"C:\\Windows\\System32\\svchost.exe",
 
 ResumeThread (pi.hThread);
 ```
+
+
+
+## Additional
+
+
+
+### Iterate through LDR\_DATA\_TABLE\_ENTY Linked List
+
+LDR\_DATA\_TABLE\_ENTRY is an important data structure in the PEB. There's some important information here so strap in.
+
+**Iterate through linked list:**
+
+```c
+// Get PPEB
+PPEB pPeb = (PPEB)__readgsqword(0x60);
+PPEB_LDR_DATA          pLdr   = (PPEB_LDR_DATA)(pPeb->Ldr);
+
+// Point to the first entry in linked list.
+PLDR_DATA_TABLE_ENTRY   pDte   = (PLDR_DATA_TABLE_ENTRY)(pLdr->InMemoryOrderModuleList.Flink);
+
+// Not null means there are more entrys in the list.
+while (pDte) {
+    if (pDte->FullDllName.Buffer == 0) {
+        break;
+    }
+    wprintf(L"[+] %ls ", pDte->FullDllName.Buffer);
+    wprintf(L"%p\n", pDte);
+    
+    // Dereference and advance
+    pDte = *(PLDR_DATA_TABLE_ENTRY*)(pDte); 
+}
+
+```
+
+* The `pDte = *(PLDR_DATA_TABLE_ENTRY*)(pDte);` is a common method for advancing in linked lists in C.
+* In this linked list, the pointer to the next node is obtained by derefencing the current node. This is because the nodes embedded within a larger structure (`PLDR_DATA_TABLE_ENTRY`), and the linked list pointers are part of that structure.
+
+To understand more how this works, let's examine the following code:.&#x20;
+
+```c
+pDte = *(PLDR_DATA_TABLE_ENTRY*)(pDte);
+```
+
+\
+The above command derefernces the value stored at the address pointed to by `pDte` and then casting the result to a pointer to the `PLDR_DATA_TABLE_ENTRY` structure. This is simply how linked lists work. It looks like this:
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### LDR\_DATA\_TABLE\_ENTRY
+
+This is a node of the doubly linked list that contains loaded DLL information. Look above to enumerate.
+
+This is the documented version of LDR\_DATA\_TABLE\_ENTRY.&#x20;
+
+```c
+typedef struct _LDR_DATA_TABLE_ENTRY
+{
+      InLoadOrderLinks;
+      InMemoryOrderLinks;
+      InInitializationOrderLinks;
+     PVOID DllBase;
+     PVOID EntryPoint;
+     ULONG SizeOfImage;
+      FullDllName;
+      BaseDllName;
+     ULONG Flags;
+     WORD LoadCount;
+     WORD TlsIndex;
+     union
+     {
+           HashLinks;
+          struct
+          {
+               PVOID SectionPointer;
+               ULONG CheckSum;
+          };
+     };
+     union
+     {
+          ULONG TimeDateStamp;
+          PVOID LoadedImports;
+     };
+     _ACTIVATION_CONTEXT * EntryPointActivationContext;
+     PVOID PatchInformation;
+      ForwarderLinks;
+      ServiceTagLinks;
+      StaticLinks;
+} LDR_DATA_TABLE_ENTRY, *PLDR_DATA_TABLE_ENTRY;
+```
+
+* <mark style="color:yellow;">**InInitializationOrderLinks.Flink**</mark>: `This is the base address of the DLL.` It is `Reserved2[0]` in WinAPI. The name doesn't suggest it, but Microsoft likes to confuse people.
 

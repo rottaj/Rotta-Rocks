@@ -12,7 +12,7 @@ Executables `.exe`, Dynamic Link Libraries `.dll`, kernel modules `.srv`, Contro
 
 A typical PE structure is as follows:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>From 0xRicks blog post</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>From 0xRicks blog post</p></figcaption></figure>
 
 
 
@@ -28,13 +28,13 @@ A typical PE structure is as follows:
 
 We can see the same thing in [hasherezade](https://github.com/hasherezade/pe-bear)'s PE-bear:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## DOS Header
 
 Every PE file starts with a DOS Header, it's a 64 bytes long structure. It makes the PE file a MS-DOS executable. It contains the magic bytes `4D 5A` that signifies the file is in the DOS family. Named after [Mark Zbikowski](https://en.wikipedia.org/wiki/Mark\_Zbikowski).
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## DOS Stub
 

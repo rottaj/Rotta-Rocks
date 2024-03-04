@@ -156,7 +156,7 @@ int wmain() {
 
 ### Custom GetModuleHandle
 
-The WinAPI function GetModuleHandle retrieves the handle for a specified DLL. The function returns a handle or NULL if the DLL does not exist in the calling process.
+The WinAPI function GetModuleHandle retrieves the handle for a specified DLL. The function returns a handle or NULL if the DLL does not exist in the calling process. <mark style="color:yellow;">This handle is actually just the base address to the module. So we are just trying to retreive the base address of the DLL.</mark>
 
 ```c
 HMODULE GetModuleHandle(IN LPCWSTR szModuleName){}
@@ -244,7 +244,13 @@ typedef struct _LDR_DATA_TABLE_ENTRY {
 
 
 
-#### GetModuleHandle Code
+####
+
+### GetModuleHandle Code
+
+GetModuleHandle returns a handle to the DLL specified. This handle is actually just the base address of the loaded DLL in memory. So we just have to locate this base address and return it.
+
+
 
 {% code fullWidth="true" %}
 ```c
