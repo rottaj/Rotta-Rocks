@@ -350,5 +350,6 @@
   * [Deleting Files](programming/windows-api/deleting-files.md)
   * [Strings](programming/windows-api/strings.md)
   * [wininet.h](programming/windows-api/wininet.h.md)
+  * [Hardcoing WinAPI Functions](programming/windows-api/hardcoing-winapi-functions.md)
 * [Position Independent Code (PIC)](programming/position-independent-code-pic/README.md)
   * [Creating Shellcode](programming/position-independent-code-pic/creating-shellcode.md)
