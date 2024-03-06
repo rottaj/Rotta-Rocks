@@ -11,7 +11,7 @@ description: >-
 
 Every header shown is a struct that holds information about the PE file.
 
-![](<../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 
 

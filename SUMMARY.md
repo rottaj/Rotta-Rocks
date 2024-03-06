@@ -20,6 +20,9 @@
     * [PE Base Relocations](offensive-tool-development/windows-internals/pe-file-format/pe-base-relocations.md)
   * [Processes & PEB Structure](offensive-tool-development/windows-internals/processes-and-peb-structure.md)
   * [Threads & TEB Structure](offensive-tool-development/windows-internals/threads-and-teb-structure.md)
+  * [Event Tracing for Windows (ETW)](offensive-tool-development/windows-internals/event-tracing-for-windows-etw/README.md)
+    * [Interacting with ETW](offensive-tool-development/windows-internals/event-tracing-for-windows-etw/interacting-with-etw.md)
+    * [ETW Tools](offensive-tool-development/windows-internals/event-tracing-for-windows-etw/etw-tools.md)
 * [Enumeration](offensive-tool-development/enumeration/README.md)
   * [Process Enumeration](offensive-tool-development/enumeration/process-enumeration/README.md)
     * [CreateToolhelp32Snapshot](offensive-tool-development/enumeration/process-enumeration/createtoolhelp32snapshot.md)
@@ -58,6 +61,7 @@
   * [String Hashing](offensive-tool-development/bypassing-av/string-hashing.md)
   * [Hiding & Obfuscating IAT](offensive-tool-development/bypassing-av/hiding-and-obfuscating-iat.md)
   * [Custom WINAPI Functions](offensive-tool-development/bypassing-av/custom-winapi-functions.md)
+  * [File Bloating](offensive-tool-development/bypassing-av/file-bloating.md)
 * [Evading EDR](offensive-tool-development/evading-edr/README.md)
   * [Payload Execution Control](offensive-tool-development/evading-edr/payload-execution-control.md)
   * [Calling NTAPI Directly](offensive-tool-development/evading-edr/calling-ntapi-directly/README.md)
@@ -132,6 +136,8 @@
   * [Using Splunk Applications](security-operation-center/splunk-as-siem/using-splunk-applications.md)
   * [Search Processing Language (SPL) Commands](security-operation-center/splunk-as-siem/search-processing-language-spl-commands.md)
   * [Hunting with Splunk](security-operation-center/splunk-as-siem/hunting-with-splunk.md)
+* [Templates & Cheat Sheets](security-operation-center/templates-and-cheat-sheets/README.md)
+  * [Interview Prep](security-operation-center/templates-and-cheat-sheets/interview-prep.md)
 
 ## 🪟 Active Directory
 
@@ -351,5 +357,7 @@
   * [Strings](programming/windows-api/strings.md)
   * [wininet.h](programming/windows-api/wininet.h.md)
   * [Hardcoing WinAPI Functions](programming/windows-api/hardcoing-winapi-functions.md)
+* [Visual Studio](programming/visual-studio/README.md)
+  * [Creating DLL's](programming/visual-studio/creating-dlls.md)
 * [Position Independent Code (PIC)](programming/position-independent-code-pic/README.md)
   * [Creating Shellcode](programming/position-independent-code-pic/creating-shellcode.md)

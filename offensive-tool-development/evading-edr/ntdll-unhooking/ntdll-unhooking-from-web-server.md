@@ -16,7 +16,7 @@ Because `ntdll.dll` must be fetched programmatically, it's important to understa
 2. [https://msdl.microsoft.com/download/symbols/ntdll.dll/2EEE8BDD1ee000/ntdll.dll](https://msdl.microsoft.com/download/symbols/ntdll.dll/2EEE8BDD1ee000/ntdll.dll)
 3. [https://msdl.microsoft.com/download/symbols/ntdll.dll/F2E8A5AB214000/ntdll.dll](https://msdl.microsoft.com/download/symbols/ntdll.dll/F2E8A5AB214000/ntdll.dll)
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 * "**1ee000**" in the URL, is 2023424 in decimal.&#x20;
 * "**2023424**" is NTDLL's VirtualSize (`OptionalHeader->SizeOfImage`)

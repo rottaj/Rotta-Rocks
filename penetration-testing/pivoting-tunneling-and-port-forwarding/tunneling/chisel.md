@@ -148,7 +148,7 @@ C:\Users\marcus> chisel.exe client 192.168.119.5:8080 R:80:172.16.6.241:80
 
 #### We can navigate to 127.0.0.1 and see the portforwarded web service
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We may need to upate our /etc/hosts to fit the domain name.
 
