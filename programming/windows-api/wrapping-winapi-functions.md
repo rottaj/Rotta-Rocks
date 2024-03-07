@@ -1,4 +1,4 @@
-# Hardcoing WinAPI Functions
+# Wrapping WinAPI Functions
 
 ## Introduction
 
@@ -10,10 +10,12 @@ Like NTAPI, there may be reasons why we want to hard-code our own WinAPI functio
 
 Here are some common examples.
 
-{% code fullWidth="true" %}
-```c
-typedef HMODULE (WINAPI* fnLoadLibraryA)(LPCSTR lpLibFileName);
+<pre class="language-c" data-full-width="true"><code class="lang-c">typedef int (WINAPI* fnwprintf )(const wchar_t *format, ...);
 
+typedef void (WINAPI* fnOutputDebugString) (LPCSTR lpOutputString);
+<strong>
+</strong><strong>typedef HMODULE (WINAPI* fnLoadLibraryA)(LPCSTR lpLibFileName);
+</strong>
 typedef LPVOID (WINAPI* fnVirtualAlloc)(LPVOID lpAddress, SIZE_T dwSize, DWORD flAllocationType, DWORD flProtect);
 
 typedef BOOL (WINAPI* fnVirtualProtect)(LPVOID lpAddress, SIZE_T dwSize, DWORD flNewProtect, PDWORD lpflOldProtect);
@@ -23,8 +25,8 @@ typedef BOOLEAN (WINAPI* fnRtlAddFunctionTable)(PRUNTIME_FUNCTION FunctionTable,
 typedef NTSTATUS (NTAPI* fnNtFlushInstructionCache)(HANDLE hProcess, PVOID BaseAddress, ULONG NumberOfBytesToFlush);
 
 typedef BOOL(WINAPI* fnDllMain)(HINSTANCE, DWORD, LPVOID);
-```
-{% endcode %}
+
+</code></pre>
 
 
 

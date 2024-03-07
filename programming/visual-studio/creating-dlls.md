@@ -20,3 +20,51 @@ To add an external function use the extern keyword
 extern __declspec(dllexport) BOOL ReflectiveFunction() {
 }
 ```
+
+
+
+## Template
+
+<pre class="language-c"><code class="lang-c"><strong>#include &#x3C;windows.h>
+</strong><strong>#include &#x3C;stdio.h>
+</strong><strong>
+</strong><strong>VOID PayloadFunction() {
+</strong>
+    MessageBoxA(NULL, "Foo", "Bar", MB_OK | MB_ICONINFORMATION);
+}
+
+BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpReserved) {
+
+    switch (dwReason)
+    {
+        case DLL_PROCESS_ATTACH:
+            PayloadFunction();
+            break;
+        case DLL_THREAD_ATTACH:
+        case DLL_THREAD_DETACH:
+        case DLL_PROCESS_DETACH:
+            break;
+    }
+    return TRUE;
+}
+
+
+extern __declspec(dllexport) BOOL ReflectiveFunction() {
+}
+</code></pre>
+
+
+
+###
+
+## Extra
+
+I know I'll be looking for this somewhere so here's the Makefile.
+
+### Makefile
+
+If developing on linux, it's crucial we compile the DLL correctly.
+
+```makefile
+x86_64-w64-mingw32-gcc LdrDll.c -s -w -Wall -Wextra -masm=intel -shared -fPIC -e DllMain -Os -fno-asynchronous-unwind-tables Source/* -I Include -o Reflective.dll -lntdll -luser32 -DWIN_X64
+```
