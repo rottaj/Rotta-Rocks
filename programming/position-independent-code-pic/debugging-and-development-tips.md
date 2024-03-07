@@ -1,4 +1,4 @@
-# Development Tips & Tricks
+# Debugging & Development Tips
 
 
 
@@ -10,14 +10,13 @@ When developing Position Independent Code (PIC) many times you'll find yourself 
 
 If we don't have access to a console,&#x20;
 
-```c
-VOID DebugPrintf(
-    _In_ PCHAR fmt,
+<pre class="language-c"><code class="lang-c"><strong>VOID DebugPrintf(
+</strong>    _In_ PCHAR fmt,
     ...
 ) {
 
-    va_list VaListArg      = 0;
-    PVOID   CallbackOutput = NULL;
+<strong>    va_list VaListArg      = 0;
+</strong>    PVOID   CallbackOutput = NULL;
     INT     CallbackSize   = 0;
 
     va_start( VaListArg, fmt );
@@ -39,7 +38,7 @@ VOID DebugPrintf(
         CallbackOutput = NULL;
     }
 }
-```
+</code></pre>
 
 ## AllocConsole
 

@@ -361,4 +361,6 @@
   * [Creating DLL's](programming/visual-studio/creating-dlls.md)
 * [Position Independent Code (PIC)](programming/position-independent-code-pic/README.md)
   * [Creating Shellcode](programming/position-independent-code-pic/creating-shellcode.md)
-  * [Development Tips & Tricks](programming/position-independent-code-pic/development-tips-and-tricks.md)
+  * [Debugging & Development Tips](programming/position-independent-code-pic/debugging-and-development-tips.md)
+  * [Strings](programming/position-independent-code-pic/strings.md)
+  * [PIC Checklist](programming/position-independent-code-pic/pic-checklist.md)

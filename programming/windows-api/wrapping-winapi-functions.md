@@ -10,9 +10,7 @@ Like NTAPI, there may be reasons why we want to hard-code our own WinAPI functio
 
 Here are some common examples.
 
-<pre class="language-c" data-full-width="true"><code class="lang-c">typedef int (WINAPI* fnwprintf )(const wchar_t *format, ...);
-
-typedef void (WINAPI* fnOutputDebugString) (LPCSTR lpOutputString);
+<pre class="language-c" data-full-width="true"><code class="lang-c">typedef void (WINAPI* fnOutputDebugString) (LPCSTR lpOutputString);
 <strong>
 </strong><strong>typedef HMODULE (WINAPI* fnLoadLibraryA)(LPCSTR lpLibFileName);
 </strong>
@@ -26,6 +24,9 @@ typedef NTSTATUS (NTAPI* fnNtFlushInstructionCache)(HANDLE hProcess, PVOID BaseA
 
 typedef BOOL(WINAPI* fnDllMain)(HINSTANCE, DWORD, LPVOID);
 
+// msvcrt.dll
+typedef int (*fn_vsnprintf)(char *buffer, size_t count, const char *format, va_list argptr);
+typedef int (*fnprintf)(const char *format, ...);
 </code></pre>
 
 
