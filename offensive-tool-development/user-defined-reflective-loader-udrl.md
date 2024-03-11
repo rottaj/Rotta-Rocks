@@ -6,6 +6,8 @@
 
 The **User Defined Reflective Loader (UDRL)** is a way for Cobalt Strike operators to write their own reflective loader for Beacons. They are particularly helpful for increasing evasiveness by allowing operators the flexibility of not being constrained to the default loader.
 
+In general, reflective DLL injection is typically used as a persistence mechanism after initial access has been achieved through other means like malicious Office macros or executable files.
+
 ## Reflective Loading
 
 A Cobalt Strike beacon is just a DLL. Fundamentally, a reflective loader must:
