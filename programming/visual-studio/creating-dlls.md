@@ -8,7 +8,7 @@ I greatly prefer a UNIX development environment, but sometimes It seems I'm almo
 
 To create a DLL in Visual Studio click: Create a Project, set the programming language to C++,  and select Dynamic Link Library (DLL).
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -59,11 +59,13 @@ extern __declspec(dllexport) BOOL ReflectiveFunction() {
 
 ## Extra
 
-I know I'll be looking for this somewhere so here's the Makefile.
+### Best Practices
+
+{% embed url="https://learn.microsoft.com/en-us/windows/win32/dlls/dynamic-link-library-best-practices?redirectedfrom=MSDN" %}
 
 ### Makefile
 
-If developing on linux, it's crucial we compile the DLL correctly.
+I know I'll be looking for this somewhere so here's the Makefile. If developing on linux, it's crucial we compile the DLL correctly.
 
 ```makefile
 x86_64-w64-mingw32-gcc LdrDll.c -s -w -Wall -Wextra -masm=intel -shared -fPIC -e DllMain -Os -fno-asynchronous-unwind-tables Source/* -I Include -o Reflective.dll -lntdll -luser32 -DWIN_X64
