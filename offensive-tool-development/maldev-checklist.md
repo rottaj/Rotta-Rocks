@@ -10,17 +10,20 @@ description: >-
 
 ### Bypassing AV
 
-* [ ] Native NtAPI or Indirect Syscalls
+* [ ] Native NtAPI wrapping or Indirect Syscalls
 * [ ] Payload encryption
 * [ ] Brute force decryption key
+* [ ] File bloating
+* [ ] PE Packing
 
-### Evading EDR
+### Evading EDR & Security Solutions
 
 * [ ] Native NtAPI or Indirect Syscalls
 * [ ] Call Stack Spoofing
 * [ ] PPID Spoofing
 * [ ] Unhooking NTDLL
 * [ ] Payload execution control
+* [ ] Sleep obfuscation
 
 ### IAT Hiding / Obfuscation
 
@@ -33,8 +36,6 @@ description: >-
 * [ ] Self Deletion
 * [ ] Delay execution&#x20;
 * [ ] Monitoring user behavior (mouse clicks)
-
-
 
 
 
