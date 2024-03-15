@@ -90,10 +90,8 @@ for (DWORD i = 0; i < pImgExportDir->NumberOfFunctions; i++){
 
 
 PVOID GetProcAddressR(HMODULE hModule, LPCSTR lpProcName) {
-    hModule = LoadLibraryW(hModule);
-    if (hModule == NULL) {
-        return NULL;
-    }
+
+    // Optionally, create a LoadLibrary check to see if hModule is loaded.
 
     // IMPORTANT - Must cast handle address to PBYTE or header parsing will fail
     PBYTE pBase = (PBYTE)hModule;
