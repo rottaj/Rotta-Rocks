@@ -88,37 +88,29 @@ for (DWORD i = 0; i < pImgExportDir->NumberOfFunctions; i++){
 #include <windows.h>
 
 
-#define TARGET_LIBRARY L"ntdll.dll"
-#define TARGET_FUNCTION "NtAllocateVirtualMemory"
 
-int wmain() {
-
-    HMODULE hModule = NULL;
-    hModule = LoadLibraryW(TARGET_LIBRARY);
+PVOID GetProcAddressR(HMODULE hModule, LPCSTR lpProcName) {
+    hModule = LoadLibraryW(hModule);
     if (hModule == NULL) {
-        wprintf(L"LoadLibrary Failed with Error Code: %d\n", GetLastError());
-        return -1;
+        return NULL;
     }
 
     // IMPORTANT - Must cast handle address to PBYTE or header parsing will fail
     PBYTE pBase = (PBYTE)hModule;
 
-    wprintf(L"Loaded %s at address: %p\n", TARGET_LIBRARY, pBase);
     PIMAGE_DOS_HEADER pImgDosHdr = (PIMAGE_DOS_HEADER)pBase;
     if(pImgDosHdr->e_magic != IMAGE_DOS_SIGNATURE) {
-        wprintf(L"Failed to Get DOS Header");
-        return -1;
+        return NULL;
     }
     PIMAGE_NT_HEADERS pImgNtHdrs = (PIMAGE_NT_HEADERS)(pBase + pImgDosHdr->e_lfanew);
     if (pImgNtHdrs->Signature != IMAGE_NT_SIGNATURE) {
-        wprintf(L"Failed to Get NT Header");
-        return -1;
+        return NULL;
     }
 
     IMAGE_OPTIONAL_HEADER ImgOptHdr = pImgNtHdrs->OptionalHeader;
     if (ImgOptHdr.Magic != IMAGE_NT_OPTIONAL_HDR_MAGIC) {
         wprintf(L"Failed to Get Optional Header");
-        return -1;
+        return NULL;
     }
 
     PIMAGE_EXPORT_DIRECTORY pImgExportDir = (PIMAGE_EXPORT_DIRECTORY)(pBase + ImgOptHdr.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress);
@@ -131,22 +123,21 @@ int wmain() {
     // Getting the function's ordinal array pointer
     PWORD  FunctionOrdinalArray 	= (PWORD)(pBase + pImgExportDir->AddressOfNameOrdinals);
 
-    for (DWORD i = 0; i < pImgExportDir->NumberOfFunctions; i++){
+    for (DWORD i = 0; i < pImgExportDir->NumberOfFunctions; i++) {
         // Getting the name of the function
-        CHAR* pFunctionName		= (CHAR*)(pBase + FunctionNameArray[i]);
+        CHAR *pFunctionName = (CHAR *) (pBase + FunctionNameArray[i]);
         // Getting the address of the function
-        PVOID pFunctionAddress	= (PVOID)(pBase + FunctionAddressArray[FunctionOrdinalArray[i]]);
+        PVOID pFunctionAddress = (PVOID) (pBase + FunctionAddressArray[FunctionOrdinalArray[i]]);
         // Getting the ordinal of the function
         WORD wFunctionOrdinal = FunctionOrdinalArray[i];
-        
-        if (strcmp((LPCSTR)TARGET_FUNCTION, pFunctionName) == 0) {
+
+        if (strcmp((LPCSTR) lpProcName, pFunctionName) == 0) {
             // Return function address
             return pFunctionAddress;
         }
     }
-
-    return 0;
 }
+
 ```
 {% endcode %}
 
