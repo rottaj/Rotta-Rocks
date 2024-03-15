@@ -16,3 +16,12 @@ if (wcsncmp(L"Teams.exe", SystemProcInfo->ImageName.Buffer, SystemProcInfo->Imag
        Instance->targetPID = HandleToULong(SystemProcInfo->UniqueProcessId);
 }
 ```
+
+## Convert Int to string
+
+```c
+#include <math.h>
+x = 43
+char strPID[(int)((ceil(log10(x))+1)*sizeof(char))];
+sprintf(strPID, "%d", x);
+```
