@@ -69,7 +69,7 @@ net group "domain admins" <username> /add /domain
 
 A common attack with generic all on a computer object is to add a fake computer to the domain.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 If enumerating and we see a user has GenericAll permission on a computer we know we full control.
 
@@ -192,7 +192,7 @@ Get-ADComputer (Get-Variable -Name "targetComputer").Value -Properties Principal
 ./r.exe hash /password:123456 /user:FAKE01$ /domain:support.htb
 ```
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```powershell
 # -------- On Attck Box Side.
