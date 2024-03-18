@@ -6,7 +6,11 @@ description: Hi, I'm Jack! (Rotta)
 
 A collection of my notes, blogs, and other nonsense. Diving into offensive tools, exploring malware, and hacking web applications.
 
-Prior work as a Software Engineer in the Oil & Gas and Insurance sectors.
+## Experience
+
+<table><thead><tr><th width="230">Current</th><th>Company</th><th>Date</th></tr></thead><tbody><tr><td>Security Analyst II</td><td>Deepwatch Inc.</td><td>Mar 2024 - Current</td></tr></tbody></table>
+
+<table><thead><tr><th width="230">Prior</th><th>Company</th><th>Date</th></tr></thead><tbody><tr><td>Software Analyst</td><td>Ciberspring Ltd.</td><td>Aug 2021 - Dec 2022</td></tr><tr><td>Software Engineer</td><td>Silixa Ltd.</td><td>Dec 2019 - May 2021</td></tr></tbody></table>
 
 ## Certifications
 
