@@ -33,7 +33,8 @@ target_link_libraries(client Qt6::Core Qt6::Widgets)
 
 ## CMakeList.txt meta-object compiler
 
-We need to specify sources to include in the moc (meta-object compiler) we can do this as follows:
+We need to specify sources to include in the moc (meta-object compiler) we can do this as follows:\
+If we don't include this we will get all sorts of ugly vtable errors.
 
 ```cmake
 set (SOURCES
@@ -57,7 +58,7 @@ add_executable(client ${SOURCES} ${MOC_SOURCES})
 
 ###
 
-### CMake Profile
+## CLion CMake Profile
 
 Next you need to add a custom CMake profile for Qt. This is as follows:
 
