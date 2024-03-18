@@ -31,6 +31,32 @@ add_executable(client
 target_link_libraries(client Qt6::Core Qt6::Widgets)
 ```
 
+## CMakeList.txt meta-object compiler
+
+We need to specify sources to include in the moc (meta-object compiler) we can do this as follows:
+
+```cmake
+set (SOURCES
+        main.cpp
+        Src/App/AppManager.cpp
+        Src/App/MainWindow.cpp
+
+)
+
+set (HEADERS
+        AppGlobalNamespace.h
+        Include/App/AppManager.h
+        Include/App/MainWindow.h
+)
+
+
+QT6_WRAP_CPP(MOC_SOURCES ${HEADERS})
+
+add_executable(client ${SOURCES} ${MOC_SOURCES})
+```
+
+###
+
 ### CMake Profile
 
 Next you need to add a custom CMake profile for Qt. This is as follows:
