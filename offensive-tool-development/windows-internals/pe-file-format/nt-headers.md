@@ -139,7 +139,7 @@ typedef struct _IMAGE_OPTIONAL_HEADER64 {
 
 **Here is the Optional Header in PE Bear**
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Magic Byte:** `0x20B` meaning that this is a `PE32+` executable.
 * **SectionAlignment**: 1000

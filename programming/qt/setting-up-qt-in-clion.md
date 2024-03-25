@@ -62,9 +62,16 @@ add_executable(client ${SOURCES} ${MOC_SOURCES})
 
 Next you need to add a custom CMake profile for Qt. This is as follows:
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 Here is what is needed:
 
 * Add working directory: \~/Qt/\<version>/\<compiler>/bin
 * Remote "Before Launch" and add "CMake: Target: all"
+
+
+
+
+
+
+
