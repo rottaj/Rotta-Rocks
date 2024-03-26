@@ -138,9 +138,12 @@
   * [Using Splunk Applications](security-operation-center/splunk-as-siem/using-splunk-applications.md)
   * [Search Processing Language (SPL) Commands](security-operation-center/splunk-as-siem/search-processing-language-spl-commands.md)
   * [Hunting with Splunk](security-operation-center/splunk-as-siem/hunting-with-splunk.md)
+* [Incident Response Process](security-operation-center/incident-response-process.md)
+* [MITRE ATT\&CK Framework](security-operation-center/mitre-att-and-ck-framework/README.md)
+  * [Persistence](security-operation-center/mitre-att-and-ck-framework/persistence/README.md)
+    * [Registry Run Keys](security-operation-center/mitre-att-and-ck-framework/persistence/registry-run-keys.md)
 * [Templates & Cheat Sheets](security-operation-center/templates-and-cheat-sheets/README.md)
   * [Interview Prep](security-operation-center/templates-and-cheat-sheets/interview-prep.md)
-* [Incident Response Process](security-operation-center/incident-response-process.md)
 
 ## 🪟 Active Directory
 

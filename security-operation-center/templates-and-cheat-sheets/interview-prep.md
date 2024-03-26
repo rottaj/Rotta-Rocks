@@ -20,5 +20,24 @@
 * Tier 2: Investigate
 * Tier 3: Hunt
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+
+
+##
+
+## MITRE ATT\&CK Framework
+
+### Scheduled Task Protection & Mitigation
+
+* Configure OS to force scheduled tasks to only run under the authenticated users instead of system accounts. This is done by editing the HKLM/SYSTEM registry key. For orgs, this can be configured globally through the GPO for all workstations.
+* Set the GPO to only allow admins to schedule tasks.
+
+
+
+### Registry Run Keys Protection & Mitigation
+
+An adversaries goal with registry run keys is to quickly establish permissions and persistence on a system. By adding a registry run key to the startup folder, the process will launch everytime an authenticated user logs in.
+
+**Note:** There are startup folders for both local and system-level accounts.
 

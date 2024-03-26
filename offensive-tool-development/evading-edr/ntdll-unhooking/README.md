@@ -38,4 +38,4 @@ The offset of the .text section for most DLL's <mark style="color:yellow;">**on 
 
 When a DLL is mapped into <mark style="color:yellow;">**memory of a process**</mark>, the .text section is mainly set to an offset of 0x1000 (4096).
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
