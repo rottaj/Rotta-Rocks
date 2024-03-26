@@ -58,7 +58,7 @@ The Double Pulsar approach differs from traditional Reflective Loaders as it is 
 
 Below shows the difference between Double Pulsar & Stephen Fewers Reflective Loader.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Taken from Forta <a href="https://www.cobaltstrike.com/blog/revisiting-the-udrl-part-1-simplifying-development">https://www.cobaltstrike.com/blog/revisiting-the-udrl-part-1-simplifying-development</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Taken from Forta <a href="https://www.cobaltstrike.com/blog/revisiting-the-udrl-part-1-simplifying-development">https://www.cobaltstrike.com/blog/revisiting-the-udrl-part-1-simplifying-development</a></p></figcaption></figure>
 
 
 
@@ -69,7 +69,7 @@ As stated above, the Double Pulsar approach prepends the loader at the very star
 * Make sure the loaders entry point sits at the very start of the Beacons shellcode.
 * Make sure we can find the end of the loader. (In order to find the start of the Beacon). (**code\_seg)**
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Taken from Forta <a href="https://www.cobaltstrike.com/blog/revisiting-the-udrl-part-1-simplifying-development">https://www.cobaltstrike.com/blog/revisiting-the-udrl-part-1-simplifying-development</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Taken from Forta <a href="https://www.cobaltstrike.com/blog/revisiting-the-udrl-part-1-simplifying-development">https://www.cobaltstrike.com/blog/revisiting-the-udrl-part-1-simplifying-development</a></p></figcaption></figure>
 
 Positioning works by telling the linker what PE sections store specified functions. This can be accomplished with  the [code\_seg](https://learn.microsoft.com/en-us/cpp/preprocessor/code-seg?view=msvc-170) [pragma directive](https://learn.microsoft.com/en-us/cpp/preprocessor/pragma-directives-and-the-pragma-keyword?view=msvc-170). These sections can then be ordered using [alphabetical values](https://devblogs.microsoft.com/oldnewthing/20181107-00/?p=100155) e.g `.text$a`.&#x20;
 

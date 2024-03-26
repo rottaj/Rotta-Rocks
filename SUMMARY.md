@@ -140,6 +140,7 @@
   * [Hunting with Splunk](security-operation-center/splunk-as-siem/hunting-with-splunk.md)
 * [Templates & Cheat Sheets](security-operation-center/templates-and-cheat-sheets/README.md)
   * [Interview Prep](security-operation-center/templates-and-cheat-sheets/interview-prep.md)
+* [Incident Response Process](security-operation-center/incident-response-process.md)
 
 ## 🪟 Active Directory
 

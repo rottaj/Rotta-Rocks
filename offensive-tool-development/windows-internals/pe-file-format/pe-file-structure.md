@@ -12,7 +12,7 @@ Executables `.exe`, Dynamic Link Libraries `.dll`, kernel modules `.srv`, Contro
 
 A typical PE structure is as follows:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>From 0xRicks blog post</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>From 0xRicks blog post</p></figcaption></figure>
 
 
 
@@ -28,7 +28,7 @@ A typical PE structure is as follows:
 
 We can see the same thing in [hasherezade](https://github.com/hasherezade/pe-bear)'s PE-bear:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## DOS Header
 

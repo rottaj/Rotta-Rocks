@@ -123,7 +123,7 @@ On disk, the IAT is identical to the ILT, however during bounding when the binar
 * The IAT will be identical to the ILT until the executable is loaded in memory, then the loader will fill the IAT with the actual addresses of the imported functions.
 * If the DLL import is a bound import, then the import information will be contained in `IMAGE_BOUND_IMPORT_DESCRIPTOR` structures in a separate Data Directory called the Bound Import Data Directory.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 **Above we can see the RVA's to the ILT & IAT.**
 
