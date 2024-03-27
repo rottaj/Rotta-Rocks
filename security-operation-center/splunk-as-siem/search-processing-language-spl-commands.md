@@ -31,20 +31,28 @@ This command returns all available indices.
 ### View sourcetypes
 
 ```splunk-spl
+index="*" | stats count by sourcetype
+```
+
+```splunk-spl
 | metadata type=sourcetypes index=* | table sourcetype
 ```
 
-This command returns a list of all sourcetypes in the Spunk environment
+These commands return a list of all sourcetypes in the Spunk environment
 
 <figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 ### View sources (data files)
 
 ```splunk-spl
+index="*" | stats count by source
+```
+
+```splunk-spl
 | metadata type=sources index=* | table source
 ```
 
-This command returns a list of all data sources in the Splunk environment.
+These commands return a list of all data sources in the Splunk environment.
 
 <figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
