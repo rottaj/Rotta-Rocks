@@ -25,7 +25,7 @@ ETW is compromised of 4 main components.
 
 These files store events that are recorded by the provider. Each file is signified with **`.etl`**
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Providers
 
@@ -35,7 +35,7 @@ Providers are the highest leven entities in ETW. They are responsible for genera
 logman query providers
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -47,7 +47,7 @@ Tracing Sessions are containers for capturing events from a ETW provider. A sess
 logman query -ets
 ```
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

@@ -138,6 +138,7 @@
   * [Using Splunk Applications](security-operation-center/splunk-as-siem/using-splunk-applications.md)
   * [Search Processing Language (SPL) Commands](security-operation-center/splunk-as-siem/search-processing-language-spl-commands.md)
   * [Hunting with Splunk](security-operation-center/splunk-as-siem/hunting-with-splunk.md)
+  * [Intrusion Detection](security-operation-center/splunk-as-siem/intrusion-detection.md)
 * [Incident Response Process](security-operation-center/incident-response-process.md)
 * [MITRE ATT\&CK Framework](security-operation-center/mitre-att-and-ck-framework/README.md)
   * [Persistence](security-operation-center/mitre-att-and-ck-framework/persistence/README.md)

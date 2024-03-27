@@ -17,12 +17,22 @@ Splunk Enterprise consists of several layers that work together to collect, inde
 * **Cluster Master**: Coordinates activities of indexers in a clustered environment.
 * L**icense Master**: Manages license details.
 
+
+
+## Splunk Users
+
+There are 3 types of users on Splunk web.
+
+* **Admi**n: The highest privilege level.
+* **Power**: This role can edit all shared objects and alerts, tag events, and other similar tasks.
+* **User**: This role can create and edit its own saved searches, run searches, edit preferences, create and edit event types, and other similar tasks.
+
 ## Splunk Key Components
 
 Apart from the overall architecture of Splunk, it can best be categorized by the following four components:
 
-* Splunk Web Interface: Graphical User Interface in which users can interact with Splunk.
-* Search Processing Language: The query language for Splunk. Allows users to search, query, and manipulate the indexed data.
+* **Splunk Web Interface**: Graphical User Interface in which users can interact with Splunk.
+* **Search Processing Language**: The query language for Splunk. Allows users to search, query, and manipulate the indexed data.
 * **Apps and Add-ons**: Ready made addons can be found on [Splunkbase](https://splunkbase.splunk.com/). Kind of like Burpsuite add-ons.
-* Kno**wledge Objects**: Fields, tags, events, lookups, macros, data models, and alerts that enhance the data in Splunk.
+* **Knowledge Objects**: Fields, tags, events, lookups, macros, data models, and alerts that enhance the data in Splunk.
 

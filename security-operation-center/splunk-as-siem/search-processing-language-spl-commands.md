@@ -2,6 +2,126 @@
 
 
 
+## References
+
+Here are some good references
+
+{% embed url="https://docs.splunk.com/Documentation/SplunkCloud/9.1.2312/SearchReference/WhatsInThisManual" %}
+
+{% embed url="https://docs.splunk.com/Documentation/SplunkCloud/9.1.2312/Search/GetstartedwithSearch" %}
+
+##
+
+## Identify Available Data
+
+We can use `metadata` to retrieve metadata about the data in our indexes. The `type=sourcetypes` argument tells Splunk to return metadata about sourcetypes.&#x20;
+
+### View sourcetypes
+
+```splunk-spl
+| metadata type=sourcetypes index=* | table sourcetype
+```
+
+This command returns a list of all sourcetypes in the Spunk environment
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+### View sources (data files)
+
+```splunk-spl
+| metadata type=sources index=* | table source
+```
+
+This command returns a list of all data sources in the Splunk environment.
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### View Raw Data in sourcetypes
+
+Once we have the sourcetypes, we can use `sourcetype` to view the data they contain.
+
+```splunk-spl
+sourcetype="WinEventLog:Security" | table _raw
+```
+
+This command will return the raw data (actual file) for the specified source type.
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### View all data in sourcetype
+
+```splunk-spl
+sourcetype="WinEventLog:Security" | table *
+```
+
+This command will return the data in a table for the specified source type. <mark style="color:red;">**NOTE:**</mark> be cautious, as the use of `table *` can result in a very wide table if our events have a large number of fields.\
+
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+### View data in sourcetype
+
+```splunk-spl
+sourcetype="WinEventLog:Security" | fields Account_Name, EventCode 
+| table Account_Name, EventCode
+```
+
+This is a better approach, listing specific fields and creating a table is better for visualizing data.
+
+### View Field Summary
+
+```splunk-spl
+sourcetype="WinEventLog:Security" | fieldsummary
+```
+
+The above command is a <mark style="color:green;">great</mark> way to return just the fields using `fieldsummary`
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+This search will return a table that includes every field found in the events returned by the search (across the sourcetype we've specified). The table includes several columns of information about each field:
+
+* `field`: The name of the field.
+* `count`: The number of events that contain the field.
+* `distinct_count`: The number of distinct values in the field.
+* `is_exact`: Whether the count is exact or estimated.
+* `max`: The maximum value of the field.
+* `mean`: The mean value of the field.
+* `min`: The minimum value of the field.
+* `numeric_count`: The number of numeric values in the field.
+* `stdev`: The standard deviation of the field.
+* `values`: Sample values of the field.
+
+We may also see:
+
+* `modes`: The most common values of the field.
+* `numBuckets`: The number of buckets used to estimate the distinct count.
+
+<mark style="color:red;">NOTE:</mark> The values shown in this command are based on the provided time in our search. We need to specify it in the search!
+
+```splunk-spl
+index=* sourcetype=* | bucket _time span=1d | stats count by _time, index, sourcetype 
+| sort - _time
+```
+
+`bucket` command is used to group the events based on the `_time` field into 1-day buckets\
+
+
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+### View uncommon events with rare
+
+```splunk-spl
+index=* sourcetype=* | rare limit=10 index, sourcetype
+```
+
+This query retrieves all data and finds the 10 rarest combinations of indexes and sourcetypes.
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
 ## Basic Commands
 
 By default a search query returns all results, but can be narrowed down with keywords, boolean operators, wildcards, and more.

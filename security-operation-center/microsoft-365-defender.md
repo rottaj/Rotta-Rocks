@@ -4,7 +4,7 @@
 
 Incidents in Microsoft 365 Defender is actually just a collection of alerts. It is able to correlate the alerts and is created by Threat intelligence.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Features of Incidents
 
