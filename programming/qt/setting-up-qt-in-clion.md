@@ -62,7 +62,7 @@ add_executable(client ${SOURCES} ${MOC_SOURCES})
 
 Next you need to add a custom CMake profile for Qt. This is as follows:
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here is what is needed:
 

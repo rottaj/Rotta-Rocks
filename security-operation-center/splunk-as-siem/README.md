@@ -6,7 +6,7 @@ Splunk is a highly scalable, versitile data aggregation solution known for it's 
 
 ## Splunk Architecture
 
-Splunk Enterprise consists of several layers that work together to collect, index, search, analyze, and visualize data.
+[https://github.com/splunk/botsv3](https://github.com/splunk/botsv3)Splunk Enterprise consists of several layers that work together to collect, index, search, analyze, and visualize data.
 
 * **Forwarders**: Responsible for data collection.
   * **Universal Forwarder (UF)**: Individual, lightweight, software packages that collect data and forwards it to Splunks indexers.
@@ -36,3 +36,8 @@ Apart from the overall architecture of Splunk, it can best be categorized by the
 * **Apps and Add-ons**: Ready made addons can be found on [Splunkbase](https://splunkbase.splunk.com/). Kind of like Burpsuite add-ons.
 * **Knowledge Objects**: Fields, tags, events, lookups, macros, data models, and alerts that enhance the data in Splunk.
 
+
+
+## Datasets&#x20;
+
+{% embed url="https://github.com/splunk/botsv3" %}

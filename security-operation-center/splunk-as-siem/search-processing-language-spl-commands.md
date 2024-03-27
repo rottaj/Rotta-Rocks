@@ -16,6 +16,18 @@ Here are some good references
 
 We can use `metadata` to retrieve metadata about the data in our indexes. The `type=sourcetypes` argument tells Splunk to return metadata about sourcetypes.&#x20;
 
+
+
+### View all indices
+
+```splunk-spl
+| eventcount summarize=false index=* | dedup index | fields index
+```
+
+This command returns all available indices.
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
 ### View sourcetypes
 
 ```splunk-spl
@@ -24,7 +36,7 @@ We can use `metadata` to retrieve metadata about the data in our indexes. The `t
 
 This command returns a list of all sourcetypes in the Spunk environment
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 ### View sources (data files)
 
@@ -34,7 +46,7 @@ This command returns a list of all sourcetypes in the Spunk environment
 
 This command returns a list of all data sources in the Splunk environment.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -48,7 +60,7 @@ sourcetype="WinEventLog:Security" | table _raw
 
 This command will return the raw data (actual file) for the specified source type.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -61,7 +73,7 @@ sourcetype="WinEventLog:Security" | table *
 This command will return the data in a table for the specified source type. <mark style="color:red;">**NOTE:**</mark> be cautious, as the use of `table *` can result in a very wide table if our events have a large number of fields.\
 
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### View data in sourcetype
 
@@ -80,7 +92,7 @@ sourcetype="WinEventLog:Security" | fieldsummary
 
 The above command is a <mark style="color:green;">great</mark> way to return just the fields using `fieldsummary`
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 This search will return a table that includes every field found in the events returned by the search (across the sourcetype we've specified). The table includes several columns of information about each field:
 
@@ -110,7 +122,7 @@ index=* sourcetype=* | bucket _time span=1d | stats count by _time, index, sourc
 `bucket` command is used to group the events based on the `_time` field into 1-day buckets\
 
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### View uncommon events with rare
 
@@ -120,7 +132,7 @@ index=* sourcetype=* | rare limit=10 index, sourcetype
 
 This query retrieves all data and finds the 10 rarest combinations of indexes and sourcetypes.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Basic Commands
 

@@ -8,7 +8,7 @@ I greatly prefer a UNIX development environment, but sometimes It seems I'm almo
 
 To create a DLL in Visual Studio click: Create a Project, set the programming language to C++,  and select Dynamic Link Library (DLL).
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

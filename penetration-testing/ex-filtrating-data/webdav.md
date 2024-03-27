@@ -30,4 +30,4 @@ Running without configuration file.
 
 We can type in the URL of our WebDAV server.
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>

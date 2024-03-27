@@ -20,7 +20,7 @@ PS> logman create trace TESTING -o C:\Users\WinDev\Desktop\Output.etl -p Microso
 
 Adding the `-ets` option to the command will send commands directly to the tracing session without saving or scheduling the session for future use
 
-![](<../../../.gitbook/assets/image (4) (1).png>)\
+![](<../../../.gitbook/assets/image (4) (1) (1).png>)\
 
 
 ### Inspecting Trace Files
@@ -29,15 +29,15 @@ Once the trace file session is created, it can be viewed in _**Event Viewer**_.
 
 Goto -> File -> Open Saved Log -> Select "Yes"
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here are the events
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Clicking on an event allow you to view the details
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -151,7 +151,7 @@ ETWExplorer is an open source tool that offers a GUI ETW Controller
 
 {% embed url="https://github.com/zodiacon/EtwExplorer" %}
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

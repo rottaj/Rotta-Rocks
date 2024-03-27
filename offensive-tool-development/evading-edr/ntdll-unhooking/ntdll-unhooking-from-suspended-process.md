@@ -21,7 +21,7 @@ Do to ASLR, the virtual address of an imported library will be the same througho
 
 The below screen shot is of svchost.exe (a suspended process we started). We are locating the NTDLL.dll based on the same address we fetched from the local PEB in unhooking.exe
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
