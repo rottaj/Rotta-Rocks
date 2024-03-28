@@ -133,6 +133,7 @@
 * [Network Traffic Analysis](security-operation-center/network-traffic-analysis/README.md)
   * [Tcpdump](security-operation-center/network-traffic-analysis/tcpdump.md)
   * [Wireshark](security-operation-center/network-traffic-analysis/wireshark.md)
+* [Windows Event Logs](security-operation-center/windows-event-logs.md)
 * [Microsoft 365 Defender](security-operation-center/microsoft-365-defender.md)
 * [Splunk as SIEM](security-operation-center/splunk-as-siem/README.md)
   * [Using Splunk Applications](security-operation-center/splunk-as-siem/using-splunk-applications.md)

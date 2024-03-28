@@ -114,3 +114,21 @@ index="main" sourcetype="WinEventLog:Sysmon" EventCode=1 (Image="*cmd.exe" OR Im
 **Here we discover an IOC: a web request to an external ip address.**
 
 <figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+
+
+
+## Building Alerts
+
+Below is a SQL query that will go through Sysmon events and search the Callstack for UNKNOWN memory regions as well as weeding out legitimate applications to prevent false positives.\
+\
+Normal Sysmon process access events starts with ntdll (hosting Windows Syscalls), if the CallTrace starts with an UNKNOWN module instead of ntdll then its suspicious and may indicate a **direct syscall evasion**.
+
+```splunk-spl
+index="main" CallTrace="*UNKNOWN*" SourceImage!=*Microsoft.NET* 
+CallTrace!=*ni.dll* CallTrace!=*clr.dll* CallTrace!=*wow64* 
+SourceImage!="C:\\Windows\\Explorer.EXE" 
+| where SourceImage!=TargetImage 
+| stats count by SourceImage, TargetImage, CallTrace
+```
+
+<figure><img src="../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
