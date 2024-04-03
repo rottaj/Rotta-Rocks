@@ -58,20 +58,22 @@ add_executable(client ${SOURCES} ${MOC_SOURCES})
 
 ###
 
-## CLion CMake Profile
+## [CLion CMake Profile](#user-content-fn-1)[^1]
 
 Next you need to add a custom CMake profile for Qt. This is as follows:
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-Here is what is needed:
 
-* Add working directory: \~/Qt/\<version>/\<compiler>/bin
-* Remote "Before Launch" and add "CMake: Target: all"
+<figure><img src="../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
 
 
 
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
 
+
+
+
+[^1]: 

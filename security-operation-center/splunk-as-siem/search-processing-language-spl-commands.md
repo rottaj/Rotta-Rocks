@@ -26,7 +26,7 @@ We can use `metadata` to retrieve metadata about the data in our indexes. The `t
 
 This command returns all available indices.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### View sourcetypes
 
@@ -54,7 +54,7 @@ index="*" | stats count by source
 
 These commands return a list of all data sources in the Splunk environment.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -68,7 +68,7 @@ sourcetype="WinEventLog:Security" | table _raw
 
 This command will return the raw data (actual file) for the specified source type.
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

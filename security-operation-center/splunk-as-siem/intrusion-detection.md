@@ -20,7 +20,7 @@ Start by viewing all available sources in index:
 index="main" | stats count by sourcetype
 ```
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -32,7 +32,7 @@ Let's see what we're dealing with by viewing Sysmon events.
 index="main" sourcetype="WinEventLog:Sysmon"
 ```
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Clicking the arrow allows us to view all data in the row.
 
