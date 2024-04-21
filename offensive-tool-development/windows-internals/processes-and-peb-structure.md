@@ -116,7 +116,8 @@ typedef struct _LIST_ENTRY {
 
 // HELPER FUNCTIONS
 // Get of current process (call pLdr->DllBase to get base address)
-PLDR_DATA_TABLE_ENTRY pLdr = (PLDR_DATA_TABLE_ENTRY)((PBYTE)(pPeb->Ldr->InMemoryOrderModuleList.Flink - 0x10)
+PLDR_DATA_TABLE_ENTRY pLdr = (PLDR_DATA_TABLE_ENTRY)((PBYTE)(pPeb->Ldr->InMemoryOrderModuleList.Flink) - 0x10);
+// pLdr->DllBase (Entrypoint to .exe)
 ```
 
 
@@ -128,7 +129,7 @@ Flink actually returns the address of the end of the structure. Which is why we 
 ```c
 PVOID FetchLocalNtdllAddress() {
     PPEB pPeb = (PPEB)__readgsqword(0x60);
-    PLDR_DATA_TABLE_ENTRY pLdr = (PLDR_DATA_TABLE_ENTRY)((PBYTE)pPeb->Ldr->InMemoryOrderModuleList.Flink->Flink - 0x10);
+        PLDR_DATA_TABLE_ENTRY pLdr = (PLDR_DATA_TABLE_ENTRY)((PBYTE)(pPeb->Ldr->InMemoryOrderModuleList.Flink->Flink) - 0x10);
     return pLdr->DllBase;
 }
 ```
