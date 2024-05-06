@@ -374,6 +374,8 @@
 * [Visual Studio](programming/visual-studio/README.md)
   * [Creating DLL's](programming/visual-studio/creating-dlls.md)
   * [Debug & Release Mode](programming/visual-studio/debug-and-release-mode.md)
+* [Mingw](programming/mingw/README.md)
+  * [Windows Development](programming/mingw/windows-development.md)
 * [Position Independent Code (PIC)](programming/position-independent-code-pic/README.md)
   * [Creating Shellcode](programming/position-independent-code-pic/creating-shellcode.md)
   * [Debugging & Development Tips](programming/position-independent-code-pic/debugging-and-development-tips.md)
