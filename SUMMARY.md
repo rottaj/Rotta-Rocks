@@ -380,4 +380,5 @@
   * [Creating Shellcode](programming/position-independent-code-pic/creating-shellcode.md)
   * [Debugging & Development Tips](programming/position-independent-code-pic/debugging-and-development-tips.md)
   * [Strings](programming/position-independent-code-pic/strings.md)
+  * [Macros](programming/position-independent-code-pic/macros.md)
   * [PIC Checklist](programming/position-independent-code-pic/pic-checklist.md)

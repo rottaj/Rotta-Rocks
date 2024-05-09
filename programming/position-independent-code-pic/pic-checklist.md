@@ -6,7 +6,24 @@
 
 These are some of the do's and dont's of creating Position Indpendent Code (PIC)
 
+## Checklist
 
+* [ ] Avoid String literals. (Use string hashing, string stacks).
+* [ ] Avoid Global Variables.
+* [ ] Use custom wrapped NTAPI functions
+* [ ] Use intrinsic functions
+
+
+
+## Debugging
+
+For debugging we can Allocate a console with AllocConsole WinAPI function.
+
+<pre class="language-c"><code class="lang-c">extern __declspec(dllexport) BOOL ReflectiveFunction() {
+    fnAllocConsole _AllocConsole = (fnAllocConsole)GetProcAddressH(GetModuleHandleH(kernel32dll_CRC32), AllocConsole_CRC32);
+<strong>    _AllocConsole();
+</strong><strong>}
+</strong></code></pre>
 
 ## List
 
@@ -32,25 +49,3 @@ These are some of the do's and dont's of creating Position Indpendent Code (PIC)
     * Reason: Accessing data indirectly through pointers or indexes allows for flexibility in memory layout and is compatible with PIC.
 
 Following these guidelines will help ensure that your code remains position-independent and can execute correctly regardless of its memory location.
-
-
-
-
-
-## Checklist
-
-* [ ] Avoid String literals. (Use string hashing, string stacks).
-* [ ] Avoid Global Variables.
-* [ ] Don't use WinAPI functions.
-
-
-
-## Debugging
-
-For debugging we can Allocate a console with AllocConsole WinAPI function.
-
-<pre class="language-c"><code class="lang-c">extern __declspec(dllexport) BOOL ReflectiveFunction() {
-    fnAllocConsole _AllocConsole = (fnAllocConsole)GetProcAddressH(GetModuleHandleH(kernel32dll_CRC32), AllocConsole_CRC32);
-<strong>    _AllocConsole();
-</strong><strong>}
-</strong></code></pre>
