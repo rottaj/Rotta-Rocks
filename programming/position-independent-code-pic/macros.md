@@ -1,7 +1,5 @@
 # Macros
 
-###
-
 ## Introduction
 
 When building PIC, having macros to intrinsic functions is very useful. _Intrinsic_ functions are processed by the compiler itself, and not at runtime. Intrinsic functions will be used instead of CRT-library functions in our case. Microsoft has an [Alphabetical listing of intrinsic functions](https://learn.microsoft.com/en-us/cpp/intrinsics/alphabetical-listing-of-intrinsic-functions?view=msvc-170).
