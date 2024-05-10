@@ -6,7 +6,11 @@ This function is similar to mattifestations [GetProcAddressWithHash](https://git
 
 ### GetProcAddressHash
 
-<mark style="color:red;">**NOTE**</mark>: When building PIC, we'll have to implement our own lstrlenA or use another hash function as we won't be using CRT or the Windows SDK.
+<mark style="color:red;">**NOTE**</mark>: When building PIC, we'll have to implement our own lstrlen or use another hash function as we won't be using CRT or the Windows SDK. Example PIC makefile flags:
+
+```makefile
+ -nostdlib -O2 --entry Entry -ffunction-sections
+```
 
 ```c
 #include <windows.h>
@@ -14,11 +18,19 @@ This function is similar to mattifestations [GetProcAddressWithHash](https://git
 
 #define INITIAL_SEED	7
 
+
+size_t strlen(const char *str) {
+	size_t len = 0;
+	while (str[len] != '\0')
+		len++;
+	return len;
+}
+
 UINT32 HASHA(_In_ PCHAR String)
 {
 	SIZE_T Index = 0;
 	UINT32 Hash = 0;
-	SIZE_T Length = lstrlenA(String);
+	SIZE_T Length = strlen(String);
 
 	while (Index != Length)
 	{
@@ -76,7 +88,6 @@ HMODULE GetProcAddressHash(DWORD dwHash)
 
 		// If not null
 		if (pDte->FullDllName.Length) {
-
 			// IMPORTANT - Must cast handle address to PBYTE or header parsing will fail
 			PBYTE pBase = pDte->Reserved2[0];
 
@@ -91,7 +102,6 @@ HMODULE GetProcAddressHash(DWORD dwHash)
 
 			IMAGE_OPTIONAL_HEADER ImgOptHdr = pImgNtHdrs->OptionalHeader;
 			if (ImgOptHdr.Magic != IMAGE_NT_OPTIONAL_HDR_MAGIC) {
-				wprintf(L"Failed to Get Optional Header");
 				return NULL;
 			}
 
@@ -116,7 +126,7 @@ HMODULE GetProcAddressHash(DWORD dwHash)
 				// TODO Compare hashes
 				if (dwHash == HASHA(pFunctionName))
 				{
-					return pFunctionAddress;
+					return (HMODULE) pFunctionAddress;
 				}
 			}
 		}
