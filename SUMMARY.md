@@ -111,6 +111,12 @@
   * [Commando VM](offensive-tool-development/maldev-environment-setup/commando-vm.md)
 * [Maldev Checklist](offensive-tool-development/maldev-checklist.md)
 
+## 🌩️ Cloud Security
+
+* [Microsoft Azure](cloud-security/microsoft-azure.md)
+* [Amazon AWS](cloud-security/amazon-aws.md)
+* [Google Cloud](cloud-security/google-cloud.md)
+
 ## 🔍 Malware Analysis
 
 * [Network Traffic Analysis](malware-analysis/network-traffic-analysis/README.md)
@@ -270,12 +276,6 @@
   * [HTTP Host Header Attacks](web-application-hacking/other-attacks/http-host-header-attacks.md)
   * [Password Reset Poisoning](web-application-hacking/other-attacks/password-reset-poisoning.md)
   * [Insecure HTTP Method Abuse](web-application-hacking/other-attacks/insecure-http-method-abuse.md)
-
-## 🌩️ Cloud Security
-
-* [Microsoft Azure](cloud-security/microsoft-azure.md)
-* [Amazon AWS](cloud-security/amazon-aws.md)
-* [Google Cloud](cloud-security/google-cloud.md)
 
 ## 🦈 Penetration Testing
 
