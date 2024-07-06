@@ -1,3 +1,0 @@
-# Amazon AWS
-
-Coming soon!

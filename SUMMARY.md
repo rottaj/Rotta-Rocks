@@ -111,11 +111,9 @@
   * [Commando VM](offensive-tool-development/maldev-environment-setup/commando-vm.md)
 * [Maldev Checklist](offensive-tool-development/maldev-checklist.md)
 
-## 🌩️ Cloud Security
+## 🛡️ Azure & M365
 
-* [Microsoft Azure](cloud-security/microsoft-azure.md)
-* [Amazon AWS](cloud-security/amazon-aws.md)
-* [Google Cloud](cloud-security/google-cloud.md)
+* [Page 2](azure-and-m365/page-2.md)
 
 ## 🔍 Malware Analysis
 
