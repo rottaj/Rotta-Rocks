@@ -8,6 +8,10 @@ For our Azure environment we will create the following things:
 
 ### Creating Azure Tenants
 
+**Create M365 Business Basic**
+
+[https://www.microsoft.com/en-us/microsoft-365/business#layout-container-uid4d2d](https://www.microsoft.com/en-us/microsoft-365/business#layout-container-uid4d2d)
+
 **Free Entra ID Tenant with $200 USD License**\
 [https://azure.microsoft.com/en-us/free/entra-id](https://azure.microsoft.com/en-us/free/entra-id)
 
@@ -21,6 +25,14 @@ For our Azure environment we will create the following things:
 [https://learn.microsoft.com/en-gb/purview/compliance-easy-trials](https://learn.microsoft.com/en-gb/purview/compliance-easy-trials)
 
 
+
+
+
+### Create M365 Business Account
+
+In order to access admin.microsoft.com, we'll need to have a business account. This will give us access to all Microsoft Office applications. Purchase the Basic account.
+
+[https://www.microsoft.com/en-us/microsoft-365/business#layout-container-uid4d2d](https://www.microsoft.com/en-us/microsoft-365/business#layout-container-uid4d2d)
 
 ### Create Azure Account
 
@@ -59,4 +71,25 @@ We now should have one Global Administrator & two regular users.
 
 Next we want to register for an E3 License. This may take up to 3 business days for the registration to complete.
 
-[https://admin.microsoft.com/](https://admin.microsoft.com/)
+{% embed url="https://admin.microsoft.com/" %}
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-07-09 at 12.06.24 PM.png" alt=""><figcaption></figcaption></figure>
+
+Go to the catalog under products and search "E3".
+
+### Assign E3 License
+
+After purchases our Office 365 E3 License, go back to our azure portal and assign the license to a user. We can do that by searching "Licenses" > "All Products" > "Assign".
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-07-09 at 12.13.53 PM.png" alt=""><figcaption></figcaption></figure>
+
+After assigning we should see our updated licensed user.
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-07-09 at 12.16.59 PM.png" alt=""><figcaption></figcaption></figure>
+
+### Activate Purview Trial
+
+Navigate to compliance.microsoft.com and click "Trials". <mark style="color:red;">**NOTE**</mark>: You'll have to wait 3-5 business days to activate this trial.
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-07-09 at 12.24.40 PM.png" alt=""><figcaption></figcaption></figure>
+
