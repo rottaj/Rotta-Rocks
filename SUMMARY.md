@@ -113,7 +113,7 @@
 
 ## 🛡️ Azure & M365
 
-* [Page 2](azure-and-m365/page-2.md)
+* [Azure Environment Setup](azure-and-m365/azure-environment-setup.md)
 
 ## 🔍 Malware Analysis
 
