@@ -22,6 +22,13 @@ For our Azure environment we will create the following things:
 
 
 
+### Create Azure Account
+
+It's recommended to purchase a new domain and register an email with it as we'll be able utilize Microsofts free Azure 12 month trial for newly registered accounts. You may want to go grab a prepaid SIM card as you'll likely have to provide a phone number that isn't registered to an exisiting M365 account. Once everything is ready to go, follow the steps below.
+
+**Free Entra ID Tenant with $200 USD License**\
+[https://azure.microsoft.com/en-us/free/entra-id](https://azure.microsoft.com/en-us/free/entra-id)
+
 ### Create Users
 
 We'll create a global admin user & 2-3 regular users for this testing environment.
@@ -50,3 +57,6 @@ We now should have one Global Administrator & two regular users.
 
 ### Create E3 License
 
+Next we want to register for an E3 License. This may take up to 3 business days for the registration to complete.
+
+[https://admin.microsoft.com/](https://admin.microsoft.com/)
