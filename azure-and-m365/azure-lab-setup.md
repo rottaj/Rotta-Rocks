@@ -1,4 +1,4 @@
-# Azure Environment Setup
+# Azure Lab Setup
 
 
 
@@ -28,22 +28,22 @@ For our Azure environment we will create the following things:
 
 
 
-### Create M365 Business Account
+### Create an M365 Business Account
 
 In order to access admin.microsoft.com, we'll need to have a business account. This will give us access to all Microsoft Office applications. Purchase the Basic account.
 
 [https://www.microsoft.com/en-us/microsoft-365/business#layout-container-uid4d2d](https://www.microsoft.com/en-us/microsoft-365/business#layout-container-uid4d2d)
 
-### Create Azure Account
+### Create an Azure Account
 
-It's recommended to purchase a new domain and register an email with it as we'll be able utilize Microsofts free Azure 12 month trial for newly registered accounts. You may want to go grab a prepaid SIM card as you'll likely have to provide a phone number that isn't registered to an exisiting M365 account. Once everything is ready to go, follow the steps below.
+It's recommended to purchase a new domain and register an email with it as we'll be able utilize Microsofts free Azure 12 month trial for newly registered accounts. You may want to go grab a prepaid SIM card as well because you'll need to provide a phone number that isn't registered to an existing M365 account. Once everything is ready to go, continue with the steps below.
 
 **Free Entra ID Tenant with $200 USD License**\
 [https://azure.microsoft.com/en-us/free/entra-id](https://azure.microsoft.com/en-us/free/entra-id)
 
 ### Create Users
 
-We'll create a global admin user & 2-3 regular users for this testing environment.
+We'll create a global admin user along with 2-3 regular users for this lab environment.
 
 Navigate to portal.azure.com -> Microsoft Entra ID
 
@@ -79,11 +79,11 @@ Go to the catalog under products and search "E3".
 
 ### Assign E3 License
 
-After purchases our Office 365 E3 License, go back to our azure portal and assign the license to a user. We can do that by searching "Licenses" > "All Products" > "Assign".
+After purchases our Office 365 E3 License, go back to our azure portal (portal.azure.com) and assign the license to a user. We can do so by searching "Licenses" > "All Products" > "Assign".
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-07-09 at 12.13.53 PM.png" alt=""><figcaption></figcaption></figure>
 
-After assigning we should see our updated licensed user.
+After assigning the license to a user we should see our updated licensed user.
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-07-09 at 12.16.59 PM.png" alt=""><figcaption></figcaption></figure>
 

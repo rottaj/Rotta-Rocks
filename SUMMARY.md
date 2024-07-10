@@ -117,7 +117,7 @@
   * [Domain Enumeration](azure-and-m365/information-gathering-reconnaissance/domain-enumeration.md)
   * [User Enumeration](azure-and-m365/information-gathering-reconnaissance/user-enumeration.md)
 * [Azure AD Killchain](azure-and-m365/azure-ad-killchain.md)
-* [Azure Environment Setup](azure-and-m365/azure-environment-setup.md)
+* [Azure Lab Setup](azure-and-m365/azure-lab-setup.md)
 
 ## 🔍 Malware Analysis
 
