@@ -93,3 +93,14 @@ Navigate to compliance.microsoft.com and click "Trials". <mark style="color:red;
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-07-09 at 12.24.40 PM.png" alt=""><figcaption></figcaption></figure>
 
+
+
+### Activate Entra P2 Trial License
+
+Navigate to "Licenses" in your azure portal. Under "Quick tasks" select "Get a free trial".
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-07-15 at 3.31.41 PM.png" alt=""><figcaption></figcaption></figure>
+
+"Click "Microsoft Entra ID P2" -> "Activate".
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-07-15 at 3.33.57 PM.png" alt=""><figcaption></figcaption></figure>

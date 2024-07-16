@@ -116,6 +116,7 @@
 * [Information Gathering / Reconnaissance](azure-and-m365/information-gathering-reconnaissance/README.md)
   * [Domain Enumeration](azure-and-m365/information-gathering-reconnaissance/domain-enumeration.md)
   * [User Enumeration](azure-and-m365/information-gathering-reconnaissance/user-enumeration.md)
+  * [AADInternals](azure-and-m365/information-gathering-reconnaissance/aadinternals.md)
 * [Azure AD Killchain](azure-and-m365/azure-ad-killchain.md)
 * [Azure Lab Setup](azure-and-m365/azure-lab-setup.md)
 
