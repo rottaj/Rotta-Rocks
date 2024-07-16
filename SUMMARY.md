@@ -117,6 +117,9 @@
   * [Domain Enumeration](azure-and-m365/information-gathering-reconnaissance/domain-enumeration.md)
   * [User Enumeration](azure-and-m365/information-gathering-reconnaissance/user-enumeration.md)
   * [AADInternals](azure-and-m365/information-gathering-reconnaissance/aadinternals.md)
+* [Attacking Authentication](azure-and-m365/attacking-authentication/README.md)
+  * [OWA Password Spraying](azure-and-m365/attacking-authentication/owa-password-spraying.md)
+  * [OAuth Abuse](azure-and-m365/attacking-authentication/oauth-abuse.md)
 * [Azure AD Killchain](azure-and-m365/azure-ad-killchain.md)
 * [Azure Lab Setup](azure-and-m365/azure-lab-setup.md)
 
