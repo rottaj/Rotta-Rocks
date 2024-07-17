@@ -93,9 +93,9 @@ rottadev.onmicrosoft.com True True True False False   False Managed
 
 
 
-## Insider Recon
+## Guest Recon
 
-### Authenticate to Microsoft
+### Authenticate as Guest
 
 We can authenticate with a user and password using AADInternals. It will prompt for MFA.
 
@@ -111,8 +111,6 @@ Id                                   Country Name  Domains
 --                                   ------- ----  -------
 4229582f-b81c-4623-b205-723775863d4f US      Rotta {rottadev.onmicrosoft.com}
 ```
-
-
 
 ### Login to Tenant as Guest
 
@@ -216,13 +214,9 @@ Teams with externals b25791fc-7c20-4027-93d8-4a39a9ed186c {user@company.com, adm
 
 <mark style="color:red;">**Note**</mark>: Many organizations have created a [dynamic group](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-create-rule) to contain all guest and/or extrernal users. Usually this is used to assign conditional access rules etc. to these users. However, the group will contain all guests of the organization, including business partners, clients, etc. And yes, **guest users can list the members of any group**!
 
-
-
-## Additional Enumeration
-
 Enumerating members is massive for us. We can use the information to conduct phishing campaigns and brute forcing.
 
-### Group Enumeration
+### Group Member Enumeration
 
 The following will extract all users from all the groups the given user is member of:
 
@@ -263,3 +257,108 @@ id                                   members
 294cdfc8-abb4-419f-bdbb-c5d616644f9a {Sync_SERVER1_895b43df@company.com}
 028e7f7b-c99a-41bb-9d5c-2d22457b5549 {admin@company.com, admin@company.onmicrosoft.com}     
 ```
+
+
+
+## Insider Recon
+
+
+
+### Authenticate as Insider
+
+We can authenticate with a username and password
+
+<pre class="language-powershell"><code class="lang-powershell"><strong>PS> Get-AADIntAccessTokenForAzureCoreManagement -SaveToCache
+</strong></code></pre>
+
+### Invoke Insider Recon
+
+```powershell
+PS> $results = Invoke-AADIntReconAsInsider
+
+Tenant brand:                Rotta
+Tenant name:                 rottadev.onmicrosoft.com
+Tenant id:                   4229582f-b81c-4623-b205-723775863d4f
+Tenant SKU:
+Azure AD objects:            213/50000
+Domains:                      ( verified)
+Non-admin users restricted?  False
+Users can register apps?     True
+Directory access restricted? False
+Directory sync enabled?      false
+Global admins:               2
+CA policies:                 0
+MS Partner IDs:
+MS Partner DAP enabled?      False
+MS Partner contracts:        0
+MS Partners:                 0
+```
+
+### User Enumeration
+
+```powershell
+PS> $results = Invoke-AADIntUserEnumerationAsInsider -Groups
+Users:        4
+Groups:       3
+```
+
+#### List Users
+
+```
+PS> $results.Users
+
+
+id                              : be7cc3bb-fe07-401d-aa27-50420392b009
+displayName                     : alice
+userPrincipalName               : alice@rottadev.onmicrosoft.com
+userType                        : Member
+onPremisesImmutableId           :
+onPremisesLastSyncDateTime      :
+onPremisesSamAccountName        :
+onPremisesSecurityIdentifier    :
+onPremisesDistinguishedName     :
+refreshTokensValidFromDateTime  : 2024-07-09T19:00:53Z
+signInSessionsValidFromDateTime : 2024-07-09T19:00:53Z
+proxyAddresses                  : {}
+businessPhones                  : {}
+identities                      : {@{signInType=userPrincipalName; issuer=rottadev.onmicrosoft.com; issuerAssignedId=alice@rottadev.onmicrosoft.com}}
+
+id                              : fdbd3d73-b316-4bd0-ab55-d5ef650e53da
+displayName                     : bob
+userPrincipalName               : bob@rottadev.onmicrosoft.com
+userType                        : Member
+onPremisesImmutableId           :
+onPremisesLastSyncDateTime      :
+onPremisesSamAccountName        :
+...
+```
+
+<mark style="color:red;">**Note**</mark>: We can list one by $results.Users\[x]
+
+## Global Admin Recon
+
+### Authenticate as Global Admin
+
+```powershell
+# Get an access token and save it to the cache
+Get-AADIntAccessTokenForAzureCoreManagement -SaveToCache
+
+# Grant Azure User Access Administrator role 
+Grant-AADIntAzureUserAccessAdminRole
+
+# Update the access token after elevation and save to cache
+Get-AADIntAccessTokenForAzureCoreManagement -SaveToCache
+
+```
+
+### List Subscriptions of current Tenant
+
+```
+PS> Get-AADIntAzureSubscriptions
+
+subscriptionId                       displayName          state
+--------------                       -----------          -----
+f14038db-c8d7-48df-8d66-adf35489efc4 Azure subscription 1 Enabled
+```
+
+###
