@@ -29,7 +29,53 @@ Once we've installed AADInternals we can import it into our current powershell p
 
 
 
+### Get Tenant ID from Domain
 
+Login information, including tenant ID
+
+<pre class="language-powershell"><code class="lang-powershell"><strong>PS> Get-AADIntTenantID -Domain rotta.dev
+</strong>f2a9b807-95f4-4a5f-9783-eaf2e0f18c7b
+</code></pre>
+
+API: login.microsoftonline.com//.well-known/openid-configuration
+
+### Get All domains of the tenant
+
+All domains of the tenant
+
+```powershell
+PS> Get-AADIntTenantDomains -Domain rotta.dev
+NETORGFT16900538.onmicrosoft.comrotta.dev
+```
+
+API: autodiscover-s.outlook.com/autodiscover/autodiscover.svc
+
+### Check if User Exists
+
+```powershell
+PS> Invoke-AADIntUserEnumerationAsOutsider -UserName alice@rottadev.onmicrosoft.com
+
+UserName                       Exists
+--------                       ------
+alice@rottadev.onmicrosoft.com   True
+```
+
+### Check if User Exists (wordlist)
+
+We can quickly check for users using a wordlist.
+
+<pre class="language-powershell"><code class="lang-powershell"><strong>PS> Get-Content .\users.txt | Invoke-AADIntUserEnumerationAsOutsider -Method Normal
+</strong>
+UserName                        Exists
+--------                        ------
+trey@rottadev.onmicrosoft.com    False
+robert@rottadev.onmicrosoft.com  False
+alice@rottadev.onmicrosoft.com    True
+bob@rottadev.onmicrosoft.com      True
+admin@rottadev.onmicrosoft.com   False
+ga_admin@rottadev.onmicrosof...   True
+admin_ga@rottadev.onmicrosof...  False
+</code></pre>
 
 ### Invoke-AADIntReconAsOutsider
 
