@@ -111,6 +111,15 @@
   * [Commando VM](offensive-tool-development/maldev-environment-setup/commando-vm.md)
 * [Maldev Checklist](offensive-tool-development/maldev-checklist.md)
 
+## Red Teaming
+
+* [Cobalt Strike](red-teaming/cobalt-strike/README.md)
+  * [Team Server](red-teaming/cobalt-strike/team-server.md)
+  * [Listeners](red-teaming/cobalt-strike/listeners.md)
+  * [Payloads](red-teaming/cobalt-strike/payloads.md)
+* [Templates & Cheat Sheets](red-teaming/templates-and-cheat-sheets/README.md)
+  * [Cheat sheet](red-teaming/templates-and-cheat-sheets/cheat-sheet.md)
+
 ## 🛡️ Azure & M365
 
 * [Information Gathering / Reconnaissance](azure-and-m365/information-gathering-reconnaissance/README.md)
