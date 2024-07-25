@@ -117,6 +117,8 @@
   * [Team Server](red-teaming/cobalt-strike/team-server.md)
   * [Listeners](red-teaming/cobalt-strike/listeners.md)
   * [Payloads](red-teaming/cobalt-strike/payloads.md)
+* [Password Spraying](red-teaming/password-spraying/README.md)
+  * [Spraying OWA](red-teaming/password-spraying/spraying-owa.md)
 * [Templates & Cheat Sheets](red-teaming/templates-and-cheat-sheets/README.md)
   * [Cheat sheet](red-teaming/templates-and-cheat-sheets/cheat-sheet.md)
 
