@@ -117,8 +117,11 @@
   * [Team Server](red-teaming/cobalt-strike/team-server.md)
   * [Listeners](red-teaming/cobalt-strike/listeners.md)
   * [Payloads](red-teaming/cobalt-strike/payloads.md)
-* [Password Spraying](red-teaming/password-spraying/README.md)
-  * [Spraying OWA](red-teaming/password-spraying/spraying-owa.md)
+* [Password Attacks](red-teaming/password-attacks/README.md)
+  * [Password Spraying OWA](red-teaming/password-attacks/password-spraying-owa.md)
+* [Phishing](red-teaming/phishing/README.md)
+  * [Crafting the email](red-teaming/phishing/crafting-the-email.md)
+  * [VBA Macro Beacon](red-teaming/phishing/vba-macro-beacon.md)
 * [Templates & Cheat Sheets](red-teaming/templates-and-cheat-sheets/README.md)
   * [Cheat sheet](red-teaming/templates-and-cheat-sheets/cheat-sheet.md)
 
