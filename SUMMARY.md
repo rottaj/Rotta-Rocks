@@ -113,6 +113,7 @@
 
 ## Red Teaming
 
+* [External Recon](red-teaming/external-recon.md)
 * [Cobalt Strike](red-teaming/cobalt-strike/README.md)
   * [Team Server](red-teaming/cobalt-strike/team-server.md)
   * [Listeners](red-teaming/cobalt-strike/listeners.md)
@@ -120,8 +121,12 @@
 * [Password Attacks](red-teaming/password-attacks/README.md)
   * [Password Spraying OWA](red-teaming/password-attacks/password-spraying-owa.md)
 * [Phishing](red-teaming/phishing/README.md)
-  * [Crafting the email](red-teaming/phishing/crafting-the-email.md)
+  * [Setting up Infrastructure](red-teaming/phishing/setting-up-infrastructure.md)
+  * [Crafting the Email](red-teaming/phishing/crafting-the-email.md)
   * [VBA Macro Beacon](red-teaming/phishing/vba-macro-beacon.md)
+* [Internal Recon](red-teaming/internal-recon/README.md)
+  * [Host Reconnaissance](red-teaming/internal-recon/host-reconnaissance.md)
+* [Persistence](red-teaming/persistence.md)
 * [Templates & Cheat Sheets](red-teaming/templates-and-cheat-sheets/README.md)
   * [Cheat sheet](red-teaming/templates-and-cheat-sheets/cheat-sheet.md)
 
