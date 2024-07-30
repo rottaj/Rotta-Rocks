@@ -111,13 +111,13 @@
   * [Commando VM](offensive-tool-development/maldev-environment-setup/commando-vm.md)
 * [Maldev Checklist](offensive-tool-development/maldev-checklist.md)
 
-## Red Teaming
+## 👺 Red Teaming
 
 * [External Recon](red-teaming/external-recon.md)
 * [Cobalt Strike](red-teaming/cobalt-strike/README.md)
   * [Team Server](red-teaming/cobalt-strike/team-server.md)
   * [Listeners](red-teaming/cobalt-strike/listeners.md)
-  * [Payloads](red-teaming/cobalt-strike/payloads.md)
+  * [Beacons](red-teaming/cobalt-strike/beacons.md)
 * [Password Attacks](red-teaming/password-attacks/README.md)
   * [Password Spraying OWA](red-teaming/password-attacks/password-spraying-owa.md)
 * [Phishing](red-teaming/phishing/README.md)
@@ -126,7 +126,8 @@
   * [VBA Macro Beacon](red-teaming/phishing/vba-macro-beacon.md)
 * [Internal Recon](red-teaming/internal-recon/README.md)
   * [Host Reconnaissance](red-teaming/internal-recon/host-reconnaissance.md)
-* [Persistence](red-teaming/persistence.md)
+* [Persistence](red-teaming/persistence/README.md)
+  * [Scheduled Tasks](red-teaming/persistence/scheduled-tasks.md)
 * [Templates & Cheat Sheets](red-teaming/templates-and-cheat-sheets/README.md)
   * [Cheat sheet](red-teaming/templates-and-cheat-sheets/cheat-sheet.md)
 
