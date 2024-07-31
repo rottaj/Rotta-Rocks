@@ -128,6 +128,8 @@
   * [Host Reconnaissance](red-teaming/internal-recon/host-reconnaissance.md)
 * [Persistence](red-teaming/persistence/README.md)
   * [Scheduled Tasks](red-teaming/persistence/scheduled-tasks.md)
+  * [Registry AutoRun](red-teaming/persistence/registry-autorun.md)
+  * [Startup Folder](red-teaming/persistence/startup-folder.md)
 * [Templates & Cheat Sheets](red-teaming/templates-and-cheat-sheets/README.md)
   * [Cheat sheet](red-teaming/templates-and-cheat-sheets/cheat-sheet.md)
 
