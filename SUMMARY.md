@@ -115,8 +115,8 @@
 
 * [External Recon](red-teaming/external-recon.md)
 * [Cobalt Strike](red-teaming/cobalt-strike/README.md)
-  * [Team Server](red-teaming/cobalt-strike/team-server.md)
-  * [Listeners](red-teaming/cobalt-strike/listeners.md)
+  * [Start Team Server](red-teaming/cobalt-strike/start-team-server.md)
+  * [Configure Listeners](red-teaming/cobalt-strike/configure-listeners.md)
   * [Beacons](red-teaming/cobalt-strike/beacons.md)
 * [Password Attacks](red-teaming/password-attacks/README.md)
   * [Password Spraying OWA](red-teaming/password-attacks/password-spraying-owa.md)
@@ -135,6 +135,7 @@
   * [COM Hijacking](red-teaming/persistence/com-hijacking.md)
 * [Templates & Cheat Sheets](red-teaming/templates-and-cheat-sheets/README.md)
   * [Cheat sheet](red-teaming/templates-and-cheat-sheets/cheat-sheet.md)
+  * [Red Team Checklist](red-teaming/templates-and-cheat-sheets/red-team-checklist.md)
 
 ## 🛡️ Azure & M365
 
