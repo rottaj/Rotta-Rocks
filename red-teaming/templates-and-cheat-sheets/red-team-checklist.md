@@ -221,7 +221,7 @@ Download global email address list with MailSniper.
 
 #### Screenshots
 
-* ```
+* ```powershell
   printscreen               Take a single screenshot via PrintScr method
   screenshot                Take a single screenshot
   screenwatch               Take periodic screenshots of desktop
@@ -263,7 +263,7 @@ Download global email address list with MailSniper.
 
 
 
-### COM Hijacking
+### Hunting for COM Hijacking
 
 
 
@@ -273,7 +273,7 @@ Download global email address list with MailSniper.
 
 ## Post Compromise - Host Privilege Escalation
 
-
+TODO Add this&#x20;
 
 ### Windows Services
 
@@ -291,9 +291,21 @@ Download global email address list with MailSniper.
 
 
 
+
+
+## Post Compromise - Elevated SYSTEM Persistence
+
+TODO Add this
+
+### Windows Services
+
+
+
+
+
 ##
 
-## Post Compromise - Lateral Movement
+## Post Compromise - Phishing & Lateral Movement
 
 ### Internal Phishing
 
@@ -303,23 +315,17 @@ TODO Add Teams, Slack, OneDrive, and others.
 
 ### Initial Access Payloads
 
+
+
 ### VBA Macros
 
-When&#x20;
-
-
-
-
-
 ### Remote template Injection
-
-
-
-
 
 ### HTML Smuggling
 
 
+
+## Post Compromise - Credential Theft
 
 
 
