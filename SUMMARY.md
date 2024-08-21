@@ -147,6 +147,7 @@
   * [MimiKatz](red-teaming/stealing-credentials/mimikatz.md)
   * [Rubeus](red-teaming/stealing-credentials/rubeus.md)
   * [Page 2](red-teaming/stealing-credentials/page-2.md)
+* [Cracking Passwords](red-teaming/cracking-passwords.md)
 * [Templates & Cheat Sheets](red-teaming/templates-and-cheat-sheets/README.md)
   * [Cheat sheet](red-teaming/templates-and-cheat-sheets/cheat-sheet.md)
   * [Red Team Checklist](red-teaming/templates-and-cheat-sheets/red-team-checklist.md)
