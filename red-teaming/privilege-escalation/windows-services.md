@@ -310,4 +310,3 @@ beacon> run sc start VulnService3
 beacon> connect localhost 4444
 ```
 
-## UAC Bypass
