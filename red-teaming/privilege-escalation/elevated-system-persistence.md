@@ -1,4 +1,4 @@
-# Elevate SYSTEM Persistence
+# Elevated SYSTEM Persistence
 
 ## Introduction
 
