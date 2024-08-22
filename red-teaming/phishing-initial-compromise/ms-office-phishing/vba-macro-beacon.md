@@ -24,7 +24,7 @@ End Sub
 
 The easiest way to get a Beacon through a VBA macro is to use a PowerShell Beacon. To do so, go to Attacks -> Scripted Web Delivery (S). After that, generate a PowerShell payload & copy and paste it.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-07-25 at 12.48.22 AM.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-25 at 12.48.22 AM.png" alt="" width="375"><figcaption></figcaption></figure>
 
 Next, copy the PowerShell payload to the VBA Macro
 
@@ -40,10 +40,10 @@ End Sub
 
 Save the Macro, return the Word and go File -> Info -> Inspect Document. Remove _Document Properties and Personal Information._ This will prevent out username and other information from being leaked.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-07-25 at 12.55.46 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-25 at 12.55.46 AM.png" alt=""><figcaption></figcaption></figure>
 
 Next we'll save it. It's important to save the Macro as a `.doc` instead of `.docx`. This is because .docx does not allow Macros. Additionally, you can use `.docm` but that's not really what we're looking for.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-07-25 at 1.05.09 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-25 at 1.05.09 AM.png" alt=""><figcaption></figcaption></figure>
 
 We'll upload this file to our Cobalt Strike team server. Go to Site Management -> Host File and select our new `.doc` file.
