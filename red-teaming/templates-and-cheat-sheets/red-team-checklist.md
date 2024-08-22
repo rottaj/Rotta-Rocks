@@ -122,11 +122,9 @@ Weak email security (SPF, DMARC and DKIM) may allow us to spoof emails to appear
 
 (TODO Include Mindmap screenshot here or organization).
 
-
-
 ## Initial Compromise
 
-### Password Spraying
+### OWA Password Spraying
 
 Far from the best method of gaining access these days. All eyes are you from the SOC when performing these attacks. That said, password spraying incidents cause massive bloat in alerts for blue team. Some orgs may decide to exclude this activity entirely as they have measures in place to mitigate activity. Account lockouts, Conditional Access Policy (CAP), etc.
 
@@ -163,6 +161,7 @@ Authentications on valid usernames take a little longer to process then invalid 
 
 If we decide to do this attack, it's best to take our time with this (depending on engagement timeframe). We are unable as red-teamers to determine account lockout configurations without access to the domain.
 
+* [ ] `Patterns such as`` `**`MonthYear`**` ``(August2019),`` `**`SeasonYear`**` ``(Summer2019) and`` `**`DayDate`**` ``(Tuesday6)`
 * ```powershell
   PS C:\Users\PaulBlart> Invoke-PasswordSprayOWA -ExchHostname mail.rotta.dev -UserList 
   .\Desktop\valid_usernames.txt -Password FoxyLady123!

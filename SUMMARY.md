@@ -156,57 +156,6 @@
   * [Cheat sheet](red-teaming/templates-and-cheat-sheets/cheat-sheet.md)
   * [Red Team Checklist](red-teaming/templates-and-cheat-sheets/red-team-checklist.md)
 
-## 🛡️ Azure & M365
-
-* [Information Gathering / Reconnaissance](azure-and-m365/information-gathering-reconnaissance/README.md)
-  * [Domain Enumeration](azure-and-m365/information-gathering-reconnaissance/domain-enumeration.md)
-  * [User Enumeration](azure-and-m365/information-gathering-reconnaissance/user-enumeration.md)
-  * [AADInternals](azure-and-m365/information-gathering-reconnaissance/aadinternals.md)
-* [Attacking Authentication](azure-and-m365/attacking-authentication/README.md)
-  * [OWA Password Spraying](azure-and-m365/attacking-authentication/owa-password-spraying.md)
-  * [OAuth Abuse](azure-and-m365/attacking-authentication/oauth-abuse.md)
-* [Azure AD Killchain](azure-and-m365/azure-ad-killchain.md)
-* [Azure Lab Setup](azure-and-m365/azure-lab-setup.md)
-
-## 🔍 Malware Analysis
-
-* [Network Traffic Analysis](malware-analysis/network-traffic-analysis/README.md)
-  * [INetSim](malware-analysis/network-traffic-analysis/inetsim.md)
-* [Static Analysis](malware-analysis/static-analysis/README.md)
-  * [Signatures & Fingerprints](malware-analysis/static-analysis/signatures-and-fingerprints.md)
-  * [Pestudio](malware-analysis/static-analysis/pestudio.md)
-  * [x64dbg](malware-analysis/static-analysis/x64dbg.md)
-* [Dynamic Analysis](malware-analysis/dynamic-analysis/README.md)
-  * [Noriben](malware-analysis/dynamic-analysis/noriben.md)
-* [Reverse Engineering / Code Analysis](malware-analysis/reverse-engineering-code-analysis/README.md)
-  * [IDA](malware-analysis/reverse-engineering-code-analysis/ida.md)
-  * [x64dbg](malware-analysis/reverse-engineering-code-analysis/x64dbg.md)
-  * [Returning Source Code](malware-analysis/reverse-engineering-code-analysis/returning-source-code/README.md)
-    * [.NET Binary](malware-analysis/reverse-engineering-code-analysis/returning-source-code/.net-binary.md)
-* [Creating Detection Rules](malware-analysis/creating-detection-rules.md)
-* [Tools](malware-analysis/tools.md)
-
-## 🥾 Security Operation Center
-
-* [Network Traffic Analysis](security-operation-center/network-traffic-analysis/README.md)
-  * [Tcpdump](security-operation-center/network-traffic-analysis/tcpdump.md)
-  * [Wireshark](security-operation-center/network-traffic-analysis/wireshark.md)
-* [Windows Event Logs](security-operation-center/windows-event-logs/README.md)
-  * [Sysmon](security-operation-center/windows-event-logs/sysmon.md)
-* [Event Tracing for Windows (ETW)](security-operation-center/event-tracing-for-windows-etw.md)
-* [Microsoft 365 Defender](security-operation-center/microsoft-365-defender.md)
-* [Splunk as SIEM](security-operation-center/splunk-as-siem/README.md)
-  * [Using Splunk Applications](security-operation-center/splunk-as-siem/using-splunk-applications.md)
-  * [Search Processing Language (SPL) Commands](security-operation-center/splunk-as-siem/search-processing-language-spl-commands.md)
-  * [Hunting with Splunk](security-operation-center/splunk-as-siem/hunting-with-splunk.md)
-  * [Intrusion Detection](security-operation-center/splunk-as-siem/intrusion-detection.md)
-* [Incident Response Process](security-operation-center/incident-response-process.md)
-* [MITRE ATT\&CK Framework](security-operation-center/mitre-att-and-ck-framework/README.md)
-  * [Persistence](security-operation-center/mitre-att-and-ck-framework/persistence/README.md)
-    * [Registry Run Keys](security-operation-center/mitre-att-and-ck-framework/persistence/registry-run-keys.md)
-* [Templates & Cheat Sheets](security-operation-center/templates-and-cheat-sheets/README.md)
-  * [Interview Prep](security-operation-center/templates-and-cheat-sheets/interview-prep.md)
-
 ## 🪟 Active Directory
 
 * [Active Directory Toolkit](active-directory/active-directory-toolkit/README.md)
@@ -341,9 +290,60 @@
   * [Useful Commands](penetration-testing/templates-and-cheat-sheets/useful-commands.md)
   * [Penetration Test Checklist](penetration-testing/templates-and-cheat-sheets/penetration-test-checklist.md)
 
+## 🛡️ Azure & M365
+
+* [Information Gathering / Reconnaissance](azure-and-m365/information-gathering-reconnaissance/README.md)
+  * [Domain Enumeration](azure-and-m365/information-gathering-reconnaissance/domain-enumeration.md)
+  * [User Enumeration](azure-and-m365/information-gathering-reconnaissance/user-enumeration.md)
+  * [AADInternals](azure-and-m365/information-gathering-reconnaissance/aadinternals.md)
+* [Attacking Authentication](azure-and-m365/attacking-authentication/README.md)
+  * [OWA Password Spraying](azure-and-m365/attacking-authentication/owa-password-spraying.md)
+  * [OAuth Abuse](azure-and-m365/attacking-authentication/oauth-abuse.md)
+* [Azure AD Killchain](azure-and-m365/azure-ad-killchain.md)
+* [Azure Lab Setup](azure-and-m365/azure-lab-setup.md)
+
+## 🥾 Security Operation Center
+
+* [Network Traffic Analysis](security-operation-center/network-traffic-analysis/README.md)
+  * [Tcpdump](security-operation-center/network-traffic-analysis/tcpdump.md)
+  * [Wireshark](security-operation-center/network-traffic-analysis/wireshark.md)
+* [Windows Event Logs](security-operation-center/windows-event-logs/README.md)
+  * [Sysmon](security-operation-center/windows-event-logs/sysmon.md)
+* [Event Tracing for Windows (ETW)](security-operation-center/event-tracing-for-windows-etw.md)
+* [Microsoft 365 Defender](security-operation-center/microsoft-365-defender.md)
+* [Splunk as SIEM](security-operation-center/splunk-as-siem/README.md)
+  * [Using Splunk Applications](security-operation-center/splunk-as-siem/using-splunk-applications.md)
+  * [Search Processing Language (SPL) Commands](security-operation-center/splunk-as-siem/search-processing-language-spl-commands.md)
+  * [Hunting with Splunk](security-operation-center/splunk-as-siem/hunting-with-splunk.md)
+  * [Intrusion Detection](security-operation-center/splunk-as-siem/intrusion-detection.md)
+* [Incident Response Process](security-operation-center/incident-response-process.md)
+* [MITRE ATT\&CK Framework](security-operation-center/mitre-att-and-ck-framework/README.md)
+  * [Persistence](security-operation-center/mitre-att-and-ck-framework/persistence/README.md)
+    * [Registry Run Keys](security-operation-center/mitre-att-and-ck-framework/persistence/registry-run-keys.md)
+* [Templates & Cheat Sheets](security-operation-center/templates-and-cheat-sheets/README.md)
+  * [Interview Prep](security-operation-center/templates-and-cheat-sheets/interview-prep.md)
+
 ## 🔬 Digital Forensics
 
 * [Tools](digital-forensics/tools.md)
+
+## 🔍 Malware Analysis
+
+* [Network Traffic Analysis](malware-analysis/network-traffic-analysis/README.md)
+  * [INetSim](malware-analysis/network-traffic-analysis/inetsim.md)
+* [Static Analysis](malware-analysis/static-analysis/README.md)
+  * [Signatures & Fingerprints](malware-analysis/static-analysis/signatures-and-fingerprints.md)
+  * [Pestudio](malware-analysis/static-analysis/pestudio.md)
+  * [x64dbg](malware-analysis/static-analysis/x64dbg.md)
+* [Dynamic Analysis](malware-analysis/dynamic-analysis/README.md)
+  * [Noriben](malware-analysis/dynamic-analysis/noriben.md)
+* [Reverse Engineering / Code Analysis](malware-analysis/reverse-engineering-code-analysis/README.md)
+  * [IDA](malware-analysis/reverse-engineering-code-analysis/ida.md)
+  * [x64dbg](malware-analysis/reverse-engineering-code-analysis/x64dbg.md)
+  * [Returning Source Code](malware-analysis/reverse-engineering-code-analysis/returning-source-code/README.md)
+    * [.NET Binary](malware-analysis/reverse-engineering-code-analysis/returning-source-code/.net-binary.md)
+* [Creating Detection Rules](malware-analysis/creating-detection-rules.md)
+* [Tools](malware-analysis/tools.md)
 
 ## 🛠️ Programming
 
