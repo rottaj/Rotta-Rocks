@@ -150,6 +150,7 @@
 * [Domain Reconnaissance ](red-teaming/domain-reconnaissance/README.md)
   * [PowerView & SharpView](red-teaming/domain-reconnaissance/powerview-and-sharpview.md)
   * [ADSearch](red-teaming/domain-reconnaissance/adsearch.md)
+* [User Impersonation](red-teaming/user-impersonation.md)
 * [Lateral Movement](red-teaming/lateral-movement.md)
 * [Cobalt Strike](red-teaming/cobalt-strike/README.md)
   * [Start Team Server](red-teaming/cobalt-strike/start-team-server.md)
