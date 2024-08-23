@@ -51,4 +51,4 @@ SQBFAFgAIAAo...ACgAbgBlAHcALQBvAGkA" -n "Updater" -m add -o hourly
 
 We can confirm we successfully created a scheduled task by opening the Task Scheduler.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-07-31 at 2.09.43 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-07-31 at 2.09.43 AM.png" alt=""><figcaption><p>Obviosly just for testing, but can click "Run" and a beacon should pop up.</p></figcaption></figure>
