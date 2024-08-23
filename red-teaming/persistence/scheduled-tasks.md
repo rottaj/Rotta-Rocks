@@ -2,6 +2,14 @@
 
 TODO: Add scheduled task enumeration. schtask commands, privileges (ability to create tasks for current user), possible hijacks, etc.
 
+## Introduction
+
+Typically an account would have to be an administrator account to schedule task for the system or it would have to be run as the administrator.&#x20;
+
+## Enumerating Task Permissions
+
+
+
 ## Creating Tasks
 
 Windows Task Scheduler allows us to create tasks that execute on a pre-defined trigger. For example they can be:
