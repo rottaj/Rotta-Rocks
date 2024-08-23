@@ -147,15 +147,19 @@
   * [MimiKatz](red-teaming/stealing-credentials/mimikatz.md)
   * [Rubeus](red-teaming/stealing-credentials/rubeus.md)
   * [Page 2](red-teaming/stealing-credentials/page-2.md)
+* [Domain Reconnaissance ](red-teaming/domain-reconnaissance/README.md)
+  * [PowerView & SharpView](red-teaming/domain-reconnaissance/powerview-and-sharpview.md)
+  * [ADSearch](red-teaming/domain-reconnaissance/adsearch.md)
 * [Lateral Movement](red-teaming/lateral-movement.md)
 * [Cobalt Strike](red-teaming/cobalt-strike/README.md)
   * [Start Team Server](red-teaming/cobalt-strike/start-team-server.md)
   * [Configure Listeners](red-teaming/cobalt-strike/configure-listeners.md)
   * [Beacons](red-teaming/cobalt-strike/beacons.md)
 * [Cracking Passwords](red-teaming/cracking-passwords.md)
-* [Templates & Cheat Sheets](red-teaming/templates-and-cheat-sheets/README.md)
-  * [Cheat sheet](red-teaming/templates-and-cheat-sheets/cheat-sheet.md)
-  * [Red Team Checklist](red-teaming/templates-and-cheat-sheets/red-team-checklist.md)
+* [Tools & Checklists](red-teaming/tools-and-checklists/README.md)
+  * [Commands Cheat Sheet](red-teaming/tools-and-checklists/commands-cheat-sheet.md)
+  * [Tools](red-teaming/tools-and-checklists/tools.md)
+  * [Red Team Checklist](red-teaming/tools-and-checklists/red-team-checklist.md)
 
 ## 🪟 Active Directory
 
