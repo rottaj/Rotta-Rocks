@@ -147,6 +147,7 @@
   * [MimiKatz](red-teaming/stealing-credentials/mimikatz.md)
   * [Rubeus](red-teaming/stealing-credentials/rubeus.md)
   * [Page 2](red-teaming/stealing-credentials/page-2.md)
+* [Lateral Movement](red-teaming/lateral-movement.md)
 * [Cobalt Strike](red-teaming/cobalt-strike/README.md)
   * [Start Team Server](red-teaming/cobalt-strike/start-team-server.md)
   * [Configure Listeners](red-teaming/cobalt-strike/configure-listeners.md)

