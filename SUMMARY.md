@@ -109,6 +109,7 @@
 * [MalDev Environment Setup](offensive-tool-development/maldev-environment-setup/README.md)
   * [Setting up Dev Box](offensive-tool-development/maldev-environment-setup/setting-up-dev-box.md)
   * [Setting up Pwn Box](offensive-tool-development/maldev-environment-setup/setting-up-pwn-box.md)
+  * [Setting up Dev Server](offensive-tool-development/maldev-environment-setup/setting-up-dev-server.md)
   * [Commando VM](offensive-tool-development/maldev-environment-setup/commando-vm.md)
 * [Maldev Checklist](offensive-tool-development/maldev-checklist.md)
 
