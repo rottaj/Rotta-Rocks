@@ -99,6 +99,7 @@
     * [SysWhispers](offensive-tool-development/syscalls/direct-syscalls/syswhispers.md)
   * [Indirect Syscalls](offensive-tool-development/syscalls/indirect-syscalls.md)
 * [C2 Development](offensive-tool-development/c2-development/README.md)
+  * [Consensus & Design Patterns](offensive-tool-development/c2-development/consensus-and-design-patterns.md)
   * [Infrastructure](offensive-tool-development/c2-development/infrastructure.md)
   * [Teamserver](offensive-tool-development/c2-development/teamserver.md)
   * [Listeners](offensive-tool-development/c2-development/listeners.md)
