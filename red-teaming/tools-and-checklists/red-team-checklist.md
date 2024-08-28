@@ -302,11 +302,25 @@ TODO Add this
 
 
 
+## Post Compromise - Credential Theft
+
+
+
+## Post Compromise - Lateral Movement
+
+
+
+TODO: Add checklist depending on the type of credential harvested and what technique(s) to use for that cred. (NTLM, AES, TGT, plaintext)
+
+
+
 ##
 
-## Post Compromise - Phishing & Lateral Movement
 
-### Internal Phishing
+
+
+
+## Post Compromise - Internal Phishing
 
 TODO Add Teams, Slack, OneDrive, and others.
 
@@ -321,12 +335,6 @@ TODO Add Teams, Slack, OneDrive, and others.
 ### Remote template Injection
 
 ### HTML Smuggling
-
-
-
-## Post Compromise - Credential Theft
-
-
 
 
 
