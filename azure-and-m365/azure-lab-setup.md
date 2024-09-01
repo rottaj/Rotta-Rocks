@@ -6,6 +6,14 @@
 
 For our Azure environment we will create the following things:
 
+
+
+## Pricing!
+
+Before we move anywhere it's best to calculate costs. Obviously, we want to spend the least amount of money as possible. If done correctly, it'll be close to if not free :wink:.
+
+If free trial fails, the [Azure Price Calculator](https://azure.microsoft.com/en-us/pricing/calculator/) is a good place to start to get an estimate of your monthy expenses.&#x20;
+
 ### Creating Azure Tenants
 
 **Create M365 Business Basic**
