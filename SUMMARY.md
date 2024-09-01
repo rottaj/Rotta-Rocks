@@ -316,6 +316,7 @@
   * [OAuth Abuse](azure-and-m365/attacking-authentication/oauth-abuse.md)
 * [Azure AD Killchain](azure-and-m365/azure-ad-killchain.md)
 * [Azure Lab Setup](azure-and-m365/azure-lab-setup.md)
+* [Azure & M365 Checklist](azure-and-m365/azure-and-m365-checklist.md)
 
 ## 🥾 Security Operation Center
 
