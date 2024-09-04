@@ -372,6 +372,7 @@
   * [wininet.h](programming/windows-api/wininet.h.md)
   * [Wrapping WinAPI Functions](programming/windows-api/wrapping-winapi-functions.md)
   * [code\_seg](programming/windows-api/code\_seg.md)
+  * [Locating WinAPI Functions - Tips ](programming/windows-api/locating-winapi-functions-tips.md)
 * [Visual Studio](programming/visual-studio/README.md)
   * [Creating DLL's](programming/visual-studio/creating-dlls.md)
   * [Debug & Release Mode](programming/visual-studio/debug-and-release-mode.md)
