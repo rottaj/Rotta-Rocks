@@ -17,6 +17,10 @@ Every header shown is a struct that holds information about the PE file.
 
 ## Access Local PEB (x64)
 
+
+
+### MSVC Intrinsic Function&#x20;
+
 ```c
 #include <winternl.h>
 // Get PEB structure
@@ -31,6 +35,34 @@ Every header shown is a struct that holds information about the PE file.
 PLDR_DATA_TABLE_ENTRY pLdr = (PLDR_DATA_TABLE_ENTRY)((PBYTE)(pPeb->Ldr->InMemoryOrderModuleList.Flink) - 0x10);
 // pLdr->DllBase (Entrypoint to .exe)
 ```
+
+### NtQueryInformationProcess
+
+```c
+typedef NTSTATUS (NTAPI *fnNtQueryInformationProcess)(
+    HANDLE ProcessHandle,
+    PROCESSINFOCLASS ProcessInformationClass,
+    PVOID ProcessInformation,
+    ULONG ProcessInformationLength,
+    PULONG ReturnLength
+);
+
+int main(void) {
+    fnNtQueryInformationProcess ntQueryPE = (fnNtQueryInformationProcess)GetProcAddress(GetModuleHandleW(L"ntdll.dll"), "NtQueryInformationProcess");
+
+    PROCESS_BASIC_INFORMATION pbi;
+    ULONG ulRetLength;
+    NTSTATUS STATUS = ntQueryPE(GetCurrentProcess(), ProcessBasicInformation, &pbi, sizeof(pbi), &ulRetLength);
+    if (STATUS != 0) {
+        printf("NtQueryInformation Failed %ld", STATUS);
+    }
+    PPEB pPeb = (PPEB)pbi.PebBaseAddress;
+    PLDR_DATA_TABLE_ENTRY pLdr = (PLDR_DATA_TABLE_ENTRY)((PBYTE)(pPeb->Ldr->InMemoryOrderModuleList.Flink) - 0x10);
+    printf("%p", pLdr->DllBase); // Print base address of current process
+}
+```
+
+##
 
 ## Structuring our code
 
