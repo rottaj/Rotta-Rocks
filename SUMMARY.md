@@ -366,6 +366,7 @@
 * [MASM Assembly ](programming/masm-assembly.md)
 * [Qt](programming/qt/README.md)
   * [Setting up Qt in CLion](programming/qt/setting-up-qt-in-clion.md)
+* [Windows Development on MacOS](programming/windows-development-on-macos.md)
 * [Windows API](programming/windows-api/README.md)
   * [Deleting Files](programming/windows-api/deleting-files.md)
   * [Strings](programming/windows-api/strings.md)
