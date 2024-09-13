@@ -386,3 +386,7 @@
   * [Strings](programming/position-independent-code-pic/strings.md)
   * [Macros](programming/position-independent-code-pic/macros.md)
   * [PIC Checklist](programming/position-independent-code-pic/pic-checklist.md)
+
+## 🏠 Home Lab
+
+* [Current Setup](home-lab/current-setup.md)
