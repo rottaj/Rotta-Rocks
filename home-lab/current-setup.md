@@ -6,6 +6,12 @@ TODO: Come back and complete this:
 
 
 
+## Microsoft Office
+
+We can install Office 2019 Professional from the ISO link below.
+
+{% embed url="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/Professional2019Retail.img" %}
+
 ### Exchange Server
 
 {% embed url="https://www.microsoft.com/en-us/download/details.aspx?id=104131" %}
