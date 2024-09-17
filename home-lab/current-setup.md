@@ -8,9 +8,11 @@ TODO: Come back and complete this:
 
 ## Microsoft Office
 
-We can install Office 2019 Professional from the ISO link below.
+We can install Office 2019 Professional from the ISO link below. Largert list can be found [here](https://gist.github.com/Issykul/6ac3395ded8d7869bca31a4a2de23adc).
 
 {% embed url="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/Professional2019Retail.img" %}
+
+
 
 ### Exchange Server
 
