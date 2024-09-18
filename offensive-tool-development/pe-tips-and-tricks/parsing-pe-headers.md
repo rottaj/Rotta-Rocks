@@ -17,8 +17,6 @@ Every header shown is a struct that holds information about the PE file.
 
 ## Access Local PEB (x64)
 
-
-
 ### MSVC Intrinsic Function&#x20;
 
 ```c
@@ -34,6 +32,18 @@ Every header shown is a struct that holds information about the PE file.
 // Get of current process (call pLdr->DllBase to get base address)
 PLDR_DATA_TABLE_ENTRY pLdr = (PLDR_DATA_TABLE_ENTRY)((PBYTE)(pPeb->Ldr->InMemoryOrderModuleList.Flink) - 0x10);
 // pLdr->DllBase (Entrypoint to .exe)
+```
+
+### NtCurrentTeb
+
+We will need to include our own [PEB](https://www.vergiliusproject.com/kernels/x86/windows-10/1703/\_PEB) & [TEB](https://www.vergiliusproject.com/kernels/x86/windows-7/sp1/\_TEB) objects (PTEB\_A & PPEB\_A)
+
+```c
+    // 64 bit
+    PTEB_A pTib = (PTEB_A)NtCurrentTeb();
+    PEB_A* pPeb = (PPEB_A)pTib->ProcessEnvironmentBlock;
+    // Getting Ldr
+    PPEB_LDR_DATA		    pLdr	= (PPEB_LDR_DATA)(pPeb->Ldr);
 ```
 
 ### NtQueryInformationProcess
