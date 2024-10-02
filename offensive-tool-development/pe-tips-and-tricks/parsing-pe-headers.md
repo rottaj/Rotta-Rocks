@@ -75,7 +75,46 @@ int main(void) {
 }
 ```
 
-##
+## PE Sections & Headeres
+
+### Parsing PE Headers
+
+PE
+
+
+
+### Parsing PE Sections
+
+#### Get Built In Sections
+
+<pre class="language-c"><code class="lang-c">// Dos Header
+PIMAGE_DOS_HEADER pImgDosHdr = (PIMAGE_DOS_HEADER)pPE;
+if (pImgDosHdr->e_magic != IMAGE_DOS_SIGNATURE){
+	return -1;
+}
+// Nt Header
+PIMAGE_NT_HEADERS pImgNtHdrs = (PIMAGE_NT_HEADERS)(pPE + pImgDosHdr->e_lfanew);
+if (pImgNtHdrs->Signature != IMAGE_NT_SIGNATURE) {
+	return -1;
+}
+
+// IMAGE_FILE_HEADER
+IMAGE_FILE_HEADER ImgFileHdr = pImgNtHdrs->FileHeader;
+// POINTER FILE HEADER
+<strong>PIMAGE_FILE_HEADER pFileHeader = (PIMAGE_FILE_HEADER)(pBaseAddress + pDosHeader->e_lfanew + sizeof(DWORD));
+</strong><strong>
+</strong><strong>PIMAGE_OPTIONAL_HEADER pOptionalHeader = (PIMAGE_OPTIONAL_HEADER)(pBaseAddress + pDosHeader->e_lfanew + sizeof(DWORD)+sizeof(IMAGE_FILE_HEADER));
+</strong>
+PIMAGE_SECTION_HEADER pSectionHeader = (PIMAGE_SECTION_HEADER)(pBaseAddress + pDosHeader->e_lfanew + sizeof(IMAGE_NT_HEADERS));
+</code></pre>
+
+#### Loop through all sections
+
+
+
+### Adding PE Sections
+
+
 
 ## Structuring our code
 
