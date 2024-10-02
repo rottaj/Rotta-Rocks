@@ -40,10 +40,13 @@ We will need to include our own [PEB](https://www.vergiliusproject.com/kernels/x
 
 ```c
     // 64 bit
-    PTEB_A pTib = (PTEB_A)NtCurrentTeb();
-    PEB_A* pPeb = (PPEB_A)pTib->ProcessEnvironmentBlock;
+    P_TEB teb = (P_TEB)NtCurrentTeb();
+    P_PEB peb  = (P_PEB)teb->ProcessEnvironmentBlock;
+    
+    // Getting Base Address
+    PVOID pBaseAddress = peb->ImageBaseAddress;
     // Getting Ldr
-    PPEB_LDR_DATA		    pLdr	= (PPEB_LDR_DATA)(pPeb->Ldr);
+    PPEB_LDR_DATA pLdr = (PPEB_LDR_DATA)(peb->Ldr);
 ```
 
 ### NtQueryInformationProcess
