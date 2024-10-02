@@ -8,6 +8,12 @@ All my development is done in a Windows VM w/ CLion. I then upload my binaries t
 
 Here are my CLion configurations for building to x86\_x64.&#x20;
 
+Not necessary, but I like to use the CMake Options:
+
+```
+-DCMAKE_SYSTEM_NAME=Windows -DCMAKE_SYSTEM_PROCESSOR=x86_64
+```
+
 <figure><img src="../../.gitbook/assets/Screenshot 2024-09-11 at 3.16.10 PM.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-09-11 at 3.18.09 PM.png" alt=""><figcaption></figcaption></figure>
