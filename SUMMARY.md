@@ -55,6 +55,7 @@
   * [Patching Base Relocations](offensive-tool-development/pe-tips-and-tricks/patching-base-relocations.md)
   * [Fixing Memory Permissions](offensive-tool-development/pe-tips-and-tricks/fixing-memory-permissions.md)
   * [Embed an EXE inside a LNK](offensive-tool-development/pe-tips-and-tricks/embed-an-exe-inside-a-lnk.md)
+  * [PE Infection](offensive-tool-development/pe-tips-and-tricks/pe-infection.md)
 * [Staging](offensive-tool-development/staging/README.md)
   * [Fetch Payload from Web Server](offensive-tool-development/staging/fetch-payload-from-web-server.md)
   * [Fetch DLL from Web Server](offensive-tool-development/staging/fetch-dll-from-web-server.md)
