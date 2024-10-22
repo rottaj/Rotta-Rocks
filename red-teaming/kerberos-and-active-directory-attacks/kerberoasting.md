@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Kerberoasting is an attack technique that attempts to obtain a password has hof an Active Directory account that has a Service Principal Name (SPN).&#x20;
+Kerberoasting is an attack technique that attempts to obtain a password hash of an Active Directory account that has a Service Principal Name (SPN).&#x20;
 
 **How it works**: An unauthenticated domain user can request a Kerberos ticket for an SPN. The kerberos ticket is encrypted with the hash of the service account. Adversaries then work offline to crack the password hash.
 
