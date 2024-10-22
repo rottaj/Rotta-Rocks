@@ -170,7 +170,6 @@
   * [Shadow Credentials](red-teaming/kerberos-and-active-directory-attacks/shadow-credentials.md)
   * [Unconstrained Delegation](red-teaming/kerberos-and-active-directory-attacks/unconstrained-delegation.md)
   * [Constrained Delegation](red-teaming/kerberos-and-active-directory-attacks/constrained-delegation.md)
-  * [S4U2Self](red-teaming/kerberos-and-active-directory-attacks/s4u2self.md)
 * [Cobalt Strike](red-teaming/cobalt-strike/README.md)
   * [Start Team Server](red-teaming/cobalt-strike/start-team-server.md)
   * [Configure Listeners](red-teaming/cobalt-strike/configure-listeners.md)
