@@ -4,9 +4,7 @@
 
 {% embed url="https://swisskyrepo.github.io/InternalAllTheThings/command-control/cobalt-strike/" %}
 
-
-
-
+##
 
 ## Windows Command Line tools
 
