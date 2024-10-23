@@ -4,9 +4,13 @@
 
 ## Introduction
 
-Constrained delegation is a safer means for services to perform Kerberos delegation (act on their behalf). Constrained delegation aims to restrict the services to which the server can act on behalf of the user. It no longer allows the server to cache TGTs of other users. But it does allow it to request a TGS for another user (using it's own TGT).
+Constrained delegation is a safer means for services to perform delegation. Constrained delegation aims to restrict the services to which the server can act on behalf of the user. It no longer allows the server to cache TGTs of other users. But it does allow it to request a TGS for another user (using it's own TGT).
 
+**Scope of Trust:** Constrained delegation allows a service to impersonate a user only for specific services.
 
+**Usage:** Typically used in scenarios where a service needs to access another service on behalf of the user (example: web server interacting with database)
+
+**Configuration:** This is set up on the service account level in Active Directory. You specify which target services the account can delegate to.
 
 ## Enumerate hosts configured for constrained delegation
 

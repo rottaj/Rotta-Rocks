@@ -6,6 +6,10 @@ Delegation allows a user or computer to impersonate another account in order to 
 
 Unconstrained delegation will cache the user's TGT if it interacts with the system. So if we compromise a machine with unconstrained delegation, we can extract any TGT from it's memory and use them to impersonate users.
 
+* **Scope of Trust:** In unconstrained delegation, a service can impersonate any user and access any service on behalf of that user within the domain.&#x20;
+* **Configuration:** Unconstrained delegation is enabled on the service account itself in Active Directory. Once enabled, there are no restrictions on which resources the service can access.
+* **Usage:** This method is typically used in scenarios where the service requires extensive access across multiple services (Example: domain controller)
+
 <mark style="color:yellow;">**Technique**</mark>: If we compromise a computer with unconstrained delegation, we can social engineer a user to interact with it and steal their TGT. We can also just wait for users and harvest TGT's! Interaction can be as simple as `dir \web\c$`
 
 <mark style="color:red;">**Note**</mark>:   Domain Controllers are always permitted for unconstrained delegation.
