@@ -383,6 +383,8 @@
   * [Setting up Qt in CLion](programming/qt/setting-up-qt-in-clion.md)
 * [Windows Development on MacOS](programming/windows-development-on-macos/README.md)
   * [CLion Setup](programming/windows-development-on-macos/clion-setup.md)
+* [Windows Driver Development](programming/windows-driver-development/README.md)
+  * [Installing Windows SDK & WDK](programming/windows-driver-development/installing-windows-sdk-and-wdk.md)
 * [Windows API](programming/windows-api/README.md)
   * [Deleting Files](programming/windows-api/deleting-files.md)
   * [Strings](programming/windows-api/strings.md)
