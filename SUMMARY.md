@@ -175,6 +175,7 @@
   * [SOCKS](red-teaming/proxies-and-pivoting/socks.md)
   * [Proxychains (Linux)](red-teaming/proxies-and-pivoting/proxychains-linux.md)
   * [Proxifier (Windows)](red-teaming/proxies-and-pivoting/proxifier-windows.md)
+  * [FoxyProxy & Browsers](red-teaming/proxies-and-pivoting/foxyproxy-and-browsers.md)
 * [Cobalt Strike](red-teaming/cobalt-strike/README.md)
   * [Start Team Server](red-teaming/cobalt-strike/start-team-server.md)
   * [Configure Listeners](red-teaming/cobalt-strike/configure-listeners.md)
