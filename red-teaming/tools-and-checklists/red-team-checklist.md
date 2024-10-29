@@ -169,7 +169,7 @@ If we decide to do this attack, it's best to take our time with this (depending 
 
 
 
-## Post Compromise - Enumeration & Reconnaissance
+## Post Compromise - Host Enumeration
 
 ### Harvested O365 Credentials
 
@@ -270,7 +270,33 @@ Download global email address list with MailSniper.
 
 
 
-## Post Compromise - Host Privilege Escalation
+## Post Compromise - Network Recon
+
+
+
+### Host Discovery
+
+#### nmap
+
+Either proxy nmap or transfer binary to host
+
+* ```sh
+  $ nmap -v -p 22,80.88,445,5985 172.16.11.0/24 --open
+  ```
+
+####
+
+### Network Sniffing
+
+#### Tcpdump
+
+* ```sh
+  $ tcpdump -i <internal-interface> -s 0 -w - -U | tee output.pcap | tcpdump -r -
+  ```
+
+
+
+## Privilege Escalation
 
 TODO Add this&#x20;
 
@@ -278,7 +304,7 @@ TODO Add this&#x20;
 
 ##
 
-## Post Compromise - Persistence
+## Persistence
 
 ### Persistence - SharPersist & Cobalt Strike
 
@@ -292,7 +318,7 @@ TODO Add this&#x20;
 
 
 
-## Post Compromise - Elevated SYSTEM Persistence
+## Elevated SYSTEM Persistence
 
 TODO Add this
 
@@ -302,7 +328,7 @@ TODO Add this
 
 
 
-## Post Compromise - Credential Theft
+## Credential Theft
 
 
 
@@ -388,7 +414,7 @@ Connect to target:
 
 ##
 
-## Post Compromise - Internal Phishing
+## Internal Phishing
 
 TODO Add Teams, Slack, OneDrive, and others.
 
