@@ -4,7 +4,7 @@
 
 One fault of Mimikatz is that it obtains handles to sensitive resources (SAM, LSASS, etc.) and can be audited easily. Rubeus, uses legitimate Windows API to obtain it's information about the host.
 
-## Rubeus Credential Commands
+## Credential Dumping
 
 ### Triage
 
