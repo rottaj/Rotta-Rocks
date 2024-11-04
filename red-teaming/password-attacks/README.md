@@ -1,2 +1,0 @@
-# Spraying OWA
-
