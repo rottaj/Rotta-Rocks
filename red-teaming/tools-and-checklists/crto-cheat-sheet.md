@@ -64,6 +64,32 @@ domain.com\cfoxy -Password Password123! -OutFile .\global-addr-list.txt
 beacon> ps
 ```
 
+#### Services
+
+Can be found [here](https://www.rotta.rocks/red-teaming/privilege-escalation/windows-services)
+
+Beacon - wmic
+
+```sh
+beacon> run wmic service get name, pathname
+```
+
+beacon - Powershell
+
+```
+beacon> powershell Get-Acl -Path "C:\Program Files\Vulnerable Services" | fl
+```
+
+beacon -SharpUp
+
+```
+// Unquoated Paths
+beacon> execute-assembly C:\Tools\SharpUp.exe audit UnquotedServicePath
+// Weak Permissions
+beacon> execute-assembly C:\Tools\SharpUp.exe audit ModifiableServices
+//
+```
+
 #### SeatBelt
 
 [Seatbelt](https://github.com/GhostPack/Seatbelt) is a C# tool that automatically enumerates a host
@@ -125,7 +151,7 @@ beacon> clipboard
 beacon> net logons
 ```
 
-##
+
 
 ## Host Persistence
 
