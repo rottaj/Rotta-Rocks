@@ -175,7 +175,7 @@
     * [Overpass The Hash](red-teaming/lateral-movement/user-impersonation/overpass-the-hash.md)
     * [Token Impersonation ](red-teaming/lateral-movement/user-impersonation/token-impersonation.md)
     * [Token Store](red-teaming/lateral-movement/user-impersonation/token-store.md)
-  * [Jumping Hosts](red-teaming/lateral-movement/jumping-hosts.md)
+  * [Techniques - Moving Laterally](red-teaming/lateral-movement/techniques-moving-laterally.md)
 * [Cobalt Strike](red-teaming/cobalt-strike/README.md)
   * [Start Team Server](red-teaming/cobalt-strike/start-team-server.md)
   * [Configure Listeners](red-teaming/cobalt-strike/configure-listeners.md)
