@@ -46,7 +46,7 @@ optional arguments:
 ```
 
 \
-_<mark style="color:red;">**NOTE:**</mark>_ As we can see the tool accepts various collection methods with the `-c` or `--collectionmethod` flag. We can retrieve specific data such as user sessions, users and groups, object properties, ACLS, or select `all` to gather as much data as possible.&#x20;
+&#xNAN;_<mark style="color:red;">**NOTE:**</mark>_ As we can see the tool accepts various collection methods with the `-c` or `--collectionmethod` flag. We can retrieve specific data such as user sessions, users and groups, object properties, ACLS, or select `all` to gather as much data as possible.&#x20;
 
 
 
@@ -85,8 +85,8 @@ We could then type `sudo neo4j start` to start the [neo4j](https://neo4j.com/) s
 Next, we can type `bloodhound` to open the GUI.\
 
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-09-20 161342.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-09-20 161342.png" alt=""><figcaption></figcaption></figure>
 
 ## **Searching for Relationships**
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-09-20 161412.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-09-20 161412.png" alt=""><figcaption></figcaption></figure>

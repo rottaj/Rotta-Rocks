@@ -479,7 +479,7 @@ wpscan --url http://10.10.10.88/webservices/wp/index.php --proxy 127.0.0.1:8080 
 
 ### SMB
 
-<mark style="color:yellow;">**Make sure to add DC name to /etc/hosts.**</mark>** Or any other domain-connected hostname.**
+<mark style="color:yellow;">**Make sure to add DC name to /etc/hosts.**</mark>**&#x20;Or any other domain-connected hostname.**
 
 nmap to get basic info&#x20;
 

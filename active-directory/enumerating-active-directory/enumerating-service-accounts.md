@@ -7,7 +7,7 @@ description: >-
 
 # Enumerating Service Accounts
 
-## S_ervice Principal Name_ (SPN)
+## &#x53;_&#x65;rvice Principal Name_ (SPN)
 
 _Service Principal Name_ (SPN) associates a service account to a specific service in Active Directory.
 
@@ -52,8 +52,6 @@ Address:  192.168.50.72
 ```
 
 <mark style="color:red;">**NOTE:**</mark> We can browser to that IP address, for now we'll document that it's attached to a Service Account which is likely higher privilege than a User Account.
-
-
 
 
 

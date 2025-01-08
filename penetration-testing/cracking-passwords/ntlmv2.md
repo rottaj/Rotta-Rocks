@@ -92,7 +92,7 @@ Sometimes we obtain a Net-NTLMv2 hash but cant crack it. **If the hash we obtain
 
 <mark style="color:red;">**IMPORTANT**</mark>: SMB Signing must be disabled to perform a relay attack!
 
-### NTLM_relayx - Impacket_
+### NTL&#x4D;_&#x72;elayx - Impacket_
 
 _We can use NTLMrelayx from impacket to relay the hash over SMB._
 

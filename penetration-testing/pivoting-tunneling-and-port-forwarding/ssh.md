@@ -41,7 +41,7 @@ _<mark style="color:red;">**NOTE**</mark>_: **-N** flag is means execute no remo
 
 Local port forwarding is limited to one socket per SSH connection. OpenSSH allows for dynamic port forwarding. From a single listening port, packets can be forwarded to any socket that the server can route to. **This works because the listening port creates a SOCKS proxy.**
 
-### D_**ynamic Port Forwarding from Attack Host:**_
+### &#x44;_**ynamic Port Forwarding from Attack Host:**_
 
 ```shell-session
 attacker@kali$ ssh -D 9050 ubuntu@10.129.202.64
@@ -57,7 +57,7 @@ $ tail -4 /etc/proxychains.conf
 socks4 	127.0.0.1 9050
 ```
 
-### D_**ynamic Port Forwarding From Jump Host:**_
+### &#x44;_**ynamic Port Forwarding From Jump Host:**_
 
 ```shell-session
 jump-host@ubuntu$ ssh -D 9050 ubuntu@172.167.32.11

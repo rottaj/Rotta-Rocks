@@ -6,7 +6,7 @@ description: >-
 
 # Indirect Syscalls
 
-_<mark style="color:red;">**NOTE:**</mark>_** As EDR vendors improve, it's becoming harder and harder to use direct syscalls for red-teaming. Welcome, indirect syscalls.**
+_<mark style="color:red;">**NOTE:**</mark>_**&#x20;As EDR vendors improve, it's becoming harder and harder to use direct syscalls for red-teaming. Welcome, indirect syscalls.**
 
 ## Introduction
 

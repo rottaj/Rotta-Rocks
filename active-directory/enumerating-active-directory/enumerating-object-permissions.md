@@ -105,7 +105,7 @@ CORP\Enterprise Admins
 
 <mark style="color:red;">NOTE:</mark> We see that <mark style="color:orange;">stephanie</mark> has "<mark style="color:orange;">GenericAll</mark>" permissions for this Object, a low-level user should not have these types of permissions so it must be a configuration mistake!
 
-<mark style="color:green;">**GenericAll**</mark>** **_**is the most powerfull ACL in Active Directory.**_
+<mark style="color:green;">**GenericAll**</mark>**&#x20;**_**is the most powerfull ACL in Active Directory.**_
 
 ##
 

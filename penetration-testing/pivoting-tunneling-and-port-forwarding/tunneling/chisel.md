@@ -7,7 +7,7 @@ description: >-
 
 # Chisel
 
-<mark style="color:red;">**IMPORTANT:**</mark>** We need to be mindful of the size of files we transfer onto targets, not just for performance reasons but also considering detection. Some useful links to proceed:**
+<mark style="color:red;">**IMPORTANT:**</mark>**&#x20;We need to be mindful of the size of files we transfer onto targets, not just for performance reasons but also considering detection. Some useful links to proceed:**
 
 {% embed url="https://0xdf.gitlab.io/2020/08/10/tunneling-with-chisel-and-ssf-update.html" %}
 
@@ -99,7 +99,7 @@ Then we connect from the Ubuntu (pivot host) to our attack host, using the optio
 victim@ubuntu$ ./chisel client -v <kali-ip>:1234 R:socks
 ```
 
-_<mark style="color:red;">**NOTE:**</mark>** **<mark style="color:yellow;">**Chisel opens a port**</mark>** **<mark style="color:red;">**1080**</mark>** **<mark style="color:yellow;">**that we will use.**</mark>_
+_<mark style="color:red;">**NOTE:**</mark>**&#x20;**<mark style="color:yellow;">**Chisel opens a port**</mark>**&#x20;**<mark style="color:red;">**1080**</mark>**&#x20;**<mark style="color:yellow;">**that we will use.**</mark>_
 
 _**Now we can modify proxychains.conf and add 1080 port so we can use it to pivot between 1080 and the tunnel.**_
 
@@ -137,7 +137,7 @@ Navigating to localhost:8090, we can now access the admin portal
 
 Sometimes we may want to port foward a direct port back to our reverse port forward. We can use the syntax: **R:localport:remotehost:remoteport.**
 
-<mark style="color:red;">**NOTE:**</mark> <mark style="color:yellow;">**This is useful if we want to access an internal**</mark>** **<mark style="color:red;">**web service**</mark>** **<mark style="color:yellow;">**on our local machine through 127.0.0.1**</mark>
+<mark style="color:red;">**NOTE:**</mark> <mark style="color:yellow;">**This is useful if we want to access an internal**</mark>**&#x20;**<mark style="color:red;">**web service**</mark>**&#x20;**<mark style="color:yellow;">**on our local machine through 127.0.0.1**</mark>
 
 ```powershell
 C:\Users\marcus> chisel.exe client 192.168.119.5:8080 R:80:172.16.6.241:80

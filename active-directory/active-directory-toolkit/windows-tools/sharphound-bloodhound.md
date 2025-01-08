@@ -9,7 +9,7 @@ description: >-
 
 ***
 
-## <mark style="color:red;">**NOTE:**</mark>** Make sure to use multiple versions of SharpHound if not working!**
+## <mark style="color:red;">**NOTE:**</mark>**&#x20;Make sure to use multiple versions of SharpHound if not working!**
 
 {% embed url="https://github.com/BloodHoundAD/SharpHound/releases" %}
 

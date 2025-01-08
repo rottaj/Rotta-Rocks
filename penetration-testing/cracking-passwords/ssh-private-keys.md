@@ -93,7 +93,7 @@ This is because modern SSH Private keys use AES-256, which Hashcat does not supp
 
 ### Creating Rules in John
 
-To add rules to John we need to add them to the **/etc/john/john.conf** file**. View "Identifying & Building Rules".**
+To add rules to John we need to add them to the **/etc/john/john.conf** fil&#x65;**. View "Identifying & Building Rules".**
 
 ```shell-session
 kali@kali$ cat ssh.rule

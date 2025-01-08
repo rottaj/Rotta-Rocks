@@ -36,13 +36,13 @@ When picking an encryption, encoding, or any other obfuscation algorithm. It's i
 
 Another effective method to keeping entropy low is using the obfuscation algorithms.
 
-<mark style="color:yellow;">**IPv4fuscation, IPv6fuscation, Macfuscation, and UUIDfuscation**</mark>** instead of using encryption algorithms**
+<mark style="color:yellow;">**IPv4fuscation, IPv6fuscation, Macfuscation, and UUIDfuscation**</mark>**&#x20;instead of using encryption algorithms**
 
 
 
 ## Inserting English Strings
 
-Another method we can use to reduce entropy is inserting english strings into the final implementation.  <mark style="color:yellow;">**It's recommended to use either all lower case or all upper case strings**</mark>** to reduce the number of possibilities for every byte.**
+Another method we can use to reduce entropy is inserting english strings into the final implementation.  <mark style="color:yellow;">**It's recommended to use either all lower case or all upper case strings**</mark>**&#x20;to reduce the number of possibilities for every byte.**
 
 
 
@@ -68,4 +68,4 @@ The CRT, or C Runtime Library, is a standard interface for the C programming lan
 
 It's also possible to reduce a payload's entropy using [EntropyReducer](https://github.com/Maldev-Academy/EntropyReducer), a tool developed by the MalDev Academy team.&#x20;
 
-EntropyReducer uses a custom algorithm that utilizes [linked lists](https://www.learn-c.org/en/Linked\_lists) to insert [null bytes](https://github.com/Maldev-Academy/EntropyReducer/blob/main/EntropyReducer/Common.h#L14) between each [BUFF\_SIZE](https://github.com/Maldev-Academy/EntropyReducer/blob/main/EntropyReducer/Common.h#L13) byte chunk of the payload.
+EntropyReducer uses a custom algorithm that utilizes [linked lists](https://www.learn-c.org/en/Linked_lists) to insert [null bytes](https://github.com/Maldev-Academy/EntropyReducer/blob/main/EntropyReducer/Common.h#L14) between each [BUFF\_SIZE](https://github.com/Maldev-Academy/EntropyReducer/blob/main/EntropyReducer/Common.h#L13) byte chunk of the payload.

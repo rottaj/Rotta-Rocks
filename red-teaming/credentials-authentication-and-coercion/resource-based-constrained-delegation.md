@@ -12,7 +12,7 @@ Resource-based constrained delegation, introduced in Windows Server 2012, allows
 
 #### <mark style="color:red;">Prerequisites to Attack</mark>:
 
-1. A target computer on which you can modify msDS-AllowedToActOnBehalfOfOtherIdentity**.**
+1. A target computer on which you can modify msDS-AllowedToActOnBehalfOfOtherIdentit&#x79;**.**
 2. Control of another principal that has an SPN.
 
 ## Enumerate Domain for Write Permissions

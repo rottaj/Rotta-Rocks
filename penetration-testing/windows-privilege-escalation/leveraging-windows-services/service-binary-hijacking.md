@@ -34,7 +34,7 @@ mysql                     Running C:\xampp\mysql\bin\mysqld.exe --defaults-file=
 
 #### What we're looking for
 
-We're looking for services that are installed in locations other than **C:\Windows\System32.** These applications are **user installed.**  For example**: C:\xampp\\.**
+We're looking for services that are installed in locations other than **C:\Windows\System32.** These applications are **user installed.**  For exampl&#x65;**: C:\xampp\\.**
 
 ## Enumerating Permissions
 

@@ -36,7 +36,7 @@ PLDR_DATA_TABLE_ENTRY pLdr = (PLDR_DATA_TABLE_ENTRY)((PBYTE)(pPeb->Ldr->InMemory
 
 ### NtCurrentTeb
 
-We will need to include our own [PEB](https://www.vergiliusproject.com/kernels/x86/windows-10/1703/\_PEB) & [TEB](https://www.vergiliusproject.com/kernels/x86/windows-7/sp1/\_TEB) objects (PTEB\_A & PPEB\_A)
+We will need to include our own [PEB](https://www.vergiliusproject.com/kernels/x86/windows-10/1703/_PEB) & [TEB](https://www.vergiliusproject.com/kernels/x86/windows-7/sp1/_TEB) objects (PTEB\_A & PPEB\_A)
 
 ```c
     // 64 bit
@@ -378,7 +378,7 @@ typedef struct _IMAGE_SECTION_HEADER {
 } IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER;
 ```
 
-_<mark style="color:red;">**IMPORTANT:**</mark>_** IMAGE\_SECTION\_HEADER Important Members**
+_<mark style="color:red;">**IMPORTANT:**</mark>_**&#x20;IMAGE\_SECTION\_HEADER Important Members**
 
 Some of IMAGE\_SECTION\_HEADER's most important members;
 

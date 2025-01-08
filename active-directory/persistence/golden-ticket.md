@@ -2,9 +2,9 @@
 
 ## Recap
 
-When a user requests a Ticket Granting Ticket (TGT) from the Key Distribution Center (KDC), the KDC encrypts the TGT with a secret only known to the KDC. **The secret is actually the password hash to the user: **_<mark style="color:yellow;">**krbtgt.**</mark>_
+When a user requests a Ticket Granting Ticket (TGT) from the Key Distribution Center (KDC), the KDC encrypts the TGT with a secret only known to the KDC. **The secret is actually the password hash to the user:&#x20;**_<mark style="color:yellow;">**krbtgt.**</mark>_
 
-_**If we get our hands on the**** **<mark style="color:yellow;">**krbtgt**</mark>** ****password hash we can create our own self made TGT tickets, know as**** **<mark style="color:yellow;">**a Golden Tickets.**</mark>_
+_**If we get our hands on the****&#x20;**<mark style="color:yellow;">**krbtgt**</mark>**&#x20;****password hash we can create our own self made TGT tickets, know as****&#x20;**<mark style="color:yellow;">**a Golden Tickets.**</mark>_
 
 
 

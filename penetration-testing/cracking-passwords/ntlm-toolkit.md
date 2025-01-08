@@ -33,7 +33,7 @@ reg save hklm\system system.hiv
 ./mimikatz64.exe "privilege::debug" "token::elevate" "lsadump::sam sam.hiv security.hiv system.hiv" "exit"
 ```
 
-### sekurlsa**::logonpasswords**
+### sekurls&#x61;**::logonpasswords**
 
 **sekurlsa::logonpasswords** attempts to extract plaintext passwords and password hashes from all available sources.
 
@@ -72,7 +72,7 @@ User : nelly
 
 
 
-## Passing NTLM - p_ass-the-hash_ (PtH)&#x20;
+## Passing NTLM - &#x70;_&#x61;ss-the-hash_ (PtH)&#x20;
 
 Depending on situation, we may be able to leverage an NTLM hash without cracking it.
 

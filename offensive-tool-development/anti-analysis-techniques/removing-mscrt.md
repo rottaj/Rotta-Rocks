@@ -32,7 +32,7 @@ To remove CRT in mingw2, we can add these additional flags to our Mafefile.
 
 &#x20;**`-nostartfiles` , `-nostdlib`**, **`-static-libgcc`**, and **`-static`**
 
-<mark style="color:red;">**Note:**</mark>** The only one we really need is `-nostartfiles`**
+<mark style="color:red;">**Note:**</mark>**&#x20;The only one we really need is `-nostartfiles`**
 
 **Example Makefile:**
 

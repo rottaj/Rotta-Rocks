@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In order to understand this page, we need to recap on Relative Virtual Addresses (RVA). An RVA is just an offset from where the image was loaded in memory (The Image base Virtual Address). **To Translate RVA into an absolute virtual address we **<mark style="color:yellow;">**add the value of the RVA to the value of the Image Base Address.**</mark>
+In order to understand this page, we need to recap on Relative Virtual Addresses (RVA). An RVA is just an offset from where the image was loaded in memory (The Image base Virtual Address). **To Translate RVA into an absolute virtual address we&#x20;**<mark style="color:yellow;">**add the value of the RVA to the value of the Image Base Address.**</mark>
 
 **To summarize:**
 
@@ -71,7 +71,7 @@ typedef struct _IMAGE_FILE_HEADER {
 
 It doesn't have a fixed size which is why the `IMAGE_FILE_HEADER.SizeOfOptionalHeader` exists.
 
-<mark style="color:yellow;">**IMPORTANT**</mark>**:** The first 8 members of the Optional Header structure are standard for every implementation of the `COFF` file format. the rest is an extension of `COFF` defined by Microsoft. **These additional members of the OptionalHeader structure are **<mark style="color:yellow;">**needed by the PE loader and linker**</mark>**.**
+<mark style="color:yellow;">**IMPORTANT**</mark>**:** The first 8 members of the Optional Header structure are standard for every implementation of the `COFF` file format. the rest is an extension of `COFF` defined by Microsoft. **These additional members of the OptionalHeader structure are&#x20;**<mark style="color:yellow;">**needed by the PE loader and linker**</mark>**.**
 
 
 

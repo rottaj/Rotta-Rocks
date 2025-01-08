@@ -111,7 +111,7 @@ The following diagram shows the first two registers. RAX & RBX.
 
 #### <mark style="color:red;">IMPORTANT:</mark> It's important to note that structure of these registers are not independent. They are arranged in a hierarchical structure. Where registers of larger size overlay smaller ones. RAX (64 bit) overlays EAX (32 bit), which in turn overlays the 16 bit registers (AX & AH/AL).
 
-**Therefore, modifying the value of RAX will change the value of EAX, and therefore the values of AX. **<mark style="color:yellow;">**The hierachical relationship implies that changing the values of higher registers effects the value of lower registers, vice versa.**</mark>
+**Therefore, modifying the value of RAX will change the value of EAX, and therefore the values of AX.&#x20;**<mark style="color:yellow;">**The hierachical relationship implies that changing the values of higher registers effects the value of lower registers, vice versa.**</mark>
 
 For example, modifying the value of `BL` will impact the value of `BX`, which will then influence the value of `EBX`, and subsequently modify the value of `RBX`.
 
