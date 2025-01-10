@@ -122,6 +122,7 @@
 * [Setting up Infrastructure](red-teaming/setting-up-infrastructure/README.md)
   * [C2 Infrastructure Design](red-teaming/setting-up-infrastructure/c2-infrastructure-design.md)
   * [Redirectors & Enabling Apache Redirection](red-teaming/setting-up-infrastructure/redirectors-and-enabling-apache-redirection.md)
+  * [Beacon Staging](red-teaming/setting-up-infrastructure/beacon-staging.md)
 * [External Recon](red-teaming/external-recon.md)
 * [Initial Compromise](red-teaming/initial-compromise/README.md)
   * [Setting up Infrastructure](red-teaming/initial-compromise/setting-up-infrastructure.md)
