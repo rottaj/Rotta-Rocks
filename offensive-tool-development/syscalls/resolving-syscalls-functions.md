@@ -2,29 +2,31 @@
 
 
 
-## Resolve Syscall by Name
+## Get Syscall number by name
 
-This code snippet is re-written from MDSec's [blog post](https://www.mdsec.co.uk/2022/04/resolving-system-service-numbers-using-the-exception-directory/).
+Syscalls numbers vary from version to version. This code snippet is from MDSec's [blog post](https://www.mdsec.co.uk/2022/04/resolving-system-service-numbers-using-the-exception-directory/) to fetch the syscall number given it's name.
 
 <pre class="language-c"><code class="lang-c"><strong>#include &#x3C;windows.h>
 </strong><strong>#include &#x3C;winternl.h>
-</strong><strong>
-</strong><strong>int GetSsnByName(PCHAR syscall) {
-</strong>    auto Ldr = (PPEB_LDR_DATA)NtCurrentTeb()->ProcessEnvironmentBlock->Ldr;
-    auto Head = (PLIST_ENTRY)&#x26;Ldr->Reserved2[1];
-    auto Next = Head->Flink;
+</strong>
+int GetSsnByName(char* syscall) {
+    PPEB_LDR_DATA Ldr = (PPEB_LDR_DATA)NtCurrentTeb()->ProcessEnvironmentBlock->Ldr;
+    PLIST_ENTRY Head = (PLIST_ENTRY)&#x26;Ldr->Reserved2[1];
+    PLIST_ENTRY Next = Head->Flink;
 
     while (Next != Head) {
-        auto ent = CONTAINING_RECORD(Next, LDR_DATA_TABLE_ENTRY, Reserved1[0]);
+        LDR_DATA_TABLE_ENTRY* ent = CONTAINING_RECORD(Next, LDR_DATA_TABLE_ENTRY, Reserved1[0]);
         Next = Next->Flink;
-        auto m = (PBYTE)ent->DllBase;
-        auto nt = (PIMAGE_NT_HEADERS)(m + ((PIMAGE_DOS_HEADER)m)->e_lfanew);
-        auto rva = nt->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress;
+        PBYTE m = (PBYTE)ent->DllBase;
+        PIMAGE_NT_HEADERS nt = (PIMAGE_NT_HEADERS)(m + ((PIMAGE_DOS_HEADER)m)->e_lfanew);
+        ULONG rva = nt->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress;
+
         if (!rva) continue; // no export table? skip
 
-        auto exp = (PIMAGE_EXPORT_DIRECTORY)(m + rva);
+        PIMAGE_EXPORT_DIRECTORY exp = (PIMAGE_EXPORT_DIRECTORY)(m + rva);
         if (!exp->NumberOfNames) continue;   // no symbols? skip
-        auto dll = (PDWORD)(m + exp->Name);
+
+        PDWORD dll = (PDWORD)(m + exp->Name);
 
         // not ntdll.dll? skip
         if ((dll[0] | 0x20202020) != 'ldtn') continue;
@@ -34,13 +36,13 @@ This code snippet is re-written from MDSec's [blog post](https://www.mdsec.co.uk
         // Load the Exception Directory.
         rva = nt->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXCEPTION].VirtualAddress;
         if (!rva) return -1;
-        auto rtf = (PIMAGE_RUNTIME_FUNCTION_ENTRY)(m + rva);
+        PIMAGE_RUNTIME_FUNCTION_ENTRY rtf = (PIMAGE_RUNTIME_FUNCTION_ENTRY)(m + rva);
 
         // Load the Export Address Table.
         rva = nt->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress;
-        auto adr = (PDWORD)(m + exp->AddressOfFunctions);
-        auto sym = (PDWORD)(m + exp->AddressOfNames);
-        auto ord = (PWORD)(m + exp->AddressOfNameOrdinals);
+        PDWORD functionAddresses = (PDWORD)(m + exp->AddressOfFunctions);
+        PDWORD nameAddresses = (PDWORD)(m + exp->AddressOfNames);
+        PWORD ordinalAddresses= (PWORD)(m + exp->AddressOfNameOrdinals);
 
         int ssn = 0;
 
@@ -49,13 +51,18 @@ This code snippet is re-written from MDSec's [blog post](https://www.mdsec.co.uk
             // Search export address table.
             for (int j = 0; j &#x3C; exp->NumberOfFunctions; j++) {
                 // begin address rva?
-                if (adr[ord[j]] == rtf[i].BeginAddress) {
-                    auto api = (PCHAR)(m + sym[j]);
-                    auto s1 = api;
-                    auto s2 = syscall;
+                if (functionAddresses[ordinalAddresses[j]] == rtf[i].BeginAddress) {
+                    char* api = (char*)(m + nameAddresses[j]);
+                    char* s1 = api;
+                    char* s2 = syscall;
+
+                    getchar();
 
                     // our system call? if true, return ssn
-                    while (*s1 &#x26;&#x26; (*s1 == *s2)) s1++, s2++;
+                    while (*s1 &#x26;&#x26; (*s1 == *s2)) {
+                        s1++, s2++;
+                    }
+
                     int cmp = (int)*(PBYTE)s1 - *(PBYTE)s2;
                     if (!cmp) return ssn;
 
