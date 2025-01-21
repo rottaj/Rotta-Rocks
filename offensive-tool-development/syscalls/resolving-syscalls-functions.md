@@ -6,10 +6,12 @@
 
 This code snippet is re-written from MDSec's [blog post](https://www.mdsec.co.uk/2022/04/resolving-system-service-numbers-using-the-exception-directory/).
 
-```c
-int GetSsnByName(PCHAR syscall) {
-    auto Ldr = (PPEB_LDR_DATA)NtCurrentTeb()->ProcessEnvironmentBlock->Ldr;
-    auto Head = (PLIST_ENTRY)&Ldr->Reserved2[1];
+<pre class="language-c"><code class="lang-c"><strong>#include &#x3C;windows.h>
+</strong><strong>#include &#x3C;winternl.h>
+</strong><strong>
+</strong><strong>int GetSsnByName(PCHAR syscall) {
+</strong>    auto Ldr = (PPEB_LDR_DATA)NtCurrentTeb()->ProcessEnvironmentBlock->Ldr;
+    auto Head = (PLIST_ENTRY)&#x26;Ldr->Reserved2[1];
     auto Next = Head->Flink;
 
     while (Next != Head) {
@@ -27,7 +29,7 @@ int GetSsnByName(PCHAR syscall) {
         // not ntdll.dll? skip
         if ((dll[0] | 0x20202020) != 'ldtn') continue;
         if ((dll[1] | 0x20202020) != 'ld.l') continue;
-        if ((*(USHORT*)&dll[2] | 0x0020) != '\x00l') continue;
+        if ((*(USHORT*)&#x26;dll[2] | 0x0020) != '\x00l') continue;
 
         // Load the Exception Directory.
         rva = nt->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXCEPTION].VirtualAddress;
@@ -45,7 +47,7 @@ int GetSsnByName(PCHAR syscall) {
         // Search runtime function table.
         for (int i = 0; rtf[i].BeginAddress; i++) {
             // Search export address table.
-            for (int j = 0; j < exp->NumberOfFunctions; j++) {
+            for (int j = 0; j &#x3C; exp->NumberOfFunctions; j++) {
                 // begin address rva?
                 if (adr[ord[j]] == rtf[i].BeginAddress) {
                     auto api = (PCHAR)(m + sym[j]);
@@ -53,7 +55,7 @@ int GetSsnByName(PCHAR syscall) {
                     auto s2 = syscall;
 
                     // our system call? if true, return ssn
-                    while (*s1 && (*s1 == *s2)) s1++, s2++;
+                    while (*s1 &#x26;&#x26; (*s1 == *s2)) s1++, s2++;
                     int cmp = (int)*(PBYTE)s1 - *(PBYTE)s2;
                     if (!cmp) return ssn;
 
@@ -66,4 +68,4 @@ int GetSsnByName(PCHAR syscall) {
     return -1; // didn't find it.
 }
 
-```
+</code></pre>
