@@ -52,7 +52,7 @@ All syscalls return a NTSTATUS value that indicates the status (or error) code o
 The majority of syscalls are not documented by Microsoft, therefore the syscall modules will reference the documentation shown below.
 
 * [Undocumented NTinternals](https://web.archive.org/web/20230401045934/http://undocumented.ntinternals.net/)
-* [ReactOS's NTDLL Reference](https://doxygen.reactos.org/dir\_a7ad942ac829d916497d820c4a26c555.html)
+* [ReactOS's NTDLL Reference](https://doxygen.reactos.org/dir_a7ad942ac829d916497d820c4a26c555.html)
 * Disassembling ntdll.dll in IDA can also be beneficial.
 
 The majority of the syscalls are exported from ntdll.dll. We can view them by opening ntdll.dll in IDA.
@@ -62,6 +62,8 @@ _<mark style="color:red;">**NOTE:**</mark>_ Syscalls provide low-level access to
 ## Syscall Service Number (SSN)
 
 Every syscall has a Syscall Service Number (SSN). These numbers are what the kernel uses to distinguish syscalls from each other and are executed in the syscall stub (explained below). IMPORTANT: syscall service numbers are not static throughout all version of windows as they have changed over time. See the table below:
+
+{% embed url="https://j00ru.vexillium.org/syscalls/nt/64/" %}
 
 {% embed url="https://github.com/hfiref0x/SyscallTables" %}
 
